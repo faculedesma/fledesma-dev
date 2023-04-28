@@ -1,0 +1,16 @@
+@import "../../utils/variables";
+
+.mouse-follow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(0, 0);
+  animation: translate calc($golden-ratio-time / 4) ease-in-out;
+  z-index: 1;
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+  background: linear-gradient(to right, $highlight-color, $secondary-color);
+  opacity: 0.2;
+  filter: blur(100px);
+}
