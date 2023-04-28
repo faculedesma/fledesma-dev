@@ -8,7 +8,7 @@ const MouseFollow = (): JSX.Element => {
 
   useEffect(() => {
     if (ref.current) {
-      ref.current.style.transform = `translate(${x}px, ${y}px)`;
+      ref.current.style.transform = `translate(${x * 0.5}px, ${y * 0.5}px)`;
     }
   }, [x, y]);
 

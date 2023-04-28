@@ -3,7 +3,7 @@
 @font-face {
   font-family: "Gilroy";
   font-weight: 300;
-  src: url("@/assets/fonts/Gilroy-SemiBold.ttf") format("truetype");
+  src: url("@/assets/fonts/Gilroy-Light.ttf") format("truetype");
 }
 
 @font-face {
@@ -76,7 +76,7 @@ $shades-gray: rgba($secondary-color, 0.5);
 
 // sizes - desktop
 
-$heading-one-size: 109.66px;
+$heading-one-size: 100px;
 $heading-one-letter-spacing: -2px;
 $heading-two-size: 25.89px;
 $heading-two-letter-spacing: -2px;
