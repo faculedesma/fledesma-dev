@@ -1,0 +1,98 @@
+@import "../../utils/variables";
+
+header {
+  width: 100dvw;
+}
+
+.header {
+  position: relative;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+
+  &-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+
+    svg {
+      cursor: pointer;
+      transform: scale(1);
+      transition: calc($golden-ratio-time / 8) ease-in;
+    }
+
+    p {
+      font-weight: bold;
+    }
+  }
+
+  &-links {
+    width: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &--item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      transition: all calc($golden-ratio-time / 8) ease-in;
+      cursor: pointer;
+
+      &-text {
+        position: relative;
+
+        span {
+          display: inline-block;
+          transition: all calc($golden-ratio-time / 8) ease-in-out;
+        }
+
+        span:first-child {
+          transform: translateY(0) scaleY(1);
+          color: $secondary-color;
+          transition: all calc($golden-ratio-time / 8) ease-in;
+        }
+
+        span:last-child {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translateY(100%) scaleY(0);
+          color: $shades-gray;
+          transition: all calc($golden-ratio-time / 8) ease-in;
+        }
+      }
+
+      &:hover {
+        .header-links--item-text {
+          span:first-child {
+            transform: translateY(0) scaleY(0);
+            transition: all calc($golden-ratio-time / 8) ease-in;
+          }
+
+          span:last-child {
+            transform: translateY(0) scaleY(1);
+            transition: all calc($golden-ratio-time / 8) ease-in;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Smartphones (portrait and landscape) */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .header {
+    height: 90px;
+
+    &-right {
+      justify-content: flex-end;
+      gap: 2rem;
+    }
+  }
+}

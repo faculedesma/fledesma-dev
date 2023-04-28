@@ -1,0 +1,103 @@
+// Gilroy
+
+@font-face {
+  font-family: "Gilroy";
+  font-weight: 300;
+  src: url("@/assets/fonts/Gilroy-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Gilroy";
+  font-weight: 400;
+  src: url("@/assets/fonts/Gilroy-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Gilroy";
+  font-weight: 500;
+  src: url("@/assets/fonts/Gilroy-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Gilroy";
+  font-weight: 600;
+  src: url("@/assets/fonts/Gilroy-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Gilroy";
+  font-weight: 700;
+  src: url("@/assets/fonts/Gilroy-Bold.ttf") format("truetype");
+}
+
+// Graphik
+
+@font-face {
+  font-family: "Graphik";
+  font-weight: 300;
+  src: url("@/assets/fonts/GraphikLight.otf");
+}
+
+@font-face {
+  font-family: "Graphik";
+  font-weight: 400;
+  src: url("@/assets/fonts/GraphikRegular.otf");
+}
+
+@font-face {
+  font-family: "Graphik";
+  font-weight: 500;
+  src: url("@/assets/fonts/GraphikMedium.otf");
+}
+
+@font-face {
+  font-family: "Graphik";
+  font-weight: 600;
+  src: url("@/assets/fonts/GraphikSemibold.otf");
+}
+
+@font-face {
+  font-family: "Graphik";
+  font-weight: 700;
+  src: url("@/assets/fonts/GraphikBold.otf");
+}
+
+// fonts
+
+$primary-font-family: "Gilroy", sans-serif;
+$secondary-font-family: "Graphik", sans-serif;
+
+// colors
+
+$primary-color: #0f0e0d;
+$secondary-color: #ffffff;
+$highlight-color: #b66d6d;
+$shades-gray: rgba($secondary-color, 0.5);
+
+// sizes - desktop
+
+$heading-one-size: 109.66px;
+$heading-one-letter-spacing: -2px;
+$heading-two-size: 25.89px;
+$heading-two-letter-spacing: -2px;
+$heading-three-size: 1rem;
+$heading-three-letter-spacing: 0.25rem;
+
+$paragraph-one-size: 1rem;
+$paragraph-two-size: 0.75rem;
+
+// sizes - mobile
+
+$heading-one-size-mobile: 3rem;
+$heading-one-letter-spacing-mobile: 0.125rem;
+$heading-two-size-mobile: 1.25rem;
+$heading-two-letter-spacing-mobile: 0.125rem;
+$heading-three-size-mobile: 1rem;
+$heading-three-letter-spacing-mobile: 0.125rem;
+
+$paragraph-one-size-mobile: 1rem;
+$paragraph-two-size-mobile: 0.875rem;
+
+// animations
+
+$golden-ratio-time: 1.618s;
