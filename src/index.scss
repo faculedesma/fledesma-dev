@@ -159,6 +159,10 @@ button:focus-visible {
   outline: none;
 }
 
+svg {
+  color: $secondary-color;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: $secondary-color;
