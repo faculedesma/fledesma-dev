@@ -1,10 +1,8 @@
-[![Deployment Pipeline](https://github.com/faculedesma/wisian-ai/actions/workflows/pipeline.yml/badge.svg)](https://github.com/faculedesma/wisian-ai/actions/workflows/pipeline.yml)
-
-# <img src="./public/logo.svg" alt="logo icon"> Namewiz
+# <img src="./public/logo.svg" alt="logo icon"> Facundo Ledesma
 
 ## About The Project
 
-Namewiz is a React-based web application that utilizes AI models to provide personalized name suggestions for your newborn.
+Facundo Ledesma's developer portfolio.
 
 ## Built With
 
@@ -27,7 +25,7 @@ If you want to play with it just follow these steps:
 
 1. Clone the repo
    ```sh
-   git clone git@github.com:faculedesma/wisian-ai.git
+   git clone git@github.com:faculedesma/fledesma-dev.git
    ```
 2. Install NPM packages
    ```sh
