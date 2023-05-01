@@ -2,16 +2,30 @@
 
 .mouse-follow {
   position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(0, 0);
-  transition: transform calc($golden-ratio-time) ease-out;
-  transition-timing-function: cubic-bezier(0.05, 0.02, 0.16, 0.99);
-  z-index: 1;
-  height: 500px;
-  width: 500px;
+  left: 50%;
+  top: 50%;
   border-radius: 50%;
+  width: 500px;
+  aspect-ratio: 1;
   background: linear-gradient(to right, $highlight-color, $secondary-color);
-  opacity: 0.2;
-  filter: blur(100px);
+  animation: rotate-ball calc($golden-ratio-time * 10) infinite;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+@keyframes rotate-ball {
+  0% {
+    filter: blur(100px);
+    transform: rotate(0deg) scaleY(0.75);
+  }
+
+  50% {
+    filter: blur(200px);
+    transform: rotate(360deg) scaleY(1);
+  }
+
+  100% {
+    filter: blur(100px);
+    transform: rotate(0deg) scaleY(0.75);
+  }
 }
