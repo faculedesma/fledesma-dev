@@ -74,6 +74,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
+  overflow: auto;
 }
 
 #root {
@@ -98,7 +99,8 @@ h1,
 h2,
 h3,
 a,
-span {
+span,
+button {
   font-family: $primary-font-family;
 }
 

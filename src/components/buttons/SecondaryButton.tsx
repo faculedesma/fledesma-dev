@@ -1,24 +1,20 @@
-import { ReactNode } from 'react';
-import './secondary-button.scss';
+import { ReactNode } from "react";
+import { ArrowRight } from "@assets/svgs/ArrowRight";
+import "./secondary-button.scss";
 
 type SecondaryButtonProps = {
   label?: string | ReactNode;
-  backgroundColor?: string;
   onClick?: () => void;
 };
 
 export const SecondaryButton = ({
-  label = '',
-  backgroundColor = '#ffffff',
-  onClick = () => null
+  label = "",
+  onClick = () => null,
 }: SecondaryButtonProps) => {
   return (
-    <button
-      className="secondary-button"
-      style={{ backgroundColor }}
-      onClick={onClick}
-    >
+    <button className="secondary-button" onClick={onClick}>
       {label}
+      <ArrowRight />
     </button>
   );
 };

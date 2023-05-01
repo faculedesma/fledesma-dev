@@ -1,0 +1,60 @@
+@import "../../utils/variables";
+
+.services {
+  width: 90%;
+  height: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h3 {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  &-list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &--card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 320px;
+      height: 375px;
+      border: 1px solid $highlight-color;
+      background: linear-gradient(to bottom, $highlight-color, $primary-color);
+      background-size: 100% 50%;
+      background-repeat: no-repeat;
+
+      &-top {
+        height: 45%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          margin-bottom: 1rem;
+        }
+      }
+
+      &-bottom {
+        height: 45%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        p {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
