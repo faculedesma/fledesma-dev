@@ -10,7 +10,8 @@
 
   > h3 {
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 600;
+    letter-spacing: 2px;
     margin-bottom: 2rem;
   }
 
@@ -32,6 +33,13 @@
       z-index: 2;
       cursor: pointer;
       overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+      h2:first-child,
+      h2:nth-child(2) {
+        translate: 0px 0px;
+        transition: translate calc($golden-ratio-time / 4) ease-in-out;
+      }
 
       h2:first-child {
         width: 40%;
@@ -54,6 +62,25 @@
         position: absolute;
         bottom: 0;
         right: 0;
+        scale: 1;
+        transition: scale calc($golden-ratio-time / 4) ease-in-out;
+      }
+
+      &:hover {
+        img {
+          scale: 1.1;
+          transition: scale calc($golden-ratio-time / 4) ease-in-out;
+        }
+
+        h2:first-child {
+          translate: 20px 20px;
+          transition: translate calc($golden-ratio-time / 4) ease-in-out;
+        }
+
+        h2:nth-child(2) {
+          translate: 20px -20px;
+          transition: translate calc($golden-ratio-time / 4) ease-in-out;
+        }
       }
     }
 
@@ -67,11 +94,7 @@
       background: linear-gradient(to right, #677874, $primary-color);
     }
     &-nina {
-      img {
-        z-index: -1;
-        scale: 1.2;
-        translate: -50px;
-      }
+      background: linear-gradient(to right, #abd3e5, $primary-color);
     }
 
     &-art {

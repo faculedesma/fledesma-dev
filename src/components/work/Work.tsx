@@ -24,7 +24,7 @@ const works = [
     title: "Let's sell it online",
     type: "Nina Style",
     image: NinaBG,
-    link: "https://faculedesma.github.io/namewiz-fe/",
+    link: "https://www.instagram.com/shopninastyle/",
   },
   {
     id: "art",
@@ -40,7 +40,7 @@ const Work = () => {
 
   return (
     <div className="container">
-      <div className="work">
+      <div id="work" className="work">
         <h3>Work</h3>
         <div className="work-list">
           {works.map((work) => {

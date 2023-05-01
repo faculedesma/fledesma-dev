@@ -13,13 +13,13 @@ const Hero = () => {
 
   useEffect(() => {
     if (ref.current) {
-      ref.current.style.transform = `translate(-${x / 30}px, -${y / 30}px)`;
+      ref.current.style.transform = `translate(-${x / 30}px, 0px)`;
     }
   }, [x, y]);
 
   return (
     <div className="container">
-      <div className="hero">
+      <div id="hero" className="hero">
         <div ref={ref} className="hero-canvas">
           <Spline scene="https://prod.spline.design/PsvclvB5wVsUm7ZW/scene.splinecode" />
         </div>
@@ -30,8 +30,8 @@ const Hero = () => {
         </div>
         <div className="hero-social">
           <Twitter />
-          <Behance />
           <Dribble />
+          <Behance />
           <LinkedIn />
         </div>
       </div>

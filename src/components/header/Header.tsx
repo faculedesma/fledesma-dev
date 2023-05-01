@@ -1,7 +1,13 @@
 import { Logo } from "@assets/svgs/Logo";
 import "./header.scss";
 
-const links = [
+type Link = {
+  id: string;
+  label: string;
+  href: string;
+};
+
+const links: Link[] = [
   {
     id: "work",
     label: "Work",
@@ -19,12 +25,30 @@ const links = [
   },
 ];
 
-const Header = () => {
+const Header = (): JSX.Element => {
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    id: string
+  ) => {
+    e.preventDefault();
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleLogoClick = () => {
+    const top = document.getElementById("hero");
+    if (top) {
+      top.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header>
       <div className="container">
-        <div className="header">
-          <div className="header-logo">
+        <div id="header" className="header">
+          <div onClick={handleLogoClick} className="header-logo">
             <Logo />
             <p>Facundo Ledesma</p>
           </div>
@@ -34,11 +58,12 @@ const Header = () => {
                 <a
                   key={link.id}
                   className="header-links--item"
+                  onClick={(e) => handleLinkClick(e, link.id)}
                   href={link.href}
                 >
                   {link.label.split("").map((char) => {
                     return (
-                      <div className="header-links--item-text">
+                      <div key={char} className="header-links--item-text">
                         <span>{char}</span>
                         <span>{char}</span>
                       </div>

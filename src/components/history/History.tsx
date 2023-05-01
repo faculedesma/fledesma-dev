@@ -15,7 +15,7 @@ const jobsHistory = [
     date: "2020",
     position: "Software Engineer",
     company: {
-      name: "ICE Mortage Technology",
+      name: "ICE Mortgage Technology, Inc.",
       url: "https://www.icemortgagetechnology.com/",
     },
   },
@@ -24,7 +24,7 @@ const jobsHistory = [
     date: "2020",
     position: "Software Engineer",
     company: {
-      name: "Leniolabs LLC",
+      name: "Leniolabs_ LLC",
       url: "https://www.leniolabs.com/",
     },
   },
@@ -32,7 +32,7 @@ const jobsHistory = [
     id: "soft-three",
     date: "2018",
     position: "Software Engineer",
-    company: { name: "Sovos Compliance LLC", url: "https://sovos.com/" },
+    company: { name: "Sovos Compliance, LLC", url: "https://sovos.com/" },
   },
 ];
 
