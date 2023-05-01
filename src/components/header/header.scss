@@ -1,11 +1,13 @@
 @import "../../utils/variables";
 
 header {
+  position: fixed;
   width: 100dvw;
+  top: 0;
+  left: 0;
 }
 
 .header {
-  position: relative;
   height: 100px;
   display: flex;
   align-items: center;
