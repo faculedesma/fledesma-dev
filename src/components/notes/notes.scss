@@ -1,0 +1,13 @@
+.notes {
+  &-one {
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+      width: 65%;
+      text-align: center;
+    }
+  }
+}

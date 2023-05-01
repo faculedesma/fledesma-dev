@@ -18,20 +18,22 @@ const Hero = () => {
   }, [x, y]);
 
   return (
-    <div className="hero">
-      <div ref={ref} className="hero-canvas">
-        <Spline scene="https://prod.spline.design/PsvclvB5wVsUm7ZW/scene.splinecode" />
-      </div>
-      <div className="hero-title">
-        <h1>Developer &</h1>
-        <h1>designer</h1>
-        <h2>Build it fast, simple and beautiful.</h2>
-      </div>
-      <div className="hero-social">
-        <Twitter />
-        <Behance />
-        <Dribble />
-        <LinkedIn />
+    <div className="container">
+      <div className="hero">
+        <div ref={ref} className="hero-canvas">
+          <Spline scene="https://prod.spline.design/PsvclvB5wVsUm7ZW/scene.splinecode" />
+        </div>
+        <div className="hero-title">
+          <h1>Developer &</h1>
+          <h1>designer</h1>
+          <h3>Build it fast, simple and beautiful.</h3>
+        </div>
+        <div className="hero-social">
+          <Twitter />
+          <Behance />
+          <Dribble />
+          <LinkedIn />
+        </div>
       </div>
     </div>
   );

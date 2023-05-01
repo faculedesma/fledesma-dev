@@ -19,6 +19,8 @@ header {
     width: 200px;
 
     svg {
+      width: 41px;
+      height: 43px;
       cursor: pointer;
       transform: scale(1);
       transition: calc($golden-ratio-time / 8) ease-in;
