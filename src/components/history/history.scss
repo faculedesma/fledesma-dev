@@ -1,0 +1,76 @@
+@import "../../utils/variables";
+
+.history {
+  width: 90%;
+  height: 888px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h3 {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+
+  &-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    &--row {
+      width: 76.5%;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10rem;
+      z-index: 2;
+
+      &-container {
+        width: 100dvw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 0.5px solid $secondary-color;
+        background-color: $primary-color;
+        color: $secondary-color;
+        transition: all calc($golden-ratio-time / 4) ease-in-out;
+
+        &:hover {
+          color: $primary-color;
+          border-color: $primary-color;
+          background-color: $highlight-color;
+          transition: all calc($golden-ratio-time / 4) ease-in-out;
+        }
+      }
+
+      h2 {
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+
+      &-charge {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        h2 {
+          text-transform: none;
+        }
+
+        a {
+          font-weight: 300;
+          position: absolute;
+          top: 100%;
+          left: 0;
+        }
+      }
+    }
+  }
+}

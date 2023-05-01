@@ -11,7 +11,7 @@
   h3 {
     text-transform: uppercase;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
   &-list {
     width: 100%;
@@ -27,9 +27,23 @@
       width: 320px;
       height: 375px;
       border: 1px solid rgba($highlight-color, 0.2);
-      background: linear-gradient(to bottom, $highlight-color, $primary-color);
-      background-size: 100% 50%;
+      background: linear-gradient(
+        to bottom,
+        $highlight-color 20%,
+        $primary-color 60%
+      );
       background-repeat: no-repeat;
+      -webkit-box-shadow: 0px 0px 40px -20px rgba(255, 255, 255, 0.2);
+      -moz-box-shadow: 0px 0px 40px -20px rgba(255, 255, 255, 0.2);
+      box-shadow: 0px 0px 40px -20px rgba(255, 255, 255, 0.2);
+      scale: 1;
+      transition: all calc($golden-ratio-time / 4) ease-in-out;
+      z-index: 2;
+
+      &:hover {
+        scale: 1.01;
+        transition: all calc($golden-ratio-time / 4) ease-in-out;
+      }
 
       &-top {
         height: 45%;

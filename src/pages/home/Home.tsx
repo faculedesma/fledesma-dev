@@ -3,6 +3,7 @@ import Header from "@components/header/Header";
 import { NoteOne } from "@components/notes/NoteOne";
 import { NoteTwo } from "@components/notes/NoteTwo";
 import Services from "@components/services/Services";
+import History from "@components/history/History";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <NoteOne />
       <Services />
       <NoteTwo />
+      <History />
     </div>
   );
 };
