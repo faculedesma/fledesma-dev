@@ -20,18 +20,18 @@ const works = [
     link: "https://faculedesma.github.io/namewiz-fe/",
   },
   {
-    id: "nina",
-    title: "Let's sell it online",
-    type: "Nina Style",
-    image: NinaBG,
-    link: "https://www.instagram.com/shopninastyle/",
-  },
-  {
     id: "art",
     title: "Journey of selfknowledge",
     type: "Art Portfolio",
     image: LampBG,
     link: "https://facundo-ledesma.me/",
+  },
+  {
+    id: "nina",
+    title: "Let's sell it online",
+    type: "Nina Style",
+    image: NinaBG,
+    link: "https://www.instagram.com/shopninastyle/",
   },
 ];
 

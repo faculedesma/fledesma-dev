@@ -1,81 +1,86 @@
 // Gilroy
 
 @font-face {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-weight: 300;
   font-style: normal;
-  src: url("../src/assets/fonts/Gilroy-Light.ttf") format("truetype");
+  src: url('../src/assets/fonts/Gilroy-Light.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-weight: 400;
   font-style: normal;
-  src: url("../src/assets/fonts/Gilroy-Regular.ttf") format("truetype");
+  src: url('../src/assets/fonts/Gilroy-Regular.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-weight: 500;
   font-style: normal;
-  src: url("../src/assets/fonts/Gilroy-Medium.ttf") format("truetype");
+  src: url('../src/assets/fonts/Gilroy-Medium.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-weight: 600;
   font-style: normal;
-  src: url("../src/assets/fonts/Gilroy-SemiBold.ttf") format("truetype");
+  src: url('../src/assets/fonts/Gilroy-SemiBold.ttf')
+    format('truetype');
 }
 
 @font-face {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-weight: 700;
   font-style: normal;
-  src: url("../src/assets/fonts/Gilroy-Bold.ttf") format("truetype");
+  src: url('../src/assets/fonts/Gilroy-Bold.ttf')
+    format('truetype');
 }
 
 // Graphik
 
 @font-face {
-  font-family: "Graphik";
+  font-family: 'Graphik';
   font-weight: 300;
-  src: url("@/assets/fonts/GraphikLight.otf");
+  src: url('@/assets/fonts/GraphikLight.otf');
 }
 
 @font-face {
-  font-family: "Graphik";
+  font-family: 'Graphik';
   font-weight: 400;
-  src: url("@/assets/fonts/GraphikRegular.otf");
+  src: url('@/assets/fonts/GraphikRegular.otf');
 }
 
 @font-face {
-  font-family: "Graphik";
+  font-family: 'Graphik';
   font-weight: 500;
-  src: url("@/assets/fonts/GraphikMedium.otf");
+  src: url('@/assets/fonts/GraphikMedium.otf');
 }
 
 @font-face {
-  font-family: "Graphik";
+  font-family: 'Graphik';
   font-weight: 600;
-  src: url("@/assets/fonts/GraphikSemibold.otf");
+  src: url('@/assets/fonts/GraphikSemibold.otf');
 }
 
 @font-face {
-  font-family: "Graphik";
+  font-family: 'Graphik';
   font-weight: 700;
-  src: url("@/assets/fonts/GraphikBold.otf");
+  src: url('@/assets/fonts/GraphikBold.otf');
 }
 
-@import "../src/utils/variables";
+@import '../src/utils/variables';
 
 body {
   width: 100dvw;
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
-  overflow: auto;
-  scroll-behavior: "smooth";
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 #root {
