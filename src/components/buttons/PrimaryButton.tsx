@@ -1,4 +1,3 @@
-import { ArrowDown } from '@assets/svgs/ArrowDown';
 import { ReactNode } from 'react';
 import './primary-button.scss';
 
@@ -20,7 +19,6 @@ export const PrimaryButton = ({
       onClick={onClick}
     >
       <span>{label}</span>
-      <ArrowDown />
     </button>
   );
 };
