@@ -1,4 +1,4 @@
-@import "../../utils/variables";
+@import '../../utils/variables';
 
 .hero {
   position: relative;
@@ -16,7 +16,8 @@
     transform: scale(0.8) translate(0, 0);
 
     canvas {
-      animation: show-canvas calc($golden-ratio-time / 4) ease-in-out forwards;
+      animation: show-canvas calc($golden-ratio-time / 4)
+        ease-in-out forwards;
     }
   }
 
@@ -32,12 +33,14 @@
     z-index: 3;
 
     h1 {
-      animation: slide-in calc($golden-ratio-time / 4) ease-in-out forwards;
+      animation: slide-in calc($golden-ratio-time / 4)
+        ease-in-out forwards;
     }
 
     h3 {
       margin-top: 1rem;
-      animation: slide-in calc($golden-ratio-time / 4) ease-in-out forwards;
+      animation: slide-in calc($golden-ratio-time / 4)
+        ease-in-out forwards;
     }
   }
 
@@ -46,26 +49,7 @@
     bottom: 0;
     right: 0;
     height: 180px;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-between;
     transform: translateY(-100px);
-
-    svg {
-      color: $secondary-color;
-      cursor: pointer;
-      transform: scale(1);
-      transition: all calc($golden-ratio-time / 8) ease-in-out;
-
-      &:hover {
-        color: $highlight-color;
-        opacity: 0.5;
-        transform: scale(1.1);
-        transition: all calc($golden-ratio-time / 8) ease-in-out;
-      }
-    }
   }
 }
 

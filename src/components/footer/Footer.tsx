@@ -1,19 +1,18 @@
-import { MailEnvelop } from "@assets/svgs/MailEnvelop";
-import { Twitter } from "@assets/svgs/Twitter";
-import { Behance } from "@assets/svgs/Behance";
-import { Dribble } from "@assets/svgs/Dribble";
-import { LinkedIn } from "@assets/svgs/LinkedIn";
-import "./footer.scss";
-import { useState } from "react";
+import { MailEnvelop } from '@assets/svgs/MailEnvelop';
+import { useState } from 'react';
+import { Social } from '@components/social/Social';
+import './footer.scss';
 
 const Footer = () => {
-  const [text, setText] = useState("Click to copy!");
+  const [text, setText] = useState('Click to copy!');
 
   const handleCopyMailToClipboard = () => {
-    navigator.clipboard.writeText("faculedesma1993@gmail.com");
-    setText("Copied!");
+    navigator.clipboard.writeText(
+      'faculedesma1993@gmail.com'
+    );
+    setText('Copied!');
     setTimeout(() => {
-      setText("Click to copy!");
+      setText('Click to copy!');
     }, 2000);
   };
 
@@ -34,10 +33,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-social">
-          <Twitter />
-          <Dribble />
-          <Behance />
-          <LinkedIn />
+          <Social />
         </div>
         <div className="footer-copyright">
           <p>

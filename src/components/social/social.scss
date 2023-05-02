@@ -1,0 +1,25 @@
+@import '../../utils/variables';
+
+.social {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  svg {
+    color: $secondary-color;
+    cursor: pointer;
+    transform: scale(1);
+    transition: all calc($golden-ratio-time / 8) ease-in-out;
+
+    &:hover {
+      color: $highlight-color;
+      opacity: 0.5;
+      transform: scale(1.1);
+      transition: all calc($golden-ratio-time / 8)
+        ease-in-out;
+    }
+  }
+}
