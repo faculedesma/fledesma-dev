@@ -6,6 +6,7 @@ import { NoteThree } from "@components/notes/NoteThree";
 import Services from "@components/services/Services";
 import History from "@components/history/History";
 import Work from "@components/work/Work";
+import Footer from "@components/footer/Footer";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <History />
       <NoteThree />
       <Work />
+      <Footer />
     </div>
   );
 };

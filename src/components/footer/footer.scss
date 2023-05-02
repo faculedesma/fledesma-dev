@@ -1,22 +1,110 @@
-footer {
-  width: 100dvw;
-}
+@import "../../utils/variables";
 
 .footer {
   width: 100%;
-  height: 100px;
+  height: 700px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
 
-  &-right {
+  h1 {
+    width: 60%;
+    text-align: center;
+  }
+
+  &-mail {
+    position: relative;
+    width: 400px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
+    background: transparent;
+    border: 1px solid $highlight-color;
+    cursor: pointer;
+    z-index: 2;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition: all calc($golden-ratio-time / 8) ease-in-out;
+
+    p {
+      position: relative;
+      width: calc(100% - 50px);
+      text-align: center;
+      text-transform: uppercase;
+      font-size: $paragraph-two-size;
+      font-weight: 600;
+      scale: 1;
+      transition: scale calc($golden-ratio-time / 8) ease-in-out;
+    }
+
+    &:hover {
+      > p {
+        scale: 0.5;
+        opacity: 0.2;
+        transition: scale calc($golden-ratio-time / 8) ease-in-out;
+      }
+
+      .footer-mail--copy {
+        scale: 1;
+        transition: scale calc($golden-ratio-time / 8) ease-in-out;
+        z-index: 3;
+      }
+    }
+
+    &--copy {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 400px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgba($highlight-color, 0.5);
+      scale: 0;
+      transition: scale calc($golden-ratio-time / 8) ease-in-out;
+      z-index: 1;
+
+      p {
+        color: $primary-color;
+        text-transform: none;
+      }
+    }
+
+    &--icon {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-left: 1px solid $highlight-color;
+    }
+  }
+
+  &-social {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
 
     svg {
-      margin-left: 0.5rem;
+      color: $secondary-color;
+      cursor: pointer;
+      transform: scale(1);
+      transition: all calc($golden-ratio-time / 8) ease-in-out;
+
+      &:hover {
+        color: $highlight-color;
+        opacity: 0.5;
+        transform: scale(1.1);
+        transition: all calc($golden-ratio-time / 8) ease-in-out;
+      }
     }
+  }
+
+  &-copyright {
+    margin-bottom: 50px;
   }
 }
 
