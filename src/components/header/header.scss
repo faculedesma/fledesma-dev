@@ -1,4 +1,4 @@
-@import "../../utils/variables";
+@import '../../utils/variables';
 
 header {
   position: fixed;
@@ -19,11 +19,11 @@ header {
     align-items: center;
     justify-content: space-between;
     width: 200px;
+    cursor: pointer;
 
     svg {
       width: 41px;
       height: 43px;
-      cursor: pointer;
       transform: scale(1);
       transition: calc($golden-ratio-time / 8) ease-in;
     }
@@ -53,13 +53,15 @@ header {
 
         span {
           display: inline-block;
-          transition: all calc($golden-ratio-time / 8) ease-in-out;
+          transition: all calc($golden-ratio-time / 8)
+            ease-in-out;
         }
 
         span:first-child {
           transform: translateY(0) scaleY(1);
           color: $secondary-color;
-          transition: all calc($golden-ratio-time / 8) ease-in;
+          transition: all calc($golden-ratio-time / 8)
+            ease-in;
         }
 
         span:last-child {
@@ -68,7 +70,8 @@ header {
           left: 0;
           transform: translateY(100%) scaleY(0);
           color: $shades-gray;
-          transition: all calc($golden-ratio-time / 8) ease-in;
+          transition: all calc($golden-ratio-time / 8)
+            ease-in;
         }
       }
 
@@ -76,12 +79,14 @@ header {
         .header-links--item-text {
           span:first-child {
             transform: translateY(0) scaleY(0);
-            transition: all calc($golden-ratio-time / 8) ease-in;
+            transition: all calc($golden-ratio-time / 8)
+              ease-in;
           }
 
           span:last-child {
             transform: translateY(0) scaleY(1);
-            transition: all calc($golden-ratio-time / 8) ease-in;
+            transition: all calc($golden-ratio-time / 8)
+              ease-in;
           }
         }
       }
