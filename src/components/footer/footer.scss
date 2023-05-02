@@ -15,7 +15,7 @@
 
   &-mail {
     position: relative;
-    width: 400px;
+    width: 450px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -28,7 +28,7 @@
 
     p {
       position: relative;
-      width: calc(100% - 50px);
+      width: calc(100% - 75px);
       text-align: center;
       text-transform: uppercase;
       font-size: $paragraph-two-size;
@@ -55,8 +55,8 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 400px;
-      height: 50px;
+      width: 450px;
+      height: 75px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -72,8 +72,8 @@
     }
 
     &--icon {
-      width: 50px;
-      height: 50px;
+      width: 75px;
+      height: 75px;
       display: flex;
       align-items: center;
       justify-content: center;
