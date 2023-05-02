@@ -79,7 +79,6 @@ body {
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
-  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -111,40 +110,43 @@ a {
   font-family: $primary-font-family;
 }
 
-h3 {
+p,
+div {
   font-family: $secondary-font-family;
 }
 
 h1 {
   font-size: $heading-one-size;
+  line-height: $heading-one-line-height;
   margin-top: 0;
   margin-bottom: 0;
-  line-height: 100px;
   font-weight: 600;
 }
 
 h2 {
   font-size: $heading-two-size;
+  line-height: $heading-two-line-height;
   margin-top: 0;
   margin-bottom: 0;
-  line-height: 55px;
   font-weight: 600;
 }
 
 h3 {
   font-size: $heading-three-size;
+  line-height: $heading-three-line-height;
   margin-top: 0;
   margin-bottom: 0;
-  line-height: 35px;
   font-weight: 300;
 }
 
-p,
-a {
-  font-size: $paragraph-one-size;
+p {
+  font-size: $paragraph-size;
+  line-height: $paragraph-line-height;
 }
 
 a {
+  font-size: $anchor-size;
+  line-height: $anchor-line-height;
   color: inherit;
   text-decoration: none;
   font-weight: 600;
@@ -153,7 +155,7 @@ a {
 button {
   border-radius: 0.5rem;
   border: 1px solid transparent;
-  font-size: $paragraph-one-size;
+  font-size: $paragraph-size;
   font-weight: 700;
   font-family: inherit;
   background-color: $secondary-color;
@@ -194,11 +196,16 @@ svg {
 
   h3 {
     font-size: $heading-three-size-mobile;
-    font-weight: 400;
+  }
+
+  a {
+    font-size: $anchor-size-mobile;
+    line-height: $anchor-line-height-mobile;
   }
 
   p {
-    font-size: $paragraph-one-size-mobile;
+    font-size: $paragraph-size-mobile;
+    line-height: $paragraph-line-height-mobile;
   }
 }
 

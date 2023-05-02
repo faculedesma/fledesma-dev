@@ -1,4 +1,4 @@
-@import "../../utils/variables";
+@import '../../utils/variables';
 
 .secondary-button {
   display: flex;
@@ -11,11 +11,11 @@
   color: $secondary-color;
   cursor: pointer;
   transform: scale(1);
-  transition: all calc($golden-ratio-time / 4) ease-in-out;
+  transition: all calc($golden-ratio-time / 8) ease-in-out;
 
   svg {
     translate: 0 0;
-    transition: all calc($golden-ratio-time / 4) ease-in-out;
+    transition: all calc($golden-ratio-time / 8) ease-in-out;
   }
 
   &:focus {
@@ -25,7 +25,8 @@
   &:hover {
     svg {
       translate: 4px 0;
-      transition: all calc($golden-ratio-time / 4) ease-in-out;
+      transition: all calc($golden-ratio-time / 8)
+        ease-in-out;
     }
   }
 }

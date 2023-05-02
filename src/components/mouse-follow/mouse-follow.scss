@@ -1,4 +1,4 @@
-@import "../../utils/variables";
+@import '../../utils/variables';
 
 .mouse-follow {
   position: absolute;
@@ -8,8 +8,12 @@
   border-radius: 50%;
   width: 500px;
   aspect-ratio: 1;
-  background: linear-gradient(to right, $highlight-color, $secondary-color);
-  animation: rotate calc($golden-ratio-time * 10) infinite;
+  background: linear-gradient(
+    to right,
+    $highlight-color,
+    $secondary-color
+  );
+  animation: rotate calc($golden-ratio-time * 8) infinite;
   opacity: 0.3;
   z-index: 1;
 }

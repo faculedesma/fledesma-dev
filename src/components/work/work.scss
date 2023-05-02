@@ -1,4 +1,4 @@
-@import "../../utils/variables";
+@import '../../utils/variables';
 
 .work {
   width: 90%;
@@ -11,7 +11,7 @@
   > h3 {
     text-transform: uppercase;
     font-weight: 600;
-    letter-spacing: 2px;
+    font-size: 16px;
     margin-bottom: 2rem;
   }
 
@@ -35,13 +35,14 @@
       overflow: hidden;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 
-      h2:first-child,
-      h2:nth-child(2) {
+      h2,
+      h3 {
         translate: 0px 0px;
-        transition: translate calc($golden-ratio-time / 4) ease-in-out;
+        transition: translate calc($golden-ratio-time / 8)
+          ease-in-out;
       }
 
-      h2:first-child {
+      h2 {
         width: 40%;
         position: absolute;
         top: 50px;
@@ -50,10 +51,11 @@
         line-height: 80px;
       }
 
-      h2:nth-child(2) {
+      h3 {
         position: absolute;
         bottom: 50px;
         left: 100px;
+        font-weight: 600;
       }
 
       img {
@@ -63,42 +65,62 @@
         bottom: 0;
         right: 0;
         scale: 1;
-        transition: scale calc($golden-ratio-time / 4) ease-in-out;
+        transition: scale calc($golden-ratio-time / 8)
+          ease-in-out;
       }
 
       &:hover {
         img {
           scale: 1.1;
-          transition: scale calc($golden-ratio-time / 4) ease-in-out;
+          transition: scale calc($golden-ratio-time / 8)
+            ease-in-out;
         }
 
-        h2:first-child {
+        h2 {
           translate: 20px 20px;
-          transition: translate calc($golden-ratio-time / 4) ease-in-out;
+          transition: translate calc($golden-ratio-time / 8)
+            ease-in-out;
         }
 
-        h2:nth-child(2) {
+        h3 {
           translate: 20px -20px;
-          transition: translate calc($golden-ratio-time / 4) ease-in-out;
+          transition: translate calc($golden-ratio-time / 8)
+            ease-in-out;
         }
       }
     }
 
     &-danilo {
-      background: linear-gradient(to right, #53302c, $primary-color);
+      background: linear-gradient(
+        to right,
+        #53302c,
+        $primary-color
+      );
     }
     &-namewiz {
       img {
         height: 80%;
       }
-      background: linear-gradient(to right, #677874, $primary-color);
+      background: linear-gradient(
+        to right,
+        #677874,
+        $primary-color
+      );
     }
     &-nina {
-      background: linear-gradient(to right, #abd3e5, $primary-color);
+      background: linear-gradient(
+        to right,
+        #abd3e5,
+        $primary-color
+      );
     }
 
     &-art {
-      background: linear-gradient(to right, #7c442f, $primary-color);
+      background: linear-gradient(
+        to right,
+        #7c442f,
+        $primary-color
+      );
     }
   }
 }

@@ -1,31 +1,31 @@
-import { SecondaryButton } from "@components/buttons/SecondaryButton";
-import { Chart } from "@assets/svgs/Chart";
-import { Processor } from "@assets/svgs/Processor";
-import { Diamond } from "@assets/svgs/Diamond";
-import "./services.scss";
+import { SecondaryButton } from '@components/buttons/SecondaryButton';
+import { Chart } from '@assets/svgs/Chart';
+import { Processor } from '@assets/svgs/Processor';
+import { Diamond } from '@assets/svgs/Diamond';
+import './services.scss';
 
 const servicesProvided = [
   {
-    id: "design",
-    label: "Design",
+    id: 'design',
+    label: 'Design',
     description:
-      "Enhance your brand with modern and innovative design solutions.",
-    icon: <Chart />,
+      'Enhance your brand with modern and innovative design solutions.',
+    icon: <Chart />
   },
   {
-    id: "development",
-    label: "Development",
+    id: 'development',
+    label: 'Development',
     description:
-      "Build robust and functional websites and applications for your business needs.",
-    icon: <Processor />,
+      'Build robust and functional websites and applications for your business needs.',
+    icon: <Processor />
   },
   {
-    id: "conversion",
-    label: "Conversion",
+    id: 'conversion',
+    label: 'Conversion',
     description:
-      "Turn website visitors into customers with effective SEO, CRO and user testing.",
-    icon: <Diamond />,
-  },
+      'Turn website visitors into customers with effective SEO, CRO and user testing.',
+    icon: <Diamond />
+  }
 ];
 
 const Services = () => {
@@ -36,7 +36,10 @@ const Services = () => {
         <div className="services-list">
           {servicesProvided.map((service) => {
             return (
-              <div key={service.id} className="services-list--card">
+              <div
+                key={service.id}
+                className="services-list--card"
+              >
                 <div className="services-list--card-top">
                   {service.icon}
                   <h2>{service.label}</h2>

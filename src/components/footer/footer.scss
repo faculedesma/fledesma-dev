@@ -32,9 +32,8 @@
       width: calc(100% - 75px);
       text-align: center;
       text-transform: uppercase;
-      font-size: $paragraph-two-size;
       font-weight: 600;
-      scale: 1;
+      scale: 0.8;
       transition: scale calc($golden-ratio-time / 8)
         ease-in-out;
     }

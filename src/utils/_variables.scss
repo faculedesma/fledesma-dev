@@ -1,7 +1,7 @@
 // fonts
 
-$primary-font-family: "Gilroy", sans-serif;
-$secondary-font-family: "Graphik", sans-serif;
+$primary-font-family: 'Gilroy', sans-serif;
+$secondary-font-family: 'Graphik', sans-serif;
 
 // colors
 
@@ -14,25 +14,32 @@ $shades-gray: rgba($secondary-color, 0.5);
 
 $heading-one-size: 100px;
 $heading-one-letter-spacing: -2px;
-$heading-two-size: 40px;
-$heading-two-letter-spacing: -2px;
-$heading-three-size: 20px;
-$heading-three-letter-spacing: -2px;
+$heading-one-line-height: 100px;
+$heading-two-size: 70px;
+$heading-two-letter-spacing: -1px;
+$heading-two-line-height: 70px;
+$heading-three-size: 40px;
+$heading-three-letter-spacing: -1px;
+$heading-three-line-height: 55px;
 
-$paragraph-one-size: 16px;
-$paragraph-two-size: 12px;
+$paragraph-size: 16px;
+$paragraph-line-height: 33px;
+$anchor-size: 16px;
+$anchor-line-height: 30px;
 
 // sizes - mobile
 
-$heading-one-size-mobile: 3rem;
-$heading-one-letter-spacing-mobile: 0.125rem;
-$heading-two-size-mobile: 1.25rem;
-$heading-two-letter-spacing-mobile: 0.125rem;
-$heading-three-size-mobile: 1rem;
-$heading-three-letter-spacing-mobile: 0.125rem;
+$heading-one-size-mobile: 45px;
+$heading-one-letter-spacing-mobile: -0.5px;
+$heading-two-size-mobile: 40px;
+$heading-two-letter-spacing-mobile: -0.5px;
+$heading-three-size-mobile: 25px;
+$heading-three-letter-spacing-mobile: -0.5px;
 
-$paragraph-one-size-mobile: 1rem;
-$paragraph-two-size-mobile: 0.875rem;
+$paragraph-size-mobile: 12px;
+$paragraph-line-height-mobile: 33px;
+$anchor-size-mobile: 16px;
+$anchor-line-height-mobile: 30px;
 
 // animations
 
