@@ -38,13 +38,13 @@
         border-bottom: 0.5px solid $secondary-color;
         background-color: $primary-color;
         color: $secondary-color;
-        transition: all calc($golden-ratio-time / 4) ease-in-out;
+        transition: all calc($golden-ratio-time / 4) ease-in;
 
         &:hover {
           color: $primary-color;
           border-color: $primary-color;
           background-color: $highlight-color;
-          transition: all calc($golden-ratio-time / 4) ease-in-out;
+          transition: all calc($golden-ratio-time / 4) ease-in;
         }
       }
 
