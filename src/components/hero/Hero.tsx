@@ -29,10 +29,34 @@ const Hero = () => {
           <h3>Build it fast, simple and beautiful.</h3>
         </div>
         <div className="hero-social">
-          <Twitter />
-          <Dribble />
-          <Behance />
-          <LinkedIn />
+          <a
+            href="https://twitter.com/faculedesma93"
+            target="_blank"
+            aria-label="Go to Facundo's Twitter account."
+          >
+            <Twitter />
+          </a>
+          <a
+            href="https://dribbble.com/fledesma"
+            target="_blank"
+            aria-label="Go to Facundo's Dribble account."
+          >
+            <Dribble />
+          </a>
+          <a
+            href="https://www.behance.net/facundoledesma5"
+            target="_blank"
+            aria-label="Go to Facundo's Behance account."
+          >
+            <Behance />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/facundo-ledesma/"
+            target="_blank"
+            aria-label="Go to Facundo's LinkedIn account."
+          >
+            <LinkedIn />
+          </a>
         </div>
       </div>
     </div>
