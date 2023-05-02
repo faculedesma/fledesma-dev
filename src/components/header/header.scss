@@ -29,7 +29,7 @@ header {
     }
 
     p {
-      font-weight: bold;
+      font-weight: 600;
     }
   }
 
@@ -92,16 +92,74 @@ header {
       }
     }
   }
+
+  &-toggle {
+    display: none;
+
+    button {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      border: 0;
+      background: transparent;
+      gap: 1rem;
+      scale: 1;
+      transition: scale calc($golden-ratio-time / 8)
+        ease-in-out;
+      padding: 0;
+
+      > div {
+        background: $secondary-color;
+        height: 3px;
+        width: 100%;
+        transition: all calc($golden-ratio-time / 4);
+        transform-origin: left;
+
+        &:last-child {
+          transform-origin: right;
+        }
+      }
+    }
+
+    .clicked {
+      z-index: 6;
+
+      div:first-child {
+        background: $secondary-color;
+        transform: rotate(45deg);
+        transform-origin: left top;
+        transition: all calc($golden-ratio-time / 4);
+      }
+
+      div:last-child {
+        background: $secondary-color;
+        transform: rotate(-45deg);
+        transform-origin: left bottom;
+        transition: all calc($golden-ratio-time / 4);
+      }
+    }
+  }
 }
 
 /* Smartphones (portrait and landscape) */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .header {
-    height: 90px;
+    &-logo {
+      p {
+        display: none;
+      }
+    }
 
-    &-right {
-      justify-content: flex-end;
-      gap: 2rem;
+    &-links {
+      display: none;
+    }
+
+    &-toggle {
+      display: inherit;
     }
   }
 }

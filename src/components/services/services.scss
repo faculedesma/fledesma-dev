@@ -80,3 +80,23 @@
     }
   }
 }
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .services {
+    width: 100%;
+    height: fit-content;
+    margin: 4rem 0;
+
+    &-list {
+      width: auto;
+      justify-content: flex-start;
+      overflow-x: scroll;
+      gap: 2rem;
+
+      &--card {
+        width: 300px;
+        height: 350px;
+      }
+    }
+  }
+}

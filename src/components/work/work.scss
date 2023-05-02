@@ -47,8 +47,6 @@
         position: absolute;
         top: 50px;
         left: 100px;
-        font-size: 68px;
-        line-height: 80px;
       }
 
       h3 {
@@ -121,6 +119,80 @@
         #7c442f,
         $primary-color
       );
+    }
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .work {
+    width: 100%;
+    height: fit-content;
+    margin: 4rem 0;
+
+    &-list {
+      width: 100%;
+      gap: 4rem;
+
+      &-danilo,
+      &-namewiz,
+      &-nina,
+      &-art {
+        height: 400px;
+
+        h2,
+        h3 {
+          translate: 0px 0px;
+          transition: translate calc($golden-ratio-time / 8)
+            ease-in-out;
+        }
+
+        h2 {
+          width: 80%;
+          position: absolute;
+          top: 50px;
+          left: 50px;
+        }
+
+        h3 {
+          position: absolute;
+          bottom: 50px;
+          left: 50px;
+          font-weight: 600;
+          z-index: 3;
+        }
+
+        img {
+          height: 70%;
+        }
+
+        &:hover {
+          h2 {
+            translate: 5px 5px;
+            transition: translate
+              calc($golden-ratio-time / 8) ease-in-out;
+          }
+
+          h3 {
+            translate: 5px -5px;
+            transition: translate
+              calc($golden-ratio-time / 8) ease-in-out;
+          }
+        }
+      }
+
+      &-namewiz {
+        img {
+          height: 60%;
+          opacity: 0.7;
+        }
+      }
+
+      &-nina {
+        img {
+          right: -100px;
+          opacity: 0.7;
+        }
+      }
     }
   }
 }

@@ -1,0 +1,136 @@
+@import '../../utils/variables.scss';
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  width: 100dvw;
+  background-color: $primary-color;
+  transform: scaleY(0);
+  transform-origin: top;
+  z-index: 5;
+
+  .container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  &-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    height: 350px;
+
+    padding-top: 100px;
+
+    &--item {
+      height: 60px;
+      clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+
+      &-container {
+        height: 100%;
+        transform: translateY(50px);
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  &-social {
+    height: 50px;
+    width: 80%;
+
+    .social {
+      flex-direction: row;
+    }
+  }
+}
+
+.show-menu {
+  animation: show-menu calc($golden-ratio-time / 8) ease-out
+    forwards;
+
+  .menu-links {
+    &--item {
+      &-container {
+        animation: show-item calc($golden-ratio-time / 4)
+          ease-in-out forwards;
+      }
+    }
+  }
+}
+
+.hide-menu {
+  animation: hide-menu calc($golden-ratio-time / 4)
+    ease-in-out forwards;
+
+  .menu-links {
+    &--item {
+      &-container {
+        animation: hide-item calc($golden-ratio-time / 8)
+          ease-in-out forwards;
+      }
+    }
+  }
+}
+
+@keyframes show-menu {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes hide-menu {
+  0% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes show-item {
+  0% {
+    transform: translateY(75px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes hide-item {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(75px);
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .menu {
+    &-links {
+      &--item {
+        a {
+          font-size: $heading-three-size;
+        }
+      }
+    }
+  }
+}

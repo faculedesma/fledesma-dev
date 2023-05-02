@@ -9,7 +9,11 @@ const Hero = () => {
   const { x, y } = useCursorPosition();
 
   useEffect(() => {
-    if (ref.current) {
+    if (
+      ref.current &&
+      !window.matchMedia('(max-width: 480px)').matches &&
+      !window.matchMedia('(min-width: 320px)').matches
+    ) {
       ref.current.style.transform = `translate(-${
         x / 30
       }px, 0px)`;

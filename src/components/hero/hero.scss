@@ -98,3 +98,27 @@
     transform: scale(1) translateY(-50px);
   }
 }
+
+/* Smartphones (portrait and landscape) */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .hero {
+    height: 500px;
+
+    &-canvas {
+      height: inherit;
+    }
+
+    &-title {
+      width: 100%;
+      bottom: -75px;
+
+      h3 {
+        font-weight: 300;
+      }
+    }
+
+    &-social {
+      display: none;
+    }
+  }
+}

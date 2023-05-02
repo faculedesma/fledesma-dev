@@ -1,5 +1,7 @@
 import { Logo } from '@assets/svgs/Logo';
+import { Menu } from '@components/menu/Menu';
 import './header.scss';
+import { useState, useRef } from 'react';
 
 type Link = {
   id: string;
@@ -7,7 +9,7 @@ type Link = {
   href: string;
 };
 
-const links: Link[] = [
+export const links: Link[] = [
   {
     id: 'work',
     label: 'Work',
@@ -26,6 +28,22 @@ const links: Link[] = [
 ];
 
 const Header = (): JSX.Element => {
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const toggleMenu = () => {
+    if (!isOpen) {
+      if (buttonRef.current) {
+        buttonRef.current.className = 'clicked';
+      }
+    } else {
+      if (buttonRef.current) {
+        buttonRef.current.className = '';
+      }
+    }
+    setIsOpen((prevIsOpen) => !prevIsOpen);
+  };
+
   const handleLinkClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     id: string
@@ -83,6 +101,17 @@ const Header = (): JSX.Element => {
               );
             })}
           </div>
+          <div className="header-toggle">
+            <button
+              id="toggle-button"
+              ref={buttonRef}
+              onClick={toggleMenu}
+            >
+              <div></div>
+              <div></div>
+            </button>
+          </div>
+          <Menu isOpen={isOpen} toggleMenu={toggleMenu} />
         </div>
       </div>
     </header>
