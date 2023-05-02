@@ -1,3 +1,5 @@
+[![Deployment Pipeline](https://github.com/faculedesma/fledesma-dev/actions/workflows/pipeline.yml/badge.svg)](https://github.com/faculedesma/fledesma-dev/actions/workflows/pipeline.yml)
+
 # <img src="./public/logo.svg" alt="logo icon"> Facundo Ledesma
 
 ## About The Project
