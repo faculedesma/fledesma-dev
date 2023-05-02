@@ -47,7 +47,10 @@ const History = () => {
         <div className="history-list">
           {jobsHistory.map((job) => {
             return (
-              <div className="history-list--row-container">
+              <div
+                key={job.id}
+                className="history-list--row-container"
+              >
                 <div className="history-list--row">
                   <h3>{job.date}</h3>
                   <div className="history-list--row-charge">

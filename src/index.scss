@@ -45,31 +45,31 @@
 @font-face {
   font-family: 'Graphik';
   font-weight: 300;
-  src: url('@/assets/fonts/GraphikLight.otf');
+  src: url('../src/assets/fonts/GraphikLight.otf');
 }
 
 @font-face {
   font-family: 'Graphik';
   font-weight: 400;
-  src: url('@/assets/fonts/GraphikRegular.otf');
+  src: url('../src/assets/fonts/GraphikRegular.otf');
 }
 
 @font-face {
   font-family: 'Graphik';
   font-weight: 500;
-  src: url('@/assets/fonts/GraphikMedium.otf');
+  src: url('../src/assets/fonts/GraphikMedium.otf');
 }
 
 @font-face {
   font-family: 'Graphik';
   font-weight: 600;
-  src: url('@/assets/fonts/GraphikSemibold.otf');
+  src: url('../src/assets/fonts/GraphikSemibold.otf');
 }
 
 @font-face {
   font-family: 'Graphik';
   font-weight: 700;
-  src: url('@/assets/fonts/GraphikBold.otf');
+  src: url('../src/assets/fonts/GraphikBold.otf');
 }
 
 @import '../src/utils/variables';
