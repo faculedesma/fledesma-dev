@@ -24,7 +24,7 @@
     background: transparent;
     border: 1px solid $highlight-color;
     cursor: pointer;
-    z-index: 2;
+    z-index: 3;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     transition: all calc($golden-ratio-time / 8) ease-in-out;
 
@@ -87,7 +87,7 @@
   }
 
   &-social {
-    z-index: 2;
+    z-index: 3;
 
     .social {
       width: 200px;
@@ -98,12 +98,15 @@
 
   &-copyright {
     margin-bottom: 50px;
+    z-index: 1;
   }
 
   &-canvas {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 2;
+    scale: 1.2;
 
     canvas {
       opacity: 0.4;
