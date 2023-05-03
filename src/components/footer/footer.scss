@@ -13,6 +13,7 @@
   h1 {
     width: 60%;
     text-align: center;
+    z-index: 2;
   }
 
   &-mail {
@@ -102,14 +103,23 @@
   }
 
   &-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    scale: 1.2;
+    &--follow,
+    &--loop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      scale: 1.2;
+    }
 
-    canvas {
-      opacity: 0.4;
+    &--follow {
+      canvas {
+        opacity: 0.4;
+      }
+    }
+
+    &--loop {
+      display: none;
     }
   }
 }
@@ -119,6 +129,7 @@
   .footer {
     padding: 4rem 0 0;
     height: 500px;
+    // overflow: hidden;
 
     h1 {
       width: 80%;
@@ -136,6 +147,19 @@
       &--icon {
         width: 50px;
         height: 50px;
+      }
+    }
+
+    &-canvas {
+      max-height: 100%;
+
+      &--loop {
+        display: inherit;
+        z-index: 1;
+      }
+
+      &--follow {
+        display: none;
       }
     }
   }

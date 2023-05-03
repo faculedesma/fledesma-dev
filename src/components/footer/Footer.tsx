@@ -41,8 +41,11 @@ const Footer = () => {
             2023 <b>© Facundo Ledesma</b>
           </p>
         </div>
-        <div className="footer-canvas">
+        <div className="footer-canvas--follow">
           <Spline scene="https://prod.spline.design/84izeqDlkxJCeAT1/scene.splinecode" />
+        </div>
+        <div className="footer-canvas--loop">
+          <Spline scene="https://prod.spline.design/bvTPKXNKeT0aeoDM/scene.splinecode" />
         </div>
       </div>
     </div>
