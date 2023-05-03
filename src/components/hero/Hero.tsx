@@ -1,22 +1,67 @@
 import { useRef, useEffect } from 'react';
+import { Social } from '@components/social/Social';
 import useCursorPosition from '@components/hooks/useCursorPosition';
 import Spline from '@splinetool/react-spline';
-import { Social } from '@components/social/Social';
 import './hero.scss';
 
-const Hero = () => {
+const Hero: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
   const { x, y } = useCursorPosition();
 
   useEffect(() => {
-    if (
-      ref.current &&
-      !window.matchMedia('(max-width: 480px)').matches &&
-      !window.matchMedia('(min-width: 320px)').matches
-    ) {
-      ref.current.style.transform = `translate(-${
-        x / 30
-      }px, 0px)`;
+    const letters = 'abcdefghijklmnopqrstuvwxyz';
+
+    let interval: ReturnType<typeof setInterval> | null =
+      null;
+
+    const randomChars = () => {
+      let iteration = 0;
+
+      clearInterval(interval!);
+
+      interval = setInterval(() => {
+        titleRef.current!.innerText = titleRef
+          .current!.innerText.split('')
+          .map((letter, index) => {
+            if (index < iteration) {
+              return titleRef.current!.dataset.value![
+                index
+              ];
+            }
+
+            return letters[Math.floor(Math.random() * 26)];
+          })
+          .join('');
+
+        if (
+          iteration >=
+          titleRef.current!.dataset.value!.length
+        ) {
+          clearInterval(interval!);
+        }
+
+        iteration += 1 / 3;
+      }, 30);
+    };
+
+    titleRef.current?.addEventListener(
+      'mouseover',
+      randomChars
+    );
+
+    return () =>
+      titleRef.current?.removeEventListener(
+        'mouseover',
+        randomChars
+      );
+  }, []);
+
+  useEffect(() => {
+    if (ref.current) {
+      // ref.current.style.transform = `translate(${
+      //   x / 100
+      // }px, 0px)`;
     }
   }, [x, y]);
 
@@ -27,8 +72,12 @@ const Hero = () => {
           <Spline scene="https://prod.spline.design/PsvclvB5wVsUm7ZW/scene.splinecode" />
         </div>
         <div className="hero-title">
-          <h1>Developer &</h1>
-          <h1>designer</h1>
+          <div className="hero-title--top">
+            <h1>Developer &amp;</h1>
+            <h1 ref={titleRef} data-value="designer">
+              designer
+            </h1>
+          </div>
           <h3>Build it fast, simple and beautiful.</h3>
         </div>
         <div className="hero-social">

@@ -29,12 +29,26 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    transform: translateY(-100px);
+    transform: translateY(-75px);
     z-index: 3;
 
-    h1 {
-      animation: slide-in calc($golden-ratio-time / 8)
-        ease-in-out forwards;
+    &--top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      h1:last-child {
+        color: $secondary-color;
+        transition: color calc($golden-ratio-time / 8)
+          ease-in;
+
+        &:hover {
+          color: $highlight-color;
+          transition: color calc($golden-ratio-time / 8)
+            ease-in;
+        }
+      }
     }
 
     h3 {
@@ -53,7 +67,7 @@
     bottom: 0;
     right: 0;
     height: 180px;
-    transform: translateY(-100px);
+    transform: translateY(-75px);
   }
 }
 
