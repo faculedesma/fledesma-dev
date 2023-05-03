@@ -66,22 +66,24 @@ const Hero: React.FC = () => {
   }, [x, y]);
 
   return (
-    <div className="container">
-      <div id="hero" className="hero">
-        <div ref={ref} className="hero-canvas">
-          <Spline scene="https://prod.spline.design/PsvclvB5wVsUm7ZW/scene.splinecode" />
-        </div>
-        <div className="hero-title">
-          <div className="hero-title--top">
-            <h1>Developer &amp;</h1>
-            <h1 ref={titleRef} data-value="designer">
-              designer
-            </h1>
+    <div className="hero-gradient">
+      <div className="container">
+        <div id="hero" className="hero">
+          <div ref={ref} className="hero-canvas">
+            <Spline scene="https://prod.spline.design/PsvclvB5wVsUm7ZW/scene.splinecode" />
           </div>
-          <h3>Build it fast, simple and beautiful.</h3>
-        </div>
-        <div className="hero-social">
-          <Social />
+          <div className="hero-title">
+            <div className="hero-title--top">
+              <h1>Developer &amp;</h1>
+              <h1 ref={titleRef} data-value="designer">
+                designer
+              </h1>
+            </div>
+            <h3>Build it fast, simple and beautiful.</h3>
+          </div>
+          <div className="hero-social">
+            <Social />
+          </div>
         </div>
       </div>
     </div>

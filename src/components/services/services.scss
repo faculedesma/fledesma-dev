@@ -90,6 +90,8 @@
       &--card {
         width: 300px;
         height: 350px;
+        border: 1px solid rgba($highlight-color, 0.8);
+        background-color: rgba($highlight-color, 0.1);
       }
     }
   }

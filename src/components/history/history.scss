@@ -44,7 +44,7 @@
         &:hover {
           color: $primary-color;
           border-color: $primary-color;
-          background-color: $highlight-color;
+          background-color: rgba($highlight-color, 0.8);
           transition: all calc($golden-ratio-time / 8)
             ease-in;
         }
