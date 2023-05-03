@@ -149,8 +149,11 @@ header {
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .header {
     &-logo {
+      width: 100px;
+
       p {
-        display: none;
+        width: 50%;
+        line-height: normal;
       }
     }
 
