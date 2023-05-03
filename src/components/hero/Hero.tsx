@@ -1,12 +1,15 @@
 import { useRef, useEffect } from 'react';
 import { Social } from '@components/social/Social';
 import useCursorPosition from '@components/hooks/useCursorPosition';
+import { useIntersection } from '@components/hooks/useIntersection';
 import Spline from '@splinetool/react-spline';
 import './hero.scss';
 
 const Hero: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const isInViewport = useIntersection(heroRef, 0);
   const { x, y } = useCursorPosition();
 
   useEffect(() => {
@@ -58,6 +61,12 @@ const Hero: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    if (isInViewport) {
+      heroRef.current?.classList.add('show-hero');
+    }
+  }, [isInViewport]);
+
+  useEffect(() => {
     if (ref.current) {
       // ref.current.style.transform = `translate(${
       //   x / 100
@@ -68,7 +77,7 @@ const Hero: React.FC = () => {
   return (
     <div className="hero-gradient">
       <div className="container">
-        <div id="hero" className="hero">
+        <div ref={heroRef} id="hero" className="hero">
           <div ref={ref} className="hero-canvas">
             <Spline scene="https://prod.spline.design/PsvclvB5wVsUm7ZW/scene.splinecode" />
           </div>

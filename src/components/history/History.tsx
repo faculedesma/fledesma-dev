@@ -40,6 +40,10 @@ const jobsHistory = [
 ];
 
 const History = () => {
+  const handleRowClick = (link: string) => {
+    window.open(link, '_blank');
+  };
+
   return (
     <div className="container">
       <div className="history">
@@ -51,7 +55,12 @@ const History = () => {
                 key={job.id}
                 className="history-list--row-container"
               >
-                <div className="history-list--row">
+                <div
+                  onClick={() =>
+                    handleRowClick(job.company.url)
+                  }
+                  className="history-list--row"
+                >
                   <h3>{job.date}</h3>
                   <div className="history-list--row-charge">
                     <h3>{job.position}</h3>
