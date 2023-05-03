@@ -1,6 +1,7 @@
 import { MailEnvelop } from '@assets/svgs/MailEnvelop';
 import { useState } from 'react';
 import { Social } from '@components/social/Social';
+import Spline from '@splinetool/react-spline';
 import './footer.scss';
 
 const Footer = () => {
@@ -39,6 +40,9 @@ const Footer = () => {
           <p>
             2023 <b>© Facundo Ledesma</b>
           </p>
+        </div>
+        <div className="footer-canvas">
+          <Spline scene="https://prod.spline.design/84izeqDlkxJCeAT1/scene.splinecode" />
         </div>
       </div>
     </div>

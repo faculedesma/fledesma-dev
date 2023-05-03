@@ -99,6 +99,16 @@
   &-copyright {
     margin-bottom: 50px;
   }
+
+  &-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    canvas {
+      opacity: 0.4;
+    }
+  }
 }
 
 /* Smartphones (portrait and landscape) */
