@@ -27,7 +27,8 @@
   width: 12px;
   height: 12px;
   background: $highlight-color;
-  z-index: 3;
+  pointer-events: none;
+  z-index: 5;
 }
 
 @keyframes rotate {
