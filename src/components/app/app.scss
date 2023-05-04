@@ -61,11 +61,21 @@
 
 @keyframes scale-in {
   0% {
-    scale: 0 1;
+    scale: 0 0;
   }
 
   100% {
     scale: 1 1;
+  }
+}
+
+@keyframes scale-out {
+  0% {
+    scale: 1 1;
+  }
+
+  100% {
+    scale: 0 0;
   }
 }
 
@@ -79,6 +89,19 @@
   100% {
     scale: 1 1;
     opacity: 1;
+  }
+}
+
+@keyframes scaley-fade-in {
+  0% {
+    transform-origin: top;
+    scale: 1 0;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    scale: 1 1;
   }
 }
 

@@ -14,7 +14,7 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 620px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -110,14 +110,17 @@
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .hero {
     height: 500px;
+    justify-content: center;
+    padding-top: 50px;
 
     &-canvas {
       height: inherit;
+      translate: 0 0;
     }
 
     &-title {
       width: 100%;
-      bottom: -75px;
+      position: relative;
 
       h3 {
         font-size: 18px;
@@ -127,6 +130,11 @@
 
     &-social {
       display: none;
+    }
+
+    &-scroll {
+      position: relative;
+      translate: 0 0;
     }
   }
 }

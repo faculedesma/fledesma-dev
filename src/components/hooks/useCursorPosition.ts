@@ -3,12 +3,16 @@ import { useState, useEffect } from 'react';
 interface Position {
   x: number;
   y: number;
+  clientX: number;
+  clientY: number;
 }
 
 export const useCursorPosition = (): Position => {
   const [position, setPosition] = useState<Position>({
     x: 0,
-    y: 0
+    y: 0,
+    clientX: 0,
+    clientY: 0
   });
 
   useEffect(() => {
@@ -16,7 +20,9 @@ export const useCursorPosition = (): Position => {
       if (event instanceof MouseEvent) {
         setPosition({
           x: window.pageXOffset + event.clientX,
-          y: window.pageYOffset + event.clientY
+          y: window.pageYOffset + event.clientY,
+          clientX: event.clientX,
+          clientY: event.clientY
         });
       }
     };

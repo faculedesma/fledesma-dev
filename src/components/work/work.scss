@@ -22,7 +22,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 6rem;
+    gap: 10rem;
 
     &--danilo,
     &--namewiz,
@@ -67,6 +67,24 @@
         scale: 1;
         transition: scale calc($golden-ratio-time / 8)
           ease-in-out;
+      }
+
+      button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 120px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: $secondary-color;
+        color: $highlight-color;
+        scale: 0;
+        translate: -50% -50%;
+        font-weight: 300;
+        z-index: 6;
       }
 
       &:hover {
@@ -127,6 +145,16 @@
 
 .show-work-card {
   animation: fade-in calc($golden-ratio-time / 4) ease-in
+    forwards;
+}
+
+.show-card-cta {
+  animation: scale-in calc($golden-ratio-time / 8) ease-in
+    forwards;
+}
+
+.hide-card-cta {
+  animation: scale-out calc($golden-ratio-time / 8) ease-out
     forwards;
 }
 
