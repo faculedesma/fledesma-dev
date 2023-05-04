@@ -16,7 +16,7 @@ const Home = ({ isLoading }: IHomeProps) => {
   return (
     <div className={`home ${!isLoading ? 'loaded' : ''}`}>
       <Header />
-      <Hero />
+      <Hero isLoading={isLoading} />
       <NoteOne />
       <Services />
       <NoteTwo />

@@ -11,7 +11,9 @@ const App: FC = () => {
   const appRef = useRef(null);
 
   const handleIsLoaded = () => {
-    setIsLoading(false);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 0);
   };
 
   useEffect(() => {
@@ -28,7 +30,7 @@ const App: FC = () => {
   useEffect(() => {
     // for mobile
     if (document.readyState === 'complete') {
-      setTimeout(() => handleIsLoaded(), 5000);
+      handleIsLoaded();
     }
   }, [document.readyState]);
 
