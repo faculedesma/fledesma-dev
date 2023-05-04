@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { useIntersection } from '@components/hooks/useIntersection';
 
-interface IJobProps {
+interface IJob {
   id: string;
   date: string;
   position: string;
@@ -11,7 +11,11 @@ interface IJobProps {
   };
 }
 
-export const HistoryRow: React.FC<IJobProps> = ({
+interface IHistoryRowProps {
+  job: IJob;
+}
+
+export const HistoryRow: React.FC<IHistoryRowProps> = ({
   job
 }) => {
   const historyRef = useRef<HTMLDivElement>(null);

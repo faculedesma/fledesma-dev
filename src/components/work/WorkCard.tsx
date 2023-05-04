@@ -1,13 +1,16 @@
 import { useEffect, useRef } from 'react';
 import { useIntersection } from '@components/hooks/useIntersection';
 
-interface IWorkCardProps {
+interface IWork {
   id: string;
-  5;
   title: string;
   type: string;
   image: string;
   link: string;
+}
+
+interface IWorkCardProps {
+  work: IWork;
 }
 
 const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
