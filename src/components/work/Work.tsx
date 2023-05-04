@@ -2,6 +2,9 @@ import DaniloBG from '@assets/images/danilo-red.png';
 import NamewizBG from '@assets/images/namewiz-bg.png';
 import NinaBG from '@assets/images/nina-bg.png';
 import LampBG from '@assets/images/lamp-bg.png';
+import WorkCard from './WorkCard';
+import { useRef, useEffect } from 'react';
+import { useIntersection } from '@components/hooks/useIntersection';
 import './work.scss';
 
 const works = [
@@ -36,26 +39,22 @@ const works = [
 ];
 
 const Work = () => {
-  const handleCardClick = (link: string) =>
-    window.open(link, '_blank');
+  const worksRef = useRef<HTMLDivElement>(null);
+  const isInViewport = useIntersection(worksRef, -300);
+
+  useEffect(() => {
+    if (isInViewport) {
+      worksRef.current?.classList.add('show-section-title');
+    }
+  }, [isInViewport]);
 
   return (
     <div className="container">
-      <div id="work" className="work">
+      <div ref={worksRef} id="work" className="work">
         <h3>Work</h3>
         <div className="work-list">
           {works.map((work) => {
-            return (
-              <div
-                key={work.id}
-                className={`work-list-${work.id}`}
-                onClick={() => handleCardClick(work.link)}
-              >
-                <h2>{work.title}</h2>
-                <h3>{work.type}</h3>
-                <img src={work.image} alt="work-image" />
-              </div>
-            );
+            return <WorkCard work={work} />;
           })}
         </div>
       </div>

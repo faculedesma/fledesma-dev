@@ -1,3 +1,6 @@
+import { useRef, useEffect } from 'react';
+import { useIntersection } from '@components/hooks/useIntersection';
+import { HistoryRow } from './HistoryRow';
 import './history.scss';
 
 const jobsHistory = [
@@ -40,40 +43,24 @@ const jobsHistory = [
 ];
 
 const History = () => {
-  const handleRowClick = (link: string) => {
-    window.open(link, '_blank');
-  };
+  const historyRef = useRef<HTMLDivElement>(null);
+  const isInViewport = useIntersection(historyRef, -300);
+
+  useEffect(() => {
+    if (isInViewport) {
+      historyRef.current?.classList.add(
+        'show-section-title'
+      );
+    }
+  }, [isInViewport]);
 
   return (
     <div className="container">
-      <div className="history">
+      <div ref={historyRef} className="history">
         <h3>History</h3>
         <div className="history-list">
           {jobsHistory.map((job) => {
-            return (
-              <div
-                key={job.id}
-                className="history-list--row-container"
-              >
-                <div
-                  onClick={() =>
-                    handleRowClick(job.company.url)
-                  }
-                  className="history-list--row"
-                >
-                  <h3>{job.date}</h3>
-                  <div className="history-list--row-charge">
-                    <h3>{job.position}</h3>
-                    <a
-                      href={job.company.url}
-                      target="_blank"
-                    >
-                      {job.company.name}
-                    </a>
-                  </div>
-                </div>
-              </div>
-            );
+            return <HistoryRow job={job} />;
           })}
         </div>
       </div>

@@ -13,6 +13,7 @@
     font-weight: 600;
     font-size: 16px;
     margin-bottom: 2rem;
+    scale: 0 1;
   }
 
   &-list {
@@ -33,7 +34,6 @@
       z-index: 2;
       cursor: pointer;
       overflow: hidden;
-      scale: 0 1;
       opacity: 0;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 
@@ -126,8 +126,8 @@
 }
 
 .show-work-card {
-  animation: scalex-fade-in calc($golden-ratio-time / 4)
-    ease-in forwards;
+  animation: fade-in calc($golden-ratio-time / 4) ease-in
+    forwards;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
