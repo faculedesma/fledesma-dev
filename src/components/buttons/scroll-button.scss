@@ -1,0 +1,39 @@
+@import '../../utils/variables';
+
+.scroll-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  color: $primary-color;
+  background: transparent;
+  cursor: pointer;
+  background-color: $secondary-color;
+  z-index: 4;
+
+  &--text {
+    p {
+      text-transform: uppercase;
+      color: $secondary-color;
+      font-weight: 300;
+    }
+
+    span {
+      font-size: 10px;
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform-origin: 0 75px;
+    }
+  }
+
+  &--icon {
+    svg {
+      path {
+        fill: $primary-color;
+      }
+    }
+  }
+}

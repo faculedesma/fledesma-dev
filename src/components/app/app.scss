@@ -1,3 +1,5 @@
+@import '../../utils/variables';
+
 .app {
   width: 100%;
   height: 100%;
@@ -48,7 +50,7 @@
 
 @keyframes scalex-in {
   0% {
-    transform-origin: left right;
+    transform-origin: left;
     scale: 0 1;
   }
 
@@ -77,5 +79,12 @@
   100% {
     scale: 1 1;
     opacity: 1;
+  }
+}
+
+.show-section-title {
+  h3 {
+    animation: scalex-in calc($golden-ratio-time / 4)
+      ease-in-out forwards;
   }
 }
