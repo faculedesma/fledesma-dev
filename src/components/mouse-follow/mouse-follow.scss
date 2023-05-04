@@ -1,6 +1,6 @@
 @import '../../utils/variables';
 
-.mouse-follow {
+.mouse-follow--bg {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -16,6 +16,18 @@
   animation: rotate calc($golden-ratio-time * 8) infinite;
   opacity: 0.3;
   z-index: 1;
+}
+
+.mouse-follow--point {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  background: $highlight-color;
+  z-index: 3;
 }
 
 @keyframes rotate {
