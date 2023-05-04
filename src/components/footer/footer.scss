@@ -13,7 +13,8 @@
   h1 {
     width: 60%;
     text-align: center;
-    z-index: 2;
+    z-index: 1;
+    opacity: 0;
   }
 
   &-mail {
@@ -26,6 +27,7 @@
     border: 1px solid $highlight-color;
     cursor: pointer;
     z-index: 3;
+    opacity: 0;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     transition: all calc($golden-ratio-time / 8) ease-in-out;
 
@@ -89,6 +91,7 @@
 
   &-social {
     z-index: 3;
+    opacity: 0;
 
     .social {
       width: 200px;
@@ -99,10 +102,13 @@
 
   &-copyright {
     margin-bottom: 50px;
+    opacity: 0;
     z-index: 1;
   }
 
   &-canvas {
+    overflow: visible;
+
     &--follow,
     &--loop {
       position: absolute;
@@ -124,12 +130,31 @@
   }
 }
 
+.show-footer {
+  h1 {
+    animation: fade-in calc($golden-ratio-time / 8) ease-in
+      forwards;
+  }
+
+  .footer {
+    &-mail {
+      animation: fade-in calc($golden-ratio-time / 2)
+        ease-in forwards;
+    }
+
+    &-copyright,
+    &-social {
+      animation: fade-in calc($golden-ratio-time) ease-in
+        forwards;
+    }
+  }
+}
+
 /* Smartphones (portrait and landscape) */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .footer {
     padding: 4rem 0 0;
     height: 500px;
-    // overflow: hidden;
 
     h1 {
       width: 80%;

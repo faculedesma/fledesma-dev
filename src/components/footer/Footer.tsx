@@ -1,10 +1,13 @@
 import { MailEnvelop } from '@assets/svgs/MailEnvelop';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { useIntersection } from '@components/hooks/useIntersection';
 import { Social } from '@components/social/Social';
 import Spline from '@splinetool/react-spline';
 import './footer.scss';
 
 const Footer = () => {
+  const footerRef = useRef<HTMLDivElement>(null);
+  const isInViewport = useIntersection(footerRef, -300);
   const [text, setText] = useState('Click to copy!');
 
   const handleCopyMailToClipboard = () => {
@@ -17,9 +20,15 @@ const Footer = () => {
     }, 2000);
   };
 
+  useEffect(() => {
+    if (isInViewport) {
+      footerRef.current?.classList.add('show-footer');
+    }
+  }, [isInViewport]);
+
   return (
     <div className="container">
-      <div id="contact" className="footer">
+      <div ref={footerRef} id="contact" className="footer">
         <h1>Let's build something awesome!</h1>
         <div className="footer-mail">
           <p>faculedesma1993@gmail.com</p>
