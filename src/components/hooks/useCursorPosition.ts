@@ -5,7 +5,7 @@ interface Position {
   y: number;
 }
 
-const useCursorPosition = (): Position => {
+export const useCursorPosition = (): Position => {
   const [position, setPosition] = useState<Position>({
     x: 0,
     y: 0
@@ -35,5 +35,3 @@ const useCursorPosition = (): Position => {
 
   return position;
 };
-
-export default useCursorPosition;
