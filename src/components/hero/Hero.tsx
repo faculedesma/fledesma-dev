@@ -1,15 +1,23 @@
 import { useRef, useEffect } from 'react';
 import { Social } from '@components/social/Social';
-import useCursorPosition from '@components/hooks/useCursorPosition';
-import { useIntersection } from '@components/hooks/useIntersection';
+import { ScrollButton } from '@components/buttons/ScrollButton';
+import { useCursorPosition } from '@components/hooks/useCursorPosition';
+import { useCursorFollowing } from '@components/hooks/useCursorFollowing';
 import Spline from '@splinetool/react-spline';
 import './hero.scss';
 
-const Hero: React.FC = () => {
-  const ref = useRef<HTMLDivElement>(null);
+interface IHeroProps {
+  isLoading: boolean;
+}
+
+const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
   const titleRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
-  const isInViewport = useIntersection(heroRef, 0);
+  const buttonRef = useRef<HTMLDivElement>(null);
+
+  const isFollowing = useCursorFollowing({
+    targetRef: buttonRef
+  });
   const { x, y } = useCursorPosition();
 
   useEffect(() => {
@@ -61,28 +69,33 @@ const Hero: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (isInViewport) {
+    if (!isLoading) {
       heroRef.current?.classList.add('show-hero');
     }
-  }, [isInViewport]);
+  }, [isLoading]);
 
   useEffect(() => {
-    if (ref.current) {
-      // ref.current.style.transform = `translate(${
-      //   x / 100
-      // }px, 0px)`;
+    if (buttonRef.current) {
+      buttonRef.current.animate(
+        {
+          left: `${isFollowing ? x / 20 : 0}px`,
+          bottom: `${isFollowing ? y / 20 : 0}px`
+        },
+        { duration: 500, fill: 'forwards' }
+      );
     }
-  }, [x, y]);
+  }, [isFollowing, x, y]);
 
   return (
     <div className="hero-gradient">
       <div className="container">
         <div ref={heroRef} id="hero" className="hero">
-          <div ref={ref} className="hero-canvas">
+          <div className="hero-canvas">
             <Spline scene="https://prod.spline.design/PsvclvB5wVsUm7ZW/scene.splinecode" />
           </div>
           <div className="hero-title">
             <div className="hero-title--top">
+              {/* <h1>Software</h1> */}
               <h1>Developer &amp;</h1>
               <h1 ref={titleRef} data-value="designer">
                 designer
@@ -92,6 +105,9 @@ const Hero: React.FC = () => {
           </div>
           <div className="hero-social">
             <Social />
+          </div>
+          <div ref={buttonRef} className="hero-scroll">
+            <ScrollButton />
           </div>
         </div>
       </div>

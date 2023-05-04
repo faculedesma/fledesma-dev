@@ -14,7 +14,11 @@ export const NoteOne = () => {
 
   return (
     <div className="container">
-      <div ref={noteOneRef} className="notes-one">
+      <div
+        ref={noteOneRef}
+        id="note-one"
+        className="notes-one"
+      >
         <h3>
           Passionate about building user interfaces that are
           aesthetically pleasing, highly functional, and
