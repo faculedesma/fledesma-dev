@@ -17,14 +17,11 @@ interface IWorkCardProps {
 
 const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
   const workCardRef = useRef<HTMLDivElement>(null);
-  const ctaRef = useRef<HTMLButtonElement>(null);
 
   const isInViewport = useIntersection(workCardRef, -250);
   const isFollowing = useCursorFollowing({
     targetRef: workCardRef
   });
-  const { x, y, clientX, clientY } = useCursorPosition();
-
   useEffect(() => {
     if (isInViewport) {
       workCardRef.current?.classList.add('show-work-card');
@@ -32,25 +29,19 @@ const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
   }, [isInViewport]);
 
   useEffect(() => {
-    if (ctaRef.current && workCardRef.current) {
-      if (isFollowing) {
-        ctaRef.current.classList.remove('hide-card-cta');
-        ctaRef.current.classList.add('show-card-cta');
-        const card =
-          workCardRef.current.getBoundingClientRect();
-        ctaRef.current.animate(
-          {
-            left: `${clientX - card.left}px`,
-            top: `${clientY - card.top}px`
-          },
-          { duration: 500, fill: 'forwards' }
-        );
-      } else {
-        ctaRef.current.classList.remove('show-card-cta');
-        ctaRef.current.classList.add('hide-card-cta');
-      }
+    const mouse = document.getElementById('mouse-follow');
+    if (isFollowing) {
+      mouse?.classList.add('discover');
+      mouse?.classList.add('show-discover');
+      mouse?.classList.remove('point');
+      mouse?.classList.remove('show-point');
+    } else {
+      mouse?.classList.add('point');
+      mouse?.classList.add('show-point');
+      mouse?.classList.remove('discover');
+      mouse?.classList.remove('show-discover');
     }
-  }, [isFollowing, x, y]);
+  }, [isFollowing]);
 
   const handleCardClick = () =>
     window.open(work.link, '_blank');
@@ -59,14 +50,12 @@ const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
     <div
       key={work.id}
       ref={workCardRef}
+      onClick={handleCardClick}
       className={`work-list--${work.id}`}
     >
       <h2>{work.title}</h2>
       <h3>{work.type}</h3>
       <img src={work.image} alt="work-image" />
-      <button ref={ctaRef} onClick={handleCardClick}>
-        Discover
-      </button>
     </div>
   );
 };

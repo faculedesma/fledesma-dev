@@ -28,14 +28,14 @@ export const useCursorPosition = (): Position => {
     };
 
     window.addEventListener('mousemove', updatePosition);
-    window.addEventListener('scroll', updatePosition);
+    window.addEventListener('wheel', updatePosition);
 
     return () => {
       window.removeEventListener(
         'mousemove',
         updatePosition
       );
-      window.removeEventListener('scroll', updatePosition);
+      window.removeEventListener('wheel', updatePosition);
     };
   }, []);
 

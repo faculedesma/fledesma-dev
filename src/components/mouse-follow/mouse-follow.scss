@@ -1,55 +1,57 @@
 @import '../../utils/variables';
 
-.mouse-follow--bg {
+.mouse-follow {
   position: absolute;
   left: 50%;
   top: 50%;
   translate: -50% -50%;
   border-radius: 50%;
-  width: 400px;
-  aspect-ratio: 1;
-  background: linear-gradient(
-    to right,
-    $highlight-color,
-    $secondary-color
-  );
-  animation: rotate calc($golden-ratio-time * 8) infinite;
-  opacity: 0.3;
-  z-index: 1;
-}
-
-.mouse-follow--point {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  translate: -50% -50%;
-  border-radius: 50%;
-  width: 12px;
-  height: 12px;
-  background: $highlight-color;
   pointer-events: none;
+  scale: 0 0;
   z-index: 5;
 }
 
-@keyframes rotate {
-  from {
-    filter: blur(100px);
-    rotate: 0deg;
-  }
+.point {
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  background: $highlight-color;
+}
 
-  50% {
-    filter: blur(200px);
-    scale: 1 1.5;
-  }
+.discover {
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $secondary-color;
+  color: $highlight-color;
+  font-weight: 300;
+  cursor: pointer;
 
-  to {
-    filter: blur(100px);
-    rotate: 360deg;
+  &::after {
+    content: 'Discover';
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
+.show-point {
+  animation: scale-in calc($golden-ratio-time / 8)
+    ease-in-out forwards;
+}
+
+.show-discover {
+  animation: scale-in calc($golden-ratio-time / 8)
+    ease-in-out forwards;
+}
+
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  .mouse-follow--bg,
+  .mouse-follow--discover,
   .mouse-follow--point {
     display: none;
   }
