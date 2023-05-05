@@ -8,9 +8,9 @@
   flex-direction: column;
   align-items: flex-start;
 
-  h3 {
+  > h3 {
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 16px;
     margin-bottom: 2rem;
     scale: 0 1;
@@ -35,7 +35,6 @@
         ease-in-out;
       z-index: 2;
       aspect-ratio: 1 / 1.6;
-      cursor: pointer;
       position: relative;
 
       &:hover:before {

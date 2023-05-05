@@ -138,6 +138,11 @@
   }
 
   .footer {
+    canvas {
+      animation: fade-in calc($golden-ratio-time / 2)
+        ease-in forwards;
+    }
+
     &-mail {
       animation: fade-in calc($golden-ratio-time / 4)
         ease-in forwards;
