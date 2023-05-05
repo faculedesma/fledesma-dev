@@ -43,9 +43,9 @@ export const HistoryRow: React.FC<IHistoryRowProps> = ({
       >
         <h3>{job.date}</h3>
         <div className="history-list--row-charge">
-          <h3>{job.position}</h3>
+          <h3>{job.company.name}</h3>
           <a href={job.company.url} target="_blank">
-            {job.company.name}
+            {job.position}
           </a>
         </div>
       </div>

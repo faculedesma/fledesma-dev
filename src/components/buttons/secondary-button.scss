@@ -25,7 +25,7 @@
 
   &:hover {
     svg {
-      translate: 4px 0;
+      translate: 2px 0;
       transition: all calc($golden-ratio-time / 8)
         ease-in-out;
     }

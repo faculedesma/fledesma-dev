@@ -81,7 +81,7 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
           left: `${isFollowing ? x / 20 : 0}px`,
           bottom: `${isFollowing ? y / 20 : 0}px`
         },
-        { duration: 500, fill: 'forwards' }
+        { duration: 1618 / 8, fill: 'forwards' }
       );
     }
   }, [isFollowing, x, y]);

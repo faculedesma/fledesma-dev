@@ -29,7 +29,10 @@
     scale: 0.9;
 
     canvas {
-      width: 100%;
+      height: 300px;
+      opacity: 0;
+      animation: fade-in calc($golden-ratio-time) ease-in
+        forwards;
     }
   }
 
@@ -109,16 +112,17 @@
 /* Smartphones (portrait and landscape) */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .hero {
-    height: 500px;
-    justify-content: center;
-    padding-top: 50px;
+    height: 620px;
+    justify-content: flex-start;
+    padding-top: 100px;
 
     &-canvas {
-      height: inherit;
+      height: 300px;
       translate: 0 0;
     }
 
     &-title {
+      height: auto;
       width: 100%;
       position: relative;
 
@@ -134,7 +138,7 @@
 
     &-scroll {
       position: relative;
-      translate: 0 0;
+      translate: 0 50px;
     }
   }
 }

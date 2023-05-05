@@ -8,6 +8,10 @@
   align-items: flex-end;
   justify-content: space-between;
 
+  a {
+    display: flex;
+  }
+
   svg {
     color: $secondary-color;
     cursor: pointer;

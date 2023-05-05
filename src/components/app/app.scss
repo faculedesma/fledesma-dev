@@ -14,6 +14,13 @@
   margin: 0 auto;
 }
 
+.show-section-title {
+  h3 {
+    animation: scalex-in calc($golden-ratio-time / 4)
+      ease-in-out forwards;
+  }
+}
+
 // global keyframes
 
 @keyframes slide-in {
@@ -103,12 +110,5 @@
   100% {
     opacity: 1;
     scale: 1 1;
-  }
-}
-
-.show-section-title {
-  h3 {
-    animation: scalex-in calc($golden-ratio-time / 4)
-      ease-in-out forwards;
   }
 }

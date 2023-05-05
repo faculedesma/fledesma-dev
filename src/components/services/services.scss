@@ -40,7 +40,7 @@
 
       &:hover:before {
         background-position: 100% 100%;
-        transform: scale(1.07, 1.03);
+        transform: scale(1.07, 1.07);
       }
 
       &:before {
@@ -79,6 +79,10 @@
 
         svg {
           margin-bottom: 1rem;
+          rotate: 0deg;
+          scale: 1;
+          transition: all calc($golden-ratio-time / 4)
+            ease-in-out;
         }
       }
 
@@ -92,6 +96,42 @@
 
         p {
           width: 80%;
+          filter: brightness(0.8);
+          transition: filter calc($golden-ratio-time / 4)
+            ease-in-out;
+        }
+      }
+
+      &:hover {
+        .services {
+          &-list {
+            &--card {
+              &-top {
+                svg {
+                  rotate: 360deg;
+                  scale: 1.2;
+                  transition: all
+                    calc($golden-ratio-time / 4) ease-in-out;
+                }
+              }
+
+              &-bottom {
+                p {
+                  filter: brightness(1);
+                  transition: filter
+                    calc($golden-ratio-time / 4) ease-in-out;
+                }
+
+                button {
+                  scale: 0.9;
+
+                  svg {
+                    translate: 8px 0;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
