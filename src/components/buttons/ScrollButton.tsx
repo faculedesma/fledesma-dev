@@ -25,7 +25,7 @@ export const ScrollButton = () => {
   }, []);
 
   return (
-    <button className="scroll-button" onClick={handleClick}>
+    <button className="scroll-button">
       <div className="scroll-button--icon">
         <ArrowDown />
       </div>
@@ -34,6 +34,10 @@ export const ScrollButton = () => {
           Scroll & Explore ・ Scroll & Explore ・
         </p>
       </div>
+      <div
+        onClick={handleClick}
+        className="scroll-button--bg"
+      ></div>
     </button>
   );
 };

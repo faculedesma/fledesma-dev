@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 4rem 0;
+  margin: 16rem 0 2rem;
 
   h1 {
     width: 60%;
@@ -138,14 +138,14 @@
 
   .footer {
     &-mail {
-      animation: fade-in calc($golden-ratio-time / 2)
+      animation: fade-in calc($golden-ratio-time / 4)
         ease-in forwards;
     }
 
     &-copyright,
     &-social {
-      animation: fade-in calc($golden-ratio-time) ease-in
-        forwards;
+      animation: fade-in calc($golden-ratio-time / 2)
+        ease-in forwards;
     }
   }
 }
