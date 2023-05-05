@@ -54,7 +54,7 @@ const Work = () => {
         <h3>Work</h3>
         <div className="work-list">
           {works.map((work) => {
-            return <WorkCard work={work} />;
+            return <WorkCard key={work.id} work={work} />;
           })}
         </div>
       </div>

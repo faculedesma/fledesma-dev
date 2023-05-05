@@ -60,7 +60,7 @@ const History = () => {
         <h3>History</h3>
         <div className="history-list">
           {jobsHistory.map((job) => {
-            return <HistoryRow job={job} />;
+            return <HistoryRow key={job.id} job={job} />;
           })}
         </div>
       </div>
