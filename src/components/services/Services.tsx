@@ -2,6 +2,9 @@ import { SecondaryButton } from '@components/buttons/SecondaryButton';
 import { Chart } from '@assets/svgs/Chart';
 import { Processor } from '@assets/svgs/Processor';
 import { Diamond } from '@assets/svgs/Diamond';
+import { useRef, useEffect } from 'react';
+import { useIntersection } from '@components/hooks/useIntersection';
+import { ServicesCard } from './ServicesCard';
 import './services.scss';
 
 const servicesProvided = [
@@ -29,27 +32,25 @@ const servicesProvided = [
 ];
 
 const Services = () => {
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const isInViewport = useIntersection(servicesRef, -300);
+
+  useEffect(() => {
+    if (isInViewport) {
+      servicesRef.current?.classList.add(
+        'show-section-title',
+        'show-services'
+      );
+    }
+  }, [isInViewport]);
+
   return (
     <div className="container">
-      <div className="services">
+      <div ref={servicesRef} className="services">
         <h3>What I do</h3>
         <div className="services-list">
           {servicesProvided.map((service) => {
-            return (
-              <div
-                key={service.id}
-                className="services-list--card"
-              >
-                <div className="services-list--card-top">
-                  {service.icon}
-                  <h2>{service.label}</h2>
-                </div>
-                <div className="services-list--card-bottom">
-                  <p>{service.description}</p>
-                  <SecondaryButton label="Get started" />
-                </div>
-              </div>
-            );
+            return <ServicesCard service={service} />;
           })}
         </div>
       </div>

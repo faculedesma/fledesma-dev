@@ -12,6 +12,7 @@
   cursor: pointer;
   transform: scale(1);
   transition: all calc($golden-ratio-time / 8) ease-in-out;
+  padding: 0;
 
   svg {
     translate: 0 0;
