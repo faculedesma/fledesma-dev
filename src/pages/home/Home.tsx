@@ -1,12 +1,26 @@
+import { lazy } from 'react';
 import Hero from '@components/hero/Hero';
 import Header from '@components/header/Header';
-import { NoteOne } from '@components/notes/NoteOne';
-import { NoteTwo } from '@components/notes/NoteTwo';
-import { NoteThree } from '@components/notes/NoteThree';
-import Services from '@components/services/Services';
-import History from '@components/history/History';
-import Work from '@components/work/Work';
-import Footer from '@components/footer/Footer';
+
+const NoteOne = lazy(
+  () => import('@components/notes/NoteOne')
+);
+const NoteTwo = lazy(
+  () => import('@components/notes/NoteTwo')
+);
+const NoteThree = lazy(
+  () => import('@components/notes/NoteThree')
+);
+const Services = lazy(
+  () => import('@components/services/Services')
+);
+const History = lazy(
+  () => import('@components/history/History')
+);
+const Work = lazy(() => import('@components/work/Work'));
+const Footer = lazy(
+  () => import('@components/footer/Footer')
+);
 
 interface IHomeProps {
   isLoading: boolean;

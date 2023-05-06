@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useIntersection } from '@components/hooks/useIntersection';
 import './notes.scss';
 
-export const NoteTwo = () => {
+const NoteTwo = () => {
   const noteTwoRef = useRef<HTMLDivElement>(null);
   const isInViewport = useIntersection(noteTwoRef, -300);
 
@@ -23,3 +23,5 @@ export const NoteTwo = () => {
     </div>
   );
 };
+
+export default NoteTwo;
