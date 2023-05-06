@@ -33,7 +33,6 @@ export const HistoryRow: React.FC<IHistoryRowProps> = ({
 
   return (
     <div
-      key={job.id}
       ref={historyRef}
       className="history-list--row-container"
     >

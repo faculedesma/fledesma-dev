@@ -50,7 +50,12 @@ const Services = () => {
         <h3>What I do</h3>
         <div className="services-list">
           {servicesProvided.map((service) => {
-            return <ServicesCard service={service} />;
+            return (
+              <ServicesCard
+                key={service.id}
+                service={service}
+              />
+            );
           })}
         </div>
       </div>

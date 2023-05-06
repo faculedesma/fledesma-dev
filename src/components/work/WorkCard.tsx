@@ -48,7 +48,6 @@ const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
 
   return (
     <div
-      key={work.id}
       ref={workCardRef}
       onClick={handleCardClick}
       className={`work-list--${work.id}`}

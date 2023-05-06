@@ -95,7 +95,6 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
           </div>
           <div className="hero-title">
             <div className="hero-title--top">
-              {/* <h1>Software</h1> */}
               <h1>Developer &amp;</h1>
               <h1 ref={titleRef} data-value="designer">
                 designer

@@ -17,7 +17,7 @@ export const ServicesCard: React.FC<IServicesCardProps> = ({
   service
 }) => {
   return (
-    <div key={service.id} className="services-list--card">
+    <div className="services-list--card">
       <div className="services-list--card-top">
         {service.icon}
         <h2>{service.label}</h2>

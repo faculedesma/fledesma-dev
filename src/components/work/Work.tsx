@@ -40,7 +40,7 @@ const works = [
 
 const Work = () => {
   const worksRef = useRef<HTMLDivElement>(null);
-  const isInViewport = useIntersection(worksRef, -300);
+  const isInViewport = useIntersection(worksRef, -200);
 
   useEffect(() => {
     if (isInViewport) {
