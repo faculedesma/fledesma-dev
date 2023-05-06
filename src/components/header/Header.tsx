@@ -104,6 +104,7 @@ const Header = (): JSX.Element => {
           <div className="header-toggle">
             <button
               id="toggle-button"
+              aria-label="Menu"
               ref={buttonRef}
               onClick={toggleMenu}
             >
