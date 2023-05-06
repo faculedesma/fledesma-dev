@@ -3,42 +3,26 @@ import { useCursorPosition } from '@components/hooks/useCursorPosition';
 import './mouse-follow.scss';
 
 const MouseFollow = (): JSX.Element => {
-  const refBackground = useRef<HTMLDivElement>(null);
-  const refPoint = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
   const { x, y } = useCursorPosition();
 
   useEffect(() => {
-    if (refBackground.current) {
-      refBackground.current.animate(
+    if (cursorRef.current) {
+      cursorRef.current.animate(
         {
           left: `${x}px`,
           top: `${y}px`
         },
-        { duration: 3000, fill: 'forwards' }
-      );
-    }
-    if (refPoint.current) {
-      refPoint.current.animate(
-        {
-          left: `${x}px`,
-          top: `${y}px`
-        },
-        { duration: 3000, fill: 'forwards' }
+        { duration: 1618 * 2, fill: 'forwards' }
       );
     }
   }, [x, y]);
 
   return (
-    <>
-      {/* <div
-        ref={refBackground}
-        className="mouse-follow--bg"
-      ></div> */}
-      <div
-        ref={refPoint}
-        className="mouse-follow--point"
-      ></div>
-    </>
+    <div
+      ref={cursorRef}
+      className="mouse-follow point"
+    ></div>
   );
 };
 

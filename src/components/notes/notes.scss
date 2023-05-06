@@ -17,6 +17,21 @@
       z-index: 2;
     }
   }
+
+  &-one {
+    position: relative;
+
+    p {
+      width: 1000px;
+      height: 1000px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      rotate: 90deg;
+      font-size: 200px;
+      opacity: 0.1;
+    }
+  }
 }
 
 .show-note {

@@ -30,7 +30,7 @@
     z-index: 3;
     opacity: 0;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    transition: all calc($golden-ratio-time / 8) ease-in-out;
+    transition: all calc($golden-ratio-time / 4) ease-in-out;
 
     p {
       position: relative;
@@ -39,7 +39,7 @@
       text-transform: uppercase;
       font-weight: 600;
       scale: 0.8;
-      transition: scale calc($golden-ratio-time / 8)
+      transition: scale calc($golden-ratio-time / 4)
         ease-in-out;
     }
 
@@ -47,13 +47,13 @@
       > p {
         scale: 0.5;
         opacity: 0.2;
-        transition: scale calc($golden-ratio-time / 8)
+        transition: scale calc($golden-ratio-time / 4)
           ease-in-out;
       }
 
       .footer-mail--copy {
         scale: 1;
-        transition: scale calc($golden-ratio-time / 8)
+        transition: scale calc($golden-ratio-time / 4)
           ease-in-out;
         z-index: 3;
       }
@@ -133,25 +133,25 @@
 
 .show-footer {
   h1 {
-    animation: fade-in calc($golden-ratio-time / 8) ease-in
+    animation: fade-in calc($golden-ratio-time / 4) ease-in
       forwards;
   }
 
   .footer {
     canvas {
-      animation: fade-in calc($golden-ratio-time / 2)
-        ease-in forwards;
+      animation: fade-in calc($golden-ratio-time) ease-in
+        forwards;
     }
 
     &-mail {
-      animation: fade-in calc($golden-ratio-time / 4)
+      animation: fade-in calc($golden-ratio-time / 2)
         ease-in forwards;
     }
 
     &-copyright,
     &-social {
-      animation: fade-in calc($golden-ratio-time / 2)
-        ease-in forwards;
+      animation: fade-in calc($golden-ratio-time) ease-in
+        forwards;
     }
   }
 }
