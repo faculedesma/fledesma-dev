@@ -17,7 +17,7 @@ export const ScrollButton = () => {
         .map(
           (char, index) =>
             `<span style="transform:rotate(${
-              index * 12
+              index * 6
             }deg)">${char}</span>`
         )
         .join('');

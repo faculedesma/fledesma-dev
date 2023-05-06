@@ -104,7 +104,7 @@
 .show-hero {
   h1:first-child,
   h1:last-child {
-    animation: slide-in calc($golden-ratio-time / 2)
+    animation: slidey-in-fade calc($golden-ratio-time / 2)
       ease-in-out forwards;
   }
 }

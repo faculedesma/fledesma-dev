@@ -141,18 +141,6 @@
   > div {
     animation: fade-in calc($golden-ratio-time / 4)
       ease-in-out forwards;
-
-    div:nth-child(1) {
-      animation-delay: calc($golden-ratio-time / 8);
-    }
-
-    div:nth-child(2) {
-      animation-delay: calc($golden-ratio-time / 4);
-    }
-
-    div:nth-child(3) {
-      animation-delay: calc($golden-ratio-time / 2);
-    }
   }
 }
 
@@ -165,7 +153,6 @@
     &-list {
       width: auto;
       justify-content: flex-start;
-      overflow-x: scroll;
       gap: 2rem;
 
       &--card {
