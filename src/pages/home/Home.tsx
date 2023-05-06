@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 import Hero from '@components/hero/Hero';
 import Header from '@components/header/Header';
+import MouseFollow from '@components/mouse-follow/MouseFollow';
 
 const NoteOne = lazy(
   () => import('@components/notes/NoteOne')
@@ -24,13 +25,14 @@ const Footer = lazy(
 
 interface IHomeProps {
   isLoading: boolean;
+  onLoad: () => void;
 }
 
-const Home = ({ isLoading }: IHomeProps) => {
+const Home = ({ isLoading, onLoad }: IHomeProps) => {
   return (
     <div className={`home ${!isLoading ? 'loaded' : ''}`}>
       <Header />
-      <Hero isLoading={isLoading} />
+      <Hero isLoading={isLoading} handleLoaded={onLoad} />
       <NoteOne />
       <Services />
       <NoteTwo />
@@ -38,6 +40,7 @@ const Home = ({ isLoading }: IHomeProps) => {
       <NoteThree />
       <Work />
       <Footer />
+      <MouseFollow />
     </div>
   );
 };

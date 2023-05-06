@@ -8,9 +8,13 @@ import './hero.scss';
 
 interface IHeroProps {
   isLoading: boolean;
+  handleLoaded: () => void;
 }
 
-const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
+const Hero: React.FC<IHeroProps> = ({
+  isLoading,
+  handleLoaded
+}) => {
   const titleRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLDivElement>(null);
@@ -91,7 +95,10 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
       <div className="container">
         <div ref={heroRef} id="hero" className="hero">
           <div className="hero-canvas">
-            <Spline scene="https://prod.spline.design/PsvclvB5wVsUm7ZW/scene.splinecode" />
+            <Spline
+              scene="https://prod.spline.design/PsvclvB5wVsUm7ZW/scene.splinecode"
+              onLoad={handleLoaded}
+            />
           </div>
           <div className="hero-title">
             <div className="hero-title--top">

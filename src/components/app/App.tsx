@@ -1,23 +1,21 @@
 import { FC, useState, useEffect, useRef } from 'react';
 import Home from '@pages/home/Home';
 import Loader from '@components/loader/Loader';
-import MouseFollow from '@components/mouse-follow/MouseFollow';
 import './app.scss';
 
 const App: FC = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoadingAssets, setIsLoadingAssets] =
+    useState(true);
+  const [is3DLoading, setIs3DLoading] = useState(true);
 
   const mounted = useRef(false);
   const appRef = useRef(null);
 
-  const handleIsLoaded = () => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 0);
-  };
+  const handleIsLoaded = () => setIsLoadingAssets(false);
+
+  const handle3DLoaded = () => setIs3DLoading(false);
 
   useEffect(() => {
-    setIsLoading(true);
     mounted.current = true;
     window.addEventListener('load', handleIsLoaded);
 
@@ -34,11 +32,12 @@ const App: FC = () => {
     }
   }, [document.readyState]);
 
+  const appLoaded = isLoadingAssets || is3DLoading;
+
   return (
     <div id="app" ref={appRef} className="app">
-      <Home isLoading={isLoading} />
-      <Loader isLoading={isLoading} />
-      <MouseFollow />
+      <Home isLoading={appLoaded} onLoad={handle3DLoaded} />
+      <Loader isLoading={appLoaded} />
     </div>
   );
 };

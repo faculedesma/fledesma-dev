@@ -31,19 +31,7 @@ const Loader: React.FC<ILoaderProps> = ({ isLoading }) => {
     <div
       className={`loader ${isLoading ? 'show' : 'hidden'}`}
     >
-      <div className="loader-left">
-        <p>Here</p>
-      </div>
-      <div className="loader-center">
-        <div className="loader-center--circle">
-          <div className="loader-center--circle-inside">
-            <p>&</p>
-          </div>
-        </div>
-      </div>
-      <div className="loader-right">
-        <p>Now</p>
-      </div>
+      Loading..
     </div>
   );
 };
