@@ -76,13 +76,13 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
 
   useEffect(() => {
     if (buttonRef.current) {
-      buttonRef.current.animate(
-        {
-          left: `${isFollowing ? x / 20 : 0}px`,
-          bottom: `${isFollowing ? y / 20 : 0}px`
-        },
-        { duration: 1618 / 8, fill: 'forwards' }
-      );
+      // buttonRef.current.animate(
+      //   {
+      //     left: `${isFollowing ? x / 20 : 0}px`,
+      //     bottom: `${isFollowing ? y / 20 : 0}px`
+      //   },
+      //   { duration: 1618 / 8, fill: 'forwards' }
+      // );
     }
   }, [isFollowing, x, y]);
 
