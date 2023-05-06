@@ -109,6 +109,16 @@
       &--row {
         width: 80%;
         gap: 2rem;
+
+        > h3 {
+          width: 70px;
+        }
+
+        &-charge {
+          h3 {
+            font-size: 1.25rem;
+          }
+        }
       }
     }
   }
