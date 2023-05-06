@@ -41,18 +41,17 @@
 }
 
 .show-point {
-  animation: scale-in calc($golden-ratio-time / 8)
-    ease-in-out forwards;
+  animation: scale-in calc($golden-ratio-time / 8) ease-in
+    forwards;
 }
 
 .show-discover {
-  animation: scale-in calc($golden-ratio-time / 8)
-    ease-in-out forwards;
+  animation: scale-in calc($golden-ratio-time / 8) ease-in
+    forwards;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  .mouse-follow--discover,
-  .mouse-follow--point {
+  .mouse-follow {
     display: none;
   }
 }
