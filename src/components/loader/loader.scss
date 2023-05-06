@@ -27,7 +27,7 @@
     > p {
       text-transform: uppercase;
       text-decoration: underline;
-      font-weight: bold;
+      font-weight: 700;
       margin: 0;
       opacity: 0;
       animation: loop-top 2s ease-in-out infinite;
@@ -75,7 +75,7 @@
         opacity: 0.5;
 
         p {
-          font-weight: lighter;
+          font-weight: 300;
           opacity: 1;
           animation: loop-top 2s ease-in-out infinite;
         }

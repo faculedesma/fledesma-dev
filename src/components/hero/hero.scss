@@ -31,8 +31,8 @@
     canvas {
       height: 300px;
       opacity: 0;
-      animation: fade-in calc($golden-ratio-time) ease-in
-        forwards;
+      animation: fade-in calc($golden-ratio-time / 2)
+        ease-in forwards;
     }
   }
 
