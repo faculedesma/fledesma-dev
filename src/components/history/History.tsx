@@ -43,8 +43,13 @@ const jobsHistory = [
 ];
 
 const History = () => {
+  const isMobile =
+    window.innerWidth > 320 && window.innerWidth < 480;
   const historyRef = useRef<HTMLDivElement>(null);
-  const isInViewport = useIntersection(historyRef, -300);
+  const isInViewport = useIntersection(
+    historyRef,
+    isMobile ? -50 : -300
+  );
 
   useEffect(() => {
     if (isInViewport) {

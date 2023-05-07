@@ -10,12 +10,13 @@
   align-items: center;
   justify-content: center;
   background-color: $primary-color;
+  scale: 1 1;
   z-index: 5;
 }
 
 .hidden {
-  animation: scale-out calc($golden-ratio-time) ease-in-out;
-  z-index: -1;
+  animation: scale-out calc($golden-ratio-time) ease-in-out
+    forwards;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {

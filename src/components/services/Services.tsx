@@ -32,8 +32,13 @@ const servicesProvided = [
 ];
 
 const Services = () => {
+  const isMobile =
+    window.innerWidth > 320 && window.innerWidth < 480;
   const servicesRef = useRef<HTMLDivElement>(null);
-  const isInViewport = useIntersection(servicesRef, -300);
+  const isInViewport = useIntersection(
+    servicesRef,
+    isMobile ? -175 : -300
+  );
 
   useEffect(() => {
     if (isInViewport) {

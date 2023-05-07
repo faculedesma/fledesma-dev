@@ -176,6 +176,12 @@ svg {
   height: 20px;
 }
 
+canvas {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: $secondary-color;

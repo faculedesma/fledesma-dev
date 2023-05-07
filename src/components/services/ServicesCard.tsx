@@ -16,6 +16,13 @@ interface IServicesCardProps {
 export const ServicesCard: React.FC<IServicesCardProps> = ({
   service
 }) => {
+  const handleCardClick = () => {
+    const section = document.getElementById('contact');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="services-list--card">
       <div className="services-list--card-top">
@@ -24,7 +31,10 @@ export const ServicesCard: React.FC<IServicesCardProps> = ({
       </div>
       <div className="services-list--card-bottom">
         <p>{service.description}</p>
-        <SecondaryButton label="Get started" />
+        <SecondaryButton
+          label="Get started"
+          onClick={handleCardClick}
+        />
       </div>
     </div>
   );

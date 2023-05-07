@@ -2,6 +2,7 @@ import { Logo } from '@assets/svgs/Logo';
 import { Menu } from '@components/menu/Menu';
 import './header.scss';
 import { useState, useRef } from 'react';
+import { ToggleButton } from '@components/buttons/ToggleButton';
 
 type Link = {
   id: string;
@@ -28,21 +29,10 @@ export const links: Link[] = [
 ];
 
 const Header = (): JSX.Element => {
-  const buttonRef = useRef<HTMLButtonElement>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const toggleMenu = () => {
-    if (!isOpen) {
-      if (buttonRef.current) {
-        buttonRef.current.className = 'clicked';
-      }
-    } else {
-      if (buttonRef.current) {
-        buttonRef.current.className = '';
-      }
-    }
+  const toggleMenu = () =>
     setIsOpen((prevIsOpen) => !prevIsOpen);
-  };
 
   const handleLinkClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -101,17 +91,7 @@ const Header = (): JSX.Element => {
               );
             })}
           </div>
-          <div className="header-toggle">
-            <button
-              id="toggle-button"
-              aria-label="Menu"
-              ref={buttonRef}
-              onClick={toggleMenu}
-            >
-              <div></div>
-              <div></div>
-            </button>
-          </div>
+          <ToggleButton onClick={toggleMenu} />
           <Menu isOpen={isOpen} toggleMenu={toggleMenu} />
         </div>
       </div>

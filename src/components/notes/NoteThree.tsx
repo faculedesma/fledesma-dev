@@ -3,8 +3,13 @@ import { useIntersection } from '@components/hooks/useIntersection';
 import './notes.scss';
 
 const NoteThree = () => {
+  const isMobile =
+    window.innerWidth > 320 && window.innerWidth < 480;
   const noteThreeRef = useRef<HTMLDivElement>(null);
-  const isInViewport = useIntersection(noteThreeRef, -300);
+  const isInViewport = useIntersection(
+    noteThreeRef,
+    isMobile ? -100 : -300
+  );
 
   useEffect(() => {
     if (isInViewport) {

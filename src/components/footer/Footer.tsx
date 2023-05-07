@@ -6,8 +6,13 @@ import Spline from '@splinetool/react-spline';
 import './footer.scss';
 
 const Footer = () => {
+  const isMobile =
+    window.innerWidth > 320 && window.innerWidth < 480;
   const footerRef = useRef<HTMLDivElement>(null);
-  const isInViewport = useIntersection(footerRef, -300);
+  const isInViewport = useIntersection(
+    footerRef,
+    isMobile ? 0 : -300
+  );
   const [text, setText] = useState('Click to copy!');
 
   const handleCopyMailToClipboard = () => {

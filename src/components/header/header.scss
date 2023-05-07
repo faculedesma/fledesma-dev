@@ -5,7 +5,8 @@ header {
   width: 100dvw;
   top: 0;
   left: 0;
-  z-index: 4;
+  background: transparent;
+  z-index: 5;
 }
 
 .header {
@@ -92,57 +93,6 @@ header {
       }
     }
   }
-
-  &-toggle {
-    display: none;
-
-    button {
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 3rem;
-      height: 3rem;
-      border: 0;
-      background: transparent;
-      gap: 1rem;
-      scale: 1;
-      transition: scale calc($golden-ratio-time / 8)
-        ease-in-out;
-      padding: 0;
-
-      > div {
-        background: $secondary-color;
-        height: 3px;
-        width: 100%;
-        transition: all calc($golden-ratio-time / 8);
-        transform-origin: left;
-
-        &:last-child {
-          transform-origin: right;
-        }
-      }
-    }
-
-    .clicked {
-      z-index: 6;
-
-      div:first-child {
-        background: $secondary-color;
-        transform: rotate(45deg);
-        transform-origin: left top;
-        transition: all calc($golden-ratio-time / 8);
-      }
-
-      div:last-child {
-        background: $secondary-color;
-        transform: rotate(-45deg);
-        transform-origin: left bottom;
-        transition: all calc($golden-ratio-time / 8);
-      }
-    }
-  }
 }
 
 /* Smartphones (portrait and landscape) */
@@ -159,10 +109,6 @@ header {
 
     &-links {
       display: none;
-    }
-
-    &-toggle {
-      display: inherit;
     }
   }
 }

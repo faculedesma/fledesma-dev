@@ -16,9 +16,14 @@ interface IWorkCardProps {
 }
 
 const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
+  const isMobile =
+    window.innerWidth > 320 && window.innerWidth < 480;
   const workCardRef = useRef<HTMLDivElement>(null);
 
-  const isInViewport = useIntersection(workCardRef, -250);
+  const isInViewport = useIntersection(
+    workCardRef,
+    isMobile ? 0 : -250
+  );
   const isFollowing = useCursorFollowing({
     targetRef: workCardRef
   });
