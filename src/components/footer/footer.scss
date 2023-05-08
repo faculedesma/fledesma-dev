@@ -113,10 +113,13 @@
     &--follow,
     &--loop {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
       z-index: 2;
       scale: 1.2;
+      width: 90%;
+      height: 500px;
     }
 
     &--follow {
