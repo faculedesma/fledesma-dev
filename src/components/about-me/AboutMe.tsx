@@ -28,7 +28,7 @@ const AboutMe = () => {
         <h3>About me</h3>
         <div className="about-me--content">
           <div className="about-me--content-left">
-            <Spline scene="https://prod.spline.design/jHfZFxpSFhS0I00i/scene.splinecode" />
+            {/* <Spline scene="https://prod.spline.design/jHfZFxpSFhS0I00i/scene.splinecode" /> */}
             <div className="about-me--content-left--bg"></div>
           </div>
           <div className="about-me--content-right">

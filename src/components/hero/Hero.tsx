@@ -98,10 +98,10 @@ const Hero: React.FC<IHeroProps> = ({
       <div className="container">
         <div ref={heroRef} id="hero" className="hero">
           <div className="hero-canvas">
-            <Spline
+            {/* <Spline
               scene="https://prod.spline.design/PsvclvB5wVsUm7ZW/scene.splinecode"
               onLoad={handleLoaded}
-            />
+            /> */}
           </div>
           <div className="hero-title">
             <div className="hero-title--top">

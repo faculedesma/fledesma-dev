@@ -56,10 +56,10 @@ const Footer = () => {
           </p>
         </div>
         <div className="footer-canvas--follow">
-          <Spline scene="https://prod.spline.design/84izeqDlkxJCeAT1/scene.splinecode" />
+          {/* <Spline scene="https://prod.spline.design/84izeqDlkxJCeAT1/scene.splinecode" /> */}
         </div>
         <div className="footer-canvas--loop">
-          <Spline scene="https://prod.spline.design/bvTPKXNKeT0aeoDM/scene.splinecode" />
+          {/* <Spline scene="https://prod.spline.design/bvTPKXNKeT0aeoDM/scene.splinecode" /> */}
         </div>
       </div>
     </div>

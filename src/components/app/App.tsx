@@ -36,8 +36,8 @@ const App: FC = () => {
 
   return (
     <div id="app" ref={appRef} className="app">
-      <Home isLoading={appLoaded} onLoad={handle3DLoaded} />
-      <Loader isLoading={appLoaded} />
+      <Home isLoading={false} onLoad={handle3DLoaded} />
+      <Loader isLoading={false} />
     </div>
   );
 };
