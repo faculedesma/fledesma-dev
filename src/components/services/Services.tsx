@@ -5,6 +5,7 @@ import { Diamond } from '@assets/svgs/Diamond';
 import { useRef, useEffect } from 'react';
 import { useIntersection } from '@components/hooks/useIntersection';
 import { ServicesCard } from './ServicesCard';
+import { Technologies } from './Technologies';
 import './services.scss';
 
 const servicesProvided = [
@@ -63,6 +64,7 @@ const Services = () => {
             );
           })}
         </div>
+        <Technologies />
       </div>
     </div>
   );
