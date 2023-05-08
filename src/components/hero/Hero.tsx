@@ -1,10 +1,13 @@
-import { useRef, useEffect } from 'react';
+import { lazy, useRef, useEffect } from 'react';
 import { Social } from '@components/social/Social';
 import { ScrollButton } from '@components/buttons/ScrollButton';
 import { useCursorPosition } from '@components/hooks/useCursorPosition';
 import { useCursorFollowing } from '@components/hooks/useCursorFollowing';
-import Spline from '@splinetool/react-spline';
 import './hero.scss';
+
+const Spline = lazy(
+  () => import('@splinetool/react-spline')
+);
 
 interface IHeroProps {
   isLoading: boolean;
