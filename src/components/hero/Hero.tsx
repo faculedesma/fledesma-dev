@@ -81,27 +81,15 @@ const Hero: React.FC<IHeroProps> = ({
     }
   }, [isLoading]);
 
-  useEffect(() => {
-    if (buttonRef.current) {
-      // buttonRef.current.animate(
-      //   {
-      //     left: `${isFollowing ? x / 20 : 0}px`,
-      //     bottom: `${isFollowing ? y / 20 : 0}px`
-      //   },
-      //   { duration: 1618 / 8, fill: 'forwards' }
-      // );
-    }
-  }, [isFollowing, x, y]);
-
   return (
     <div className="hero-gradient">
       <div className="container">
         <div ref={heroRef} id="hero" className="hero">
           <div className="hero-canvas">
-            {/* <Spline
+            <Spline
               scene="https://prod.spline.design/PsvclvB5wVsUm7ZW/scene.splinecode"
               onLoad={handleLoaded}
-            /> */}
+            />
           </div>
           <div className="hero-title">
             <div className="hero-title--top">
