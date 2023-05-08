@@ -186,6 +186,7 @@
 
     &-canvas {
       &--loop {
+        width: 100%;
         display: inherit;
         z-index: 1;
       }
