@@ -18,6 +18,9 @@ const Services = lazy(
 const History = lazy(
   () => import('@components/history/History')
 );
+const AboutMe = lazy(
+  () => import('@components/about-me/AboutMe')
+);
 const Work = lazy(() => import('@components/work/Work'));
 const Footer = lazy(
   () => import('@components/footer/Footer')
@@ -36,6 +39,7 @@ const Home = ({ isLoading, onLoad }: IHomeProps) => {
       <NoteOne />
       <Services />
       <NoteTwo />
+      <AboutMe />
       <History />
       <NoteThree />
       <Work />

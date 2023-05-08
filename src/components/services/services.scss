@@ -148,13 +148,14 @@
   svg {
     width: 80px;
     height: 80px;
+    opacity: 0.6;
     filter: grayscale(1);
-    transition: filter calc($golden-ratio-time / 4)
-      ease-in-out;
+    transition: all calc($golden-ratio-time / 4) ease-in-out;
 
     &:hover {
       filter: grayscale(1) brightness(1.4);
-      transition: filter calc($golden-ratio-time / 4)
+      opacity: 0.8;
+      transition: all calc($golden-ratio-time / 4)
         ease-in-out;
     }
   }
