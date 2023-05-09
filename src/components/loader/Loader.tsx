@@ -28,10 +28,11 @@ const Loader: React.FC<ILoaderProps> = ({ isLoading }) => {
   }, [isLoading]);
 
   return (
-    <div
-      className={`loader ${isLoading ? 'show' : 'hidden'}`}
-    >
-      Loading..
+    <div className={`loader ${isLoading ? '' : 'hidden'}`}>
+      <div className="loader-left--bottom"></div>
+      <div className="loader-left--top"></div>
+      <div className="loader-right--top"></div>
+      <div className="loader-right--bottom"></div>
     </div>
   );
 };

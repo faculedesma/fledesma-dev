@@ -44,7 +44,7 @@ const Home = ({ isLoading, onLoad }: IHomeProps) => {
       <NoteThree />
       <Work />
       <Footer />
-      <MouseFollow />
+      {!isLoading && <MouseFollow />}
     </div>
   );
 };

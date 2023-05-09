@@ -16,12 +16,11 @@
   width: 100%;
   height: 620px;
   position: relative;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   padding-top: 100px;
-
   z-index: 2;
 
   &-canvas {
@@ -32,8 +31,9 @@
 
     canvas {
       opacity: 0;
-      animation: fade-in calc($golden-ratio-time / 2)
+      animation: fade-in calc($golden-ratio-time / 4)
         ease-in forwards;
+      animation-delay: $golden-ratio-time;
     }
   }
 
@@ -58,6 +58,9 @@
       h1:last-child {
         translate: 0 100%;
         opacity: 0;
+        animation: slidey-in-fade
+          calc($golden-ratio-time / 16) ease-in-out forwards;
+        animation-delay: $golden-ratio-time;
       }
 
       h1:last-child {
@@ -79,8 +82,10 @@
       font-weight: 300;
       font-family: $secondary-font-family;
       margin-top: 1rem;
-      animation: slide-in calc($golden-ratio-time)
+      opacity: 0;
+      animation: fade-in calc($golden-ratio-time / 16)
         ease-in-out forwards;
+      animation-delay: $golden-ratio-time;
     }
   }
 
@@ -90,8 +95,9 @@
     right: 0;
     height: 180px;
     opacity: 0;
-    animation: fade-in calc($golden-ratio-time) ease-in
+    animation: fade-in calc($golden-ratio-time / 16) ease-in
       forwards;
+    animation-delay: $golden-ratio-time;
   }
 
   &-scroll {
@@ -99,15 +105,15 @@
     bottom: 0;
     left: 0;
     translate: 25px -25px;
+    opacity: 0;
+    animation: fade-in calc($golden-ratio-time / 16) ease-in
+      forwards;
+    animation-delay: $golden-ratio-time;
   }
 }
 
 .show-hero {
-  h1:first-child,
-  h1:last-child {
-    animation: slidey-in-fade calc($golden-ratio-time / 2)
-      ease-in-out forwards;
-  }
+  display: flex;
 }
 
 /* Smartphones (portrait and landscape) */

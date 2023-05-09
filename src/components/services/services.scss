@@ -144,6 +144,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  opacity: 0;
 
   svg {
     width: 80px;
@@ -189,6 +190,7 @@
 
     .technologies {
       flex-wrap: wrap;
+      margin-top: 5rem;
       gap: 3rem;
 
       svg {

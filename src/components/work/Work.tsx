@@ -28,13 +28,6 @@ const works = [
     type: 'Art Portfolio',
     image: LampBG,
     link: 'https://facundo-ledesma.me/'
-  },
-  {
-    id: 'nina',
-    title: "Let's sell it online",
-    type: 'Nina Style',
-    image: NinaBG,
-    link: 'https://www.instagram.com/shopninastyle/'
   }
 ];
 
