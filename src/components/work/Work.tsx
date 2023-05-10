@@ -1,6 +1,5 @@
 import DaniloBG from '@assets/images/danilo-red.png';
 import NamewizBG from '@assets/images/namewiz-bg.png';
-import NinaBG from '@assets/images/nina-bg.png';
 import LampBG from '@assets/images/lamp-bg.png';
 import WorkCard from './WorkCard';
 import { useRef, useEffect } from 'react';

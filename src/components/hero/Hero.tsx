@@ -1,8 +1,6 @@
 import { lazy, useRef, useEffect } from 'react';
 import { Social } from '@components/social/Social';
 import { ScrollButton } from '@components/buttons/ScrollButton';
-import { useCursorPosition } from '@components/hooks/useCursorPosition';
-import { useCursorFollowing } from '@components/hooks/useCursorFollowing';
 import './hero.scss';
 
 const Spline = lazy(
@@ -21,11 +19,6 @@ const Hero: React.FC<IHeroProps> = ({
   const titleRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLDivElement>(null);
-
-  const isFollowing = useCursorFollowing({
-    targetRef: buttonRef
-  });
-  const { x, y } = useCursorPosition();
 
   useEffect(() => {
     const letters = 'abcdefghijklmnopqrstuvwxyz';
