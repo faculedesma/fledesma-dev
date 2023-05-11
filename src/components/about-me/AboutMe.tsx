@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { useIntersection } from '@components/hooks/useIntersection';
-import Spline from '@splinetool/react-spline';
+import MePNG from '@assets/images/me.png';
+import MeBGPNG from '@assets/images/me-bg.png';
 import './about-me.scss';
 
 const AboutMe = () => {
@@ -15,6 +16,7 @@ const AboutMe = () => {
   useEffect(() => {
     if (isInViewport) {
       aboutRef.current?.classList.add('show-section-title');
+      aboutRef.current?.classList.add('show-about-me');
     }
   }, [isInViewport]);
 
@@ -22,13 +24,16 @@ const AboutMe = () => {
     <div className="container">
       <section
         ref={aboutRef}
-        id="about-me"
+        id="about"
         className="about-me"
       >
         <h3>About me</h3>
         <div className="about-me--content">
           <div className="about-me--content-left">
-            {/* <Spline scene="https://prod.spline.design/jHfZFxpSFhS0I00i/scene.splinecode" /> */}
+            <div className="about-me--content-left--images">
+              <img src={MePNG} alt="me" />
+              <img src={MeBGPNG} alt="me-bg" />
+            </div>
             <div className="about-me--content-left--bg"></div>
           </div>
           <div className="about-me--content-right">
