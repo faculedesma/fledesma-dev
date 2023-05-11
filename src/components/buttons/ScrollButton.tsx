@@ -20,24 +20,25 @@ export const ScrollButton = () => {
               index * 6
             }deg)">${char}</span>`
         )
-        .join('');
+        .join(' ');
     }
   }, []);
 
   return (
-    <button className="scroll-button">
-      <div className="scroll-button--icon">
-        <ArrowDown />
-      </div>
-      <div className="scroll-button--text">
-        <p ref={textRef}>
-          Scroll & Explore ・ Scroll & Explore ・
-        </p>
-      </div>
-      <div
-        onClick={handleClick}
-        className="scroll-button--bg"
-      ></div>
-    </button>
+    <div
+      onClick={handleClick}
+      className="scroll-button--container"
+    >
+      <button className="scroll-button">
+        <div className="scroll-button--icon">
+          <ArrowDown />
+        </div>
+        <div className="scroll-button--text">
+          <p ref={textRef}>
+            Scroll&Explore・Scroll&Explore・
+          </p>
+        </div>
+      </button>
+    </div>
   );
 };

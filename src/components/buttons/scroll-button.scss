@@ -1,50 +1,75 @@
 @import '../../utils/variables';
 
+.scroll-button--container {
+  width: 100%;
+  height: 100%;
+
+  &:hover {
+    .scroll-button {
+      scale: 0.9 0.9;
+      transition: scale calc($golden-ratio-time / 8);
+      transition-timing-function: ease-in;
+    }
+  }
+}
+
 .scroll-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 75px;
   height: 75px;
   border-radius: 50%;
   color: $primary-color;
   background: transparent;
   background-color: $secondary-color;
+  scale: 1 1;
+  transition: scale calc($golden-ratio-time / 8);
+  transition-timing-function: ease-out;
   z-index: 4;
 
   &--text {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    rotate: -360deg;
+    animation: rotate-text calc($golden-ratio-time * 8)
+      linear infinite reverse;
+
     p {
-      text-transform: uppercase;
-      color: $secondary-color;
-      font-weight: 300;
+      // line-height: normal;
     }
 
     span {
+      text-transform: uppercase;
+      color: $secondary-color;
+      font-weight: 300;
       font-size: 10px;
       position: absolute;
       top: -50%;
-      left: 50%;
       transform-origin: 0 75px;
     }
   }
 
   &--icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
     svg {
       path {
         fill: $primary-color;
       }
     }
   }
+}
 
-  &--bg {
-    width: 250px;
-    height: 250px;
-    background: transparent;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: 5;
-    cursor: pointer;
+@keyframes rotate-text {
+  0% {
+    rotate: -360deg;
+  }
+
+  100% {
+    rotate: 0deg;
   }
 }
