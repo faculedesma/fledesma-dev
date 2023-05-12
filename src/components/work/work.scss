@@ -154,7 +154,7 @@
       &:hover {
         img {
           scale: 1.4;
-          filter: saturate(3);
+          filter: saturate(1.5);
           transition: all calc($golden-ratio-time / 4)
             ease-in-out;
         }
