@@ -91,7 +91,10 @@ const Header = (): JSX.Element => {
               );
             })}
           </div>
-          <ToggleButton onClick={toggleMenu} />
+          <ToggleButton
+            onClick={toggleMenu}
+            isOpen={isOpen}
+          />
           <Menu isOpen={isOpen} toggleMenu={toggleMenu} />
         </div>
       </div>
