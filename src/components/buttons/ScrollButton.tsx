@@ -1,9 +1,9 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef } from 'react';
 import { ArrowDown } from '@assets/svgs/ArrowDown';
 import './scroll-button.scss';
 
 const CircleText = () => {
-  const radius = 60; // radius of the circle
+  const radius = 65; // radius of the circle
   const textPathId = 'text-path'; // id for the textPath element
 
   return (
@@ -37,7 +37,7 @@ const CircleText = () => {
           textAnchor="middle"
           dominantBaseline="middle"
         >
-          Scroll & Explore
+          Curious · Explore ·
         </textPath>
       </text>
     </svg>
