@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './toggle-button.scss';
 
 type ToggleButtonProps = {
@@ -8,10 +8,25 @@ type ToggleButtonProps = {
 export const ToggleButton: React.FC<ToggleButtonProps> = ({
   onClick
 }) => {
-  const handleClick = () => onClick();
+  const toggleRef = useRef<HTMLDivElement>(null);
+
+  const handleClick = () => {
+    onClick();
+    if (toggleRef.current) {
+      if (toggleRef.current.classList.contains('clicked')) {
+        toggleRef.current.classList.remove('clicked');
+      } else {
+        toggleRef.current.classList.add('clicked');
+      }
+    }
+  };
 
   return (
-    <div onClick={handleClick} className="toggle">
+    <div
+      ref={toggleRef}
+      onClick={handleClick}
+      className="toggle"
+    >
       <div></div>
       <div></div>
     </div>

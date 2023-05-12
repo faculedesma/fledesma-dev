@@ -11,16 +11,33 @@
     height: 2px;
     width: 100%;
     background-color: $secondary-color;
-    transition: transform calc($golden-ratio-time / 8) ease;
     cursor: pointer;
   }
 
   div:first-child {
-    transform: rotateX(0);
+    rotate: 0;
+    translate: 0 0;
+    transition: all calc($golden-ratio-time / 8) ease;
   }
 
   div:last-child {
-    transform: rotateX(0);
+    rotate: 0;
+    translate: 0 0;
+    transition: all calc($golden-ratio-time / 8) ease;
+  }
+}
+
+.clicked {
+  div:first-child {
+    rotate: 45deg;
+    translate: 0 0;
+    transition: all calc($golden-ratio-time / 8) ease;
+  }
+
+  div:last-child {
+    rotate: -45deg;
+    translate: 0 -18px;
+    transition: all calc($golden-ratio-time / 8) ease;
   }
 }
 
