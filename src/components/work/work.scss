@@ -138,12 +138,13 @@
     &--art {
       background: linear-gradient(
         to right,
-        #362339,
+        rgba(#362339, 0.4),
         $primary-color
       );
 
       img {
         scale: 1.2;
+        opacity: 0.6;
         translate: -50px 60px;
         filter: saturate(1);
         transition: all calc($golden-ratio-time / 4)
@@ -153,7 +154,7 @@
       &:hover {
         img {
           scale: 1.4;
-          filter: saturate(2);
+          filter: saturate(3);
           transition: all calc($golden-ratio-time / 4)
             ease-in-out;
         }
