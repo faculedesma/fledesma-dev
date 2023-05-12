@@ -2,6 +2,7 @@ import { lazy, useRef, useEffect } from 'react';
 import { Social } from '@components/social/Social';
 import { ScrollButton } from '@components/buttons/ScrollButton';
 import ShapesBG from '@assets/images/shapes-bg.png';
+import { useCursorPosition } from '@components/hooks/useCursorPosition';
 import './hero.scss';
 
 const Spline = lazy(
@@ -21,6 +22,7 @@ const Hero: React.FC<IHeroProps> = ({
   const heroRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLDivElement>(null);
   const backgroundRef = useRef<HTMLDivElement>(null);
+  const { x, y } = useCursorPosition();
 
   useEffect(() => {
     const letters = 'abcdefghijklmnopqrstuvwxyz';
@@ -75,6 +77,18 @@ const Hero: React.FC<IHeroProps> = ({
       heroRef.current?.classList.add('show-hero');
     }
   }, [isLoading]);
+
+  useEffect(() => {
+    if (backgroundRef.current) {
+      backgroundRef.current.animate(
+        {
+          left: `${x / 20}px`,
+          top: `${y / 20}px`
+        },
+        { duration: 1618 * 2, fill: 'forwards' }
+      );
+    }
+  }, [x, y]);
 
   const handleOnScrollHover = () => {
     if (backgroundRef.current) {

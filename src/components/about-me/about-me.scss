@@ -80,6 +80,7 @@
         top: 0;
         border: 0.5px solid $highlight-color;
         z-index: 1;
+        opacity: 0;
       }
     }
 
@@ -123,6 +124,11 @@
             animation: fade-in calc($golden-ratio-time / 2)
               ease-in-out forwards;
           }
+        }
+
+        &--bg {
+          animation: fade-in calc($golden-ratio-time)
+            ease-in-out forwards;
         }
       }
 
