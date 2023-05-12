@@ -35,6 +35,11 @@
     scale: 1;
     transition: scale calc($golden-ratio-time / 4)
       ease-in-out;
+    -webkit-box-shadow: 10px 0px 77px 14px
+      rgba(181, 181, 181, 1);
+    -moz-box-shadow: 10px 0px 77px 14px
+      rgba(181, 181, 181, 1);
+    box-shadow: 10px 0px 77px 14px rgba(181, 181, 181, 1);
   }
 
   &--text-path {

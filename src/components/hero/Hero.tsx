@@ -3,6 +3,7 @@ import { Social } from '@components/social/Social';
 import { ScrollButton } from '@components/buttons/ScrollButton';
 import ShapesBG from '@assets/images/shapes-bg.png';
 import { useCursorPosition } from '@components/hooks/useCursorPosition';
+import { useIntersection } from '@components/hooks/useIntersection';
 import './hero.scss';
 
 const Spline = lazy(
@@ -22,7 +23,9 @@ const Hero: React.FC<IHeroProps> = ({
   const heroRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLDivElement>(null);
   const backgroundRef = useRef<HTMLDivElement>(null);
+
   const { x, y } = useCursorPosition();
+  const isInViewport = useIntersection(backgroundRef, 0);
 
   useEffect(() => {
     const letters = 'abcdefghijklmnopqrstuvwxyz';
@@ -79,7 +82,7 @@ const Hero: React.FC<IHeroProps> = ({
   }, [isLoading]);
 
   useEffect(() => {
-    if (backgroundRef.current) {
+    if (backgroundRef.current && isInViewport) {
       backgroundRef.current.animate(
         {
           left: `${x / 20}px`,
