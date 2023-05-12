@@ -64,7 +64,7 @@ const Services = () => {
             );
           })}
         </div>
-        <Technologies />
+        <Technologies isMobile={isMobile} />
       </div>
     </div>
   );
