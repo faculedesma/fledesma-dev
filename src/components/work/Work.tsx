@@ -1,6 +1,6 @@
 import DaniloBG from '@assets/images/danilo-red.png';
 import NamewizBG from '@assets/images/namewiz-bg.png';
-import LampBG from '@assets/images/lamp-bg.png';
+import LampBG from '@assets/images/lamp.png';
 import WorkCard from './WorkCard';
 import { useRef, useEffect } from 'react';
 import { useIntersection } from '@components/hooks/useIntersection';
