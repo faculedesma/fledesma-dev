@@ -115,6 +115,7 @@
         $primary-color
       );
     }
+
     &--namewiz {
       img {
         height: 80%;
@@ -125,6 +126,7 @@
         $primary-color
       );
     }
+
     &--nina {
       background: linear-gradient(
         to right,
@@ -136,9 +138,26 @@
     &--art {
       background: linear-gradient(
         to right,
-        #7c442f,
+        #362339,
         $primary-color
       );
+
+      img {
+        scale: 1.2;
+        translate: -50px 60px;
+        filter: saturate(1);
+        transition: all calc($golden-ratio-time / 4)
+          ease-in-out;
+      }
+
+      &:hover {
+        img {
+          scale: 1.4;
+          filter: saturate(2);
+          transition: all calc($golden-ratio-time / 4)
+            ease-in-out;
+        }
+      }
     }
   }
 }

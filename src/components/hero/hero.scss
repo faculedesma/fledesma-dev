@@ -5,7 +5,7 @@
   height: 680px;
   background: linear-gradient(
     to bottom,
-    rgba($highlight-color, 0.2),
+    rgba(#39232e80, 0.5),
     transparent
   );
   z-index: 1;
@@ -172,6 +172,7 @@
   }
 
   .hero {
+    translate: 0 -50px;
     padding-top: 100px;
 
     &-canvas {
