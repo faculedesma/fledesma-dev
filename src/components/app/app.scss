@@ -150,6 +150,18 @@
   }
 }
 
+@keyframes scale-fade-in {
+  0% {
+    scale: 0 0;
+    opacity: 0;
+  }
+
+  100% {
+    scale: 1 1;
+    opacity: 1;
+  }
+}
+
 @keyframes scalex-fade-in {
   0% {
     transform-origin: left;
