@@ -9,6 +9,7 @@
 
   &:hover {
     .scroll-button {
+      &--icon svg,
       &--circle {
         scale: 0.8;
         transition: scale calc($golden-ratio-time / 4)
@@ -79,6 +80,10 @@
     translate: -50% -50%;
 
     svg {
+      scale: 1;
+      transition: scale calc($golden-ratio-time / 4)
+        ease-in-out;
+
       path {
         fill: $primary-color;
       }

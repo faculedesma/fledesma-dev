@@ -1,6 +1,7 @@
 import { lazy, useRef, useEffect } from 'react';
 import { Social } from '@components/social/Social';
 import { ScrollButton } from '@components/buttons/ScrollButton';
+import ShapesBG from '@assets/images/shapes-bg.png';
 import './hero.scss';
 
 const Spline = lazy(
@@ -19,6 +20,7 @@ const Hero: React.FC<IHeroProps> = ({
   const titleRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLDivElement>(null);
+  const backgroundRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const letters = 'abcdefghijklmnopqrstuvwxyz';
@@ -74,6 +76,18 @@ const Hero: React.FC<IHeroProps> = ({
     }
   }, [isLoading]);
 
+  const handleOnScrollHover = () => {
+    if (backgroundRef.current) {
+      backgroundRef.current.classList.add('scale-bg');
+    }
+  };
+
+  const handleOnScrollLeave = () => {
+    if (backgroundRef.current) {
+      backgroundRef.current.classList.remove('scale-bg');
+    }
+  };
+
   return (
     <div className="hero-gradient">
       <div className="container">
@@ -96,9 +110,20 @@ const Hero: React.FC<IHeroProps> = ({
           <div className="hero-social">
             <Social />
           </div>
-          <div ref={buttonRef} className="hero-scroll">
+          <div
+            ref={buttonRef}
+            onMouseEnter={handleOnScrollHover}
+            onMouseLeave={handleOnScrollLeave}
+            className="hero-scroll"
+          >
             <ScrollButton />
           </div>
+        </div>
+        <div
+          className="hero-background"
+          ref={backgroundRef}
+        >
+          <img src={ShapesBG} alt="bg-shapes" />
         </div>
       </div>
     </div>
