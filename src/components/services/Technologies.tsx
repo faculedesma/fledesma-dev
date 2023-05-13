@@ -8,6 +8,8 @@ import { NodeJS } from '@assets/svgs/techs/NodeJS';
 import { Git } from '@assets/svgs/techs/Git';
 import { Figma } from '@assets/svgs/techs/Figma';
 import { useIntersection } from '@components/hooks/useIntersection';
+import { useCursorPosition } from '@components/hooks/useCursorPosition';
+import Squares from '@assets/images/squares.png';
 
 interface ITechnologiesProps {
   isMobile: boolean;
@@ -17,10 +19,12 @@ export const Technologies: React.FC<ITechnologiesProps> = ({
   isMobile
 }) => {
   const technologiesRef = useRef<HTMLDivElement>(null);
+  const squaresRef = useRef<HTMLImageElement>(null);
 
+  const { x, y } = useCursorPosition();
   const isInViewport = useIntersection(
-    technologiesRef,
-    isMobile ? -175 : -300
+    squaresRef,
+    isMobile ? -100 : -250
   );
 
   useEffect(() => {
@@ -30,6 +34,18 @@ export const Technologies: React.FC<ITechnologiesProps> = ({
       );
     }
   }, [isInViewport]);
+
+  useEffect(() => {
+    if (squaresRef.current && isInViewport) {
+      squaresRef.current.animate(
+        {
+          left: `${x / 20}px`,
+          top: `${y / 20}px`
+        },
+        { duration: 1618 * 2, fill: 'forwards' }
+      );
+    }
+  }, [x, y]);
 
   return (
     <div ref={technologiesRef} className="technologies">
@@ -41,6 +57,7 @@ export const Technologies: React.FC<ITechnologiesProps> = ({
       <NodeJS />
       <Git />
       <Figma />
+      <img ref={squaresRef} src={Squares} alt="squares" />
     </div>
   );
 };

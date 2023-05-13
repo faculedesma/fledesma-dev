@@ -78,7 +78,7 @@
 
         svg {
           margin-bottom: 1rem;
-          rotate: 0deg;
+          rotate: 0;
           scale: 1;
           transition: all calc($golden-ratio-time / 4)
             ease-in-out;
@@ -138,6 +138,7 @@
 }
 
 .technologies {
+  position: relative;
   width: 100%;
   margin-top: 10rem;
   display: flex;
@@ -160,10 +161,20 @@
         ease-in-out;
     }
   }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    transform: scale(1, 1) skew(0, 0);
+    animation: squares-loop calc($golden-ratio-time * 8)
+      ease-in-out infinite;
+  }
 }
 
-.show-services {
-  > div {
+.show-cards {
+  .services-list {
     animation: fade-in calc($golden-ratio-time / 4)
       ease-in-out forwards;
   }
@@ -232,6 +243,24 @@
   }
 }
 
+@keyframes squares-loop {
+  0% {
+    transform: scale(1, 1) skew(0, 0);
+  }
+
+  50% {
+    transform: scale(1.2, 1.2) skew(6deg, 6deg);
+  }
+
+  75% {
+    transform: scale(0.9, 0.9) skew(3deg, 3deg);
+  }
+
+  100% {
+    transform: scale(1, 1) skew(0, 0);
+  }
+}
+
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .services {
     width: 100%;
@@ -243,7 +272,7 @@
       justify-content: flex-start;
       padding: 1rem 0;
       gap: 2rem;
-      overflow-x: scroll;
+      overflow-x: visible;
 
       &--card {
         width: 300px;

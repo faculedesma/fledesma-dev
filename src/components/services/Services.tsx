@@ -45,7 +45,7 @@ const Services = () => {
     if (isInViewport) {
       servicesRef.current?.classList.add(
         'show-section-title',
-        'show-services'
+        'show-cards'
       );
     }
   }, [isInViewport]);
