@@ -1,31 +1,30 @@
-import { lazy, useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { Social } from '@components/social/Social';
 import { ScrollButton } from '@components/buttons/ScrollButton';
 import ShapesBG from '@assets/images/shapes-bg.png';
 import { useCursorPosition } from '@components/hooks/useCursorPosition';
 import { useIntersection } from '@components/hooks/useIntersection';
+import TrianglePNG from '@assets/images/triangle.png';
+import EyePNG from '@assets/images/eye.png';
 import './hero.scss';
-
-const Spline = lazy(
-  () => import('@splinetool/react-spline')
-);
 
 interface IHeroProps {
   isLoading: boolean;
-  handleLoaded: () => void;
 }
 
-const Hero: React.FC<IHeroProps> = ({
-  isLoading,
-  handleLoaded
-}) => {
+const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
   const titleRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLDivElement>(null);
   const backgroundRef = useRef<HTMLDivElement>(null);
+  const eyeRef = useRef<HTMLImageElement>(null);
+  const pupilRef = useRef<HTMLDivElement>(null);
 
   const { x, y } = useCursorPosition();
-  const isInViewport = useIntersection(backgroundRef, 0);
+  const isBGInViewport = useIntersection(
+    backgroundRef,
+    -100
+  );
 
   useEffect(() => {
     const letters = 'abcdefghijklmnopqrstuvwxyz';
@@ -82,7 +81,12 @@ const Hero: React.FC<IHeroProps> = ({
   }, [isLoading]);
 
   useEffect(() => {
-    if (backgroundRef.current && isInViewport) {
+    if (
+      backgroundRef.current &&
+      eyeRef.current &&
+      pupilRef.current &&
+      isBGInViewport
+    ) {
       backgroundRef.current.animate(
         {
           left: `${x / 20}px`,
@@ -90,18 +94,44 @@ const Hero: React.FC<IHeroProps> = ({
         },
         { duration: 1618 * 2, fill: 'forwards' }
       );
+      eyeRef.current.animate(
+        {
+          left: `${x / 100}px`,
+          top: `${y / 100}px`
+        },
+        { duration: 1618, fill: 'forwards' }
+      );
+      pupilRef.current.animate(
+        {
+          left: `${x / 50}px`,
+          top: `${y / 50}px`
+        },
+        { duration: 1618, fill: 'forwards' }
+      );
     }
   }, [x, y]);
 
   const handleOnScrollHover = () => {
-    if (backgroundRef.current) {
+    if (
+      backgroundRef.current &&
+      eyeRef.current &&
+      pupilRef.current
+    ) {
       backgroundRef.current.classList.add('scale-bg');
+      eyeRef.current.classList.add('scale-eye');
+      pupilRef.current.classList.add('scale-pupil');
     }
   };
 
   const handleOnScrollLeave = () => {
-    if (backgroundRef.current) {
+    if (
+      backgroundRef.current &&
+      eyeRef.current &&
+      pupilRef.current
+    ) {
       backgroundRef.current.classList.remove('scale-bg');
+      eyeRef.current.classList.remove('scale-eye');
+      pupilRef.current.classList.remove('scale-pupil');
     }
   };
 
@@ -110,10 +140,14 @@ const Hero: React.FC<IHeroProps> = ({
       <div className="container">
         <div ref={heroRef} id="hero" className="hero">
           <div className="hero-canvas">
-            <Spline
-              scene="https://prod.spline.design/PsvclvB5wVsUm7ZW/scene.splinecode"
-              onLoad={handleLoaded}
-            />
+            <img src={TrianglePNG} alt="triangle" />
+            <div className="eye">
+              <img ref={eyeRef} src={EyePNG} alt="eye" />
+              <div
+                ref={pupilRef}
+                className="eye-ball"
+              ></div>
+            </div>
           </div>
           <div className="hero-title">
             <div className="hero-title--top">

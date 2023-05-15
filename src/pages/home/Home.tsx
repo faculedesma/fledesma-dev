@@ -28,14 +28,13 @@ const Footer = lazy(
 
 interface IHomeProps {
   isLoading: boolean;
-  onLoad: () => void;
 }
 
-const Home = ({ isLoading, onLoad }: IHomeProps) => {
+const Home = ({ isLoading }: IHomeProps) => {
   return (
     <div className={`home ${!isLoading ? 'loaded' : ''}`}>
       <Header />
-      <Hero isLoading={isLoading} handleLoaded={onLoad} />
+      <Hero isLoading={isLoading} />
       <NoteOne />
       <Services />
       <NoteTwo />

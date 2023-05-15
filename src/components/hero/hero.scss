@@ -51,6 +51,49 @@
         ease-in forwards;
       animation-delay: $golden-ratio-time;
     }
+
+    img {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      translate: -50% -50%;
+    }
+
+    img:first-child {
+      width: 550px;
+    }
+
+    .eye {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+
+      img {
+        width: 150px;
+        top: 55%;
+        scale: 1;
+        transition: transform calc($golden-ratio-time / 8)
+          ease-out;
+        filter: contrast(100%);
+        animation: twinkle-image
+          calc($golden-ratio-time * 2) ease-in-out infinite;
+      }
+
+      &-ball {
+        position: absolute;
+        bottom: 0;
+        width: 20px;
+        height: 20px;
+        scale: 1;
+        transition: transform calc($golden-ratio-time / 8)
+          ease-out;
+        border-radius: 50%;
+        background-color: $primary-color;
+      }
+    }
   }
 
   &-title {
@@ -140,6 +183,22 @@
   }
 }
 
+.scale-eye {
+  transform: scale(1.5);
+  transition: transform calc($golden-ratio-time / 8)
+    ease-out;
+}
+
+.scale-pupil {
+  transform: scale(2);
+  transition: transform calc($golden-ratio-time / 8)
+    ease-out;
+  -webkit-box-shadow: 10px 0px 77px 14px
+    rgba(181, 181, 181, 1);
+  -moz-box-shadow: 10px 0px 77px 14px rgba(181, 181, 181, 1);
+  box-shadow: 10px 0px 77px 14px rgba(181, 181, 181, 1);
+}
+
 @keyframes twinkle-image {
   0% {
     filter: contrast(100%);
@@ -172,12 +231,25 @@
   }
 
   .hero {
-    translate: 0 -50px;
+    height: 470px;
     padding-top: 100px;
 
     &-canvas {
-      translate: 0 0;
-      height: 320px;
+      width: 100%;
+      translate: 0 10px;
+
+      img:first-child {
+        width: 80%;
+      }
+
+      .eye {
+        img {
+          width: 50px;
+        }
+
+        &-ball {
+        }
+      }
     }
 
     &-title {

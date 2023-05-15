@@ -6,14 +6,11 @@ import './app.scss';
 const App: FC = () => {
   const [isLoadingAssets, setIsLoadingAssets] =
     useState(true);
-  const [is3DLoading, setIs3DLoading] = useState(true);
 
   const mounted = useRef(false);
   const appRef = useRef(null);
 
   const handleIsLoaded = () => setIsLoadingAssets(false);
-
-  const handle3DLoaded = () => setIs3DLoading(false);
 
   useEffect(() => {
     mounted.current = true;
@@ -32,11 +29,11 @@ const App: FC = () => {
     }
   }, [document.readyState]);
 
-  const appLoaded = isLoadingAssets || is3DLoading;
+  const appLoaded = isLoadingAssets;
 
   return (
     <div id="app" ref={appRef} className="app">
-      <Home isLoading={appLoaded} onLoad={handle3DLoaded} />
+      <Home isLoading={appLoaded} />
       <Loader isLoading={appLoaded} />
     </div>
   );

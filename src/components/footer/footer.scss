@@ -106,32 +106,6 @@
     opacity: 0;
     z-index: 1;
   }
-
-  &-canvas {
-    overflow: visible;
-
-    &--follow,
-    &--loop {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      translate: -50% -50%;
-      z-index: 2;
-      scale: 1.2;
-      width: 90%;
-      height: 500px;
-    }
-
-    &--follow {
-      canvas {
-        opacity: 0.4;
-      }
-    }
-
-    &--loop {
-      display: none;
-    }
-  }
 }
 
 .show-footer {
@@ -141,19 +115,14 @@
   }
 
   .footer {
-    canvas {
-      animation: fade-in calc($golden-ratio-time) ease-in
-        forwards;
-    }
-
     &-mail {
-      animation: fade-in calc($golden-ratio-time / 2)
+      animation: fade-in calc($golden-ratio-time / 4)
         ease-in forwards;
     }
 
     &-copyright,
     &-social {
-      animation: fade-in calc($golden-ratio-time) ease-in
+      animation: fade-in calc($golden-ratio-time/ 2) ease-in
         forwards;
     }
   }
@@ -172,6 +141,7 @@
     &-mail {
       width: 80%;
       height: 50px;
+      z-index: 3;
 
       &--copy {
         width: 100%;
@@ -181,18 +151,6 @@
       &--icon {
         width: 50px;
         height: 50px;
-      }
-    }
-
-    &-canvas {
-      &--loop {
-        width: 100%;
-        display: inherit;
-        z-index: 1;
-      }
-
-      &--follow {
-        display: none;
       }
     }
   }
