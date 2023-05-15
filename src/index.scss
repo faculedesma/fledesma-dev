@@ -80,6 +80,10 @@ body {
   margin: 0;
   background-color: $primary-color;
   overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 #root {
