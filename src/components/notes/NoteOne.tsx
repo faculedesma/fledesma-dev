@@ -25,9 +25,8 @@ const NoteOne = () => {
         className="notes-one"
       >
         <h3>
-          Passionate about building user interfaces that are
-          aesthetically pleasing, highly functional, and
-          intuitive.
+          Passionate about building user interfaces
+          harmonious, highly functional, and intuitive.
         </h3>
       </div>
     </div>
