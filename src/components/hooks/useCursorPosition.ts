@@ -5,6 +5,7 @@ interface Position {
   y: number;
   clientX: number;
   clientY: number;
+  moveRight: boolean;
 }
 
 export const useCursorPosition = (): Position => {
@@ -12,7 +13,8 @@ export const useCursorPosition = (): Position => {
     x: 0,
     y: 0,
     clientX: 0,
-    clientY: 0
+    clientY: 0,
+    moveRight: false
   });
 
   useEffect(() => {
@@ -22,7 +24,8 @@ export const useCursorPosition = (): Position => {
           x: window.pageXOffset + event.clientX,
           y: window.pageYOffset + event.clientY,
           clientX: event.clientX,
-          clientY: event.clientY
+          clientY: event.clientY,
+          moveRight: event.movementX > 0
         });
       }
     };

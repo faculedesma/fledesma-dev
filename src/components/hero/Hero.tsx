@@ -5,6 +5,9 @@ import ShapesBG from '@assets/images/shapes-bg.png';
 import { useCursorPosition } from '@components/hooks/useCursorPosition';
 import { useIntersection } from '@components/hooks/useIntersection';
 import TrianglePNG from '@assets/images/triangle.png';
+import TrianglePsychPNG from '@assets/images/triangle-psych.png';
+import TriangleBGPNG from '@assets/images/triangle-bg.png';
+import TriangleShapesPNG from '@assets/images/shapes-triangle.png';
 import EyePNG from '@assets/images/eye.png';
 import './hero.scss';
 
@@ -19,8 +22,9 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
   const backgroundRef = useRef<HTMLDivElement>(null);
   const eyeRef = useRef<HTMLImageElement>(null);
   const pupilRef = useRef<HTMLDivElement>(null);
+  const triangleBgRef = useRef<HTMLImageElement>(null);
 
-  const { x, y } = useCursorPosition();
+  const { x, y, moveRight } = useCursorPosition();
   const isBGInViewport = useIntersection(
     backgroundRef,
     -100
@@ -85,6 +89,7 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
       backgroundRef.current &&
       eyeRef.current &&
       pupilRef.current &&
+      triangleBgRef.current &&
       isBGInViewport
     ) {
       backgroundRef.current.animate(
@@ -96,17 +101,18 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
       );
       eyeRef.current.animate(
         {
-          left: `${x / 100}px`,
-          top: `${y / 100}px`
+          transform: `rotate(${x / 100}deg, ${y / 100}deg);`
         },
         { duration: 1618, fill: 'forwards' }
       );
       pupilRef.current.animate(
         {
-          left: `${x / 50}px`,
-          top: `${y / 50}px`
+          translate: `${moveRight ? '' : '-'}${x / 40}px ${
+            y / 20
+          }px`,
+          skew: `${x / 50}deg ${y / 50}deg `
         },
-        { duration: 1618, fill: 'forwards' }
+        { duration: 1618 / 2, fill: 'forwards' }
       );
     }
   }, [x, y]);
@@ -117,9 +123,9 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
       eyeRef.current &&
       pupilRef.current
     ) {
-      backgroundRef.current.classList.add('scale-bg');
-      eyeRef.current.classList.add('scale-eye');
-      pupilRef.current.classList.add('scale-pupil');
+      backgroundRef.current.classList.add('focus-bg');
+      eyeRef.current.classList.add('focus-eye');
+      pupilRef.current.classList.add('focus-pupil');
     }
   };
 
@@ -129,9 +135,9 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
       eyeRef.current &&
       pupilRef.current
     ) {
-      backgroundRef.current.classList.remove('scale-bg');
-      eyeRef.current.classList.remove('scale-eye');
-      pupilRef.current.classList.remove('scale-pupil');
+      backgroundRef.current.classList.remove('focus-bg');
+      eyeRef.current.classList.remove('focus-eye');
+      pupilRef.current.classList.remove('focus-pupil');
     }
   };
 
@@ -139,13 +145,33 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
     <div className="hero-gradient">
       <div className="container">
         <div ref={heroRef} id="hero" className="hero">
-          <div className="hero-canvas">
-            <img src={TrianglePNG} alt="triangle" />
+          <div className="hero-triangle">
+            <img
+              src={TrianglePNG}
+              className="hero-triangle--normal"
+              alt="triangle"
+            />
+            <img
+              src={TrianglePsychPNG}
+              className="hero-triangle--psych"
+              alt="triangle-pscyh"
+            />
+            <img
+              src={TriangleShapesPNG}
+              className="hero-triangle--shapes"
+              alt="triangle-shapes"
+            />
+            <img
+              ref={triangleBgRef}
+              src={TriangleBGPNG}
+              className="hero-triangle--bg"
+              alt="triangle-bg"
+            />
             <div className="eye">
               <img ref={eyeRef} src={EyePNG} alt="eye" />
               <div
                 ref={pupilRef}
-                className="eye-ball"
+                className="eye-pupil"
               ></div>
             </div>
           </div>
@@ -165,6 +191,8 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
             ref={buttonRef}
             onMouseEnter={handleOnScrollHover}
             onMouseLeave={handleOnScrollLeave}
+            onTouchStart={handleOnScrollHover}
+            onTouchEnd={handleOnScrollLeave}
             className="hero-scroll"
           >
             <ScrollButton />
