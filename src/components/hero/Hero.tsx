@@ -24,6 +24,9 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
   const pupilRef = useRef<HTMLDivElement>(null);
   const shapesRef = useRef<HTMLImageElement>(null);
 
+  const isMobile =
+    window.innerWidth > 320 && window.innerWidth < 480;
+
   const { x, y, moveRight } = useCursorPosition();
   const isBGInViewport = useIntersection(
     backgroundRef,
@@ -99,27 +102,23 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
         },
         { duration: 1618 * 2, fill: 'forwards' }
       );
-      eyeRef.current.animate(
-        {
-          transform: `rotate(${x / 100}deg, ${y / 100}deg);`
-        },
-        { duration: 1618, fill: 'forwards' }
-      );
-      pupilRef.current.animate(
-        {
-          translate: `${moveRight ? '' : '-'}${x / 40}px ${
-            y / 20
-          }px`,
-          skew: `${x / 50}deg ${y / 50}deg `
-        },
-        { duration: 1618 / 2, fill: 'forwards' }
-      );
-      shapesRef.current.animate(
-        {
-          translate: `0 -${y / 20}px`
-        },
-        { duration: 1618 / 2, fill: 'forwards' }
-      );
+      if (!isMobile) {
+        pupilRef.current.animate(
+          {
+            translate: `${moveRight ? '' : '-'}${
+              x / 40
+            }px ${y / 20}px`,
+            skew: `${x / 50}deg ${y / 50}deg `
+          },
+          { duration: 1618 / 2, fill: 'forwards' }
+        );
+        shapesRef.current.animate(
+          {
+            translate: `0 -${y / 20}px`
+          },
+          { duration: 1618 / 2, fill: 'forwards' }
+        );
+      }
     }
   }, [x, y, moveRight]);
 
