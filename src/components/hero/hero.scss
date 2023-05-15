@@ -46,7 +46,10 @@
     scale: 0.9;
     height: 620px;
 
-    img {
+    &--normal,
+    &--psych,
+    &--shapes,
+    &--bg {
       position: absolute;
       top: 45%;
       left: 50%;
@@ -55,6 +58,9 @@
 
     &--normal {
       width: 550px;
+      opacity: 1;
+      animation: fade-loop calc($golden-ratio-time * 4)
+        linear infinite;
       z-index: 2;
     }
 
@@ -66,6 +72,8 @@
 
     &--shapes {
       clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      top: 20%;
+      left: -30%;
       opacity: 0.4;
       scale: 1.2;
       animation: shapes-loop calc($golden-ratio-time * 4)
@@ -78,12 +86,6 @@
       top: 50%;
       left: 50%;
       translate: -50% -50%;
-    }
-
-    &--normal {
-      opacity: 1;
-      animation: fade-loop calc($golden-ratio-time * 4)
-        linear infinite;
     }
 
     .eye {
@@ -99,13 +101,15 @@
 
       img {
         width: 50%;
-        transform: scale(1.4);
-        transition: transform calc($golden-ratio-time / 8)
-          ease-out;
         z-index: 2;
+        opacity: 0.5;
+        rotate: -360deg;
+        scale: 1;
+        filter: contrast(100%);
       }
 
       &-pupil {
+        position: absolute;
         width: 40px;
         height: 40px;
         transform: scale(1) skew(2deg, 2deg)
@@ -207,9 +211,8 @@
 }
 
 .focus-eye {
-  filter: contrast(150%);
-  transform: scale(2);
-  transition: all calc($golden-ratio-time / 8) ease-out;
+  animation: focus-eye calc($golden-ratio-time) ease-out
+    infinite;
 }
 
 .focus-pupil {
@@ -265,6 +268,23 @@
   100% {
     rotate: 0;
     scale: 1;
+  }
+}
+
+@keyframes focus-eye {
+  0% {
+    filter: contrast(100%);
+    transform: scale(1) rotate(-360deg);
+  }
+
+  50% {
+    filter: contrast(150%);
+    transform: scale(2) rotate(0deg);
+  }
+
+  100% {
+    filter: contrast(100%);
+    transform: scale(1) rotate(-360deg);
   }
 }
 

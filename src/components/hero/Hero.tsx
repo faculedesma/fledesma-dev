@@ -22,7 +22,7 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
   const backgroundRef = useRef<HTMLDivElement>(null);
   const eyeRef = useRef<HTMLImageElement>(null);
   const pupilRef = useRef<HTMLDivElement>(null);
-  const triangleBgRef = useRef<HTMLImageElement>(null);
+  const shapesRef = useRef<HTMLImageElement>(null);
 
   const { x, y, moveRight } = useCursorPosition();
   const isBGInViewport = useIntersection(
@@ -89,7 +89,7 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
       backgroundRef.current &&
       eyeRef.current &&
       pupilRef.current &&
-      triangleBgRef.current &&
+      shapesRef.current &&
       isBGInViewport
     ) {
       backgroundRef.current.animate(
@@ -114,8 +114,14 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
         },
         { duration: 1618 / 2, fill: 'forwards' }
       );
+      shapesRef.current.animate(
+        {
+          translate: `0 -${y / 20}px`
+        },
+        { duration: 1618 / 2, fill: 'forwards' }
+      );
     }
-  }, [x, y]);
+  }, [x, y, moveRight]);
 
   const handleOnScrollHover = () => {
     if (
@@ -157,12 +163,12 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
               alt="triangle-pscyh"
             />
             <img
+              ref={shapesRef}
               src={TriangleShapesPNG}
               className="hero-triangle--shapes"
               alt="triangle-shapes"
             />
             <img
-              ref={triangleBgRef}
               src={TriangleBGPNG}
               className="hero-triangle--bg"
               alt="triangle-bg"
