@@ -39,8 +39,8 @@ export const Technologies: React.FC<ITechnologiesProps> = ({
     if (squaresRef.current && isInViewport) {
       squaresRef.current.animate(
         {
-          left: `${x / 20}px`,
-          top: `${y / 20}px`
+          left: `${x / 10}px`,
+          top: `${y / 10}px`
         },
         { duration: 1618 * 2, fill: 'forwards' }
       );

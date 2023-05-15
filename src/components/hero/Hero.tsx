@@ -28,10 +28,7 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
     window.innerWidth > 320 && window.innerWidth < 480;
 
   const { x, y, moveRight } = useCursorPosition();
-  const isBGInViewport = useIntersection(
-    backgroundRef,
-    -100
-  );
+  const isPupilInViewport = useIntersection(pupilRef, -100);
 
   useEffect(() => {
     const letters = 'abcdefghijklmnopqrstuvwxyz';
@@ -93,7 +90,7 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
       eyeRef.current &&
       pupilRef.current &&
       shapesRef.current &&
-      isBGInViewport
+      isPupilInViewport
     ) {
       backgroundRef.current.animate(
         {
@@ -114,7 +111,7 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
         );
         shapesRef.current.animate(
           {
-            translate: `0 -${y / 20}px`
+            translate: `0 -${y / 50}px`
           },
           { duration: 1618 / 2, fill: 'forwards' }
         );
@@ -161,12 +158,15 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
               className="hero-triangle--psych"
               alt="triangle-pscyh"
             />
-            <img
+            <div
               ref={shapesRef}
-              src={TriangleShapesPNG}
               className="hero-triangle--shapes"
-              alt="triangle-shapes"
-            />
+            >
+              <img
+                src={TriangleShapesPNG}
+                alt="triangle-shapes"
+              />
+            </div>
             <img
               src={TriangleBGPNG}
               className="hero-triangle--bg"
