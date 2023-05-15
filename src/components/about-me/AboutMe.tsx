@@ -31,8 +31,12 @@ const AboutMe = () => {
         <div className="about-me--content">
           <div className="about-me--content-left">
             <div className="about-me--content-left--images">
-              <img src={MePNG} alt="me" />
-              <img src={MeBGPNG} alt="me-bg" />
+              <img src={MePNG} alt="me" draggable="false" />
+              <img
+                src={MeBGPNG}
+                alt="me-bg"
+                draggable="false"
+              />
             </div>
             <div className="about-me--content-left--bg"></div>
           </div>

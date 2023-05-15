@@ -63,6 +63,7 @@ const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
         loading="lazy"
         src={work.image}
         alt="work-image"
+        draggable="false"
       />
     </div>
   );

@@ -69,7 +69,11 @@ const History = () => {
             return <HistoryRow key={job.id} job={job} />;
           })}
         </div>
-        <img src={Ilusion} alt="ilusion" />
+        <img
+          src={Ilusion}
+          alt="ilusion"
+          draggable="false"
+        />
       </div>
     </div>
   );

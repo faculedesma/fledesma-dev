@@ -57,7 +57,12 @@ export const Technologies: React.FC<ITechnologiesProps> = ({
       <NodeJS />
       <Git />
       <Figma />
-      <img ref={squaresRef} src={Squares} alt="squares" />
+      <img
+        ref={squaresRef}
+        src={Squares}
+        alt="squares"
+        draggable="false"
+      />
     </div>
   );
 };

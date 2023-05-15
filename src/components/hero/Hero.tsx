@@ -140,7 +140,11 @@ const Hero: React.FC<IHeroProps> = ({
           className="hero-background"
           ref={backgroundRef}
         >
-          <img src={ShapesBG} alt="bg-shapes" />
+          <img
+            src={ShapesBG}
+            alt="bg-shapes"
+            draggable="false"
+          />
         </div>
       </div>
     </div>
