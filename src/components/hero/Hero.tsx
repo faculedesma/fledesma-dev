@@ -104,8 +104,7 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
           {
             translate: `${moveRight ? '' : '-'}${
               x / 40
-            }px ${y / 20}px`,
-            skew: `${x / 50}deg ${y / 50}deg `
+            }px ${y / 20}px`
           },
           { duration: 1618 / 2, fill: 'forwards' }
         );
@@ -120,26 +119,20 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
   }, [x, y, moveRight]);
 
   const handleOnScrollHover = () => {
-    if (
-      backgroundRef.current &&
-      eyeRef.current &&
-      pupilRef.current
-    ) {
-      backgroundRef.current.classList.add('focus-bg');
+    if (eyeRef.current && pupilRef.current) {
+      eyeRef.current.classList.remove('unfocus-eye');
       eyeRef.current.classList.add('focus-eye');
+      pupilRef.current.classList.remove('unfocus-pupil');
       pupilRef.current.classList.add('focus-pupil');
     }
   };
 
   const handleOnScrollLeave = () => {
-    if (
-      backgroundRef.current &&
-      eyeRef.current &&
-      pupilRef.current
-    ) {
-      backgroundRef.current.classList.remove('focus-bg');
+    if (eyeRef.current && pupilRef.current) {
       eyeRef.current.classList.remove('focus-eye');
+      eyeRef.current.classList.add('unfocus-eye');
       pupilRef.current.classList.remove('focus-pupil');
+      pupilRef.current.classList.add('unfocus-pupil');
     }
   };
 

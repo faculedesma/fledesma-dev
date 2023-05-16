@@ -8,11 +8,11 @@ export const Social = () => {
   return (
     <div className="social">
       <a
-        href="https://twitter.com/faculedesma93"
+        href="https://www.linkedin.com/in/facundo-ledesma/"
         target="_blank"
-        aria-label="Go to Facundo's Twitter account."
+        aria-label="Go to Facundo's LinkedIn account."
       >
-        <Twitter />
+        <LinkedIn />
       </a>
       <a
         href="https://dribbble.com/fledesma"
@@ -29,11 +29,11 @@ export const Social = () => {
         <Behance />
       </a>
       <a
-        href="https://www.linkedin.com/in/facundo-ledesma/"
+        href="https://twitter.com/faculedesma93"
         target="_blank"
-        aria-label="Go to Facundo's LinkedIn account."
+        aria-label="Go to Facundo's Twitter account."
       >
-        <LinkedIn />
+        <Twitter />
       </a>
     </div>
   );

@@ -1,7 +1,6 @@
 import { FC, useState, useEffect, useRef } from 'react';
 import Home from '@pages/home/Home';
 import Loader from '@components/loader/Loader';
-import { loadInitialAssets } from 'src/utils/utils';
 import './app.scss';
 
 const App: FC = () => {
@@ -14,8 +13,9 @@ const App: FC = () => {
   const handleIsLoaded = () => setIsLoadingAssets(false);
 
   const handleLoadInitialAssets = async () => {
-    await loadInitialAssets();
-    handleIsLoaded();
+    setTimeout(() => {
+      handleIsLoaded();
+    }, 3000);
   };
 
   useEffect(() => {
@@ -27,12 +27,12 @@ const App: FC = () => {
     };
   }, []);
 
-  const appLoaded = isLoadingAssets;
+  const appLoading = isLoadingAssets;
 
   return (
     <div id="app" ref={appRef} className="app">
-      <Home isLoading={appLoaded} />
-      <Loader isLoading={appLoaded} />
+      <Home isLoading={appLoading} />
+      <Loader isLoading={appLoading} />
     </div>
   );
 };
