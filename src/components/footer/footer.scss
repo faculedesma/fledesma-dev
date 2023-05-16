@@ -13,7 +13,7 @@
     width: 100%;
     z-index: -1;
     opacity: 0.5;
-    translate: -175px -100px;
+    translate: -115px -100px;
     clip-path: circle(150px at 50% 50%);
     filter: invert(100%) contrast(100%);
     animation: matrix-loop calc($golden-ratio-time / 8)
