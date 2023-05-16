@@ -24,7 +24,7 @@ const works = [
   {
     id: 'art',
     title: 'Journey of selfknowledge',
-    type: 'Art Portfolio',
+    type: 'Art Concept',
     image: LampBG,
     link: 'https://facundo-ledesma.me/'
   }

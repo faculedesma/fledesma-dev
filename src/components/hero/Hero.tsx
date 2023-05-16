@@ -152,11 +152,13 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
               src={TrianglePNG}
               className="hero-triangle--normal"
               alt="triangle"
+              loading="lazy"
             />
             <img
               src={TrianglePsychPNG}
               className="hero-triangle--psych"
               alt="triangle-pscyh"
+              loading="lazy"
             />
             <div
               ref={shapesRef}
@@ -165,15 +167,22 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
               <img
                 src={TriangleShapesPNG}
                 alt="triangle-shapes"
+                loading="lazy"
               />
             </div>
             <img
               src={TriangleBGPNG}
               className="hero-triangle--bg"
               alt="triangle-bg"
+              loading="lazy"
             />
             <div className="eye">
-              <img ref={eyeRef} src={EyePNG} alt="eye" />
+              <img
+                ref={eyeRef}
+                src={EyePNG}
+                alt="eye"
+                loading="lazy"
+              />
               <div
                 ref={pupilRef}
                 className="eye-pupil"

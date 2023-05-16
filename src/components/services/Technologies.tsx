@@ -24,7 +24,7 @@ export const Technologies: React.FC<ITechnologiesProps> = ({
   const { x, y } = useCursorPosition();
   const isInViewport = useIntersection(
     squaresRef,
-    isMobile ? -100 : -250
+    isMobile ? -75 : -150
   );
 
   useEffect(() => {
@@ -62,6 +62,7 @@ export const Technologies: React.FC<ITechnologiesProps> = ({
         src={Squares}
         alt="squares"
         draggable="false"
+        loading="lazy"
       />
     </div>
   );

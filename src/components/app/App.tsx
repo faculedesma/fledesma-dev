@@ -1,6 +1,7 @@
 import { FC, useState, useEffect, useRef } from 'react';
 import Home from '@pages/home/Home';
 import Loader from '@components/loader/Loader';
+import { loadInitialAssets } from 'src/utils/utils';
 import './app.scss';
 
 const App: FC = () => {
@@ -12,22 +13,19 @@ const App: FC = () => {
 
   const handleIsLoaded = () => setIsLoadingAssets(false);
 
+  const handleLoadInitialAssets = async () => {
+    await loadInitialAssets();
+    handleIsLoaded();
+  };
+
   useEffect(() => {
     mounted.current = true;
-    window.addEventListener('load', handleIsLoaded);
+    handleLoadInitialAssets();
 
     return () => {
-      window.removeEventListener('load', handleIsLoaded);
       mounted.current = false;
     };
   }, []);
-
-  useEffect(() => {
-    // for mobile
-    if (document.readyState === 'complete') {
-      handleIsLoaded();
-    }
-  }, [document.readyState]);
 
   const appLoaded = isLoadingAssets;
 
