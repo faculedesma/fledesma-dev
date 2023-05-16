@@ -4,7 +4,7 @@
   &-one,
   &-two,
   &-three {
-    height: 1000px;
+    height: 750px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,10 +34,62 @@
   }
 }
 
+.dices {
+  position: absolute;
+
+  img {
+    position: relative;
+    opacity: 0.5;
+    transform: scale(1, 1);
+    filter: brightness(100%);
+    animation: dice-loop calc($golden-ratio-time * 8)
+      ease-in-out infinite;
+  }
+
+  img:nth-child(1) {
+    translate: 0 0;
+  }
+
+  img:nth-child(2) {
+    translate: 0 0;
+  }
+
+  img:nth-child(3) {
+    translate: 0 0;
+  }
+}
+
 .show-note {
   h3 {
     animation: fade-in calc($golden-ratio-time / 2)
       ease-in-out forwards;
+  }
+}
+
+@keyframes dice-loop {
+  0% {
+    filter: brightness(100%);
+    transform: scale(1, 1);
+  }
+
+  25% {
+    filter: brightness(120%);
+    transform: scale(1.2, 1.2);
+  }
+
+  50% {
+    filter: brightness(150%);
+    transform: scale(1.2, 1.2);
+  }
+
+  75% {
+    filter: brightness(120%);
+    transform: scale(0.9, 0.9);
+  }
+
+  100% {
+    filter: brightness(100%);
+    transform: scale(1, 1);
   }
 }
 
@@ -58,6 +110,14 @@
       h3 {
         width: 80%;
       }
+    }
+  }
+
+  .dices {
+    translate: 25px 0;
+
+    img {
+      width: 150px;
     }
   }
 }
