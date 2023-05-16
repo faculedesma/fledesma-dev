@@ -166,8 +166,10 @@
     position: absolute;
     top: 0;
     left: 0;
+    translate: -200px 0;
     opacity: 0.5;
-    transform: scale(1, 1) skew(0, 0);
+    transform: scale(1, 1);
+    filter: brightness(100%);
     animation: squares-loop calc($golden-ratio-time * 8)
       ease-in-out infinite;
   }
@@ -245,19 +247,28 @@
 
 @keyframes squares-loop {
   0% {
-    transform: scale(1, 1) skew(0, 0);
+    filter: brightness(100%);
+    transform: scale(1, 1);
+  }
+
+  25% {
+    filter: brightness(120%);
+    transform: scale(1.2, 1.2);
   }
 
   50% {
-    transform: scale(1.2, 1.2) skew(6deg, 6deg);
+    filter: brightness(150%);
+    transform: scale(1.2, 1.2);
   }
 
   75% {
-    transform: scale(0.9, 0.9) skew(3deg, 3deg);
+    filter: brightness(120%);
+    transform: scale(0.9, 0.9);
   }
 
   100% {
-    transform: scale(1, 1) skew(0, 0);
+    filter: brightness(100%);
+    transform: scale(1, 1);
   }
 }
 
