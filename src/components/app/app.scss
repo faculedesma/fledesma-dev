@@ -187,3 +187,9 @@
     scale: 1 1;
   }
 }
+
+@media only screen and (min-device-width: 1920px) and (max-device-width: 3840px) {
+  .container {
+    width: 70%;
+  }
+}

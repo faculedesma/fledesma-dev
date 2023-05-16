@@ -430,3 +430,9 @@
     }
   }
 }
+
+@media only screen and (min-device-width: 1920px) and (max-device-width: 3840px) {
+  .hero {
+    height: 700px;
+  }
+}

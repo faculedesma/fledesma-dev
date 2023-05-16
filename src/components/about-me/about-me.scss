@@ -182,3 +182,16 @@
     }
   }
 }
+
+@media only screen and (min-device-width: 1920px) and (max-device-width: 3840px) {
+  .about-me {
+    &--content {
+      &-left {
+        &--bg {
+          width: 500px;
+          height: 700px;
+        }
+      }
+    }
+  }
+}
