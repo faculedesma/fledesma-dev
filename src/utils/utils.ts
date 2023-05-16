@@ -25,29 +25,30 @@ export async function loadInitialAssets(): Promise<void> {
   const assetPromises: Promise<void>[] = [];
 
   // Add each asset's promise to the array
+  assetPromises.push(loadAsset('../assets/images/eye.png'));
   assetPromises.push(
-    loadAsset('src/assets/images/eye.png')
+    loadAsset('../assets/images/triangle.png')
   );
   assetPromises.push(
-    loadAsset('src/assets/images/triangle.png')
+    loadAsset('../assets/images/triangle-psych.png')
   );
   assetPromises.push(
-    loadAsset('src/assets/images/triangle-psych.png')
+    loadAsset('../assets/images/triangle-bg.png')
   );
   assetPromises.push(
-    loadAsset('src/assets/images/triangle-bg.png')
+    loadAsset('../assets/images/shapes-triangle.png')
   );
   assetPromises.push(
-    loadAsset('src/assets/images/shapes-triangle.png')
+    loadAsset('../assets/images/shapes-bg.png')
   );
   assetPromises.push(
-    loadAsset('src/assets/fonts/Gilroy-SemiBold.ttf')
+    loadAsset('../assets/fonts/Gilroy-SemiBold.ttf')
   );
   assetPromises.push(
-    loadAsset('src/assets/fonts/GraphikLight.otf')
+    loadAsset('../assets/fonts/GraphikLight.otf')
   );
   assetPromises.push(
-    loadAsset('src/assets/fonts/GraphikSemibold.otf')
+    loadAsset('../assets/fonts/GraphikSemibold.otf')
   );
 
   // Wait for all promises to resolve
