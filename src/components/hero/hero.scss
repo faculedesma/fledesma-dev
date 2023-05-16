@@ -208,6 +208,14 @@
   display: flex;
 }
 
+.focus-bg {
+  img {
+    transform: skew(20deg, 0deg) scale(1.2);
+    transition: transform calc($golden-ratio-time / 8)
+      ease-out;
+  }
+}
+
 .focus-eye {
   animation: focus-eye calc($golden-ratio-time) ease-out
     infinite;
@@ -345,7 +353,8 @@
 
   .hero-background {
     img {
-      width: 150%;
+      width: 80%;
+      height: 200px;
       scale: 1 1;
     }
   }
@@ -364,14 +373,15 @@
       }
 
       &--shapes {
-        width: 60%;
-        top: 20%;
-        left: 20%;
-        opacity: 0.2;
+        width: 40%;
+        top: 30%;
+        left: 50%;
+        opacity: 0.5;
       }
 
       &--bg {
         width: 100%;
+        opacity: 0.5;
       }
 
       &--normal {
@@ -386,6 +396,7 @@
         &-pupil {
           width: 20px;
           height: 20px;
+          translate: 0 15px;
         }
       }
     }
@@ -408,6 +419,14 @@
     &-scroll {
       position: relative;
       translate: 0 50px;
+    }
+  }
+
+  .focus-bg {
+    img {
+      transform: skew(0deg, 0deg) scale(2);
+      transition: transform calc($golden-ratio-time / 8)
+        ease-out;
     }
   }
 }

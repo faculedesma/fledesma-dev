@@ -279,8 +279,9 @@
     margin: 4rem 0;
 
     &-list {
-      width: auto;
+      width: fit-content;
       justify-content: flex-start;
+      flex-wrap: wrap;
       padding: 1rem 0;
       gap: 2rem;
 
@@ -291,7 +292,10 @@
     }
 
     .technologies {
+      height: 250px;
       flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
       margin-top: 8rem;
       gap: 3rem;
 

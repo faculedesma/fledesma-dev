@@ -19,8 +19,8 @@ const jobsHistory = [
     date: '2020',
     position: 'Software Engineer',
     company: {
-      name: 'ICE Mortgage Technology, Inc.',
-      url: 'https://www.icemortgagetechnology.com/'
+      name: 'Leniolabs_ LLC',
+      url: 'https://www.leniolabs.com/'
     }
   },
   {
@@ -28,8 +28,8 @@ const jobsHistory = [
     date: '2020',
     position: 'Software Engineer',
     company: {
-      name: 'Leniolabs_ LLC',
-      url: 'https://www.leniolabs.com/'
+      name: 'ICE Mortgage Technology, Inc.',
+      url: 'https://www.icemortgagetechnology.com/'
     }
   },
   {
