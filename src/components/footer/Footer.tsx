@@ -36,7 +36,7 @@ const Footer = () => {
   }, [isInViewport]);
 
   useEffect(() => {
-    if (matrixRef.current) {
+    if (matrixRef.current && !isMobile && isInViewport) {
       const xSetted = Math.round(
         (clientX / window.innerWidth) * 100
       );
@@ -45,7 +45,7 @@ const Footer = () => {
       );
       matrixRef.current.animate(
         {
-          clipPath: `circle(100px at ${xSetted}% ${ySetted}%)`
+          clipPath: `circle(150px at ${xSetted}% ${ySetted}%)`
         },
         { duration: 1618 * 2, fill: 'forwards' }
       );
@@ -66,7 +66,7 @@ const Footer = () => {
     if (matrixRef.current) {
       matrixRef.current.animate(
         {
-          clipPath: `circle(5000px at 0 0)`
+          clipPath: `circle(2000px at 50% 50%)`
         },
         { duration: 1618 * 2, fill: 'forwards' }
       );
@@ -77,7 +77,7 @@ const Footer = () => {
     if (matrixRef.current) {
       matrixRef.current.animate(
         {
-          clipPath: `circle(100px at 0 0)`
+          clipPath: `circle(150px at 0 0)`
         },
         { duration: 1618 * 2, fill: 'forwards' }
       );
