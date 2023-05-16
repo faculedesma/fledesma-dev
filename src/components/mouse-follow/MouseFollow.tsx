@@ -27,6 +27,7 @@ const MouseFollow = (): JSX.Element => {
 
   return (
     <div
+      id="mouse-follow"
       ref={cursorRef}
       className="mouse-follow point"
     ></div>

@@ -17,27 +17,19 @@
   width: 12px;
   height: 12px;
   background: $highlight-color;
+  z-index: 5;
 }
 
-.discover {
+.matrix {
   top: 0;
   left: 0;
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
+  border: 0.5px solid $highlight-color;
+  background: transparent;
+  object-fit: contain;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: $secondary-color;
-  color: $highlight-color;
-  font-weight: 300;
-  cursor: pointer;
-
-  &::after {
-    content: 'Discover';
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  z-index: -1;
 }
 
 .show-point {

@@ -3,13 +3,13 @@
 .footer {
   position: relative;
   width: 100%;
-  height: 700px;
+  height: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 4rem;
-  margin: 16rem 0 2rem;
+  margin: 24rem 0 2rem;
 
   h1 {
     width: 60%;
@@ -18,13 +18,24 @@
     opacity: 0;
   }
 
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    clip-path: circle(100px at 50% 50%);
+  }
+
   &-mail {
     position: relative;
     width: 450px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: transparent;
+    background-color: $primary-color;
     border: 1px solid $highlight-color;
     cursor: pointer;
     z-index: 3;
@@ -68,7 +79,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background-color: rgba($highlight-color, 0.5);
+      background-color: rgba($highlight-color, 0.6);
       scale: 0;
       transition: scale calc($golden-ratio-time / 8)
         ease-in-out;
@@ -105,6 +116,13 @@
     margin-bottom: 50px;
     opacity: 0;
     z-index: 1;
+  }
+
+  &-expand {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba($highlight-color, 0.6);
   }
 }
 
