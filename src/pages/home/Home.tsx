@@ -37,8 +37,8 @@ const Home = ({ isLoading }: IHomeProps) => {
       <Hero isLoading={isLoading} />
       <NoteOne />
       <Services />
-      <NoteTwo />
       <AboutMe />
+      <NoteTwo />
       <History />
       <NoteThree />
       <Work />
