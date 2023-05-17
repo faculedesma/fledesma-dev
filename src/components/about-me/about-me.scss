@@ -131,10 +131,6 @@
           margin-top: 2rem;
         }
       }
-
-      button {
-        opacity: 0;
-      }
     }
   }
 }
@@ -234,12 +230,12 @@
 
       &-right {
         height: 600px;
-        align-items: flex-end;
+        align-items: flex-start;
         justify-content: center;
 
         &--text {
           p {
-            text-align: end;
+            text-align: start;
           }
         }
       }

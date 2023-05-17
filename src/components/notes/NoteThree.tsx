@@ -23,8 +23,9 @@ const NoteThree = () => {
     <div className="container">
       <div ref={noteThreeRef} className="notes-three">
         <h3>
-          Build a strong base and enjoy the ride. Build a
-          strong base and enjoy the ride.
+          Every project, like every person, is unique.
+          Reflecting that energy into the designs will make
+          the difference.
         </h3>
         <img
           src={Ilusion}

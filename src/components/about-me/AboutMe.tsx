@@ -94,22 +94,21 @@ const AboutMe = () => {
             </div>
             <div className="about-me--content-right--text">
               <p>
-                I am Facundo! Then I started growing up,
-                creating experiences. I like so many stuff
-                that probably I can't sum it up. I love
-                music, computers & art. Graduated in
-                Computer Science in the National University
-                of Tucumán, <b>Argentina</b> in 2018. Been
-                coding around five years, and last one
-                started integrating desing to the stack.
-                Love to mix programming and art and build
-                amazing stuff.
+                I am Facundo! I'm a person whose life
+                philosophy is based on creating positive and
+                caring interactions with people. I love
+                music, computers, and art. I graduated in
+                Computer Science from the National
+                University of Tucumán, <b>Argentina</b> in
+                2018. I have been working as a software
+                engineer for over +5 years, and in the past
+                year, I started integrating design into my
+                skillset. I love combining programming and
+                art to build amazing things.
               </p>
               <p>
-                Been coding around five years, and last one
-                started integrating desing to the stack.
-                Love to mix programming and art and build
-                amazing stuff.
+                I believe details make simplicity beautiful.
+                Are you ready to build your dream project?
               </p>
             </div>
             <SecondaryButton
