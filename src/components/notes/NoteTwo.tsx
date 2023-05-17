@@ -16,13 +16,14 @@ const NoteTwo = () => {
 
   const isInViewport = useIntersection(
     noteTwoRef,
-    isMobile ? -100 : -300
+    isMobile ? -50 : -100
   );
   const { x, y } = useCursorPosition();
 
   useEffect(() => {
     if (isInViewport) {
       noteTwoRef.current?.classList.add('show-note');
+      noteTwoRef.current?.classList.add('show-dices');
     }
   }, [isInViewport]);
 
