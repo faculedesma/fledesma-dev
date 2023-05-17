@@ -33,7 +33,7 @@ interface IHomeProps {
 const Home = ({ isLoading }: IHomeProps) => {
   return (
     <div className={`home ${!isLoading ? 'loaded' : ''}`}>
-      <Header />
+      <Header isLoading={isLoading} />
       <Hero isLoading={isLoading} />
       <NoteOne />
       <Services />

@@ -7,17 +7,17 @@ header {
   left: 0;
   background: transparent;
   z-index: 5;
-  opacity: 0;
-  animation: fade-in calc($golden-ratio-time / 2) ease-out
-    forwards;
-  animation-delay: $golden-ratio-time;
 }
 
 .header {
   height: 100px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
+  opacity: 0;
+  scale: 1 0;
+  animation: scaley-fade-in calc($golden-ratio-time / 2)
+    ease-out forwards;
 
   &-logo {
     display: flex;
@@ -97,6 +97,10 @@ header {
       }
     }
   }
+}
+
+.show-header {
+  display: flex;
 }
 
 /* Smartphones (portrait and landscape) */

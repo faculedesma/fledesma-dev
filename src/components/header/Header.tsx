@@ -1,7 +1,7 @@
 import { Logo } from '@assets/svgs/Logo';
 import { Menu } from '@components/menu/Menu';
 import './header.scss';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { ToggleButton } from '@components/buttons/ToggleButton';
 
 type Link = {
@@ -28,8 +28,21 @@ export const links: Link[] = [
   }
 ];
 
-const Header = (): JSX.Element => {
+interface IHeaderProps {
+  isLoading: boolean;
+}
+
+const Header: React.FC<IHeaderProps> = ({
+  isLoading
+}): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const headerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isLoading) {
+      headerRef.current?.classList.add('show-header');
+    }
+  }, [isLoading]);
 
   const toggleMenu = () =>
     setIsOpen((prevIsOpen) => !prevIsOpen);
@@ -55,7 +68,7 @@ const Header = (): JSX.Element => {
   return (
     <header>
       <div className="container">
-        <div id="header" className="header">
+        <div ref={headerRef} id="header" className="header">
           <div
             onClick={handleLogoClick}
             className="header-logo"
