@@ -443,7 +443,7 @@
 
   .focus-bg {
     img {
-      transform: skew(0deg, 0deg) scale(2);
+      transform: skew(0, 0) scale(1.5);
       transition: transform calc($golden-ratio-time / 8)
         ease-out;
     }
