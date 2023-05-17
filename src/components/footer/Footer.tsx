@@ -20,14 +20,19 @@ const Footer = () => {
   const { x, y, clientX, clientY } = useCursorPosition();
 
   const handleCopyMailToClipboard = () => {
-    navigator.clipboard.writeText(
-      'faculedesma1993@gmail.com'
-    );
+    if (
+      navigator.clipboard &&
+      navigator.clipboard.writeText
+    ) {
+      navigator.clipboard.writeText(
+        'faculedesma1993@gmail.com'
+      );
+    }
     setText('Copied!');
     setTimeout(() => {
       setText('Click to copy!');
     }, 2000);
-    handleExpandImage();
+    if (!isMobile) handleExpandImage();
   };
 
   useEffect(() => {
