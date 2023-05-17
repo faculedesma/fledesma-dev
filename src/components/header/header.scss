@@ -15,9 +15,8 @@ header {
   align-items: center;
   justify-content: space-between;
   opacity: 0;
-  scale: 1 0;
-  animation: scaley-fade-in calc($golden-ratio-time / 2)
-    ease-out forwards;
+  animation: fade-in calc($golden-ratio-time / 2) ease-out
+    forwards;
 
   &-logo {
     display: flex;

@@ -145,12 +145,12 @@
       &-left {
         &--images {
           img:first-child {
-            animation: fade-in calc($golden-ratio-time / 4)
+            animation: fade-in calc($golden-ratio-time / 2)
               ease-in-out forwards;
           }
 
           img:last-child {
-            animation: fade-in calc($golden-ratio-time / 2)
+            animation: fade-in calc($golden-ratio-time)
               ease-in-out forwards;
           }
         }
