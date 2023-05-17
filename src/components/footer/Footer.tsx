@@ -54,6 +54,7 @@ const Footer = () => {
 
   const handleFollowMouse = () => {
     const mouse = document.getElementById('mouse-follow');
+    mouse?.classList.remove('lighted');
     mouse?.classList.remove('point');
   };
 

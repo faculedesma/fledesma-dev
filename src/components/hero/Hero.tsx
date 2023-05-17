@@ -146,6 +146,11 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
     }
   };
 
+  const handleOnScrollClick = () => {
+    const mouse = document.getElementById('mouse-follow');
+    mouse?.classList.add('lighted');
+  };
+
   return (
     <div className="hero-gradient">
       <div className="container">
@@ -210,6 +215,7 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
             onMouseLeave={handleOnScrollLeave}
             onTouchStart={handleOnScrollHover}
             onTouchEnd={handleOnScrollLeave}
+            onClick={handleOnScrollClick}
             className="hero-scroll"
           >
             <ScrollButton />

@@ -1,7 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { useIntersection } from '@components/hooks/useIntersection';
 import { HistoryRow } from './HistoryRow';
-import Ilusion from '@assets/images/ilusion.png';
 import './history.scss';
 
 const jobsHistory = [
@@ -69,12 +68,6 @@ const History = () => {
             return <HistoryRow key={job.id} job={job} />;
           })}
         </div>
-        <img
-          src={Ilusion}
-          alt="ilusion"
-          draggable="false"
-          loading="lazy"
-        />
       </div>
     </div>
   );

@@ -37,6 +37,20 @@
   &-two {
     height: 1000px;
   }
+
+  &-three {
+    position: relative;
+
+    img {
+      position: absolute;
+      right: 0;
+      top: 0;
+      opacity: 0.2;
+      transform: scale(1) rotate(0deg) translate(0 150px);
+      animation: ilusion-loop calc($golden-ratio-time * 8)
+        ease-in-out infinite;
+    }
+  }
 }
 
 .dices {

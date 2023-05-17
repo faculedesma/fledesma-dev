@@ -90,16 +90,6 @@
       }
     }
   }
-
-  img {
-    position: absolute;
-    right: 0;
-    top: 0;
-    opacity: 0.2;
-    transform: scale(1) rotate(0deg);
-    animation: ilusion-loop calc($golden-ratio-time * 8)
-      ease-in-out infinite;
-  }
 }
 
 .show-row {
