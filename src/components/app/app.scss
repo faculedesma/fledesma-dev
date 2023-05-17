@@ -97,6 +97,16 @@
   }
 }
 
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 @keyframes scaley-in {
   0% {
     transform-origin: top bottom;

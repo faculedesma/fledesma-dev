@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './loader.scss';
 
 interface ILoaderProps {
@@ -12,6 +12,10 @@ const preventScroll = (e: WheelEvent) => {
 };
 
 const Loader: React.FC<ILoaderProps> = ({ isLoading }) => {
+  const [number, setNumber] = useState<number>(0);
+
+  const loaderRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     window.addEventListener('wheel', preventScroll, {
       passive: false
@@ -22,17 +26,34 @@ const Loader: React.FC<ILoaderProps> = ({ isLoading }) => {
   }, []);
 
   useEffect(() => {
-    if (!isLoading) {
+    function increase() {
+      const randomIncrement =
+        Math.floor(Math.random() * 10) + 1;
+      setNumber((prevNumber) =>
+        prevNumber + randomIncrement > 100
+          ? 100
+          : prevNumber + randomIncrement
+      );
+    }
+
+    if (number < 100) {
+      const timeoutId = setTimeout(increase, 100); // Increase every second (adjust as needed)
+      return () => clearTimeout(timeoutId); // Cleanup function to clear the timeout
+    }
+  }, [number]);
+
+  useEffect(() => {
+    if (!isLoading && loaderRef.current) {
       window.removeEventListener('wheel', preventScroll);
+      loaderRef.current.classList.add('hidden');
     }
   }, [isLoading]);
 
   return (
-    <div className={`loader ${isLoading ? '' : 'hidden'}`}>
-      <div className="loader-left--bottom"></div>
-      <div className="loader-left--top"></div>
-      <div className="loader-right--top"></div>
-      <div className="loader-right--bottom"></div>
+    <div ref={loaderRef} className="loader">
+      <div className="number">
+        <p>{number}%</p>
+      </div>
     </div>
   );
 };
