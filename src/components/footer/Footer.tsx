@@ -27,6 +27,7 @@ const Footer = () => {
     setTimeout(() => {
       setText('Click to copy!');
     }, 2000);
+    handleExpandImage();
   };
 
   useEffect(() => {
@@ -69,18 +70,11 @@ const Footer = () => {
         {
           clipPath: `circle(2000px at 50% 50%)`
         },
-        { duration: 1618 * 2, fill: 'forwards' }
-      );
-    }
-  };
-
-  const handleCollapseImage = () => {
-    if (matrixRef.current) {
-      matrixRef.current.animate(
         {
-          clipPath: `circle(150px at 0 0)`
-        },
-        { duration: 1618 * 2, fill: 'forwards' }
+          duration: 1618,
+          fill: 'forwards',
+          easing: 'ease-out'
+        }
       );
     }
   };
@@ -93,11 +87,6 @@ const Footer = () => {
     >
       <div ref={footerRef} id="contact" className="footer">
         <h1>Let's build something awesome!</h1>
-        <div
-          className="footer-expand"
-          onMouseEnter={handleExpandImage}
-          onMouseLeave={handleCollapseImage}
-        ></div>
         <div className="footer-mail">
           <p>faculedesma1993@gmail.com</p>
           <div className="footer-mail--icon">
