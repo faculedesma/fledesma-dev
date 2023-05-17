@@ -89,27 +89,51 @@
       height: 620px;
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
+      align-items: flex-start;
       justify-content: space-evenly;
       gap: 2rem;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 
-      p {
-        margin: 0;
-        text-align: end;
+      &--intro {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+        h3:nth-child(1),
+        h3:nth-child(2),
+        h3:nth-child(3) {
+          opacity: 0;
+          translate: 0 -100%;
+        }
+
+        h3 {
+          font-family: 'Gilroy';
+          font-weight: 700;
+          color: rgba($highlight-color, 1);
+          line-height: 1;
+        }
       }
 
-      p:first-child {
-        font-size: 30px;
-        font-weight: 300;
-        opacity: 0;
-        translate: 0 100%;
-        line-height: normal;
+      &--text {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+        p {
+          margin: 0;
+          text-align: start;
+        }
+
+        p:first-child {
+          opacity: 0;
+          translate: 0 100%;
+        }
+
+        p:last-child {
+          opacity: 0;
+          font-weight: 700;
+          margin-top: 2rem;
+        }
       }
 
-      p:last-child {
+      button {
         opacity: 0;
-        font-weight: 700;
       }
     }
   }
@@ -138,13 +162,36 @@
       }
 
       &-right {
-        p:first-child {
-          animation: slidey-in-fade
-            calc($golden-ratio-time / 4) ease-in-out
-            forwards;
+        &--intro {
+          h3 {
+            animation: slidey-in-fade
+              calc($golden-ratio-time / 2) ease-in-out
+              forwards;
+          }
+
+          h3:nth-child(1) {
+            animation-delay: calc($golden-ratio-time / 2);
+          }
+
+          h3:nth-child(2) {
+            animation-delay: calc($golden-ratio-time / 4);
+          }
         }
 
-        p:last-child {
+        &--text {
+          p:first-child {
+            animation: slidey-in-fade
+              calc($golden-ratio-time / 2) ease-in-out
+              forwards;
+          }
+
+          p:last-child {
+            animation: fade-in calc($golden-ratio-time / 2)
+              ease-in-out forwards;
+          }
+        }
+
+        button {
           animation: fade-in calc($golden-ratio-time / 2)
             ease-in-out forwards;
         }
@@ -180,8 +227,14 @@
       }
 
       &-right {
-        p {
-          text-align: center;
+        height: 600px;
+        align-items: flex-end;
+        justify-content: center;
+
+        &--text {
+          p {
+            text-align: end;
+          }
         }
       }
     }

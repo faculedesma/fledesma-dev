@@ -3,6 +3,7 @@ import { useIntersection } from '@components/hooks/useIntersection';
 import MePNG from '@assets/images/me.png';
 import MeBGPNG from '@assets/images/me-bg.png';
 import './about-me.scss';
+import { SecondaryButton } from '@components/buttons/SecondaryButton';
 
 const AboutMe = () => {
   const isMobile =
@@ -19,6 +20,11 @@ const AboutMe = () => {
       aboutRef.current?.classList.add('show-about-me');
     }
   }, [isInViewport]);
+
+  const handleClick = () => {
+    const noteTwo = document.getElementById('note-two');
+    noteTwo?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <div className="container">
@@ -47,19 +53,35 @@ const AboutMe = () => {
             <div className="about-me--content-left--bg"></div>
           </div>
           <div className="about-me--content-right">
-            <p>
-              Who I am? Well, first I was born. Then I
-              started growing up, creating experiences. I
-              like so many stuff that probably I can't sum
-              it up. I love music, computers & art.
-              Graduated in Computer Science in the National
-              University of Tucumán, <b>Argentina</b> in
-              2018. Been coding around five years, and last
-              one started integrating desing to the stack.
-              Love to mix programming and art and build
-              amazing stuff.
-            </p>
-            <p>Let's start creating new realities!</p>
+            <div className="about-me--content-right--intro">
+              <h3>Hola.</h3>
+              <h3>Hello.</h3>
+              <h3>Ciao.</h3>
+            </div>
+            <div className="about-me--content-right--text">
+              <p>
+                I am Facundo! Then I started growing up,
+                creating experiences. I like so many stuff
+                that probably I can't sum it up. I love
+                music, computers & art. Graduated in
+                Computer Science in the National University
+                of Tucumán, <b>Argentina</b> in 2018. Been
+                coding around five years, and last one
+                started integrating desing to the stack.
+                Love to mix programming and art and build
+                amazing stuff.
+              </p>
+              <p>
+                LBeen coding around five years, and last one
+                started integrating desing to the stack.
+                Love to mix programming and art and build
+                amazing stuff.
+              </p>
+            </div>
+            <SecondaryButton
+              label="Keep exploring"
+              onClick={handleClick}
+            />
           </div>
         </div>
       </section>

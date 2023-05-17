@@ -60,7 +60,11 @@ const NoteTwo = () => {
 
   return (
     <div className="container">
-      <div ref={noteTwoRef} className="notes-two">
+      <div
+        id="note-two"
+        ref={noteTwoRef}
+        className="notes-two"
+      >
         <h3>
           Investing time in fundamentals is essential, build
           a strong base and enjoy the ride.

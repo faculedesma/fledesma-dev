@@ -14,7 +14,7 @@
 }
 
 .show-section-title {
-  h3 {
+  > h3 {
     animation: scalex-in calc($golden-ratio-time / 4)
       ease-in-out forwards;
   }
