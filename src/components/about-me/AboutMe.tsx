@@ -9,17 +9,45 @@ const AboutMe = () => {
   const isMobile =
     window.innerWidth > 320 && window.innerWidth < 480;
   const aboutRef = useRef<HTMLDivElement>(null);
+  const aboutTopRef = useRef<HTMLDivElement>(null);
+  const aboutBottomRef = useRef<HTMLDivElement>(null);
+
   const isInViewport = useIntersection(
-    aboutRef,
-    isMobile ? -50 : -200
+    aboutTopRef,
+    isMobile ? -50 : -150
+  );
+
+  const isTopInViewport = useIntersection(
+    aboutTopRef,
+    isMobile ? -50 : -150
+  );
+
+  const isBottomInViewport = useIntersection(
+    aboutBottomRef,
+    isMobile ? -50 : -150
   );
 
   useEffect(() => {
     if (isInViewport) {
       aboutRef.current?.classList.add('show-section-title');
-      aboutRef.current?.classList.add('show-about-me');
     }
   }, [isInViewport]);
+
+  useEffect(() => {
+    if (isTopInViewport) {
+      aboutTopRef.current?.classList.add(
+        'show-about-me-left'
+      );
+    }
+  }, [isTopInViewport]);
+
+  useEffect(() => {
+    if (isBottomInViewport) {
+      aboutBottomRef.current?.classList.add(
+        'show-about-me-right'
+      );
+    }
+  }, [isBottomInViewport]);
 
   const handleClick = () => {
     const noteTwo = document.getElementById('note-two');
@@ -35,7 +63,10 @@ const AboutMe = () => {
       >
         <h3>About me</h3>
         <div className="about-me--content">
-          <div className="about-me--content-left">
+          <div
+            ref={aboutTopRef}
+            className="about-me--content-left"
+          >
             <div className="about-me--content-left--images">
               <img
                 src={MePNG}
@@ -52,7 +83,10 @@ const AboutMe = () => {
             </div>
             <div className="about-me--content-left--bg"></div>
           </div>
-          <div className="about-me--content-right">
+          <div
+            ref={aboutBottomRef}
+            className="about-me--content-right"
+          >
             <div className="about-me--content-right--intro">
               <h3>Hola.</h3>
               <h3>Hello.</h3>
@@ -72,7 +106,7 @@ const AboutMe = () => {
                 amazing stuff.
               </p>
               <p>
-                LBeen coding around five years, and last one
+                Been coding around five years, and last one
                 started integrating desing to the stack.
                 Love to mix programming and art and build
                 amazing stuff.

@@ -139,28 +139,9 @@
   }
 }
 
-.show-about-me {
+.show-about-me-right {
   .about-me {
     &--content {
-      &-left {
-        &--images {
-          img:first-child {
-            animation: fade-in calc($golden-ratio-time / 2)
-              ease-in-out forwards;
-          }
-
-          img:last-child {
-            animation: fade-in calc($golden-ratio-time)
-              ease-in-out forwards;
-          }
-        }
-
-        &--bg {
-          animation: fade-in calc($golden-ratio-time)
-            ease-in-out forwards;
-        }
-      }
-
       &-right {
         &--intro {
           h3 {
@@ -186,13 +167,38 @@
           }
 
           p:last-child {
-            animation: fade-in calc($golden-ratio-time / 2)
-              ease-in-out forwards;
+            animation: slidey-in-fade
+              calc($golden-ratio-time / 2) ease-in-out
+              forwards;
           }
         }
 
         button {
           animation: fade-in calc($golden-ratio-time / 2)
+            ease-in-out forwards;
+        }
+      }
+    }
+  }
+}
+.show-about-me-left {
+  .about-me {
+    &--content {
+      &-left {
+        &--images {
+          img:first-child {
+            animation: fade-in calc($golden-ratio-time / 2)
+              ease-in-out forwards;
+          }
+
+          img:last-child {
+            animation: fade-in calc($golden-ratio-time)
+              ease-in-out forwards;
+          }
+        }
+
+        &--bg {
+          animation: fade-in calc($golden-ratio-time)
             ease-in-out forwards;
         }
       }

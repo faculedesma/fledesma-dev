@@ -217,8 +217,7 @@
 
     .scroll-button--circle,
     .scroll-button--icon {
-      scale: 0 0;
-      animation: scale-in calc($golden-ratio-time / 4)
+      animation: fade-in calc($golden-ratio-time / 4)
         ease-in forwards;
     }
   }
