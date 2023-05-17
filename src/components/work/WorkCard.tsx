@@ -1,7 +1,5 @@
 import { useEffect, useRef } from 'react';
 import { useIntersection } from '@components/hooks/useIntersection';
-import { useCursorFollowing } from '@components/hooks/useCursorFollowing';
-import { useCursorPosition } from '@components/hooks/useCursorPosition';
 
 interface IWork {
   id: string;
@@ -24,29 +22,12 @@ const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
     workCardRef,
     isMobile ? 0 : -250
   );
-  const isFollowing = useCursorFollowing({
-    targetRef: workCardRef
-  });
+
   useEffect(() => {
     if (isInViewport) {
       workCardRef.current?.classList.add('show-work-card');
     }
   }, [isInViewport]);
-
-  useEffect(() => {
-    const mouse = document.getElementById('mouse-follow');
-    if (isFollowing) {
-      mouse?.classList.add('discover');
-      mouse?.classList.add('show-discover');
-      mouse?.classList.remove('point');
-      mouse?.classList.remove('show-point');
-    } else {
-      mouse?.classList.add('point');
-      mouse?.classList.add('show-point');
-      mouse?.classList.remove('discover');
-      mouse?.classList.remove('show-discover');
-    }
-  }, [isFollowing]);
 
   const handleCardClick = () =>
     window.open(work.link, '_blank');
