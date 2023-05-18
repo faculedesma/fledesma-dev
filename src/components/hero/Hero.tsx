@@ -96,7 +96,6 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
       backgroundRef.current &&
       eyeRef.current &&
       pupilRef.current &&
-      shapesRef.current &&
       isPupilInViewport
     ) {
       backgroundRef.current.animate(
@@ -112,12 +111,6 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
             translate: `${moveRight ? '' : '-'}${
               x / 40
             }px ${y / 20}px`
-          },
-          { duration: 1618 / 2, fill: 'forwards' }
-        );
-        shapesRef.current.animate(
-          {
-            translate: `0 -${y / 50}px`
           },
           { duration: 1618 / 2, fill: 'forwards' }
         );
