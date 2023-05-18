@@ -152,11 +152,23 @@
     }
   }
 
-  .dices {
-    translate: 25px 0;
+  .notes-two-bg {
+    width: 100%;
+    height: 450px;
 
-    img {
-      width: 150px;
+    .square-big {
+      width: 100%;
+      height: 300px;
+    }
+
+    .square-small {
+      width: 60%;
+      height: 60%;
+    }
+
+    .circles {
+      width: 30%;
+      height: 30%;
     }
   }
 }
