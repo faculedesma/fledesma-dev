@@ -70,8 +70,10 @@
   .mouse-follow {
     &--bg {
       opacity: 0.8;
-      scale: 20;
+      scale: 32;
       background-image: url('../../assets/images/2001.jpg');
+      animation: eye-follow-tick
+        calc($golden-ratio-time * 8) ease-in-out infinite;
       background-position: center;
       background-size: cover;
       transition: all calc($golden-ratio-time / 8)
@@ -85,6 +87,20 @@
     rgba(181, 181, 181, 1);
   -moz-box-shadow: 10px 0px 77px 14px rgba(181, 181, 181, 1);
   box-shadow: 10px 0px 77px 14px rgba(181, 181, 181, 1);
+}
+
+@keyframes eye-follow-tick {
+  0% {
+    filter: invert(0);
+  }
+
+  50% {
+    filter: invert(1);
+  }
+
+  100% {
+    filter: invert(0);
+  }
 }
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
