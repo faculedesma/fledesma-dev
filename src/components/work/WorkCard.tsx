@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useIntersection } from '@components/hooks/useIntersection';
+import { useIsOnTop } from '@components/hooks/useIsOnTop';
 
 interface IWork {
   id: string;
@@ -17,6 +18,7 @@ const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
   const isMobile =
     window.innerWidth > 320 && window.innerWidth < 480;
   const workCardRef = useRef<HTMLDivElement>(null);
+  const isOnTop = useIsOnTop(workCardRef);
 
   const isInViewport = useIntersection(
     workCardRef,
@@ -28,6 +30,19 @@ const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
       workCardRef.current?.classList.add('show-work-card');
     }
   }, [isInViewport]);
+
+  useEffect(() => {
+    if (workCardRef.current) {
+      const mouse = document.getElementById('mouse-follow');
+      if (isOnTop) {
+        mouse?.classList.remove('point');
+        mouse?.classList.add('visit');
+      } else {
+        mouse?.classList.add('point');
+        mouse?.classList.remove('visit');
+      }
+    }
+  }, [isOnTop]);
 
   const handleCardClick = () =>
     window.open(work.link, '_blank');

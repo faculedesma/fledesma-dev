@@ -8,13 +8,6 @@ const MouseFollow = (): JSX.Element => {
 
   useEffect(() => {
     if (cursorRef.current) {
-      cursorRef.current.classList.add('show-point');
-    }
-  }),
-    [];
-
-  useEffect(() => {
-    if (cursorRef.current) {
       cursorRef.current.animate(
         {
           left: `${x}px`,
@@ -30,7 +23,10 @@ const MouseFollow = (): JSX.Element => {
       id="mouse-follow"
       ref={cursorRef}
       className="mouse-follow point"
-    ></div>
+    >
+      <div className="mouse-follow--bg"></div>
+      <p className="mouse-follow--text">Visit</p>
+    </div>
   );
 };
 
