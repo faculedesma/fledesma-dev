@@ -70,12 +70,16 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
       'mouseover',
       randomChars
     );
+    setTimeout(() => {
+      randomChars();
+    }, 3200);
 
-    return () =>
+    return () => {
       titleRef.current?.removeEventListener(
         'mouseover',
         randomChars
       );
+    };
   }, []);
 
   useEffect(() => {
