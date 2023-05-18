@@ -9,6 +9,7 @@ import TrianglePsychPNG from '@assets/images/triangle-psych.png';
 import TriangleBGPNG from '@assets/images/triangle-bg.png';
 import TriangleShapesPNG from '@assets/images/shapes-triangle.png';
 import EyePNG from '@assets/images/eye.png';
+import { useIsOnTop } from '@components/hooks/useIsOnTop';
 import './hero.scss';
 
 interface IHeroProps {
@@ -23,6 +24,8 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
   const eyeRef = useRef<HTMLImageElement>(null);
   const pupilRef = useRef<HTMLDivElement>(null);
   const shapesRef = useRef<HTMLImageElement>(null);
+
+  const isOnTop = useIsOnTop(eyeRef);
 
   const isMobile =
     window.innerWidth > 320 && window.innerWidth < 480;
@@ -121,6 +124,19 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
       }
     }
   }, [x, y, moveRight]);
+
+  useEffect(() => {
+    if (eyeRef.current) {
+      const mouse = document.getElementById('mouse-follow');
+      if (isOnTop) {
+        mouse?.classList.remove('point');
+        mouse?.classList.add('eye');
+      } else {
+        mouse?.classList.add('point');
+        mouse?.classList.remove('eye');
+      }
+    }
+  }, [isOnTop]);
 
   const handleOnScrollHover = () => {
     if (
