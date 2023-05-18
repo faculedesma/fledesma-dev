@@ -1,62 +1,42 @@
 import { useEffect, useRef } from 'react';
 import { useIntersection } from '@components/hooks/useIntersection';
-import { useCursorPosition } from '@components/hooks/useCursorPosition';
-import DiceOne from '@assets/images/dice-one.png';
-import DiceTwo from '@assets/images/dice-two.png';
-import DiceFour from '@assets/images/dice-four.png';
+import { useIsOnTop } from '@components/hooks/useIsOnTop';
 import './notes.scss';
 
 const NoteTwo = () => {
   const isMobile =
     window.innerWidth > 320 && window.innerWidth < 480;
   const noteTwoRef = useRef<HTMLDivElement>(null);
-  const diceOneRef = useRef<HTMLImageElement>(null);
-  const diceTwoRef = useRef<HTMLImageElement>(null);
-  const diceFourRef = useRef<HTMLImageElement>(null);
+  const squareBigRef = useRef<HTMLImageElement>(null);
+  const squareSmallRef = useRef<HTMLImageElement>(null);
+  const circlesRef = useRef<HTMLImageElement>(null);
+
+  const isOnTop = useIsOnTop(circlesRef);
 
   const isInViewport = useIntersection(
     noteTwoRef,
     isMobile ? -50 : -100
   );
-  const { x, y } = useCursorPosition();
 
   useEffect(() => {
     if (isInViewport) {
       noteTwoRef.current?.classList.add('show-note');
-      noteTwoRef.current?.classList.add('show-dices');
+      squareBigRef.current?.classList.add('show-bg');
     }
   }, [isInViewport]);
 
   useEffect(() => {
-    if (
-      diceOneRef.current &&
-      diceTwoRef.current &&
-      diceFourRef.current &&
-      isInViewport
-    ) {
-      diceOneRef.current.animate(
-        {
-          left: `${x / 10}px`,
-          top: `-${y / 10}px`
-        },
-        { duration: 1618 * 2, fill: 'forwards' }
-      );
-      diceTwoRef.current.animate(
-        {
-          left: `${x / 20}px`,
-          top: `${y / 20}px`
-        },
-        { duration: 1618 / 2, fill: 'forwards' }
-      );
-      diceFourRef.current.animate(
-        {
-          left: `${x / 30}px`,
-          top: `-${y / 30}px`
-        },
-        { duration: 1618 * 2, fill: 'forwards' }
-      );
+    if (circlesRef.current) {
+      const mouse = document.getElementById('mouse-follow');
+      if (isOnTop) {
+        mouse?.classList.remove('point');
+        mouse?.classList.add('video');
+      } else {
+        mouse?.classList.add('point');
+        mouse?.classList.remove('video');
+      }
     }
-  }, [x, y]);
+  }, [isOnTop]);
 
   return (
     <div className="container">
@@ -69,28 +49,15 @@ const NoteTwo = () => {
           Investing time in fundamentals is essential, build
           a strong base and enjoy the ride.
         </h3>
-        <div className="dices">
-          <img
-            ref={diceTwoRef}
-            src={DiceTwo}
-            alt="dice-two"
-            draggable="false"
-            loading="lazy"
-          />
-          <img
-            ref={diceFourRef}
-            src={DiceFour}
-            alt="dice-four"
-            draggable="false"
-            loading="lazy"
-          />
-          <img
-            ref={diceOneRef}
-            src={DiceOne}
-            alt="dice-one"
-            draggable="false"
-            loading="lazy"
-          />
+      </div>
+      <div className="notes-two-bg">
+        <div ref={squareBigRef} className="square-big">
+          <div
+            ref={squareSmallRef}
+            className="square-small"
+          >
+            <div ref={circlesRef} className="circles"></div>
+          </div>
         </div>
       </div>
     </div>

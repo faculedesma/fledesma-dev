@@ -37,6 +37,10 @@
   &-two {
     position: relative;
     height: 1000px;
+
+    h3 {
+      z-index: -1;
+    }
   }
 
   &-three {
@@ -54,13 +58,51 @@
   }
 }
 
-.dices {
-  position: absolute;
+.container {
+  position: relative;
+}
 
-  img {
-    position: relative;
-    opacity: 0.8;
-    scale: 0 0;
+.notes-two-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1000px;
+  width: 100%;
+
+  .square-big,
+  .square-small,
+  .circles {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+  }
+
+  .square-big {
+    width: 450px;
+    height: 450px;
+    border: 0.5px solid rgba($highlight-color, 0.5);
+  }
+
+  .square-small {
+    width: 250px;
+    height: 250px;
+    border: 0.5px solid rgba($highlight-color, 0.5);
+  }
+
+  .circles {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 0.5px solid rgba($highlight-color, 0.5);
+    filter: hue-rotate(2);
+    background-image: url('../../assets/images/beyond.jpg');
+    background-position: center;
+    background-size: cover;
+    opacity: 0.1;
   }
 }
 
@@ -71,26 +113,9 @@
   }
 }
 
-.show-dices {
-  .dices {
-    img {
-      animation: scale-fade-in calc($golden-ratio-time / 2)
-        ease-in-out forwards;
-    }
-    img:nth-child(1) {
-      translate: 0 -100%;
-    }
-
-    img:nth-child(2) {
-      translate: 0 100%;
-      animation-delay: calc($golden-ratio-time / 4);
-    }
-
-    img:nth-child(3) {
-      translate: 0 50%;
-      animation-delay: calc($golden-ratio-time / 4);
-    }
-  }
+.show-bg {
+  animation: scale-fade-in calc($golden-ratio-time / 2)
+    ease-in-out forwards;
 }
 
 @keyframes ilusion-loop {
