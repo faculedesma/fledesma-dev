@@ -128,3 +128,50 @@
     }
   }
 }
+
+/* Tablets (portrait) */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: 'portrait') and (-webkit-min-device-pixel-ratio: 1) {
+  .scroll-button {
+    &--text-path {
+      display: none;
+
+      svg:first-child {
+        scale: -4.5;
+      }
+
+      svg:last-child {
+        scale: 4.5;
+      }
+    }
+  }
+}
+
+/* Tablets (landscape) */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: 'landscape') and (-webkit-min-device-pixel-ratio: 1) {
+  .scroll-button {
+    &--text-path {
+      svg:first-child {
+        scale: -4.5;
+      }
+
+      svg:last-child {
+        scale: 4.5;
+      }
+    }
+  }
+}
+
+/* Tablets (portrait) */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: 'portrait') and (-webkit-min-device-pixel-ratio: 1) {
+  .scroll-button {
+    &--text-path {
+      svg:first-child {
+        scale: -4.5;
+      }
+
+      svg:last-child {
+        scale: 4.5;
+      }
+    }
+  }
+}

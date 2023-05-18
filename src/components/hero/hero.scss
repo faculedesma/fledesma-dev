@@ -463,3 +463,17 @@
     height: 700px;
   }
 }
+
+/* Tablets (landscape) */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: 'landscape') and (-webkit-min-device-pixel-ratio: 1) {
+  .hero {
+    height: 600px;
+  }
+}
+
+/* Tablets (portrait) */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: 'portrait') and (-webkit-min-device-pixel-ratio: 1) {
+  .hero {
+    height: 750px;
+  }
+}
