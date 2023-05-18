@@ -34,7 +34,7 @@
   display: none;
   position: relative;
   width: 100%;
-  height: 650px;
+  height: 620px;
   position: relative;
   flex-direction: column;
   align-items: center;
@@ -372,10 +372,17 @@
   }
 
   .hero-background {
+    width: 71dvw;
+    height: 200px;
+
     img {
-      width: 80%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 71dvw;
       height: 200px;
       scale: 1 1;
+      transform: skew(0, 0) scale(1.5);
     }
   }
 
@@ -442,7 +449,7 @@
     }
   }
 
-  .focus-bg {
+  .focus-bg-mobile {
     img {
       transform: skew(0, 0) scale(1.5);
       transition: transform calc($golden-ratio-time / 8)
