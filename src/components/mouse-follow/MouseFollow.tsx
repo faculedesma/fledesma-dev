@@ -25,6 +25,7 @@ const MouseFollow = (): JSX.Element => {
       className="mouse-follow point"
     >
       <div className="mouse-follow--bg"></div>
+      <div className="mouse-follow--image"></div>
       <p className="mouse-follow--text">Visit</p>
     </div>
   );

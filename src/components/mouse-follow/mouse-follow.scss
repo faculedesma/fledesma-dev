@@ -13,7 +13,8 @@
   justify-content: center;
   z-index: 5;
 
-  &--bg {
+  &--bg,
+  &--image {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -21,23 +22,49 @@
     height: 100%;
     border-radius: 50%;
     translate: -50% -50%;
+  }
+
+  &--bg {
+    scale: 1;
+    transition: scale calc($golden-ratio-time / 4)
+      ease-in-out;
+    z-index: 5;
+  }
+
+  &--image {
     scale: 0;
-    transition: all calc($golden-ratio-time / 8) ease-in-out;
+    background: transparent;
+    transition: scale calc($golden-ratio-time / 4)
+      ease-in-out;
+    z-index: 4;
   }
 
   &--text {
     scale: 0;
     color: rgba($primary-color, 0.9);
-    transition: color calc($golden-ratio-time / 8)
-      ease-in-out forwards;
+    transition: color calc($golden-ratio-time / 4)
+      ease-in-out;
   }
 }
 
 .point {
-  .mouse-follow--bg {
-    scale: 1;
-    background: rgba($highlight-color, 0.9);
-    transition: all calc($golden-ratio-time / 8) ease-in-out;
+  .mouse-follow {
+    &--bg {
+      scale: 1;
+      background: rgba($highlight-color, 0.9);
+      transition: all calc($golden-ratio-time / 4)
+        ease-in-out;
+    }
+
+    &--image {
+      scale: 0;
+      opacity: 0.5;
+      background: url('../../assets/images/2001.jpg');
+      background-position: center;
+      background-size: cover;
+      transition: scale calc($golden-ratio-time / 4)
+        ease-in-out;
+    }
   }
 }
 
@@ -46,8 +73,8 @@
     &--bg {
       scale: 12;
       background: rgba($primary-color, 0.95);
-      transition: all calc($golden-ratio-time / 8)
-        ease-in-out forwards;
+      transition: all calc($golden-ratio-time / 4)
+        ease-in-out;
 
       &::before {
         border: 0.5px solid $secondary-color;
@@ -57,8 +84,9 @@
     &--text {
       scale: 1;
       color: rgba($secondary-color, 0.9);
-      transition: all calc($golden-ratio-time / 8)
-        ease-in-out forwards;
+      transition: all calc($golden-ratio-time / 4)
+        ease-in-out;
+      z-index: 6;
     }
   }
 }
@@ -66,6 +94,12 @@
 .eye {
   .mouse-follow {
     &--bg {
+      scale: 0;
+      transition: all calc($golden-ratio-time / 4)
+        ease-in-out;
+    }
+
+    &--image {
       opacity: 0.9;
       scale: 40;
       background: url('../../assets/images/2001.jpg');
@@ -73,7 +107,7 @@
         calc($golden-ratio-time * 8) ease-in-out infinite;
       background-position: center;
       background-size: cover;
-      transition: all calc($golden-ratio-time / 8)
+      transition: all calc($golden-ratio-time / 4)
         ease-in-out;
     }
   }
@@ -82,14 +116,18 @@
 .video {
   .mouse-follow {
     &--bg {
+      scale: 0;
+      transition: all calc($golden-ratio-time * 4) ease-out;
+    }
+
+    &--image {
       opacity: 0.5;
-      scale: 50;
+      scale: 0;
       border-radius: 0%;
-      background-image: url('../../assets/images/beyond.jpg');
+      background: url('../../assets/images/beyond.jpg');
       background-position: center;
       background-size: cover;
-      transition: all calc($golden-ratio-time / 8)
-        ease-in-out;
+      transition: all calc($golden-ratio-time * 4) ease-out;
       z-index: 10;
     }
   }
