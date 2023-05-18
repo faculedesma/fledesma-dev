@@ -24,8 +24,8 @@ const NoteThree = () => {
       <div ref={noteThreeRef} className="notes-three">
         <h3>
           Every project, like every person, is unique.
-          Reflecting that energy into the designs will make
-          the difference.
+          Reflecting that energy into the designs makes the
+          difference.
         </h3>
         <img
           src={Ilusion}
