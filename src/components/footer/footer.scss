@@ -5,19 +5,21 @@
   top: 0;
   left: 0;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../assets/images/matrix.png');
+  background-position: center;
+  background-size: cover;
+  filter: invert(100%) contrast(100%);
+  animation: matrix-loop calc($golden-ratio-time / 8)
+    ease-out infinite;
+  margin-bottom: 20rem;
+  width: 100%;
   height: 700px;
-
-  img {
-    width: 100dvw;
-    z-index: 1;
-    scale: 1.2;
-    opacity: 0.5;
-    clip-path: circle(150px at 50% 50%);
-    filter: invert(100%) contrast(100%);
-    animation: matrix-loop calc($golden-ratio-time / 8)
-      ease-out infinite;
-    margin-bottom: 20rem;
-  }
+  z-index: 1;
+  opacity: 0.5;
+  clip-path: circle(150px at 50% 50%);
 }
 
 .footer {
@@ -177,15 +179,6 @@
       width: 80%;
     }
 
-    img {
-      opacity: 0.5;
-      width: 200px;
-      scale: 1;
-      filter: invert(100%) contrast(100%);
-      animation: none;
-      clip-path: circle(100px at 50% 50%);
-    }
-
     &-mail {
       width: 80%;
       height: 50px;
@@ -200,6 +193,33 @@
         width: 50px;
         height: 50px;
       }
+    }
+  }
+
+  .footer-bg {
+    opacity: 0.2;
+    filter: contrast(100%);
+    background-position: center;
+    animation: footer-bg-mobile calc($golden-ratio-time * 4)
+      linear infinite;
+    width: 100%;
+  }
+
+  @keyframes footer-bg-mobile {
+    0% {
+      background-position: center;
+    }
+
+    50% {
+      background-position: left;
+    }
+
+    75% {
+      background-position: right;
+    }
+
+    100% {
+      background-position: center;
     }
   }
 }

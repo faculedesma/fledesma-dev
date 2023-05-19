@@ -59,6 +59,7 @@ header {
 
       svg {
         width: 18px;
+        padding: 5px;
         scale: 1;
         transition: all calc($golden-ratio-time / 8) ease-in;
       }

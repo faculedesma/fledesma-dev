@@ -25,8 +25,8 @@ const NoteOne = () => {
         className="notes-one"
       >
         <h3>
-          Passionate about building harmonious, highly
-          functional, and intuitive experiences.
+          Passionate about building highly functional,
+          intuitive and unique experiences.
         </h3>
       </div>
     </div>

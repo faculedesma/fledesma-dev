@@ -2,7 +2,6 @@ import { MailEnvelop } from '@assets/svgs/MailEnvelop';
 import { useState, useRef, useEffect } from 'react';
 import { useIntersection } from '@components/hooks/useIntersection';
 import { Social } from '@components/social/Social';
-import MatirxPNG from '@assets/images/matrix.png';
 import { useCursorPosition } from '@components/hooks/useCursorPosition';
 import './footer.scss';
 
@@ -112,15 +111,8 @@ const Footer = () => {
             2023 <b>© Facundo Ledesma</b>
           </p>
         </div>
-        <div className="footer-bg">
-          <img
-            ref={matrixRef}
-            src={MatirxPNG}
-            alt="matrix"
-            loading="lazy"
-          />
-        </div>
       </div>
+      <div ref={matrixRef} className="footer-bg"></div>
     </div>
   );
 };
