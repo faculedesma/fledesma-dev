@@ -1,7 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { Social } from '@components/social/Social';
 import { ScrollButton } from '@components/buttons/ScrollButton';
-import ShapesBG from '@assets/images/shapes-bg.png';
 import { useCursorPosition } from '@components/hooks/useCursorPosition';
 import { useIntersection } from '@components/hooks/useIntersection';
 import TrianglePNG from '@assets/images/triangle.png';
@@ -100,8 +99,8 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
     ) {
       backgroundRef.current.animate(
         {
-          left: `${x / 20}px`,
-          top: `${y / 20}px`
+          left: `${x / 40}px`,
+          top: `${y / 40}px`
         },
         { duration: 1618 * 2, fill: 'forwards' }
       );
@@ -234,17 +233,11 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
             <ScrollButton />
           </div>
         </div>
-        <div
-          className="hero-background"
-          ref={backgroundRef}
-        >
-          <img
-            src={ShapesBG}
-            alt="bg-shapes"
-            draggable="false"
-          />
-        </div>
       </div>
+      <div
+        className="hero-background"
+        ref={backgroundRef}
+      ></div>
     </div>
   );
 };
