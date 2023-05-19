@@ -3,6 +3,9 @@ import { Menu } from '@components/menu/Menu';
 import './header.scss';
 import { useState, useRef, useEffect } from 'react';
 import { ToggleButton } from '@components/buttons/ToggleButton';
+import { useTheme } from '@components/hooks/useTheme';
+import { Sun } from '@assets/svgs/Sun';
+import { Moon } from '@assets/svgs/Moon';
 
 type Link = {
   id: string;
@@ -37,6 +40,8 @@ const Header: React.FC<IHeaderProps> = ({
 }): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const headerRef = useRef<HTMLDivElement>(null);
+
+  const { isDarkMode, toggleTheme } = useTheme();
 
   useEffect(() => {
     if (!isLoading) {
@@ -77,6 +82,13 @@ const Header: React.FC<IHeaderProps> = ({
             <p>Facundo Ledesma</p>
           </div>
           <div className="header-links">
+            <a
+              key="theme-color-toggle"
+              className="header-links--item theme"
+              onClick={(e) => toggleTheme()}
+            >
+              {isDarkMode ? <Moon /> : <Sun />}
+            </a>
             {links.map((link) => {
               return (
                 <a

@@ -78,7 +78,7 @@
         position: absolute;
         left: 0;
         top: 0;
-        border: 0.5px solid $highlight-color;
+        border: 0.5px solid var(--highlight-color);
         z-index: 1;
         opacity: 0;
       }
@@ -107,7 +107,7 @@
         h3 {
           font-family: 'Gilroy';
           font-weight: 700;
-          color: rgba($highlight-color, 1);
+          color: var(--highlight-color);
           line-height: 1;
         }
       }

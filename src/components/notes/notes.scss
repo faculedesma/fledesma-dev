@@ -84,20 +84,23 @@
   .square-big {
     width: 450px;
     height: 450px;
-    border: 0.5px solid rgba($highlight-color, 0.5);
+    border: 0.5px solid
+      rgba(var(--highlight-color-rgb), 0.5);
   }
 
   .square-small {
     width: 250px;
     height: 250px;
-    border: 0.5px solid rgba($highlight-color, 0.5);
+    border: 0.5px solid
+      rgba(var(--highlight-color-rgb), 0.5);
   }
 
   .circles {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 0.5px solid rgba($highlight-color, 0.5);
+    border: 0.5px solid
+      rgba(var(--highlight-color-rgb), 0.5);
     filter: hue-rotate(2);
     background-image: url('../../assets/images/beyond.jpg');
     background-position: center;

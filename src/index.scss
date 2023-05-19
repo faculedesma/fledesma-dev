@@ -73,11 +73,35 @@
 
 @import '../src/utils/variables';
 
+.dark {
+  --primary-color-rgb: 15, 14, 13;
+  --primary-color: rgb(15, 14, 13);
+  --secondary-color-rgb: 255, 255, 255;
+  --secondary-color: rgb(255, 255, 255);
+  --highlight-color-rgb: 152, 81, 81;
+  --highlight-color: rgb(152, 81, 81);
+  --shades-gray-op-one: 0.5;
+  --shades-gray-op-two: 0.1;
+  --hero-gradient-rgb: 35, 21, 33;
+}
+
+.light {
+  --primary-color-rgb: 255, 255, 255;
+  --primary-color: rgb(255, 255, 255);
+  --secondary-color-rgb: 152, 81, 81;
+  --secondary-color: rgb(152, 81, 81);
+  --highlight-color-rgb: 152, 81, 81;
+  --highlight-color: rgb(152, 81, 81);
+  --shades-gray-op-one: 0.5;
+  --shades-gray-op-two: 0.1;
+  --hero-gradient-rgb: 35, 21, 33;
+}
+
 body {
   width: 100dvw;
   min-width: 320px;
   margin: 0;
-  background-color: $primary-color;
+  background-color: var(--primary-color);
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-touch-callout: none; /* iOS Safari */
@@ -99,7 +123,7 @@ body {
 
   font-family: $secondary-font-family;
   color-scheme: light dark;
-  color: $secondary-color;
+  color: var(--secondary-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -166,7 +190,7 @@ button {
   font-size: $paragraph-size;
   font-weight: 700;
   font-family: inherit;
-  background-color: $secondary-color;
+  background-color: var(--secondary-color);
   cursor: pointer;
 }
 
@@ -180,15 +204,13 @@ button:focus-visible {
 }
 
 svg {
-  color: $secondary-color;
+  color: var(--secondary-color);
   width: 20px;
   height: 20px;
-}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: $secondary-color;
-    background-color: rgba($primary-color, 0.87);
+  path {
+    stroke: var(--secondary-color);
+    fill: var(--secondary-color);
   }
 }
 

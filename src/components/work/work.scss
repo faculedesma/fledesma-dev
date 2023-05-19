@@ -8,6 +8,7 @@
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 8rem;
+  color: var(--primary-color);
 
   > h3 {
     text-transform: uppercase;
@@ -35,6 +36,7 @@
       cursor: pointer;
       overflow: hidden;
       opacity: 0;
+      color: var(--secondary-color);
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 
       h2,
@@ -79,8 +81,8 @@
         align-items: center;
         justify-content: center;
         border-radius: 50%;
-        background-color: $secondary-color;
-        color: $highlight-color;
+        background-color: var(--secondary-color);
+        color: var(--highlight-color);
         scale: 0;
         translate: -50% -50%;
         font-weight: 300;
@@ -108,32 +110,13 @@
       }
     }
 
-    &--danilo {
-      background: linear-gradient(
-        to right,
-        #53302c,
-        $primary-color
-      );
-    }
-
     &--namewiz {
       img {
         height: 80%;
       }
-      background: linear-gradient(
-        to right,
-        #677874,
-        $primary-color
-      );
     }
 
     &--art {
-      background: linear-gradient(
-        to right,
-        rgba(#231521, 0.4),
-        $primary-color
-      );
-
       img {
         scale: 1.2;
         opacity: 0.6;
@@ -168,6 +151,54 @@
 .hide-card-cta {
   animation: scale-out calc($golden-ratio-time / 8) ease-out
     forwards;
+}
+
+.danilo-dark,
+.namewiz-dark,
+.art-dark {
+  color: var(--secondary-color);
+}
+
+.danilo-dark {
+  background: linear-gradient(
+    to right,
+    rgb(83, 48, 44),
+    var(--primary-color)
+  );
+}
+
+.namewiz-dark {
+  background: linear-gradient(
+    to right,
+    rgb(103, 120, 116),
+    var(--primary-color)
+  );
+}
+
+.art-dark {
+  background: linear-gradient(
+    to right,
+    rgba(rgb(35, 21, 33), 0.4),
+    var(--primary-color)
+  );
+}
+
+.danilo-light {
+  background: rgba(rgb(83, 48, 44), 0.95);
+}
+
+.namewiz-light {
+  background: rgba(rgb(103, 120, 116), 0.7);
+}
+
+.art-light {
+  background: rgba(rgb(35, 21, 33), 0.9);
+}
+
+.danilo-light,
+.namewiz-light,
+.art-light {
+  color: var(--primary-color);
 }
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {

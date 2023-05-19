@@ -47,7 +47,7 @@
     align-items: center;
     justify-content: space-between;
     background: transparent;
-    border: 1px solid $highlight-color;
+    border: 1px solid var(--highlight-color);
     cursor: pointer;
     z-index: 3;
     opacity: 0;
@@ -90,14 +90,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background-color: rgba($primary-color, 0.5);
+      background-color: rgba(var(--primary-color-rgb), 0.5);
       scale: 0;
       transition: scale calc($golden-ratio-time / 8)
         ease-in-out;
       z-index: 2;
 
       p {
-        color: $secondary-color;
+        color: var(--secondary-color);
         text-transform: none;
       }
     }
@@ -108,7 +108,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border-left: 1px solid $highlight-color;
+      border-left: 1px solid var(--highlight-color);
     }
   }
 

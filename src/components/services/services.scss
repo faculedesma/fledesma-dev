@@ -30,7 +30,8 @@
       justify-content: center;
       width: 320px;
       height: 375px;
-      border: 1px solid rgba($highlight-color, 0.2);
+      border: 1px solid
+        rgba(var(--highlight-color-rgb), 0.2);
       transition: border calc($golden-ratio-time / 8)
         ease-in-out;
       z-index: 2;
@@ -46,13 +47,14 @@
         background: linear-gradient(
           130deg,
           transparent 0% 33%,
-          $primary-color 66%,
-          rgba($highlight-color, 0.7) 83.5%,
-          rgba($highlight-color, 0.7) 100%
+          var(--primary-color) 66%,
+          rgba(var(--highlight-color-rgb), 0.7) 83.5%,
+          rgba(var(--highlight-color-rgb), 0.7) 100%
         );
         background-position: 0% 0%;
         background-size: 200% 200%;
-        border: 1px solid rgba($highlight-color, 0.2);
+        border: 1px solid
+          rgba(var(--highlight-color-rgb), 0.2);
         content: '';
         height: 100%;
         left: 0px;
@@ -82,6 +84,10 @@
           scale: 1;
           transition: all calc($golden-ratio-time / 4)
             ease-in-out;
+
+          path {
+            stroke: none;
+          }
         }
       }
 
@@ -150,15 +156,55 @@
     width: 80px;
     height: 80px;
     scale: 0 0;
-    opacity: 0;
-    filter: grayscale(1);
+    opacity: 0.8;
     transition: all calc($golden-ratio-time / 4) ease-in-out;
 
     &:hover {
-      filter: grayscale(1) brightness(1.4);
-      opacity: 0.8;
+      opacity: 0.9;
       transition: all calc($golden-ratio-time / 4)
         ease-in-out;
+    }
+  }
+
+  svg:nth-child(1) {
+    circle,
+    g {
+      stroke: var(--secondary-color);
+      fill: transparent;
+    }
+  }
+
+  svg:nth-child(2),
+  svg:nth-child(5) {
+    rect {
+      fill: var(--secondary-color);
+    }
+
+    path {
+      stroke: var(--secondary-color);
+      fill: var(--primary-color);
+    }
+  }
+
+  svg:nth-child(3) {
+    path {
+      stroke: var(--secondary-color);
+      fill: var(--secondary-color);
+    }
+  }
+
+  svg:nth-child(4) {
+    path {
+      stroke: var(--secondary-color);
+      fill: var(--secondary-color);
+    }
+  }
+
+  svg:nth-child(8) {
+    path,
+    circle {
+      stroke: var(--secondary-color);
+      fill: transparent;
     }
   }
 }
@@ -172,7 +218,7 @@
 
 .show-technologies {
   svg {
-    animation: scale-fade-in calc($golden-ratio-time / 4)
+    animation: scale-in calc($golden-ratio-time / 4)
       ease-in-out forwards;
   }
 

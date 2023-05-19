@@ -5,7 +5,7 @@
   height: 680px;
   background: linear-gradient(
     to bottom,
-    rgba(#231521, 0.3),
+    rgba(var(--hero-gradient), 0.3),
     transparent
   );
   z-index: 1;
@@ -128,7 +128,7 @@
         transition: all calc($golden-ratio-time / 8)
           ease-out;
         border-radius: 50%;
-        background-color: $highlight-color;
+        background-color: var(--highlight-color);
         z-index: 1;
       }
     }
@@ -160,12 +160,12 @@
       }
 
       h1:last-child {
-        color: $secondary-color;
+        color: var(--secondary-color);
         transition: color calc($golden-ratio-time / 8)
           ease-in;
 
         &:hover {
-          color: $highlight-color;
+          color: var(--highlight-color);
           transition: color calc($golden-ratio-time / 8)
             ease-in;
         }
@@ -366,7 +366,7 @@
   .hero-gradient {
     background: linear-gradient(
       to bottom,
-      rgba($highlight-color, 0.1),
+      rgba(var(--highlight-color), 0.1),
       transparent
     );
   }

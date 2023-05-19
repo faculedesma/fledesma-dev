@@ -8,7 +8,7 @@
   width: auto;
   height: 55px;
   background: none;
-  color: $secondary-color;
+  color: var(--secondary-color);
   cursor: pointer;
   transform: scale(1);
   transition: all calc($golden-ratio-time / 8) ease-in-out;
@@ -17,6 +17,11 @@
   svg {
     translate: 0 0;
     transition: all calc($golden-ratio-time / 8) ease-in-out;
+
+    path {
+      stroke: none;
+      fill: var(--highlight-color);
+    }
   }
 
   &:focus {

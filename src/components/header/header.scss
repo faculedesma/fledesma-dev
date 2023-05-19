@@ -30,6 +30,17 @@ header {
       height: 43px;
       transform: scale(1);
       transition: calc($golden-ratio-time / 8) ease-in;
+
+      path {
+        stroke: var(--secondary-color);
+        fill: transparent;
+      }
+
+      circle,
+      rect {
+        stroke: rgba(var(--secondary-color-rgb), 1);
+        fill: transparent;
+      }
     }
 
     p {
@@ -38,10 +49,25 @@ header {
   }
 
   &-links {
-    width: 270px;
+    width: 320px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    .theme {
+      margin-right: 2rem;
+
+      svg {
+        width: 18px;
+        scale: 1;
+        transition: all calc($golden-ratio-time / 8) ease-in;
+      }
+
+      svg:hover {
+        scale: 1;
+        transition: all calc($golden-ratio-time / 8) ease-in;
+      }
+    }
 
     &--item {
       position: relative;
@@ -63,7 +89,7 @@ header {
 
         span:first-child {
           transform: translateY(0) scaleY(1);
-          color: $secondary-color;
+          color: var(--secondary-color);
           transition: all calc($golden-ratio-time / 8)
             ease-in;
         }
@@ -73,7 +99,7 @@ header {
           top: 0;
           left: 0;
           transform: translateY(100%) scaleY(0);
-          color: $shades-gray;
+          color: var(--secondary-color);
           transition: all calc($golden-ratio-time / 8)
             ease-in;
         }
@@ -82,12 +108,20 @@ header {
       &:hover {
         .header-links--item-text {
           span:first-child {
+            color: rgba(
+              var(--secondary-color-rgb),
+              var(--shades-gray-op-one)
+            );
             transform: translateY(0) scaleY(0);
             transition: all calc($golden-ratio-time / 8)
               ease-in;
           }
 
           span:last-child {
+            color: rgba(
+              var(--secondary-color-rgb),
+              var(--shades-gray-op-one)
+            );
             transform: translateY(0) scaleY(1);
             transition: all calc($golden-ratio-time / 8)
               ease-in;
@@ -105,6 +139,8 @@ header {
 /* Smartphones (portrait and landscape) */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .header {
+    position: relative;
+
     &-logo {
       width: 100px;
 
@@ -115,7 +151,16 @@ header {
     }
 
     &-links {
-      display: none;
+      width: 20px;
+      translate: 55px 0;
+
+      &--item {
+        display: none;
+      }
+
+      .theme {
+        display: inherit;
+      }
     }
   }
 }

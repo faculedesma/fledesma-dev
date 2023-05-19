@@ -3,7 +3,7 @@
 .scroll-button {
   height: 75px;
   width: 75px;
-  color: $primary-color;
+  color: var(--primary-color);
   background: transparent;
   z-index: 4;
 
@@ -30,7 +30,7 @@
     translate: -50% -50%;
     height: 100%;
     width: 100%;
-    background-color: $secondary-color;
+    background-color: var(--secondary-color);
     border-radius: 50%;
     scale: 1;
     transition: scale calc($golden-ratio-time / 4)
@@ -59,10 +59,11 @@
 
       path {
         stroke: transparent;
+        fill: transparent;
       }
 
       textPath {
-        fill: $secondary-color;
+        fill: var(--secondary-color);
         text-transform: uppercase;
         font-weight: 300;
         font-size: 12px;
@@ -91,7 +92,7 @@
         ease-in-out;
 
       path {
-        fill: $primary-color;
+        stroke: var(--primary-color);
       }
     }
   }
