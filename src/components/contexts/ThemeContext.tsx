@@ -17,7 +17,9 @@ export const ThemeProvider: React.FC<
   ThemeProviderProps
 > = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem('theme') === 'dark'
+    localStorage.getItem('theme')
+      ? localStorage.getItem('theme') === 'dark'
+      : true
   );
 
   useEffect(() => {
