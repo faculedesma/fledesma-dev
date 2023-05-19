@@ -458,9 +458,35 @@
   }
 }
 
+/* Larger screens */
 @media only screen and (min-device-width: 1920px) and (max-device-width: 3840px) {
   .hero {
-    height: 700px;
+    height: 900px;
+
+    &-triangle {
+      translate: 0 75px;
+      scale: 1.05;
+    }
+  }
+
+  .hero-gradient {
+    height: fit-content;
+  }
+
+  .hero-background {
+    img {
+      transform: skew(0deg, 0deg) scale(1.1 1);
+      transition: transform calc($golden-ratio-time / 8)
+        ease-out;
+    }
+  }
+
+  .focus-bg {
+    img {
+      transform: skew(5deg, 0deg) scale(1.3 1);
+      transition: transform calc($golden-ratio-time / 8)
+        ease-out;
+    }
   }
 }
 

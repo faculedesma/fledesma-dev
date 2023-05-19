@@ -135,6 +135,16 @@
   }
 }
 
+@media only screen and (min-device-width: 1920px) and (max-device-width: 3840px) {
+  .notes {
+    &-three {
+      img {
+        scale: 1.5;
+      }
+    }
+  }
+}
+
 /* Smartphones (portrait and landscape) */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .notes {

@@ -278,3 +278,23 @@
     }
   }
 }
+
+@media only screen and (min-device-width: 1920px) and (max-device-width: 3840px) {
+  .work {
+    &-list {
+      &--danilo,
+      &--namewiz,
+      &--art {
+        height: 650px;
+
+        h2 {
+          top: 100px;
+        }
+
+        h3 {
+          bottom: 100px;
+        }
+      }
+    }
+  }
+}

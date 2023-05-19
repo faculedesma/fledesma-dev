@@ -247,10 +247,16 @@
   .about-me {
     &--content {
       &-left {
+        height: 100%;
+
         &--bg {
           width: 500px;
           height: 700px;
         }
+      }
+
+      &-right {
+        height: 85%;
       }
     }
   }

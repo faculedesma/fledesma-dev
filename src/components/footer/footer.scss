@@ -2,18 +2,16 @@
 
 .footer-bg {
   position: absolute;
-  width: 100dvw;
   top: 0;
   left: 0;
-  height: 700px;
-  scale: 1.2;
   overflow: hidden;
+  height: 700px;
 
   img {
-    width: 100%;
+    width: 100dvw;
     z-index: 1;
+    scale: 1.2;
     opacity: 0.5;
-    translate: -115px -100px;
     clip-path: circle(150px at 50% 50%);
     filter: invert(100%) contrast(100%);
     animation: matrix-loop calc($golden-ratio-time / 8)
@@ -203,5 +201,14 @@
         height: 50px;
       }
     }
+  }
+}
+
+/* Larger screens */
+@media only screen and (min-device-width: 1920px) and (max-device-width: 3840px) {
+  .footer {
+    height: 850px;
+    justify-content: space-evenly;
+    margin-top: 20rem;
   }
 }
