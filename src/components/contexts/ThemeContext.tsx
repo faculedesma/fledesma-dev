@@ -1,11 +1,11 @@
-import React from 'react';
+import { useState, useEffect, createContext } from 'react';
 
 type ThemeContextType = {
   isDarkMode: boolean;
   toggleTheme: () => void;
 };
 
-export const ThemeContext = React.createContext<
+export const ThemeContext = createContext<
   ThemeContextType | undefined
 >(undefined);
 
@@ -16,15 +16,19 @@ type ThemeProviderProps = {
 export const ThemeProvider: React.FC<
   ThemeProviderProps
 > = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = React.useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem('theme') === 'dark'
+  );
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.remove('light');
       document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
     } else {
       document.documentElement.classList.remove('dark');
       document.documentElement.classList.add('light');
+      localStorage.setItem('theme', 'light');
     }
   }, [isDarkMode]);
 
