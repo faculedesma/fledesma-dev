@@ -8,7 +8,6 @@
     rgba(var(--hero-gradient), 0.3),
     transparent
   );
-  z-index: 1;
 }
 
 .hero-background {
@@ -26,7 +25,7 @@
   transition: transform calc($golden-ratio-time) ease-out;
   animation: fade-in calc($golden-ratio-time / 2) ease-in
     forwards;
-  z-index: 1;
+  z-index: -1;
 }
 
 .hero {
@@ -362,10 +361,6 @@
     );
   }
 
-  .hero-background {
-    transform: skew(0, 0) scale(1.05);
-  }
-
   .hero {
     position: relative;
     height: fit-content;
@@ -447,10 +442,6 @@
     }
   }
 
-  .hero-background {
-    transform: skew(0, 0) scale(1.05);
-  }
-
   .hero-gradient {
     height: fit-content;
   }
@@ -472,10 +463,6 @@
       translate: -25px 25px;
     }
   }
-
-  .hero-background {
-    transform: skew(0, 0) scale(1.05);
-  }
 }
 
 /* Tablets (portrait) */
@@ -489,9 +476,5 @@
         left: -30%;
       }
     }
-  }
-
-  .hero-background {
-    transform: skew(0, 0) scale(1.05);
   }
 }

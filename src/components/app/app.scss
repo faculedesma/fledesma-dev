@@ -1,8 +1,11 @@
 @import '../../utils/variables';
 
 .app {
+  position: relative;
   width: 100%;
-  display: block;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
   box-sizing: border-box;
 }
 
