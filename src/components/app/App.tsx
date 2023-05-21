@@ -32,8 +32,6 @@ const App: FC = () => {
 
   const appLoading = isLoadingAssets;
 
-  console.log(isDarkMode);
-
   return (
     <div id="app" ref={appRef} className="app">
       <Home isLoading={appLoading} />

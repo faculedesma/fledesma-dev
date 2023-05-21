@@ -137,34 +137,36 @@
 
 .lighted {
   -webkit-box-shadow: 10px 0px 77px 14px
-    rgba(181, 181, 181, 1);
-  -moz-box-shadow: 10px 0px 77px 14px rgba(181, 181, 181, 1);
-  box-shadow: 10px 0px 77px 14px rgba(181, 181, 181, 1);
+    rgba(var(--shadow-gray-rgb), 1);
+  -moz-box-shadow: 10px 0px 77px 14px
+    rgba(var(--shadow-gray-rgb), 1);
+  box-shadow: 10px 0px 77px 14px
+    rgba(var(--shadow-gray-rgb), 1);
 }
 
 @keyframes eye-follow-tick {
   0% {
-    filter: invert(1);
+    filter: invert(1) saturate(1);
     background-position: center;
   }
 
   25% {
-    filter: invert(0.5);
+    filter: invert(1) saturate(1.1);
     background-position: top;
   }
 
   50% {
-    filter: invert(1);
+    filter: invert(1) saturate(1.2);
     background-position: center;
   }
 
   75% {
-    filter: invert(0.5);
+    filter: invert(1) saturate(1.1);
     background-position: bottom;
   }
 
   100% {
-    filter: invert(1);
+    filter: invert(1) saturate(1);
     background-position: center;
   }
 }
