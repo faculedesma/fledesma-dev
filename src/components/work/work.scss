@@ -217,19 +217,22 @@
 
         h2,
         h3 {
+          font-size: 30px;
           translate: 0px 0px;
           transition: translate calc($golden-ratio-time / 8)
             ease-in-out;
         }
 
         h2 {
-          width: 80%;
+          font-size: 30px;
+          width: 75%;
           position: absolute;
           top: 50px;
           left: 50px;
         }
 
         h3 {
+          font-size: 20px;
           position: absolute;
           bottom: 50px;
           left: 50px;

@@ -1,10 +1,11 @@
 @import '../../utils/variables';
 
 .scroll-button {
-  height: 75px;
-  width: 75px;
+  height: 175px;
+  width: 175px;
   color: var(--primary-color);
   background: transparent;
+  translate: -50px 50px;
   z-index: 4;
 
   &:hover {
@@ -25,11 +26,11 @@
 
   &--circle {
     position: absolute;
-    top: 50%;
     left: 50%;
+    top: 50%;
     translate: -50% -50%;
-    height: 100%;
-    width: 100%;
+    height: 75px;
+    width: 75px;
     background-color: var(--secondary-color);
     border-radius: 50%;
     scale: 1;
@@ -44,19 +45,17 @@
   }
 
   &--text-path {
-    width: 100%;
-    height: 100%;
-    rotate: -360deg;
-    animation: rotate-text calc($golden-ratio-time / 2)
-      ease-in-out 1;
-    z-index: -1;
-
     svg {
+      animation: rotate-text calc($golden-ratio-time / 2)
+        ease-in-out 1;
+      z-index: -1;
+      rotate: -360deg;
+      width: 175px;
+      height: 175px;
       position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
+      left: 50%;
+      top: 50%;
+      translate: -50% -50%;
 
       path {
         stroke: transparent;
@@ -72,12 +71,8 @@
       }
     }
 
-    svg:first-child {
-      scale: -3;
-    }
-
     svg:last-child {
-      scale: 3;
+      scale: -1;
     }
   }
 
@@ -118,61 +113,30 @@
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .hero {
     .scroll-button {
-      &--text-path {
-        svg:first-child {
-          scale: -4.5;
+      translate: 0 0;
+
+      &:hover {
+        .scroll-button {
+          &--text-path {
+            animation: none;
+          }
         }
+      }
+    }
+  }
+}
 
-        svg:last-child {
-          scale: 4.5;
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .hero {
+    .scroll-button {
+      translate: 0 0;
+
+      &:hover {
+        .scroll-button {
+          &--text-path {
+            animation: none;
+          }
         }
-      }
-    }
-  }
-}
-
-/* Tablets (portrait) */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: 'portrait') and (-webkit-min-device-pixel-ratio: 1) {
-  .scroll-button {
-    &--text-path {
-      display: none;
-
-      svg:first-child {
-        scale: -4.5;
-      }
-
-      svg:last-child {
-        scale: 4.5;
-      }
-    }
-  }
-}
-
-/* Tablets (landscape) */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: 'landscape') and (-webkit-min-device-pixel-ratio: 1) {
-  .scroll-button {
-    &--text-path {
-      svg:first-child {
-        scale: -4.5;
-      }
-
-      svg:last-child {
-        scale: 4.5;
-      }
-    }
-  }
-}
-
-/* Tablets (portrait) */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: 'portrait') and (-webkit-min-device-pixel-ratio: 1) {
-  .scroll-button {
-    &--text-path {
-      svg:first-child {
-        scale: -4.5;
-      }
-
-      svg:last-child {
-        scale: 4.5;
       }
     }
   }

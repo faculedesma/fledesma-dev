@@ -222,9 +222,15 @@
         width: 100%;
         height: 550px;
 
+        &--images {
+          img {
+            width: 90%;
+          }
+        }
+
         &--bg {
-          width: 350px;
-          height: 450px;
+          width: 100%;
+          height: 420px;
         }
       }
 

@@ -180,16 +180,13 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
               alt="triangle-pscyh"
               loading="lazy"
             />
-            <div
+            <img
               ref={shapesRef}
+              src={TriangleShapesPNG}
               className="hero-triangle--shapes"
-            >
-              <img
-                src={TriangleShapesPNG}
-                alt="triangle-shapes"
-                loading="lazy"
-              />
-            </div>
+              alt="triangle-shapes"
+              loading="lazy"
+            />
             <img
               src={TriangleBGPNG}
               className="hero-triangle--bg"
