@@ -1,7 +1,7 @@
 import { FC, useState, useEffect, useRef } from 'react';
 import Home from '@pages/home/Home';
 import Loader from '@components/loader/Loader';
-import { useTheme } from '@components/hooks/useTheme';
+import MouseFollow from '@components/mouse-follow/MouseFollow';
 import './app.scss';
 
 const App: FC = () => {
@@ -10,8 +10,6 @@ const App: FC = () => {
 
   const mounted = useRef(false);
   const appRef = useRef(null);
-
-  const { isDarkMode } = useTheme();
 
   const handleIsLoaded = () => setIsLoadingAssets(false);
 
@@ -36,6 +34,7 @@ const App: FC = () => {
     <div id="app" ref={appRef} className="app">
       <Home isLoading={appLoading} />
       <Loader isLoading={appLoading} />
+      {!appLoading && <MouseFollow />}
     </div>
   );
 };

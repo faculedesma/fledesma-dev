@@ -1,7 +1,6 @@
 import { lazy } from 'react';
 import Hero from '@components/hero/Hero';
 import Header from '@components/header/Header';
-import MouseFollow from '@components/mouse-follow/MouseFollow';
 
 const NoteOne = lazy(
   () => import('@components/notes/NoteOne')
@@ -43,7 +42,6 @@ const Home = ({ isLoading }: IHomeProps) => {
       <NoteThree />
       <Work />
       <Footer />
-      {!isLoading && <MouseFollow />}
     </div>
   );
 };

@@ -1,6 +1,9 @@
 @import '../../utils/variables';
 
 .hero-gradient {
+  position: relative;
+  top: 0;
+  left: 0;
   width: 100dvw;
   height: 680px;
   background: linear-gradient(
@@ -368,8 +371,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    margin-top: 50px;
-    padding: 0;
+    padding-top: 50px;
 
     &-triangle,
     &-title,
@@ -389,7 +391,6 @@
 
       &--shapes {
         width: 50%;
-        top: 30%;
         opacity: 0.2;
       }
 
@@ -452,13 +453,6 @@
   .hero {
     height: 600px;
 
-    &-triangle {
-      &--shapes {
-        top: 30%;
-        left: -30%;
-      }
-    }
-
     &-scroll {
       translate: -25px 25px;
     }
@@ -469,12 +463,5 @@
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: 'portrait') and (-webkit-min-device-pixel-ratio: 1) {
   .hero {
     height: 750px;
-
-    &-triangle {
-      &--shapes {
-        top: 30%;
-        left: -30%;
-      }
-    }
   }
 }
