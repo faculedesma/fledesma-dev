@@ -31,7 +31,6 @@ const NoteThree = () => {
           src={Ilusion}
           alt="ilusion"
           draggable="false"
-          loading="lazy"
         />
       </div>
     </div>

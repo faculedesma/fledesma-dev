@@ -68,17 +68,11 @@ const AboutMe = () => {
             className="about-me--content-left"
           >
             <div className="about-me--content-left--images">
-              <img
-                src={MePNG}
-                alt="me"
-                draggable="false"
-                loading="lazy"
-              />
+              <img src={MePNG} alt="me" draggable="false" />
               <img
                 src={MeBGPNG}
                 alt="me-bg"
                 draggable="false"
-                loading="lazy"
               />
             </div>
             <div className="about-me--content-left--bg"></div>
