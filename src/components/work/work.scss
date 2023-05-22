@@ -300,3 +300,24 @@
     }
   }
 }
+
+/* Tablets (portrait) */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: 'portrait') and (-webkit-min-device-pixel-ratio: 1) {
+  .work {
+    width: 100%;
+
+    &-list {
+      &--danilo,
+      &--namewiz,
+      &--art {
+        img {
+          height: 400px;
+        }
+
+        h2 {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

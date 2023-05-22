@@ -293,7 +293,8 @@
     height: fit-content;
 
     &--content {
-      align-items: center;
+      align-items: flex-start;
+      flex-direction: column;
 
       &-left,
       &-right {
@@ -302,30 +303,25 @@
 
       &-left {
         width: 100%;
-        height: 450px;
+        height: 700px;
 
         &--images {
           img {
-            width: 80%;
+            width: 450px;
           }
         }
 
         &--bg {
-          width: 350px;
-          height: 450px;
+          width: 470px;
+          height: 600px;
         }
       }
 
       &-right {
-        height: 600px;
-        align-items: flex-end;
+        height: 700px;
+        width: 80%;
+        align-items: flex-start;
         justify-content: center;
-
-        &--text {
-          p {
-            text-align: end;
-          }
-        }
       }
     }
   }
