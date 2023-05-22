@@ -2,8 +2,6 @@
 
 .mouse-follow {
   position: absolute;
-  left: 50%;
-  top: 50%;
   width: 12px;
   height: 12px;
   translate: -50% -50%;
@@ -102,6 +100,7 @@
     }
 
     &--image {
+      display: none;
       opacity: 0.8;
       scale: 40;
       background: url('../../assets/images/2001.webp');
@@ -136,6 +135,8 @@
 }
 
 .lighted {
+  transition: box-shadow calc($golden-ratio-time / 4)
+    ease-in-out;
   -webkit-box-shadow: 10px 0px 77px 14px
     rgba(var(--shadow-gray-rgb), 1);
   -moz-box-shadow: 10px 0px 77px 14px

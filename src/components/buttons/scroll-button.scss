@@ -18,8 +18,9 @@
       }
 
       &--text-path {
-        animation: rotate-text calc($golden-ratio-time * 2)
-          ease-in-out infinite;
+        scale: 1.2;
+        transition: scale calc($golden-ratio-time / 4)
+          ease-in-out;
       }
     }
   }
@@ -34,8 +35,7 @@
     background-color: var(--secondary-color);
     border-radius: 50%;
     scale: 1;
-    transition: scale calc($golden-ratio-time / 4)
-      ease-in-out;
+    transition: all calc($golden-ratio-time / 4) ease-in-out;
     -webkit-box-shadow: 10px 0px 77px 14px
       rgba(var(--shadow-gray-rgb), 1);
     -moz-box-shadow: 10px 0px 77px 14px
@@ -45,6 +45,9 @@
   }
 
   &--text-path {
+    scale: 1;
+    transition: scale calc($golden-ratio-time / 4)
+      ease-in-out;
     svg {
       animation: rotate-text calc($golden-ratio-time / 2)
         ease-in-out 1;
