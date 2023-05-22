@@ -76,7 +76,6 @@ const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
       <h2>{work.title}</h2>
       <h3>{work.type}</h3>
       <img
-        loading="lazy"
         src={work.image}
         alt="work-image"
         draggable="false"

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useIntersection } from '@components/hooks/useIntersection';
-import Ilusion from '@assets/images/ilusion.png';
+import Ilusion from '@assets/images/ilusion.webp';
 
 import './notes.scss';
 

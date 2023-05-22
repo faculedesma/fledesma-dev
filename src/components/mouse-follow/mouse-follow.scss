@@ -60,7 +60,7 @@
       scale: 0;
       opacity: 0.5;
       filter: invert(1);
-      background: url('../../assets/images/2001.jpg');
+      background: url('../../assets/images/2001.webp');
       background-position: center;
       background-size: cover;
       transition: scale calc($golden-ratio-time / 4)
@@ -104,7 +104,7 @@
     &--image {
       opacity: 0.8;
       scale: 40;
-      background: url('../../assets/images/2001.jpg');
+      background: url('../../assets/images/2001.webp');
       animation: eye-follow-tick
         calc($golden-ratio-time * 8) ease-in-out infinite;
       background-position: center;
@@ -126,7 +126,7 @@
       opacity: 0.5;
       scale: 0;
       border-radius: 0%;
-      background: url('../../assets/images/beyond.jpg');
+      background: url('../../assets/images/beyond.webp');
       background-position: center;
       background-size: cover;
       transition: all calc($golden-ratio-time * 4) ease-out;

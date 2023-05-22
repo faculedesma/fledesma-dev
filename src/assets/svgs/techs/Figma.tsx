@@ -12,32 +12,32 @@ export const Figma = () => {
         r="34"
         fill="none"
         stroke="#000"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="12"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="12"
       ></circle>
       <path
         fill="none"
         stroke="#000"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="12"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="12"
         d="M128,94V26.00089H94a34,34,0,0,0,0,68Z"
       ></path>
       <path
         fill="none"
         stroke="#000"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="12"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="12"
         d="M128 161.99911V94H94a34 34 0 0 0 0 68zM128 94V26.00089h34a34 34 0 0 1 0 68z"
       ></path>
       <path
         fill="none"
         stroke="#000"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="12"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="12"
         d="M128,161.99911v34.00044A34,34,0,1,1,94,162Z"
       ></path>
     </svg>

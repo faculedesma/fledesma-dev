@@ -3,11 +3,11 @@ import { Social } from '@components/social/Social';
 import { ScrollButton } from '@components/buttons/ScrollButton';
 import { useCursorPosition } from '@components/hooks/useCursorPosition';
 import { useIntersection } from '@components/hooks/useIntersection';
-import TrianglePNG from '@assets/images/triangle.png';
-import TrianglePsychPNG from '@assets/images/triangle-psych.png';
-import TriangleBGPNG from '@assets/images/triangle-bg.png';
-import TriangleShapesPNG from '@assets/images/shapes-triangle.png';
-import EyePNG from '@assets/images/eye.png';
+import TrianglePNG from '@assets/images/triangle.webp';
+import TrianglePsychPNG from '@assets/images/triangle-psych.webp';
+import TriangleBGPNG from '@assets/images/triangle-bg.webp';
+import TriangleShapesPNG from '@assets/images/shapes-triangle.webp';
+import EyePNG from '@assets/images/eye.webp';
 import { useIsOnTop } from '@components/hooks/useIsOnTop';
 import './hero.scss';
 
