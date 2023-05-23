@@ -15,18 +15,18 @@ export const Social = () => {
         <LinkedIn />
       </a>
       <a
-        href="https://dribbble.com/fledesma"
-        target="_blank"
-        aria-label="Go to Facundo's Dribble account."
-      >
-        <Dribble />
-      </a>
-      <a
         href="https://www.behance.net/facundoledesma5"
         target="_blank"
         aria-label="Go to Facundo's Behance account."
       >
         <Behance />
+      </a>
+      <a
+        href="https://dribbble.com/fledesma"
+        target="_blank"
+        aria-label="Go to Facundo's Dribble account."
+      >
+        <Dribble />
       </a>
       <a
         href="https://twitter.com/faculedesma93"
