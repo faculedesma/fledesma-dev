@@ -18,6 +18,7 @@
       scale: 1;
       transition: scale calc($golden-ratio-time / 8)
         ease-in-out;
+      font-weight: 700;
     }
 
     &:hover {
