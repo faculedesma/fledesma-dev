@@ -228,7 +228,7 @@
 }
 
 .focus-bg {
-  transform: skew(20deg, 0deg) scale(1.1);
+  transform: skew(-10deg, 0deg) scale(1.1);
   transition: transform calc($golden-ratio-time / 8)
     ease-out;
 }
@@ -328,7 +328,7 @@
 
 @keyframes focus-pupil {
   0% {
-    transform: scale(1) translate(0, -15px) skew(2deg, 2deg);
+    transform: scale(1) translate(0, 15px) skew(2deg, 2deg);
   }
 
   100% {
