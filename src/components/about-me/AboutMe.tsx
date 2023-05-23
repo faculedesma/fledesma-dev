@@ -2,8 +2,8 @@ import { useRef, useEffect } from 'react';
 import { useIntersection } from '@components/hooks/useIntersection';
 import MePNG from '@assets/images/me.webp';
 import MeBGPNG from '@assets/images/me-bg.webp';
+import { Discovery } from '@components/buttons/Discovery';
 import './about-me.scss';
-import { SecondaryButton } from '@components/buttons/SecondaryButton';
 
 const AboutMe = () => {
   const isMobile =
@@ -105,10 +105,7 @@ const AboutMe = () => {
                 Are you ready to build your dream project?
               </p>
             </div>
-            <SecondaryButton
-              label="Keep exploring"
-              onClick={handleClick}
-            />
+            <Discovery />
           </div>
         </div>
       </section>

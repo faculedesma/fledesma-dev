@@ -1,0 +1,56 @@
+@import '../../utils/variables';
+
+.discovery {
+  width: 270px;
+  z-index: 2;
+
+  a {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    cursor: pointer;
+
+    span {
+      color: var(--secondary-color);
+      text-transform: uppercase;
+      scale: 1;
+      transition: scale calc($golden-ratio-time / 8)
+        ease-in-out;
+    }
+
+    &:hover {
+      svg {
+        scale: 1.2;
+        transition: scale calc($golden-ratio-time / 8)
+          ease-in-out;
+      }
+
+      span {
+        scale: 0.9;
+        transition: scale calc($golden-ratio-time / 8)
+          ease-in-out;
+      }
+    }
+
+    svg {
+      scale: 1;
+      transition: scale calc($golden-ratio-time / 8)
+        ease-in-out;
+
+      path {
+        stroke: var(--highlight-color);
+        fill: var(--highlight-color);
+      }
+    }
+  }
+}
+
+/* Smartphones (portrait & landscape) */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .discovery {
+    width: 210px;
+    height: 40px;
+  }
+}

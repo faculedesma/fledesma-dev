@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useIntersection } from '@components/hooks/useIntersection';
 import { Social } from '@components/social/Social';
 import { useCursorPosition } from '@components/hooks/useCursorPosition';
+import { Discovery } from '@components/buttons/Discovery';
 import './footer.scss';
 
 const Footer = () => {
@@ -91,6 +92,7 @@ const Footer = () => {
     >
       <div ref={footerRef} id="contact" className="footer">
         <h1>Let's build something awesome!</h1>
+        <Discovery />
         <div className="footer-mail">
           <p>faculedesma1993@gmail.com</p>
           <div className="footer-mail--icon">
