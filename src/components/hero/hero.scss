@@ -243,12 +243,12 @@
 }
 
 .focus-pupil {
-  animation: focus-pupil calc($golden-ratio-time / 8)
+  animation: focus-pupil calc($golden-ratio-time / 6)
     ease-out forwards;
 }
 
 .unfocus-pupil {
-  animation: unfocus-pupil calc($golden-ratio-time / 8)
+  animation: unfocus-pupil calc($golden-ratio-time / 6)
     ease-out forwards;
 }
 
@@ -328,11 +328,11 @@
 
 @keyframes focus-pupil {
   0% {
-    transform: scale(1) translate(0, 15px) skew(2deg, 2deg);
+    transform: scale(1) translate(0, -15px) skew(2deg, 2deg);
   }
 
   100% {
-    transform: scale(1.25) translate(-10px, 0px)
+    transform: scale(1.25) translate(10px, 10px)
       skew(10deg, 2deg);
     -webkit-box-shadow: 10px 0px 77px 14px
       rgba(var(--shadow-gray-rgb), 1);
@@ -345,7 +345,7 @@
 
 @keyframes unfocus-pupil {
   0% {
-    transform: scale(1.25) translate(-10px, 0px)
+    transform: scale(1.25) translate(10px, 10px)
       skew(10deg, 2deg);
     -webkit-box-shadow: 10px 0px 77px 14px
       rgba(var(--shadow-gray-rgb), 1);

@@ -107,9 +107,8 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
       if (!isMobile) {
         pupilRef.current.animate(
           {
-            translate: `${moveRight ? '' : '-'}${
-              x / 40
-            }px ${y / 20}px`
+            left: `${x / 20}px`,
+            top: `${y / 20}px`
           },
           { duration: 1618 / 2, fill: 'forwards' }
         );
