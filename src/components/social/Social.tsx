@@ -2,6 +2,7 @@ import { Twitter } from '@assets/svgs/Twitter';
 import { Behance } from '@assets/svgs/Behance';
 import { Dribble } from '@assets/svgs/Dribble';
 import { LinkedIn } from '@assets/svgs/LinkedIn';
+import { GitHub } from '@assets/svgs/GitHub';
 import './social.scss';
 
 export const Social = () => {
@@ -15,6 +16,13 @@ export const Social = () => {
         <LinkedIn />
       </a>
       <a
+        href="https://github.com/faculedesma"
+        target="_blank"
+        aria-label="Go to Facundo's GitHub account."
+      >
+        <GitHub />
+      </a>
+      {/* <a
         href="https://www.behance.net/facundoledesma5"
         target="_blank"
         aria-label="Go to Facundo's Behance account."
@@ -27,7 +35,7 @@ export const Social = () => {
         aria-label="Go to Facundo's Dribble account."
       >
         <Dribble />
-      </a>
+      </a> */}
       <a
         href="https://twitter.com/faculedesma93"
         target="_blank"
