@@ -116,8 +116,7 @@
         position: absolute;
         width: 40px;
         height: 40px;
-        transform: scale(1) skew(2deg, 2deg)
-          translate(0, -15px);
+        transform: scale(1) skew(2deg, 2deg) translate(0, 0);
         -webkit-box-shadow: 0px 0px 0px 0px
           rgba(var(--shadow-gray-rgb), 1);
         -moz-box-shadow: 0px 0px 0px 0px
@@ -328,7 +327,7 @@
 
 @keyframes focus-pupil {
   0% {
-    transform: scale(1) translate(0, -15px) skew(2deg, 2deg);
+    transform: scale(1) translate(0, 0) skew(2deg, 2deg);
   }
 
   100% {
@@ -356,7 +355,7 @@
   }
 
   100% {
-    transform: scale(1) translate(0, -15px) skew(2deg, 2deg);
+    transform: scale(1) translate(0, 0) skew(2deg, 2deg);
   }
 }
 
