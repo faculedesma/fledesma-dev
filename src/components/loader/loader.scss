@@ -1,9 +1,9 @@
 @import '../../utils/variables';
 
 .loader {
-  width: 100dvw;
-  height: 100dvh;
-  position: absolute;
+  width: 100%;
+  height: 100%;
+  position: fixed;
   left: 0;
   top: 0;
   opacity: 1;
@@ -28,7 +28,7 @@
 }
 
 .hidden {
-  animation: fade-out calc($golden-ratio-time / 16)
+  animation: fade-out calc($golden-ratio-time / 8)
     ease-in-out forwards;
   z-index: -1;
 
@@ -38,11 +38,5 @@
       transition: translate calc($golden-ratio-time / 16)
         ease-in-out;
     }
-  }
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
-  .loader {
-    flex-direction: column;
   }
 }
