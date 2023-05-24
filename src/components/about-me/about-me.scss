@@ -205,10 +205,11 @@
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .about-me {
     width: 100%;
-    height: fit-content;
+    height: 1100px;
     margin: 4rem 0;
 
     &--content {
+      height: 100%;
       flex-direction: column;
       align-items: flex-start;
       justify-content: space-between;
@@ -235,9 +236,9 @@
       }
 
       &-right {
-        height: 600px;
+        height: 610px;
         align-items: flex-start;
-        justify-content: center;
+        justify-content: space-between;
 
         &--text {
           p {

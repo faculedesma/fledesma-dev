@@ -180,9 +180,13 @@
     }
 
     &-mail {
-      width: 80%;
+      width: 90%;
       height: 50px;
       z-index: 3;
+
+      p {
+        width: calc(100% - 50px);
+      }
 
       &--copy {
         width: 100%;
@@ -203,24 +207,6 @@
     animation: footer-bg-mobile calc($golden-ratio-time * 4)
       linear infinite;
     width: 100%;
-  }
-
-  @keyframes footer-bg-mobile {
-    0% {
-      background-position: center;
-    }
-
-    50% {
-      background-position: left;
-    }
-
-    75% {
-      background-position: right;
-    }
-
-    100% {
-      background-position: center;
-    }
   }
 }
 
