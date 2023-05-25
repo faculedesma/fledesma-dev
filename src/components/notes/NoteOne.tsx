@@ -8,7 +8,7 @@ const NoteOne = () => {
   const noteOneRef = useRef<HTMLDivElement>(null);
   const isInViewport = useIntersection(
     noteOneRef,
-    isMobile ? -100 : -300
+    isMobile ? -50 : -150
   );
 
   useEffect(() => {

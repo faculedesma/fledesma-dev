@@ -48,7 +48,7 @@ const History = () => {
   const historyRef = useRef<HTMLDivElement>(null);
   const isInViewport = useIntersection(
     historyRef,
-    isMobile ? -50 : -300
+    isMobile ? -50 : -150
   );
 
   useEffect(() => {

@@ -13,7 +13,7 @@ const Footer = () => {
   const matrixRef = useRef<HTMLImageElement>(null);
   const isInViewport = useIntersection(
     footerRef,
-    isMobile ? 0 : -300
+    isMobile ? -50 : -150
   );
   const [text, setText] = useState('Click to copy!');
 

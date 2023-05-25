@@ -36,7 +36,7 @@ const Work = () => {
   const worksRef = useRef<HTMLDivElement>(null);
   const isInViewport = useIntersection(
     worksRef,
-    isMobile ? -50 : -200
+    isMobile ? -50 : -150
   );
 
   useEffect(() => {

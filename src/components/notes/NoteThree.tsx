@@ -10,7 +10,7 @@ const NoteThree = () => {
   const noteThreeRef = useRef<HTMLDivElement>(null);
   const isInViewport = useIntersection(
     noteThreeRef,
-    isMobile ? -100 : -300
+    isMobile ? -50 : -150
   );
 
   useEffect(() => {

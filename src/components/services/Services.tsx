@@ -38,7 +38,7 @@ const Services = () => {
   const servicesRef = useRef<HTMLDivElement>(null);
   const isInViewport = useIntersection(
     servicesRef,
-    isMobile ? -175 : -300
+    isMobile ? -50 : -150
   );
 
   useEffect(() => {

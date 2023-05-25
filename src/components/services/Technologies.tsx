@@ -20,7 +20,7 @@ export const Technologies: React.FC<ITechnologiesProps> = ({
 
   const isInViewport = useIntersection(
     technologiesRef,
-    isMobile ? -50 : -100
+    isMobile ? -50 : -150
   );
 
   useEffect(() => {
