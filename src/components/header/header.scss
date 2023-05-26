@@ -60,13 +60,9 @@ header {
       svg {
         width: 18px;
         padding: 5px;
-        scale: 1;
-        transition: all calc($golden-ratio-time / 8) ease-in;
-      }
-
-      svg:hover {
-        scale: 1;
-        transition: all calc($golden-ratio-time / 8) ease-in;
+        scale: 0 0;
+        animation: scale-in calc($golden-ratio-time / 8)
+          ease-in forwards;
       }
     }
 
