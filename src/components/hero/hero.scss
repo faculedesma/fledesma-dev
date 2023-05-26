@@ -188,6 +188,7 @@
     left: 0;
     height: 175px;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transform: translate(-15px, 15px);
 
     a {
       opacity: 0;
