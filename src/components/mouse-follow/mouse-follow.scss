@@ -50,6 +50,7 @@
     &--bg {
       scale: 1;
       background: rgba(var(--highlight-color-rgb), 0.9);
+      border: 0px solid var(--highlight-color);
       transition: all calc($golden-ratio-time / 4)
         ease-in-out;
     }
@@ -86,6 +87,22 @@
       transition: all calc($golden-ratio-time / 4)
         ease-in-out;
       z-index: 6;
+    }
+  }
+}
+
+.hover {
+  .mouse-follow {
+    &--bg {
+      scale: 4;
+      border: 0.5px solid var(--highlight-color);
+      background: rgba(var(--highlight-color-rgb), 0.1);
+      transition: all calc($golden-ratio-time / 4)
+        ease-in-out;
+    }
+
+    &--text {
+      display: none;
     }
   }
 }

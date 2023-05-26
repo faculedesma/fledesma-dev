@@ -8,22 +8,31 @@
   align-items: flex-end;
   justify-content: space-between;
 
-  a {
+  .link-container {
+    width: 50px;
+    height: 50px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 
-    &:hover {
-      svg {
-        color: var(--highlight-color);
-        opacity: 0.5;
-        transition: all calc($golden-ratio-time / 8)
-          ease-in-out;
+    a {
+      display: flex;
+
+      &:hover {
+        svg {
+          color: var(--highlight-color);
+          opacity: 0.5;
+          transition: all calc($golden-ratio-time / 8)
+            ease-in-out;
+        }
       }
     }
-  }
 
-  svg {
-    color: var(--secondary-color);
-    cursor: pointer;
-    transition: all calc($golden-ratio-time / 8) ease-in-out;
+    svg {
+      color: var(--secondary-color);
+      transition: all calc($golden-ratio-time / 8)
+        ease-in-out;
+    }
   }
 }
