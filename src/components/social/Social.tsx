@@ -55,9 +55,10 @@ const links = [
 
 const SocialLink = ({ link }: ILinkProps) => {
   const elementRef = useRef<HTMLAnchorElement>(null);
-  const containerRef = useMagnet(elementRef, {
-    timingDelay: 1618 / 4
-  });
+  const containerRef = useRef<HTMLDivElement>(null);
+  // const containerRef = useMagnet(elementRef, {
+  //   timingDelay: 1618 / 4
+  // });
   const isOnTop = useIsOnTop(containerRef);
 
   useEffect(() => {
