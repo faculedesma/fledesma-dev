@@ -1,36 +1,5 @@
 @import '../../utils/variables';
 
-.hero-gradient {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100dvw;
-  height: 680px;
-  background: linear-gradient(
-    to bottom,
-    rgba(var(--hero-gradient), 0.3),
-    transparent
-  );
-}
-
-.hero-background {
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-  width: 100dvw;
-  height: 500px;
-  background-image: url('../../assets/images/shapes-bg.webp');
-  background-position: center;
-  background-size: cover;
-  filter: contrast(100%);
-  transform: skew(0, 0) scale(1.05);
-  transition: transform calc($golden-ratio-time) ease-out;
-  animation: fade-in calc($golden-ratio-time / 2) ease-in
-    forwards;
-  z-index: -1;
-}
-
 .hero {
   display: none;
   position: relative;
@@ -39,107 +8,15 @@
   position: relative;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding-top: 100px;
+  justify-content: center;
+  padding-top: 120px;
   z-index: 2;
 
-  &-triangle {
-    position: relative;
-    translate: 0 -50px;
-    scale: 0.9;
-    height: 620px;
-    animation: fade-in calc($golden-ratio-time / 2) ease-in
-      forwards;
-
-    &--normal,
-    &--psych,
-    &--shapes,
-    &--bg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      translate: -50% -50%;
-    }
-
-    &--normal {
-      width: 550px;
-      opacity: 1;
-      animation: fade-loop calc($golden-ratio-time * 4)
-        linear infinite;
-      z-index: 2;
-    }
-
-    &--psych {
-      width: 550px;
-      z-index: 1;
-      opacity: 0.5;
-    }
-
-    &--shapes {
-      position: absolute;
-      rotate: 5deg 5deg;
-      animation: shapes-loop calc($golden-ratio-time * 4)
-        linear infinite;
-      opacity: 0.3;
-    }
-
-    &--bg {
-      position: absolute;
-      width: 400px;
-      top: 50%;
-      left: 50%;
-      translate: -50% -50%;
-    }
-
-    .eye {
-      position: relative;
-      top: 50%;
-      left: 50%;
-      translate: -50% -50%;
-      width: 200px;
-      height: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2;
-
-      img {
-        width: 50%;
-        z-index: 2;
-        opacity: 0.5;
-        rotate: -360deg;
-        scale: 1;
-        filter: contrast(100%);
-      }
-
-      &-pupil {
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        transform: scale(1) skew(2deg, 2deg) translate(0, 0);
-        -webkit-box-shadow: 0px 0px 0px 0px
-          rgba(var(--shadow-gray-rgb), 1);
-        -moz-box-shadow: 0px 0px 0px 0px
-          rgba(var(--shadow-gray-rgb), 1);
-        box-shadow: 0px 0px 0px 0px
-          rgba(var(--shadow-gray-rgb), 1);
-        transition: all calc($golden-ratio-time / 8)
-          ease-out;
-        border-radius: 50%;
-        background-color: var(--highlight-color);
-        z-index: 1;
-      }
-    }
-  }
-
-  &-title {
-    position: absolute;
-    bottom: 0;
-    height: 270px;
+  &-titles {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    gap: 1rem;
     z-index: 3;
 
     &--top {
@@ -149,8 +26,13 @@
       justify-content: center;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 
-      h1:first-child,
-      h1:last-child {
+      p:first-child {
+        text-transform: uppercase;
+        letter-spacing: 0.25rem;
+        color: $shadow-light;
+      }
+
+      h1 {
         translate: 0 100%;
         opacity: 0;
         animation: slidey-in-fade
@@ -158,112 +40,40 @@
       }
 
       h1:last-child {
-        color: var(--secondary-color);
+        background: -webkit-linear-gradient(
+          $highlight-color,
+          $primary-color
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         transition: color calc($golden-ratio-time / 8)
           ease-in;
 
         &:hover {
-          color: var(--highlight-color);
+          color: $highlight-color;
           transition: color calc($golden-ratio-time / 8)
             ease-in;
         }
       }
     }
 
-    h3 {
-      font-size: 20px;
-      line-height: 35px;
-      font-weight: 300;
-      font-family: $secondary-font-family;
-      margin-top: 1rem;
-      opacity: 0;
-      animation: fade-in calc($golden-ratio-time / 4)
-        ease-in-out forwards;
-    }
-  }
-
-  &-social {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 175px;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    transform: translate(-15px, 15px);
-
-    a {
-      opacity: 0;
-      translate: 0 100%;
-      animation: slidey-in-fade calc($golden-ratio-time / 4)
-        ease-in forwards;
-    }
-
-    a:nth-child(3) {
-      animation-delay: calc($golden-ratio-time / 16);
-    }
-
-    a:nth-child(4) {
-      animation-delay: calc($golden-ratio-time / 16);
-    }
-  }
-
-  &-scroll {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    translate: 76px -25px;
-    opacity: 0;
-    animation: fade-in calc($golden-ratio-time / 4) ease-in
-      forwards;
-
-    .scroll-button--circle,
-    .scroll-button--icon {
-      animation: fade-in calc($golden-ratio-time / 4)
-        ease-in forwards;
+    &--bottom {
+      p {
+        font-size: 20px;
+        line-height: 35px;
+        font-weight: 300;
+        font-family: $secondary-font-family;
+        margin-top: 1rem;
+        opacity: 0;
+        animation: fade-in calc($golden-ratio-time / 4)
+          ease-in-out forwards;
+      }
     }
   }
 }
 
 .show-hero {
   display: flex;
-}
-
-.focus-bg {
-  transform: skew(-10deg, 0deg) scale(1.1);
-  transition: transform calc($golden-ratio-time / 8)
-    ease-out;
-}
-
-.focus-eye {
-  animation: focus-eye calc($golden-ratio-time) ease-out
-    infinite;
-}
-
-.unfocus-eye {
-  animation: unfocus-eye calc($golden-ratio-time) ease-out 1;
-}
-
-.focus-pupil {
-  animation: focus-pupil calc($golden-ratio-time / 6)
-    ease-out forwards;
-}
-
-.unfocus-pupil {
-  animation: unfocus-pupil calc($golden-ratio-time / 6)
-    ease-out forwards;
-}
-
-@keyframes twinkle-image {
-  0% {
-    filter: contrast(100%);
-  }
-
-  50% {
-    filter: contrast(150%);
-  }
-
-  100% {
-    filter: contrast(100%);
-  }
 }
 
 @keyframes fade-loop {
@@ -280,96 +90,8 @@
   }
 }
 
-@keyframes shapes-loop {
-  0% {
-    rotate: 0 0;
-    scale: 1;
-  }
-
-  50% {
-    rotate: 5deg 5deg;
-    scale: 1.2;
-  }
-
-  100% {
-    rotate: 0 0;
-    scale: 1;
-  }
-}
-
-@keyframes focus-eye {
-  0% {
-    filter: contrast(100%);
-    transform: scale(1) rotate(-360deg);
-  }
-
-  50% {
-    filter: contrast(150%);
-    transform: scale(2) rotate(0deg);
-  }
-
-  100% {
-    filter: contrast(100%);
-    transform: scale(1) rotate(-360deg);
-  }
-}
-
-@keyframes unfocus-eye {
-  0% {
-    filter: contrast(150%);
-    transform: scale(1.75) rotate(0deg);
-  }
-
-  100% {
-    filter: contrast(100%);
-    transform: scale(1) rotate(-360deg);
-  }
-}
-
-@keyframes focus-pupil {
-  0% {
-    transform: scale(1) translate(0, 0) skew(2deg, 2deg);
-  }
-
-  100% {
-    transform: scale(1.25) translate(10px, 10px)
-      skew(10deg, 2deg);
-    -webkit-box-shadow: 10px 0px 77px 14px
-      rgba(var(--shadow-gray-rgb), 1);
-    -moz-box-shadow: 10px 0px 77px 14px
-      rgba(var(--shadow-gray-rgb), 1);
-    box-shadow: 10px 0px 77px 14px
-      rgba(var(--shadow-gray-rgb), 1);
-  }
-}
-
-@keyframes unfocus-pupil {
-  0% {
-    transform: scale(1.25) translate(10px, 10px)
-      skew(10deg, 2deg);
-    -webkit-box-shadow: 10px 0px 77px 14px
-      rgba(var(--shadow-gray-rgb), 1);
-    -moz-box-shadow: 10px 0px 77px 14px
-      rgba(var(--shadow-gray-rgb), 1);
-    box-shadow: 10px 0px 77px 14px
-      rgba(var(--shadow-gray-rgb), 1);
-  }
-
-  100% {
-    transform: scale(1) translate(0, 0) skew(2deg, 2deg);
-  }
-}
-
 /* Smartphones (portrait and landscape) */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  .hero-gradient {
-    background: linear-gradient(
-      to bottom,
-      rgba(var(--highlight-color), 0.1),
-      transparent
-    );
-  }
-
   .hero {
     position: relative;
     height: fit-content;
@@ -379,46 +101,7 @@
     justify-content: space-evenly;
     padding-top: 50px;
 
-    &-triangle,
-    &-title,
-    &-scroll {
-      position: relative;
-    }
-
-    &-triangle {
-      width: 100%;
-      height: 320px;
-      translate: 0 0;
-
-      &--psych,
-      &--normal {
-        width: 90%;
-      }
-
-      &--shapes {
-        width: 50%;
-        opacity: 0.2;
-      }
-
-      &--bg {
-        width: 80%;
-        opacity: 0.5;
-      }
-
-      .eye {
-        img {
-          width: 60px;
-        }
-
-        &-pupil {
-          width: 20px;
-          height: 20px;
-          translate: 0 15px;
-        }
-      }
-    }
-
-    &-title {
+    &-titles {
       height: auto;
       width: 100%;
 
@@ -427,14 +110,6 @@
         font-weight: 300;
       }
     }
-
-    &-social {
-      display: none;
-    }
-
-    &-scroll {
-      translate: 0 0;
-    }
   }
 }
 
@@ -442,15 +117,6 @@
 @media only screen and (min-device-width: 1920px) and (max-device-width: 3840px) {
   .hero {
     height: 900px;
-
-    &-triangle {
-      translate: 0 75px;
-      scale: 1.05;
-    }
-  }
-
-  .hero-gradient {
-    height: fit-content;
   }
 }
 
@@ -458,10 +124,6 @@
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: 'landscape') and (-webkit-min-device-pixel-ratio: 1) {
   .hero {
     height: 600px;
-
-    &-scroll {
-      translate: 25px 25px;
-    }
   }
 }
 
@@ -469,9 +131,5 @@
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: 'portrait') and (-webkit-min-device-pixel-ratio: 1) {
   .hero {
     height: 750px;
-
-    &-scroll {
-      translate: 25px 25px;
-    }
   }
 }
