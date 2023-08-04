@@ -13,10 +13,10 @@
     cursor: pointer;
 
     span {
-      color: var(--secondary-color);
+      color: $secondary-color;
       text-transform: uppercase;
       scale: 1;
-      transition: scale calc($golden-ratio-time / 8)
+      transition: all calc($golden-ratio-time / 8)
         ease-in-out;
       font-weight: 700;
     }
@@ -29,8 +29,8 @@
       }
 
       span {
-        scale: 0.9;
-        transition: scale calc($golden-ratio-time / 8)
+        color: $shadow-dark-800;
+        transition: color calc($golden-ratio-time / 8)
           ease-in-out;
       }
     }
@@ -41,8 +41,8 @@
         ease-in-out;
 
       path {
-        stroke: var(--highlight-color);
-        fill: var(--highlight-color);
+        stroke: $highlight-color;
+        fill: $highlight-color;
       }
     }
   }
