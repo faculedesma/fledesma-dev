@@ -1,11 +1,10 @@
-import { SecondaryButton } from '@components/buttons/SecondaryButton';
 import { Chart } from '@assets/svgs/Chart';
 import { Processor } from '@assets/svgs/Processor';
 import { Diamond } from '@assets/svgs/Diamond';
 import { useRef, useEffect } from 'react';
 import { useIntersection } from '@components/hooks/useIntersection';
 import { ServicesCard } from './ServicesCard';
-import { Technologies } from './Technologies';
+import SectionTitle from '@components/titles/SectionTitle';
 import './services.scss';
 
 const servicesProvided = [
@@ -24,37 +23,29 @@ const servicesProvided = [
     icon: <Processor />
   },
   {
-    id: 'conversion',
-    label: 'Conversion',
+    id: 'brand',
+    label: 'Brand',
     description:
-      'Turn website visitors into customers with effective SEO, CRO and user testing.',
+      'Create a brand appealing to your users and customers that align your strategy.',
     icon: <Diamond />
   }
 ];
 
 const Services = () => {
-  const isMobile =
-    window.innerWidth > 320 && window.innerWidth < 480;
   const servicesRef = useRef<HTMLDivElement>(null);
-  const isInViewport = useIntersection(
-    servicesRef,
-    isMobile ? -50 : -150
-  );
+  const isInViewport = useIntersection(servicesRef);
 
   useEffect(() => {
     if (isInViewport) {
-      servicesRef.current?.classList.add(
-        'show-section-title',
-        'show-cards'
-      );
+      servicesRef.current?.classList.add('show-cards');
     }
   }, [isInViewport]);
 
   return (
     <div className="container">
-      <div ref={servicesRef} className="services">
-        <h3>What I do</h3>
-        <div className="services-list">
+      <section className="services">
+        <SectionTitle text="Services" />
+        <div className="services-list" ref={servicesRef}>
           {servicesProvided.map((service) => {
             return (
               <ServicesCard
@@ -64,8 +55,7 @@ const Services = () => {
             );
           })}
         </div>
-        <Technologies isMobile={isMobile} />
-      </div>
+      </section>
     </div>
   );
 };
