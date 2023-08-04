@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useIntersection } from '@components/hooks/useIntersection';
 import { useIsOnTop } from '@components/hooks/useIsOnTop';
-import { useTheme } from '@components/hooks/useTheme';
 
 interface IWork {
   id: string;
@@ -20,8 +19,6 @@ const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
     window.innerWidth > 320 && window.innerWidth < 480;
   const workCardRef = useRef<HTMLDivElement>(null);
   const isOnTop = useIsOnTop(workCardRef);
-
-  const { isDarkMode } = useTheme();
 
   const isInViewport = useIntersection(
     workCardRef,
@@ -46,22 +43,6 @@ const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
       }
     }
   }, [isOnTop]);
-
-  useEffect(() => {
-    if (isDarkMode) {
-      workCardRef.current?.classList.add(`${work.id}-dark`);
-      workCardRef.current?.classList.remove(
-        `${work.id}-light`
-      );
-    } else {
-      workCardRef.current?.classList.add(
-        `${work.id}-light`
-      );
-      workCardRef.current?.classList.remove(
-        `${work.id}-dark`
-      );
-    }
-  }, [isDarkMode]);
 
   const handleCardClick = () =>
     window.open(work.link, '_blank');

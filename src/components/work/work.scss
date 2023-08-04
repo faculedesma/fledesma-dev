@@ -6,16 +6,9 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 8rem;
-
-  > h3 {
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 16px;
-    margin-bottom: 2rem;
-    scale: 0 1;
-  }
+  align-items: center;
+  gap: 120px;
+  padding: 180px 0;
 
   &-list {
     width: 100%;
@@ -23,7 +16,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 10rem;
+    gap: 200px;
 
     &--danilo,
     &--namewiz,
@@ -31,12 +24,13 @@
       position: relative;
       width: 100%;
       height: 550px;
-      z-index: 2;
-      cursor: pointer;
       overflow: hidden;
       opacity: 0;
-      color: var(--secondary-color);
+      color: $secondary-color;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      border-radius: 0.5rem;
+      cursor: pointer;
+      z-index: 2;
 
       h2,
       h3 {
@@ -80,8 +74,8 @@
         align-items: center;
         justify-content: center;
         border-radius: 50%;
-        background-color: var(--secondary-color);
-        color: var(--highlight-color);
+        background-color: $secondary-color;
+        color: $highlight-color;
         scale: 0;
         translate: -50% -50%;
         font-weight: 300;
@@ -109,13 +103,33 @@
       }
     }
 
+    &--danilo {
+      background: linear-gradient(
+        to right,
+        rgb(83, 48, 44),
+        $primary-color
+      );
+    }
+
     &--namewiz {
+      background: linear-gradient(
+        to right,
+        rgb(103, 120, 116),
+        $primary-color
+      );
+
       img {
         height: 80%;
       }
     }
 
     &--art {
+      background: linear-gradient(
+        to right,
+        rgba(rgb(35, 21, 33), 0.4),
+        $primary-color
+      );
+
       img {
         scale: 1.2;
         opacity: 0.6;
@@ -150,54 +164,6 @@
 .hide-card-cta {
   animation: scale-out calc($golden-ratio-time / 8) ease-out
     forwards;
-}
-
-.danilo-dark,
-.namewiz-dark,
-.art-dark {
-  color: var(--secondary-color);
-}
-
-.danilo-dark {
-  background: linear-gradient(
-    to right,
-    rgb(83, 48, 44),
-    var(--primary-color)
-  );
-}
-
-.namewiz-dark {
-  background: linear-gradient(
-    to right,
-    rgb(103, 120, 116),
-    var(--primary-color)
-  );
-}
-
-.art-dark {
-  background: linear-gradient(
-    to right,
-    rgba(rgb(35, 21, 33), 0.4),
-    var(--primary-color)
-  );
-}
-
-.danilo-light {
-  background: rgba(rgb(83, 48, 44), 0.95);
-}
-
-.namewiz-light {
-  background: rgba(rgb(103, 120, 116), 0.7);
-}
-
-.art-light {
-  background: rgba(rgb(35, 21, 33), 0.9);
-}
-
-.danilo-light,
-.namewiz-light,
-.art-light {
-  color: var(--primary-color);
 }
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {

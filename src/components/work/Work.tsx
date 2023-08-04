@@ -2,8 +2,7 @@ import DaniloBG from '@assets/images/danilo-red.webp';
 import NamewizBG from '@assets/images/namewiz-bg.webp';
 import LampBG from '@assets/images/lamp.png';
 import WorkCard from './WorkCard';
-import { useRef, useEffect } from 'react';
-import { useIntersection } from '@components/hooks/useIntersection';
+import SectionTitle from '@components/titles/SectionTitle';
 import './work.scss';
 
 const works = [
@@ -31,30 +30,16 @@ const works = [
 ];
 
 const Work = () => {
-  const isMobile =
-    window.innerWidth > 320 && window.innerWidth < 480;
-  const worksRef = useRef<HTMLDivElement>(null);
-  const isInViewport = useIntersection(
-    worksRef,
-    isMobile ? -50 : -150
-  );
-
-  useEffect(() => {
-    if (isInViewport) {
-      worksRef.current?.classList.add('show-section-title');
-    }
-  }, [isInViewport]);
-
   return (
     <div className="container">
-      <div ref={worksRef} id="work" className="work">
-        <h3>Work</h3>
+      <section id="work" className="work">
+        <SectionTitle text="Work" />
         <div className="work-list">
           {works.map((work) => {
             return <WorkCard key={work.id} work={work} />;
           })}
         </div>
-      </div>
+      </section>
     </div>
   );
 };
