@@ -1,36 +1,31 @@
 @import '../../utils/variables';
 
 .social {
-  height: 100%;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 
-  .link-container {
-    width: 50px;
-    height: 50px;
+  a {
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 0.5px solid $shadow-light;
+    border-radius: 50%;
     cursor: pointer;
+  }
 
-    a {
-      display: flex;
+  svg {
+    width: 1rem;
+    transition: all calc($golden-ratio-time / 8) ease-in-out;
 
-      &:hover {
-        svg {
-          color: var(--highlight-color);
-          opacity: 0.5;
-          transition: all calc($golden-ratio-time / 8)
-            ease-in-out;
-        }
-      }
-    }
-
-    svg {
-      color: var(--secondary-color);
+    &:hover {
+      color: $highlight-color;
+      opacity: 0.5;
       transition: all calc($golden-ratio-time / 8)
         ease-in-out;
     }

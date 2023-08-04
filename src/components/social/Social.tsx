@@ -5,9 +5,9 @@ import { Dribble } from '@assets/svgs/Dribble';
 import { LinkedIn } from '@assets/svgs/LinkedIn';
 import { GitHub } from '@assets/svgs/GitHub';
 import { ReactElement, useRef } from 'react';
-import { useMagnet } from '@components/hooks/useMagnet';
 import { useIsOnTop } from '@components/hooks/useIsOnTop';
 import './social.scss';
+import { MailEnvelop } from '@assets/svgs/MailEnvelop';
 
 interface ILink {
   id: string;
@@ -50,19 +50,21 @@ const links = [
     href: 'https://twitter.com/faculedesma93',
     aria: `Go to Facundo's Twitter account.`,
     icon: <Twitter />
+  },
+  {
+    id: 'envelop',
+    href: 'mailto:faculedesma1993@gmail.com',
+    aria: `Send Facundo an email.`,
+    icon: <MailEnvelop />
   }
 ];
 
 const SocialLink = ({ link }: ILinkProps) => {
-  const elementRef = useRef<HTMLAnchorElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  // const containerRef = useMagnet(elementRef, {
-  //   timingDelay: 1618 / 4
-  // });
-  const isOnTop = useIsOnTop(containerRef);
+  const linkRef = useRef<HTMLAnchorElement>(null);
+  const isOnTop = useIsOnTop(linkRef);
 
   useEffect(() => {
-    if (containerRef.current) {
+    if (linkRef.current) {
       const mouse = document.getElementById('mouse-follow');
       if (isOnTop) {
         mouse?.classList.remove('point');
@@ -75,16 +77,14 @@ const SocialLink = ({ link }: ILinkProps) => {
   }, [isOnTop]);
 
   return (
-    <div ref={containerRef} className="link-container">
-      <a
-        // ref={elementRef}
-        href={link.href}
-        target="_blank"
-        aria-label={link.aria}
-      >
-        {link.icon}
-      </a>
-    </div>
+    <a
+      ref={linkRef}
+      href={link.href}
+      target="_blank"
+      aria-label={link.aria}
+    >
+      {link.icon}
+    </a>
   );
 };
 
