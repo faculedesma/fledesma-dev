@@ -37,8 +37,6 @@
       h1 {
         translate: 0 100%;
         opacity: 0;
-        animation: slidey-in-fade
-          calc($golden-ratio-time / 4) ease-in-out forwards;
       }
 
       h1:last-child {
@@ -67,8 +65,6 @@
         font-family: $secondary-font-family;
         margin-top: 1rem;
         opacity: 0;
-        animation: fade-in calc($golden-ratio-time / 4)
-          ease-in-out forwards;
       }
     }
   }
@@ -77,6 +73,24 @@
 .show-hero {
   animation: fade-in calc($golden-ratio-time) ease-in-out
     forwards;
+
+  .hero {
+    &-titles {
+      &--top {
+        h1 {
+          animation: slidey-in-fade calc($golden-ratio-time)
+            ease-in-out forwards;
+        }
+      }
+
+      &--bottom {
+        p {
+          animation: fade-in calc($golden-ratio-time)
+            ease-in-out forwards;
+        }
+      }
+    }
+  }
 }
 
 /* Smartphones (portrait and landscape) */
