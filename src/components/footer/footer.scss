@@ -8,6 +8,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding-top: 120px;
+  scroll-snap-align: start;
 
   &-content {
     height: 500px;

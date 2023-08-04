@@ -1,15 +1,17 @@
 @import '../../utils/variables';
 
 .hero {
-  display: none;
   position: relative;
   width: 100%;
   height: 620px;
   position: relative;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  opacity: 0;
   padding-top: 120px;
+  scroll-snap-align: start;
   z-index: 2;
 
   &-titles {
@@ -73,21 +75,8 @@
 }
 
 .show-hero {
-  display: flex;
-}
-
-@keyframes fade-loop {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+  animation: fade-in calc($golden-ratio-time) ease-in-out
+    forwards;
 }
 
 /* Smartphones (portrait and landscape) */

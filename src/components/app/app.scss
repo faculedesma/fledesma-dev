@@ -6,6 +6,7 @@
   overflow-x: hidden;
   overflow-y: scroll;
   box-sizing: border-box;
+  scroll-snap-type: y mandatory;
 }
 
 .container {

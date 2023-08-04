@@ -48,7 +48,7 @@ const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
     window.open(work.link, '_blank');
 
   return (
-    <div
+    <section
       id={work.id}
       ref={workCardRef}
       onClick={handleCardClick}
@@ -61,7 +61,7 @@ const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
         alt="work-image"
         draggable="false"
       />
-    </div>
+    </section>
   );
 };
 
