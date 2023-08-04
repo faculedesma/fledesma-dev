@@ -73,43 +73,18 @@
 
 @import '../src/utils/variables';
 
-.dark {
-  --primary-color-rgb: 15, 14, 13;
-  --primary-color: rgb(15, 14, 13);
-  --secondary-color-rgb: 255, 255, 255;
-  --secondary-color: rgb(255, 255, 255);
-  --highlight-color-rgb: 152, 81, 81;
-  --highlight-color: rgb(152, 81, 81);
-  --shades-gray-op-one: 0.5;
-  --shades-gray-op-two: 0.1;
-  --hero-gradient-rgb: 35, 21, 33;
-  --shadow-gray-rgb: 181, 181, 181;
-  --shadow-gray: rgb(181, 181, 181);
-}
-
-.light {
-  --primary-color-rgb: 255, 255, 255;
-  --primary-color: rgb(255, 255, 255);
-  --secondary-color-rgb: 152, 81, 81;
-  --secondary-color: rgb(152, 81, 81);
-  --highlight-color-rgb: 152, 81, 81;
-  --highlight-color: rgb(152, 81, 81);
-  --shades-gray-op-one: 0.5;
-  --shades-gray-op-two: 0.1;
-  --hero-gradient-rgb: 35, 21, 33;
-  --shadow-gray-rgb: 251, 193, 193;
-  --shadow-gray: rgb(214, 169, 169);
-}
-
 body {
   width: 100dvw;
   height: 100dvh;
   margin: 0;
-  background-color: var(--primary-color);
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
+  font-family: $secondary-font-family;
+  background-color: $primary-color;
+  color: $secondary-color;
+  color-scheme: light dark;
 
   img {
     touch-action: pan-y;
@@ -122,11 +97,6 @@ body {
   display: flex;
   place-items: center;
   line-height: normal;
-
-  font-family: $secondary-font-family;
-  color-scheme: light dark;
-  color: var(--secondary-color);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -187,32 +157,44 @@ a {
 }
 
 button {
-  border-radius: 0.5rem;
-  border: 1px solid transparent;
   font-size: $paragraph-size;
   font-weight: 700;
   font-family: inherit;
-  background-color: var(--secondary-color);
-  cursor: pointer;
-}
-
-button:hover {
-  border-color: none;
-}
-
-button:focus,
-button:focus-visible {
-  outline: none;
 }
 
 svg {
-  color: var(--secondary-color);
+  color: $secondary-color;
   width: 20px;
   height: 20px;
 
   path {
-    fill: var(--secondary-color);
+    fill: $secondary-color;
   }
+}
+
+input,
+textarea {
+  font-size: $paragraph-size;
+  font-weight: 300;
+  font-family: inherit;
+}
+
+textarea {
+  padding-top: 1rem;
+  padding-left: 1rem;
+  box-sizing: border-box;
+}
+
+input {
+  padding-left: 1rem;
+  box-sizing: border-box;
+}
+
+input:focus,
+input:focus-visible,
+textarea:focus,
+textarea:focus-visible {
+  outline-color: $highlight-color;
 }
 
 /* Smartphones (portrait and landscape) */
@@ -241,8 +223,4 @@ svg {
     font-size: $paragraph-size-mobile;
     line-height: $paragraph-line-height-mobile;
   }
-}
-
-/* Tablets (portrait) */
-@media only screen and (min-width: 768px) and (max-width: 959px) {
 }

@@ -14,15 +14,7 @@
   margin: 0 auto;
 }
 
-.show-section-title {
-  > h3 {
-    animation: scalex-in calc($golden-ratio-time / 4)
-      ease-in-out forwards;
-  }
-}
-
 // global keyframes
-
 @keyframes slide-in {
   0% {
     translate: 0 100%;
@@ -36,6 +28,16 @@
 @keyframes slidey-in {
   0% {
     translate: 0 100%;
+  }
+
+  100% {
+    translate: 0 0;
+  }
+}
+
+@keyframes slidey-in-top {
+  0% {
+    translate: 0 -100%;
   }
 
   100% {
