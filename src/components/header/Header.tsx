@@ -128,7 +128,9 @@ const Header: React.FC<IHeaderProps> = ({ isLoading }) => {
           onClick={toggleMenu}
           isOpen={isOpen}
         />
-        <Menu isOpen={isOpen} toggleMenu={toggleMenu} />
+        {isOpen && (
+          <Menu isOpen={isOpen} toggleMenu={toggleMenu} />
+        )}
       </div>
     </header>
   );

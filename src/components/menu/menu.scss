@@ -1,15 +1,14 @@
 @import '../../utils/variables.scss';
 
 .menu {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 100dvh;
   width: 100%;
   background-color: $primary-color;
   opacity: 0;
   z-index: -1;
-  pointer-events: none;
 
   .container {
     position: relative;

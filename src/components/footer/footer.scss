@@ -276,6 +276,14 @@
           }
         }
       }
+
+      &--right {
+        form {
+          .form-success {
+            position: relative;
+          }
+        }
+      }
     }
 
     &-bottom {
