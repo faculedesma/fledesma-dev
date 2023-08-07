@@ -214,8 +214,8 @@ textarea:focus,
 textarea:focus-visible,
 select:focus,
 select:focus-visible {
+  outline-style: solid;
   outline-color: $highlight-color-300;
-  -webkit-outline-color: $highlight-color-300;
 }
 
 /* Smartphones (portrait and landscape) */
