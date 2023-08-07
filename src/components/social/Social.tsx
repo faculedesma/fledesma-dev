@@ -68,10 +68,10 @@ const SocialLink = ({ link }: ILinkProps) => {
       const mouse = document.getElementById('mouse-follow');
       if (isOnTop) {
         mouse?.classList.remove('point');
-        mouse?.classList.add('hover');
+        mouse?.classList.add('hide');
       } else {
         mouse?.classList.add('point');
-        mouse?.classList.remove('hover');
+        mouse?.classList.remove('hide');
       }
     }
   }, [isOnTop]);

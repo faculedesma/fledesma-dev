@@ -16,16 +16,28 @@
     justify-content: center;
     border: 0.5px solid $shadow-light;
     border-radius: 50%;
+    scale: 1;
+    transition: all calc($golden-ratio-time / 8) ease-in-out;
     cursor: pointer;
+
+    &:hover {
+      border: 0.5px solid $highlight-color-900;
+      scale: 1.1;
+      transition: all calc($golden-ratio-time / 8)
+        ease-in-out;
+
+      svg {
+        scale: 0.9;
+      }
+    }
   }
 
   svg {
-    width: 1rem;
+    width: 14px;
     transition: all calc($golden-ratio-time / 8) ease-in-out;
 
     &:hover {
       color: $highlight-color;
-      opacity: 0.5;
       transition: all calc($golden-ratio-time / 8)
         ease-in-out;
     }
