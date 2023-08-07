@@ -21,9 +21,8 @@ const NoteThree = () => {
     <div className="container">
       <section ref={noteThreeRef} className="notes-three">
         <h3>
-          Every project, like every person, is unique.
-          Reflecting that energy into the designs makes the
-          difference.
+          I infuse a unique essence into each design project
+          to achieve a distinctive impact.
         </h3>
       </section>
     </div>

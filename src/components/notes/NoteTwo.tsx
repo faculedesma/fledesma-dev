@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 import { useIntersection } from '@components/hooks/useIntersection';
-import { useIsOnTop } from '@components/hooks/useIsOnTop';
 import './notes.scss';
 
 const NoteTwo = () => {
@@ -27,8 +26,8 @@ const NoteTwo = () => {
         className="notes-two"
       >
         <h3>
-          Investing time in fundamentals is essential, build
-          a strong base and enjoy the ride.
+          I elevate your online presence with high
+          performing websites that sets you apart.
         </h3>
       </section>
     </div>
