@@ -1,4 +1,3 @@
-import { MailEnvelop } from '@assets/svgs/MailEnvelop';
 import {
   useState,
   useRef,
@@ -7,12 +6,11 @@ import {
 } from 'react';
 import { useIntersection } from '@components/hooks/useIntersection';
 import { Social } from '@components/social/Social';
-import { useCursorPosition } from '@components/hooks/useCursorPosition';
-import { Discovery } from '@components/buttons/Discovery';
 import { PrimaryButton } from '@components/buttons/PrimaryButton';
 import Lottie from 'lottie-react';
 import SuccessJSON from '@assets/animations/congrats.json';
 import './footer.scss';
+import Logo from '@components/logo/Logo';
 
 const Footer = () => {
   const isMobile =
@@ -24,22 +22,6 @@ const Footer = () => {
   );
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSucess] = useState(false);
-  const [text, setText] = useState('Click to copy!');
-
-  const handleCopyMailToClipboard = () => {
-    if (
-      navigator.clipboard &&
-      navigator.clipboard.writeText
-    ) {
-      navigator.clipboard.writeText(
-        'faculedesma1993@gmail.com'
-      );
-    }
-    setText('Copied!');
-    setTimeout(() => {
-      setText('Click to copy!');
-    }, 2000);
-  };
 
   useEffect(() => {
     if (isInViewport) {
@@ -69,9 +51,12 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-content--left">
             <div className="footer-content--left-titles">
-              <h1>Let's build something together.</h1>
+              <h2>Let's build something together.</h2>
               <p>
-                Your dream project is waiting to be real.
+                I’m open to freelance opportunities or a
+                remote position. Also, feel free to reach
+                out if you need a hand on your side/open
+                source project. I would love to help.
               </p>
             </div>
             <div className="footer-content--left-bottom">
@@ -136,15 +121,20 @@ const Footer = () => {
             </form>
           </div>
         </div>
-        <div className="footer-bottom">
+        <section className="footer-bottom">
           <div className="footer-bottom--divider"></div>
-          <div className="footer-bottom--copyright">
-            <p>2023 All rights reserved</p>
-            <p>
-              <b>© Facundo Ledesma</b>
-            </p>
+          <div className="footer-bottom--content">
+            <div className="footer-bottom--content-copyright">
+              <p>
+                <b>© Facundo Ledesma</b>
+              </p>
+              <p>2023 All rights reserved.</p>
+            </div>
+            <div className="footer-bottom--content-logo">
+              <Logo />
+            </div>
           </div>
-        </div>
+        </section>
       </section>
     </div>
   );

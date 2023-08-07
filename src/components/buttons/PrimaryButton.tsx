@@ -1,6 +1,4 @@
 import { ReactNode } from 'react';
-import Lottie from 'lottie-react';
-import LoadingJSON from '@assets/animations/loading.json';
 import './primary-button.scss';
 
 type PrimaryButtonProps = {

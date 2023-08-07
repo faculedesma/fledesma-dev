@@ -1,8 +1,8 @@
-import { Logo } from '@assets/svgs/Logo';
 import { Menu } from '@components/menu/Menu';
 import { useState, useRef, useEffect } from 'react';
 import { ToggleButton } from '@components/buttons/ToggleButton';
 import { useIsOnTop } from '@components/hooks/useIsOnTop';
+import Logo from '@components/logo/Logo';
 import './header.scss';
 
 type Link = {
@@ -45,19 +45,11 @@ const HeaderlLink = ({ link }: ILinkProps) => {
     if (linkRef.current) {
       const mouse = document.getElementById('mouse-follow');
       if (isOnTop) {
-        mouse?.animate(
-          {
-            scale: 0
-          },
-          { duration: 1618 / 4, fill: 'forwards' }
-        );
+        mouse?.classList.remove('point');
+        mouse?.classList.add('hide');
       } else {
-        mouse?.animate(
-          {
-            scale: 1
-          },
-          { duration: 1618 / 4, fill: 'forwards' }
-        );
+        mouse?.classList.add('point');
+        mouse?.classList.remove('hide');
       }
     }
   }, [isOnTop]);

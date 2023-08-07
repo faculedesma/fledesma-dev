@@ -16,42 +16,11 @@ header {
 
 .header {
   height: 100px;
-  width: 85%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 7.5%;
-  padding-right: 7.5%;
-
-  &-logo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 200px;
-    cursor: pointer;
-
-    svg {
-      width: 41px;
-      height: 43px;
-      transform: scale(1);
-      transition: calc($golden-ratio-time / 8) ease-in;
-
-      path {
-        stroke: $secondary-color;
-        fill: transparent;
-      }
-
-      circle,
-      rect {
-        stroke: $secondary-color;
-        fill: transparent;
-      }
-    }
-
-    p {
-      font-weight: 600;
-    }
-  }
+  padding-left: 5%;
+  padding-right: 5%;
 
   &-links {
     width: 320px;
@@ -117,7 +86,7 @@ header {
 }
 
 .show-header {
-  animation: slidey-in-top calc($golden-ratio-time / 2)
+  animation: slidey-in-top calc($golden-ratio-time / 4)
     ease-out forwards;
 }
 
