@@ -1,58 +1,25 @@
 import { useRef, useEffect } from 'react';
 import { useIntersection } from '@components/hooks/useIntersection';
-import MePNG from '@assets/images/me.webp';
-import MeBGPNG from '@assets/images/me-bg.webp';
 import { Discovery } from '@components/buttons/Discovery';
+import SectionTitle from '@components/titles/SectionTitle';
+import MePNG from '@assets/images/me.webp';
 import './about-me.scss';
 
 const AboutMe = () => {
   const isMobile =
     window.innerWidth > 320 && window.innerWidth < 480;
   const aboutRef = useRef<HTMLDivElement>(null);
-  const aboutTopRef = useRef<HTMLDivElement>(null);
-  const aboutBottomRef = useRef<HTMLDivElement>(null);
 
   const isInViewport = useIntersection(
-    aboutTopRef,
-    isMobile ? -50 : -150
-  );
-
-  const isTopInViewport = useIntersection(
-    aboutTopRef,
-    isMobile ? -50 : -150
-  );
-
-  const isBottomInViewport = useIntersection(
-    aboutBottomRef,
-    isMobile ? -50 : -150
+    aboutRef,
+    isMobile ? -50 : -100
   );
 
   useEffect(() => {
     if (isInViewport) {
-      aboutRef.current?.classList.add('show-section-title');
+      aboutRef.current?.classList.add('show-about-me');
     }
   }, [isInViewport]);
-
-  useEffect(() => {
-    if (isTopInViewport) {
-      aboutTopRef.current?.classList.add(
-        'show-about-me-left'
-      );
-    }
-  }, [isTopInViewport]);
-
-  useEffect(() => {
-    if (isBottomInViewport) {
-      aboutBottomRef.current?.classList.add(
-        'show-about-me-right'
-      );
-    }
-  }, [isBottomInViewport]);
-
-  const handleClick = () => {
-    const noteTwo = document.getElementById('note-two');
-    noteTwo?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
     <div className="container">
@@ -61,26 +28,15 @@ const AboutMe = () => {
         id="about"
         className="about-me"
       >
-        <h3>About me</h3>
-        <div className="about-me--content">
-          <div
-            ref={aboutTopRef}
-            className="about-me--content-left"
-          >
-            <div className="about-me--content-left--images">
+        <SectionTitle text="About me" />
+        <section className="about-me--content">
+          <div className="about-me--content-left">
+            <div className="about-me--content-left--portrait">
               <img src={MePNG} alt="me" draggable="false" />
-              <img
-                src={MeBGPNG}
-                alt="me-bg"
-                draggable="false"
-              />
             </div>
             <div className="about-me--content-left--bg"></div>
           </div>
-          <div
-            ref={aboutBottomRef}
-            className="about-me--content-right"
-          >
+          <div className="about-me--content-right">
             <div className="about-me--content-right--intro">
               <h3>Hola.</h3>
               <h3>Hello.</h3>
@@ -88,17 +44,18 @@ const AboutMe = () => {
             </div>
             <div className="about-me--content-right--text">
               <p>
-                I am Facundo! I'm a person whose life
-                philosophy is based on creating positive and
-                caring interactions with people. I love
-                music, computers, and art. I graduated in
-                Computer Science from the National
-                University of Tucumán, <b>Argentina</b> in
-                2018. I have been working as a software
-                engineer for over +5 years, and in the past
-                year, I started integrating design into my
-                skillset. I love combining programming and
-                art to build amazing things.
+                I'm Facundo! A person who believes in
+                building meaningful and positive connections
+                with others. My passions span across
+                computer, music, and art. Graduating with a
+                degree in Computer Science from the National
+                University of Tucumán, Argentina (2018),
+                I've gain over 4 years of experience working
+                as a software engineer. Over the past year,
+                I've dive in the world of design, mixing it
+                with my technical abbilities. The fusion of
+                programming and artistic expression allows
+                me to bring captivating concepts to life.
               </p>
               <p>
                 I believe details make simplicity beautiful.
@@ -107,7 +64,7 @@ const AboutMe = () => {
             </div>
             <Discovery />
           </div>
-        </div>
+        </section>
       </section>
     </div>
   );

@@ -2,6 +2,18 @@
 
 .discovery {
   width: 270px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border: 0.5px solid $highlight-color-500;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 50px 50px $shadow-dark-100;
+  background: linear-gradient(
+    to right,
+    $primary-color,
+    $shadow-dark-100
+  );
   z-index: 2;
 
   a {
@@ -18,18 +30,19 @@
       scale: 1;
       transition: all calc($golden-ratio-time / 8)
         ease-in-out;
-      font-weight: 700;
+      font-weight: 500;
+      font-size: 0.875rem;
     }
 
     &:hover {
       svg {
-        scale: 1.2;
+        scale: 1.1;
         transition: scale calc($golden-ratio-time / 8)
           ease-in-out;
       }
 
       span {
-        color: $shadow-dark-800;
+        color: $shadow-light;
         transition: color calc($golden-ratio-time / 8)
           ease-in-out;
       }
@@ -41,8 +54,8 @@
         ease-in-out;
 
       path {
-        stroke: $highlight-color;
-        fill: $highlight-color;
+        stroke: $highlight-color-500;
+        fill: $highlight-color-300;
       }
     }
   }
@@ -51,7 +64,7 @@
 /* Smartphones (portrait & landscape) */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .discovery {
-    width: 210px;
+    width: 100%;
     height: 40px;
   }
 }

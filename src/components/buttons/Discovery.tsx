@@ -10,7 +10,10 @@ export const Discovery = () => {
           target="_blank"
           aria-label="Go to Calendy's to book a call."
         >
-          <span>Book a free discovery call</span> <Phone />
+          <span>
+            Book <b>free</b> discovery call
+          </span>{' '}
+          <Phone />
         </a>
       </div>
     </div>

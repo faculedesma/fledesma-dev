@@ -1,84 +1,52 @@
 @import '../../utils/variables';
 
 .about-me {
-  width: 90%;
-  height: 850px;
+  width: 100%;
+  height: 900px;
   margin: 4rem auto 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-
-  > h3 {
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 16px;
-    margin-bottom: 2rem;
-    scale: 0 1;
-  }
+  align-items: center;
+  scroll-snap-align: start;
+  gap: 100px;
+  padding: 200px 0;
 
   &--content {
     height: 100%;
+    height: 600px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-
-    &-left,
-    &-right {
-      width: 40%;
-    }
+    scroll-snap-align: start;
+    scroll-margin-top: 150px;
 
     &-left {
       position: relative;
+      width: 450px;
 
-      &--images {
-        position: relative;
-        width: 100%;
-        height: fit-content;
-
-        &:hover {
-          img:first-child {
-            scale: 1.1 1.1;
-            transition: scale calc($golden-ratio-time / 4)
-              ease-in;
-          }
-
-          img:last-child {
-            scale: 0.9 0.9;
-            transition: scale calc($golden-ratio-time / 4)
-              ease-in;
-          }
-        }
-
+      &--portrait {
         img {
+          display: none;
           width: 100%;
           position: absolute;
           top: 0;
           left: 0;
           opacity: 0;
         }
-
-        img:first-child {
-          scale: 1 1;
-          transition: scale calc($golden-ratio-time / 4)
-            ease-in;
-          z-index: 2;
-        }
-
-        img:last-child {
-          scale: 1 1;
-          transition: scale calc($golden-ratio-time / 4)
-            ease-in;
-          z-index: 1;
-        }
       }
 
       &--bg {
-        width: 480px;
-        height: 620px;
+        width: 500px;
+        height: 600px;
         position: absolute;
         left: 0;
         top: 0;
-        border: 0.5px solid var(--highlight-color);
+        background: linear-gradient(
+          to bottom,
+          $highlight-color-500,
+          $highlight-color-100
+        );
+        box-shadow: 0 0 10px 10px $shadow-dark-100;
         z-index: 1;
         opacity: 0;
       }
@@ -86,13 +54,12 @@
 
     &-right {
       width: 45%;
-      height: 620px;
+      height: 600px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: space-evenly;
       gap: 2rem;
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 
       &--intro {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -107,7 +74,7 @@
         h3 {
           font-family: 'Gilroy';
           font-weight: 700;
-          color: var(--highlight-color);
+          color: $highlight-color-800;
           line-height: 1;
         }
       }
@@ -135,9 +102,28 @@
   }
 }
 
-.show-about-me-right {
+.show-about-me {
   .about-me {
     &--content {
+      &-left {
+        &--portrait {
+          img:first-child {
+            animation: fade-in calc($golden-ratio-time / 2)
+              ease-in-out forwards;
+          }
+
+          img:last-child {
+            animation: fade-in calc($golden-ratio-time)
+              ease-in-out forwards;
+          }
+        }
+
+        &--bg {
+          animation: fade-in calc($golden-ratio-time)
+            ease-in-out forwards;
+        }
+      }
+
       &-right {
         &--intro {
           h3 {
@@ -177,42 +163,20 @@
     }
   }
 }
-.show-about-me-left {
-  .about-me {
-    &--content {
-      &-left {
-        &--images {
-          img:first-child {
-            animation: fade-in calc($golden-ratio-time / 2)
-              ease-in-out forwards;
-          }
-
-          img:last-child {
-            animation: fade-in calc($golden-ratio-time)
-              ease-in-out forwards;
-          }
-        }
-
-        &--bg {
-          animation: fade-in calc($golden-ratio-time)
-            ease-in-out forwards;
-        }
-      }
-    }
-  }
-}
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .about-me {
     width: 100%;
-    height: 1100px;
-    margin: 4rem 0;
+    height: auto;
+    gap: 1rem;
+    align-items: flex-start;
 
     &--content {
       height: 100%;
       flex-direction: column;
       align-items: flex-start;
       justify-content: space-between;
+      gap: 2rem;
 
       &-left,
       &-right {
@@ -221,7 +185,6 @@
 
       &-left {
         width: 100%;
-        height: 550px;
 
         &--images {
           img {
@@ -230,8 +193,9 @@
         }
 
         &--bg {
-          width: 100%;
+          position: relative;
           height: 420px;
+          width: 100%;
         }
       }
 
