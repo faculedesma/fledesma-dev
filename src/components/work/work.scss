@@ -7,9 +7,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 120px;
-  padding: 240px 0;
   scroll-snap-align: start;
+  gap: 100px;
+  padding: 200px 0;
 
   &-list {
     width: 100%;
@@ -23,7 +23,7 @@
     &--namewiz,
     &--art {
       position: relative;
-      width: 100%;
+      width: 1000px;
       height: 550px;
       overflow: hidden;
       opacity: 0;
@@ -33,16 +33,17 @@
       cursor: pointer;
       z-index: 2;
       scroll-snap-align: start;
-      scroll-margin-top: 120px;
+      scroll-margin-top: 180px;
+      perspective: 1000px;
+      transform-style: preserve-3d;
 
-      h2,
       h3 {
         translate: 0px 0px;
         transition: translate calc($golden-ratio-time / 8)
           ease-in-out;
       }
 
-      h2 {
+      h3:first-child {
         width: 40%;
         position: absolute;
         top: 50px;
@@ -87,20 +88,20 @@
 
       &:hover {
         img {
-          scale: 1.1;
-          transition: scale calc($golden-ratio-time / 8)
+          scale: 1.05;
+          transition: scale calc($golden-ratio-time / 4)
             ease-in-out;
         }
 
-        h2 {
-          translate: 20px 20px;
-          transition: translate calc($golden-ratio-time / 8)
+        h3:first-child {
+          translate: 1rem 1rem;
+          transition: translate calc($golden-ratio-time / 4)
             ease-in-out;
         }
 
         h3 {
-          translate: 20px -20px;
-          transition: translate calc($golden-ratio-time / 8)
+          translate: 1rem -1rem;
+          transition: translate calc($golden-ratio-time / 4)
             ease-in-out;
         }
       }
@@ -173,18 +174,19 @@
   .work {
     width: 100%;
     height: fit-content;
-    margin: 4rem 0;
+    gap: 60px;
+    padding: 120px 0;
 
     &-list {
       width: 100%;
-      gap: 4rem;
+      gap: 60px;
 
       &--danilo,
       &--namewiz,
       &--art {
         height: 400px;
+        width: 100%;
 
-        h2,
         h3 {
           font-size: 30px;
           translate: 0px 0px;
@@ -192,7 +194,7 @@
             ease-in-out;
         }
 
-        h2 {
+        h3:first-child {
           font-size: 30px;
           width: 75%;
           position: absolute;
@@ -214,7 +216,7 @@
         }
 
         &:hover {
-          h2 {
+          h3:first-child {
             translate: 5px 5px;
             transition: translate
               calc($golden-ratio-time / 8) ease-in-out;

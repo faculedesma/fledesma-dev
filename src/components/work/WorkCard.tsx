@@ -22,7 +22,7 @@ const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
 
   const isInViewport = useIntersection(
     workCardRef,
-    isMobile ? 0 : -250
+    isMobile ? 50 : -250
   );
 
   useEffect(() => {
@@ -54,7 +54,7 @@ const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
       onClick={handleCardClick}
       className={`work-list--${work.id}`}
     >
-      <h2>{work.title}</h2>
+      <h3>{work.title}</h3>
       <h3>{work.type}</h3>
       <img
         src={work.image}

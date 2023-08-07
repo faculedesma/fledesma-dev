@@ -44,7 +44,7 @@ const Services = () => {
   return (
     <div className="container">
       <section className="services">
-        <SectionTitle text="Services" />
+        <SectionTitle text="What I Do" />
         <div className="services-list" ref={servicesRef}>
           {servicesProvided.map((service) => {
             return (

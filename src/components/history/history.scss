@@ -3,13 +3,14 @@
 .history {
   position: relative;
   width: 90%;
+  height: 900px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 120px;
-  padding: 240px 0;
   scroll-snap-align: start;
+  gap: 100px;
+  padding: 200px 0;
 
   &-list {
     width: 100%;
@@ -38,8 +39,7 @@
         color: $secondary-color;
         scale: 0;
         z-index: 2;
-        filter: saturate(0.5);
-        transition: all calc($golden-ratio-time / 8) ease-in;
+        transition: all calc($golden-ratio-time / 4) ease-in;
 
         &::before {
           content: '';
@@ -50,19 +50,19 @@
           left: 0;
           background: linear-gradient(
             to right,
-            $highlight-color-500,
+            $shadow-dark-400,
             transparent
           );
           transform: scaleX(0);
           transform-origin: left;
-          transition: all calc($golden-ratio-time / 8)
+          transition: all calc($golden-ratio-time / 4)
             ease-in;
         }
 
         &:hover {
           &::before {
             transform: scaleX(1);
-            transition: all calc($golden-ratio-time / 8)
+            transition: all calc($golden-ratio-time / 4)
               ease-in;
             z-index: -1;
           }
@@ -114,7 +114,8 @@
   .history {
     width: 100%;
     height: fit-content;
-    margin: 4rem 0;
+    gap: 60px;
+    padding: 120px 0;
 
     &-list {
       width: 100%;
