@@ -39,7 +39,7 @@ const processes = [
     order: 4,
     label: 'Build',
     description:
-      'the planned web solution is created using coding and development, turning design and functionality into a fully functional digital reality.',
+      'The planned web solution is created using coding and development, turning design and functionality into a fully functional digital reality.',
     lottieJSON: buildJSON
   }
 ];
@@ -116,6 +116,7 @@ const Process = () => {
             {processes.map((p) => {
               return (
                 <div
+                  key={p.id}
                   onClick={() => setActive(p.order)}
                   className={`${
                     active === p.order ? 'active-step' : ''
