@@ -147,6 +147,13 @@
             font-size: 0.75rem;
           }
         }
+
+        .form-error {
+          p {
+            color: $highlight-color;
+            font-size: 0.75rem;
+          }
+        }
       }
     }
   }

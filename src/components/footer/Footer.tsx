@@ -9,10 +9,21 @@ import { Social } from '@components/social/Social';
 import { PrimaryButton } from '@components/buttons/PrimaryButton';
 import Lottie from 'lottie-react';
 import SuccessJSON from '@assets/animations/congrats.json';
-import './footer.scss';
 import Logo from '@components/logo/Logo';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '@database/firebase';
+import './footer.scss';
 
 const Footer = () => {
+  const [firstName, setFirstName] = useState<string>('');
+  const [lastName, setLastName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [country, setCountry] = useState<string>('');
+  const [interest, setInterest] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
+
+  const [error, setError] = useState<string>('');
+
   const isMobile =
     window.innerWidth > 320 && window.innerWidth < 480;
   const footerRef = useRef<HTMLDivElement>(null);
@@ -29,16 +40,41 @@ const Footer = () => {
     }
   }, [isInViewport]);
 
-  const handleSubmit = (
+  const clearForm = () => {
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setCountry('');
+    setInterest('');
+    setMessage('');
+  };
+
+  const handleSubmit = async (
     event: FormEvent<HTMLFormElement>
   ) => {
     event?.preventDefault();
     setIsSubmitting(true);
+    setError('');
     setSucess(false);
-    setTimeout(() => {
+
+    try {
+      const docRef = collection(db, 'contact-form');
+      await addDoc(docRef, {
+        firstName,
+        lastName,
+        email,
+        country,
+        interest,
+        message
+      });
       setIsSubmitting(false);
       setSucess(true);
-    }, 2000);
+      clearForm();
+    } catch (error) {
+      setIsSubmitting(false);
+      setSucess(false);
+      console.log(error);
+    }
   };
 
   return (
@@ -67,12 +103,20 @@ const Footer = () => {
             <form onSubmit={handleSubmit}>
               <div className="form-names">
                 <input
+                  value={firstName}
+                  onChange={(e) =>
+                    setFirstName(e.target.value)
+                  }
                   required
                   type="text"
                   placeholder="First Name"
                   className="input-small"
                 />
                 <input
+                  value={lastName}
+                  onChange={(e) =>
+                    setLastName(e.target.value)
+                  }
                   required
                   type="text"
                   placeholder="Last Name"
@@ -80,24 +124,34 @@ const Footer = () => {
                 />
               </div>
               <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
                 type="email"
                 placeholder="Email address"
                 className="input-large"
               />
               <input
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
                 required
                 type="text"
                 placeholder="Country"
                 className="input-large"
               />
               <input
+                value={interest}
+                onChange={(e) =>
+                  setInterest(e.target.value)
+                }
                 required
                 type="text"
                 placeholder="I'm interested in"
                 className="input-large"
               />
               <textarea
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 placeholder="Message"
                 maxLength={300}
               />
@@ -115,6 +169,14 @@ const Footer = () => {
                   <p>
                     Your form was submitted! I'll get back
                     to you soon.
+                  </p>
+                </div>
+              )}
+              {error && (
+                <div className="form-error">
+                  <p>
+                    There was an error submitting the data.
+                    Please try again.
                   </p>
                 </div>
               )}

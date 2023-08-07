@@ -20,7 +20,8 @@
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
       "@pages/*": ["src/pages/*"],
-      "@constants/*": ["src/constants/*"]
+      "@constants/*": ["src/constants/*"],
+      "@database/*": ["src/database/*"]
     }
   },
   "include": ["src", "**/*.ts", "**/*.tsx"],
