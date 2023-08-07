@@ -85,7 +85,7 @@ const Footer = () => {
         className="footer"
       >
         <div className="footer-content">
-          <div className="footer-content--left">
+          <section className="footer-content--left">
             <div className="footer-content--left-titles">
               <h2>Let's build something together.</h2>
               <p>
@@ -98,8 +98,8 @@ const Footer = () => {
             <div className="footer-content--left-bottom">
               <Social />
             </div>
-          </div>
-          <div className="footer-content--right">
+          </section>
+          <section className="footer-content--right">
             <form onSubmit={handleSubmit}>
               <div className="form-names">
                 <input
@@ -139,16 +139,37 @@ const Footer = () => {
                 placeholder="Country"
                 className="input-large"
               />
-              <input
+              <select
                 value={interest}
                 onChange={(e) =>
                   setInterest(e.target.value)
                 }
                 required
-                type="text"
-                placeholder="I'm interested in"
-                className="input-large"
-              />
+                className={`input-large ${
+                  interest === ''
+                    ? 'select-placeholder'
+                    : ''
+                }`}
+              >
+                <option
+                  value=""
+                  className="option-placeholder"
+                >
+                  I'm interested in
+                </option>
+                <option value="web-desing-dev">
+                  Web Desing & Development
+                </option>
+                <option value="design-only">
+                  Web Design only
+                </option>
+                <option value="dev-only">
+                  Web development only
+                </option>
+                <option value="brand">
+                  Brand (Logo, Design & Development)
+                </option>
+              </select>
               <textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
@@ -181,7 +202,7 @@ const Footer = () => {
                 </div>
               )}
             </form>
-          </div>
+          </section>
         </div>
         <section className="footer-bottom">
           <div className="footer-bottom--divider"></div>
