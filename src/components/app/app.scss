@@ -79,6 +79,18 @@
   }
 }
 
+@keyframes slidey-out-fade {
+  0% {
+    translate: 0 -100%;
+    opacity: 0;
+  }
+
+  100% {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+
 @keyframes slidey-out {
   0% {
     translate: 0 0;
@@ -199,6 +211,19 @@
   100% {
     opacity: 1;
     scale: 1 1;
+  }
+}
+
+@keyframes scaley-fade-out {
+  0% {
+    opacity: 1;
+    scale: 1 1;
+  }
+
+  100% {
+    transform-origin: top;
+    scale: 1 0;
+    opacity: 0;
   }
 }
 

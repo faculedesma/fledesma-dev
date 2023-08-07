@@ -77,10 +77,6 @@ body {
   width: 100dvw;
   height: 100dvh;
   margin: 0;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
   font-family: $secondary-font-family;
   background-color: $primary-color;
   color: $secondary-color;
@@ -148,6 +144,14 @@ p {
   line-height: $paragraph-line-height;
 }
 
+input,
+textarea,
+input::placeholder,
+textarea::placeholder {
+  font-size: $input-size;
+  line-height: $input-line-height;
+}
+
 a {
   font-size: $anchor-size;
   line-height: $anchor-line-height;
@@ -194,7 +198,7 @@ input:focus,
 input:focus-visible,
 textarea:focus,
 textarea:focus-visible {
-  outline-color: $highlight-color;
+  outline-color: $highlight-color-300;
 }
 
 /* Smartphones (portrait and landscape) */
@@ -222,5 +226,13 @@ textarea:focus-visible {
   p {
     font-size: $paragraph-size-mobile;
     line-height: $paragraph-line-height-mobile;
+  }
+
+  input,
+  textarea,
+  input::placeholder,
+  textarea::placeholder {
+    font-size: $input-size-mobile;
+    line-height: $input-line-height-mobile;
   }
 }
