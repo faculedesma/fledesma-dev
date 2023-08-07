@@ -1,0 +1,202 @@
+@import '../../utils/variables';
+
+.process {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  gap: 100px;
+  padding: 180px 0;
+  scroll-snap-align: start;
+
+  &-text {
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+
+    &--top {
+      display: flex;
+      align-items: center;
+    }
+
+    &--bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      span {
+        color: $highlight-color-900;
+        font-size: 1rem;
+        letter-spacing: 0.25rem;
+      }
+
+      p {
+        color: $shadow-light;
+      }
+    }
+  }
+
+  &-content {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+
+    &--step {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &-card {
+        position: relative;
+        width: 450px;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 1rem;
+        background: linear-gradient(
+          to bottom,
+          $primary-color,
+          $shadow-dark-100,
+          $highlight-color-100
+        );
+        border: 0.5px solid $highlight-color-300;
+        border-radius: 1.5rem;
+        box-shadow: 0 0 50px 50px $shadow-dark-100;
+
+        &-order {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: 0.5px solid $highlight-color-100;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &-anim {
+          border-radius: 1rem;
+        }
+
+        &-text {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-end;
+
+          p {
+            width: 70%;
+            text-align: center;
+          }
+
+          h3 {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  &-stepper {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+
+    div {
+      height: 0.25rem;
+      width: 1rem;
+      background: $shadow-dark-900;
+      border-radius: 1rem;
+      cursor: pointer;
+      transition: all calc($golden-ratio-time / 4)
+        ease-in-out;
+      z-index: 1;
+    }
+
+    .active-step {
+      width: 2rem;
+      background: $shadow-light;
+      transition: all calc($golden-ratio-time / 4)
+        ease-in-out;
+    }
+  }
+}
+
+.show-process {
+  animation: fade-in calc($golden-ratio-time) ease-in-out
+    forwards;
+
+  .process {
+    &-list {
+      &--step {
+        &-card {
+          &-anim {
+            animation: scale-in calc($golden-ratio-time / 2)
+              ease-in-out forwards;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Smartphones (portrait and landscape) */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .process {
+    flex-direction: column;
+    padding: 120px 0;
+
+    &-text {
+      width: 100%;
+
+      p,
+      h3 {
+        text-align: left;
+      }
+    }
+
+    &-content {
+      width: 100%;
+    }
+
+    &-list {
+      &--step {
+        &-card {
+          width: 300px;
+          height: 370px;
+        }
+      }
+    }
+
+    &-progress {
+      display: none;
+    }
+  }
+}
+
+/* Larger screens */
+@media only screen and (min-device-width: 1920px) and (max-device-width: 3840px) {
+  .process {
+  }
+}
+
+/* Tablets (portrait) */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: 'portrait') and (-webkit-min-device-pixel-ratio: 1) {
+  .process {
+  }
+}
