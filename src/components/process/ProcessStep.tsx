@@ -17,25 +17,9 @@ interface IProcessCardProps {
 export const ProcessStep: React.FC<IProcessCardProps> = ({
   process
 }) => {
-  const processRef = useRef<HTMLDivElement>(null);
-  const isInViewport = useIntersection(processRef, -100);
-
-  useEffect(() => {
-    if (isInViewport) {
-      processRef.current?.classList.add('show-process');
-    }
-  }, [isInViewport]);
-
   return (
-    <div
-      id={process.id}
-      ref={processRef}
-      className="process-list--step"
-    >
+    <div id={process.id} className="process-list--step">
       <div className="process-list--step-card">
-        <div className="process-list--step-card-order">
-          <span>{process.order}</span>
-        </div>
         <div className="process-list--step-card-anim">
           <Lottie
             animationData={process.lottieJSON}
@@ -44,7 +28,10 @@ export const ProcessStep: React.FC<IProcessCardProps> = ({
           />
         </div>
         <div className="process-list--step-card-text">
-          <h3>{process.label}</h3>
+          <div className="process-list--step-card-text--top">
+            <h3>{process.order}.</h3>
+            <h3>{process.label}</h3>
+          </div>
           <p>{process.description}</p>
         </div>
       </div>
