@@ -2,13 +2,10 @@
 
 .section-title {
   text-transform: uppercase;
-  font-weight: 300;
-  font-size: 100px;
-  letter-spacing: 24px;
-  line-height: inherit;
   scale: 0 1;
-  color: $highlight-color;
-  opacity: 0.2;
+  color: $highlight-color-900;
+  font-size: 1rem;
+  letter-spacing: 0.25rem;
 }
 
 .show-section-title {

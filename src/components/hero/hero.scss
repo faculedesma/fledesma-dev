@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   opacity: 0;
-  padding-top: 120px;
+  padding-top: 100px;
   scroll-snap-align: start;
   z-index: 2;
 
@@ -36,7 +36,6 @@
 
       h1 {
         translate: 0 100%;
-        opacity: 0;
       }
 
       h1:last-child {
@@ -71,21 +70,44 @@
 }
 
 .show-hero {
-  animation: fade-in calc($golden-ratio-time) ease-in-out
-    forwards;
+  animation: fade-in calc($golden-ratio-time / 4)
+    ease-in-out forwards;
 
   .hero {
     &-titles {
       &--top {
         h1 {
-          animation: slidey-in-fade calc($golden-ratio-time)
+          animation: slidey-in calc($golden-ratio-time / 4)
             ease-in-out forwards;
         }
       }
 
       &--bottom {
         p {
-          animation: fade-in calc($golden-ratio-time)
+          animation: fade-in calc($golden-ratio-time / 4)
+            ease-in-out forwards;
+        }
+      }
+    }
+  }
+}
+
+.hide-hero {
+  animation: fade-out calc($golden-ratio-time / 4)
+    ease-in-out forwards;
+
+  .hero {
+    &-titles {
+      &--top {
+        h1 {
+          animation: slidey-out calc($golden-ratio-time / 4)
+            ease-in-out forwards;
+        }
+      }
+
+      &--bottom {
+        p {
+          animation: fade-out calc($golden-ratio-time / 4)
             ease-in-out forwards;
         }
       }
@@ -99,10 +121,10 @@
     position: relative;
     height: fit-content;
     width: 100%;
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding-top: 50px;
 
     &-titles {
       height: auto;

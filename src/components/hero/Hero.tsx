@@ -1,4 +1,5 @@
 import { useRef, useEffect } from 'react';
+import { useIntersection } from '@components/hooks/useIntersection';
 import './hero.scss';
 
 interface IHeroProps {
@@ -8,11 +9,19 @@ interface IHeroProps {
 const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
   const heroRef = useRef<HTMLDivElement>(null);
 
+  const isHeroInViewport = useIntersection(heroRef, -100);
+
   useEffect(() => {
     if (!isLoading) {
-      heroRef.current?.classList.add('show-hero');
+      if (isHeroInViewport) {
+        heroRef.current?.classList.remove('hide-hero');
+        heroRef.current?.classList.add('show-hero');
+      } else {
+        heroRef.current?.classList.remove('show-hero');
+        heroRef.current?.classList.add('hide-hero');
+      }
     }
-  }, [isLoading]);
+  }, [isLoading, isHeroInViewport]);
 
   return (
     <div className="container">
