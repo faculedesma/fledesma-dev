@@ -169,8 +169,9 @@
   .about-me {
     width: 100%;
     height: auto;
-    gap: 1rem;
-    align-items: flex-start;
+    gap: 50px;
+    padding: 100px 0;
+    scroll-margin-top: 50px;
 
     &--content {
       height: 100%;

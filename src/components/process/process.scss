@@ -48,12 +48,6 @@
   }
 
   &-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 200px;
-
     &--step {
       display: flex;
       align-items: center;
@@ -77,16 +71,8 @@
         border: 0.5px solid $highlight-color-300;
         border-radius: 1.5rem;
         box-shadow: 0 0 50px 50px $shadow-dark-100;
-
-        &-order {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          border: 0.5px solid $highlight-color-100;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
+        animation: scale-fade-in
+          calc($golden-ratio-time / 2) ease-in-out;
 
         &-anim {
           border-radius: 1rem;
@@ -97,6 +83,16 @@
           flex-direction: column;
           align-items: center;
           justify-content: flex-end;
+
+          &--top {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            b {
+              color: $highlight-color-500;
+            }
+          }
 
           p {
             width: 70%;
@@ -181,10 +177,6 @@
           height: 420px;
         }
       }
-    }
-
-    &-progress {
-      display: none;
     }
   }
 }

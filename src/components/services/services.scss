@@ -177,21 +177,31 @@
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .services {
     width: 100%;
-    height: fit-content;
-    padding-top: 60px;
-    gap: 1rem;
-    align-items: flex-start;
+    height: auto;
+    gap: 50px;
+    padding: 100px 0;
+    scroll-margin-top: 50px;
 
     &-list {
-      width: fit-content;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-      padding: 1rem 0;
-      gap: 4rem;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6rem;
 
       &--card {
         width: 300px;
         height: 350px;
+
+        &::before {
+          width: 301px;
+          height: 351px;
+        }
+
+        &::after {
+          width: 300px;
+          height: 350px;
+        }
       }
     }
   }

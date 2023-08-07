@@ -76,15 +76,10 @@
     &-two,
     &-three {
       height: 450px;
+      scroll-margin-top: 100px;
 
       h3 {
         width: 100%;
-      }
-    }
-
-    &-two {
-      h3 {
-        width: 80%;
       }
     }
   }

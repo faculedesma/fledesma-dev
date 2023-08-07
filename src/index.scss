@@ -139,7 +139,8 @@ h3 {
   font-weight: 300;
 }
 
-p {
+p,
+span {
   font-size: $paragraph-size;
   line-height: $paragraph-line-height;
 }
@@ -150,6 +151,11 @@ input::placeholder,
 textarea::placeholder {
   font-size: $input-size;
   line-height: $input-line-height;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: $shadow-light;
 }
 
 a {
@@ -177,10 +183,17 @@ svg {
 }
 
 input,
-textarea {
+textarea,
+select,
+option {
   font-size: $paragraph-size;
   font-weight: 300;
   font-family: inherit;
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 textarea {
@@ -189,7 +202,8 @@ textarea {
   box-sizing: border-box;
 }
 
-input {
+input,
+select {
   padding-left: 1rem;
   box-sizing: border-box;
 }
@@ -197,8 +211,11 @@ input {
 input:focus,
 input:focus-visible,
 textarea:focus,
-textarea:focus-visible {
+textarea:focus-visible,
+select:focus,
+select:focus-visible {
   outline-color: $highlight-color-300;
+  -webkit-outline-color: $highlight-color-300;
 }
 
 /* Smartphones (portrait and landscape) */
