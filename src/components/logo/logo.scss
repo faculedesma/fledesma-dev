@@ -1,0 +1,33 @@
+@import '../../utils/variables';
+
+.logo {
+  cursor: pointer;
+
+  svg {
+    width: 41px;
+    height: 43px;
+
+    path {
+      stroke: $highlight-color-900;
+      transition: all calc($golden-ratio-time / 8)
+        ease-in-out;
+      fill: transparent;
+    }
+
+    path:last-child {
+      stroke-dasharray: 0;
+      filter: brightness(100%);
+      stroke: $highlight-color-800;
+      transition: all calc($golden-ratio-time / 8)
+        ease-in-out;
+    }
+
+    &:hover {
+      path:last-child {
+        stroke-dasharray: 24;
+        stroke: $highlight-color;
+        filter: brightness(200%);
+      }
+    }
+  }
+}

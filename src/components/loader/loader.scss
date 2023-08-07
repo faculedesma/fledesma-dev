@@ -8,7 +8,7 @@
   top: 0;
   opacity: 1;
   z-index: 5;
-  background-color: var(--primary-color);
+  background-color: $primary-color;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,6 +19,8 @@
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 
     p {
+      text-align: center;
+      font-size: 0.75rem;
       margin: 0;
       translate: 0 0;
       transition: translate calc($golden-ratio-time / 16)

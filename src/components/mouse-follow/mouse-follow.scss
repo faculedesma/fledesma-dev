@@ -11,8 +11,7 @@
   justify-content: center;
   z-index: 5;
 
-  &--bg,
-  &--image {
+  &--bg {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -29,17 +28,9 @@
     z-index: 5;
   }
 
-  &--image {
-    scale: 0;
-    background: transparent;
-    transition: scale calc($golden-ratio-time / 4)
-      ease-in-out;
-    z-index: 4;
-  }
-
   &--text {
     scale: 0;
-    color: rgba(var(--primary-color-rgb), 0.9);
+    color: $primary-color-900;
     transition: color calc($golden-ratio-time / 4)
       ease-in-out;
   }
@@ -49,20 +40,19 @@
   .mouse-follow {
     &--bg {
       scale: 1;
-      background: rgba(var(--highlight-color-rgb), 0.9);
-      border: 0px solid var(--highlight-color);
+      background: $highlight-color-900;
+      border: 0px solid $highlight-color;
       transition: all calc($golden-ratio-time / 4)
         ease-in-out;
     }
+  }
+}
 
-    &--image {
+.hide {
+  .mouse-follow {
+    &--bg {
       scale: 0;
-      opacity: 0.5;
-      filter: invert(1);
-      background: url('../../assets/images/2001.webp');
-      background-position: center;
-      background-size: cover;
-      transition: scale calc($golden-ratio-time / 4)
+      transition: all calc($golden-ratio-time / 4)
         ease-in-out;
     }
   }
@@ -72,120 +62,22 @@
   .mouse-follow {
     &--bg {
       scale: 12;
-      background: rgba(var(--primary-color-rgb), 0.95);
+      background: $primary-color;
       transition: all calc($golden-ratio-time / 4)
         ease-in-out;
 
       &::before {
-        border: 0.5px solid var(--secondary-color);
+        border: 0.5px solid $secondary-color;
       }
     }
 
     &--text {
       scale: 1;
-      color: rgba(var(--secondary-color-rgb), 0.9);
+      color: $secondary-color-900;
       transition: all calc($golden-ratio-time / 4)
         ease-in-out;
       z-index: 6;
     }
-  }
-}
-
-.hover {
-  .mouse-follow {
-    &--bg {
-      scale: 4;
-      border: 0.5px solid var(--highlight-color);
-      background: rgba(var(--highlight-color-rgb), 0.1);
-      transition: all calc($golden-ratio-time / 4)
-        ease-in-out;
-    }
-
-    &--text {
-      display: none;
-    }
-  }
-}
-
-.eye {
-  .mouse-follow {
-    &--bg {
-      scale: 1;
-      opacity: 0.4;
-      transition: all calc($golden-ratio-time / 4)
-        ease-in-out;
-    }
-
-    &--image {
-      display: none;
-      opacity: 0.8;
-      scale: 40;
-      background: url('../../assets/images/2001.webp');
-      animation: eye-follow-tick
-        calc($golden-ratio-time * 8) ease-in-out infinite;
-      background-position: center;
-      background-size: cover;
-      transition: all calc($golden-ratio-time / 4)
-        ease-in-out;
-    }
-  }
-}
-
-.video {
-  .mouse-follow {
-    &--bg {
-      scale: 0;
-      transition: all calc($golden-ratio-time * 4) ease-out;
-    }
-
-    &--image {
-      opacity: 0.5;
-      scale: 0;
-      border-radius: 0%;
-      background: url('../../assets/images/beyond.webp');
-      background-position: center;
-      background-size: cover;
-      transition: all calc($golden-ratio-time * 4) ease-out;
-      z-index: 10;
-    }
-  }
-}
-
-.lighted {
-  transition: box-shadow calc($golden-ratio-time / 4)
-    ease-in-out;
-  -webkit-box-shadow: 10px 0px 77px 14px
-    rgba(var(--shadow-gray-rgb), 1);
-  -moz-box-shadow: 10px 0px 77px 14px
-    rgba(var(--shadow-gray-rgb), 1);
-  box-shadow: 10px 0px 77px 14px
-    rgba(var(--shadow-gray-rgb), 1);
-}
-
-@keyframes eye-follow-tick {
-  0% {
-    filter: invert(1) saturate(1);
-    background-position: center;
-  }
-
-  25% {
-    filter: invert(1) saturate(1.1);
-    background-position: top;
-  }
-
-  50% {
-    filter: invert(1) saturate(1.2);
-    background-position: center;
-  }
-
-  75% {
-    filter: invert(1) saturate(1.1);
-    background-position: bottom;
-  }
-
-  100% {
-    filter: invert(1) saturate(1);
-    background-position: center;
   }
 }
 

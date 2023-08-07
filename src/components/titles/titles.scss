@@ -1,0 +1,14 @@
+@import '../../utils/variables';
+
+.section-title {
+  text-transform: uppercase;
+  scale: 0 1;
+  color: $highlight-color-900;
+  font-size: 1rem;
+  letter-spacing: 0.25rem;
+}
+
+.show-section-title {
+  animation: scaley-in calc($golden-ratio-time / 4)
+    ease-in-out forwards;
+}

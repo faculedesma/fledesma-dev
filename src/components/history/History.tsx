@@ -1,6 +1,5 @@
-import { useRef, useEffect } from 'react';
-import { useIntersection } from '@components/hooks/useIntersection';
 import { HistoryRow } from './HistoryRow';
+import SectionTitle from '@components/titles/SectionTitle';
 import './history.scss';
 
 const jobsHistory = [
@@ -43,32 +42,16 @@ const jobsHistory = [
 ];
 
 const History = () => {
-  const isMobile =
-    window.innerWidth > 320 && window.innerWidth < 480;
-  const historyRef = useRef<HTMLDivElement>(null);
-  const isInViewport = useIntersection(
-    historyRef,
-    isMobile ? -50 : -150
-  );
-
-  useEffect(() => {
-    if (isInViewport) {
-      historyRef.current?.classList.add(
-        'show-section-title'
-      );
-    }
-  }, [isInViewport]);
-
   return (
     <div className="container">
-      <div ref={historyRef} className="history">
-        <h3>History</h3>
+      <section className="history">
+        <SectionTitle text="History" />
         <div className="history-list">
           {jobsHistory.map((job) => {
             return <HistoryRow key={job.id} job={job} />;
           })}
         </div>
-      </div>
+      </section>
     </div>
   );
 };

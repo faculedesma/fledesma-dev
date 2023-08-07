@@ -1,39 +1,38 @@
-import { MailEnvelop } from '@assets/svgs/MailEnvelop';
-import { useState, useRef, useEffect } from 'react';
+import {
+  useState,
+  useRef,
+  useEffect,
+  FormEvent
+} from 'react';
 import { useIntersection } from '@components/hooks/useIntersection';
 import { Social } from '@components/social/Social';
-import { useCursorPosition } from '@components/hooks/useCursorPosition';
-import { Discovery } from '@components/buttons/Discovery';
+import { PrimaryButton } from '@components/buttons/PrimaryButton';
+import Lottie from 'lottie-react';
+import SuccessJSON from '@assets/animations/congrats.json';
+import Logo from '@components/logo/Logo';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '@database/firebase';
 import './footer.scss';
 
 const Footer = () => {
+  const [firstName, setFirstName] = useState<string>('');
+  const [lastName, setLastName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [country, setCountry] = useState<string>('');
+  const [interest, setInterest] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
+
+  const [error, setError] = useState<string>('');
+
   const isMobile =
     window.innerWidth > 320 && window.innerWidth < 480;
   const footerRef = useRef<HTMLDivElement>(null);
-  const matrixRef = useRef<HTMLImageElement>(null);
   const isInViewport = useIntersection(
     footerRef,
     isMobile ? -50 : -150
   );
-  const [text, setText] = useState('Click to copy!');
-
-  const { x, y, clientX, clientY } = useCursorPosition();
-
-  const handleCopyMailToClipboard = () => {
-    if (
-      navigator.clipboard &&
-      navigator.clipboard.writeText
-    ) {
-      navigator.clipboard.writeText(
-        'faculedesma1993@gmail.com'
-      );
-    }
-    setText('Copied!');
-    setTimeout(() => {
-      setText('Click to copy!');
-    }, 2000);
-    if (!isMobile) handleExpandImage();
-  };
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [success, setSucess] = useState(false);
 
   useEffect(() => {
     if (isInViewport) {
@@ -41,80 +40,164 @@ const Footer = () => {
     }
   }, [isInViewport]);
 
-  useEffect(() => {
-    if (matrixRef.current && !isMobile && isInViewport) {
-      const xSetted = Math.round(
-        (clientX / window.innerWidth) * 100
-      );
-      const ySetted = Math.round(
-        (clientY / window.innerHeight) * 100
-      );
-      matrixRef.current.animate(
-        {
-          clipPath: `circle(150px at ${xSetted}% ${ySetted}%)`
-        },
-        { duration: 1618 * 2, fill: 'forwards' }
-      );
-    }
-  }, [x, y, clientX, clientY]);
-
-  const handleFollowMouse = () => {
-    const mouse = document.getElementById('mouse-follow');
-    mouse?.classList.remove('lighted');
-    mouse?.classList.remove('point');
+  const clearForm = () => {
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setCountry('');
+    setInterest('');
+    setMessage('');
   };
 
-  const handleLeaveMouse = () => {
-    const mouse = document.getElementById('mouse-follow');
-    mouse?.classList.add('point');
-  };
+  const handleSubmit = async (
+    event: FormEvent<HTMLFormElement>
+  ) => {
+    event?.preventDefault();
+    setIsSubmitting(true);
+    setError('');
+    setSucess(false);
 
-  const handleExpandImage = () => {
-    if (matrixRef.current) {
-      matrixRef.current.animate(
-        {
-          clipPath: `circle(2000px at 50% 50%)`
-        },
-        {
-          duration: 1618,
-          fill: 'forwards',
-          easing: 'ease-out'
-        }
-      );
+    try {
+      const docRef = collection(db, 'contact-form');
+      await addDoc(docRef, {
+        firstName,
+        lastName,
+        email,
+        country,
+        interest,
+        message
+      });
+      setIsSubmitting(false);
+      setSucess(true);
+      clearForm();
+    } catch (error) {
+      setIsSubmitting(false);
+      setSucess(false);
+      console.log(error);
     }
   };
 
   return (
-    <div
-      className="container"
-      onMouseEnter={handleFollowMouse}
-      onMouseLeave={handleLeaveMouse}
-    >
-      <div ref={footerRef} id="contact" className="footer">
-        <h1>Let's build something awesome!</h1>
-        <Discovery />
-        <div className="footer-mail">
-          <p>faculedesma1993@gmail.com</p>
-          <div className="footer-mail--icon">
-            <MailEnvelop />
+    <div className="container">
+      <section
+        ref={footerRef}
+        id="contact"
+        className="footer"
+      >
+        <div className="footer-content">
+          <div className="footer-content--left">
+            <div className="footer-content--left-titles">
+              <h2>Let's build something together.</h2>
+              <p>
+                I’m open to freelance opportunities or a
+                remote position. Also, feel free to reach
+                out if you need a hand on your side/open
+                source project. I would love to help.
+              </p>
+            </div>
+            <div className="footer-content--left-bottom">
+              <Social />
+            </div>
           </div>
-          <div
-            onClick={handleCopyMailToClipboard}
-            className="footer-mail--copy"
-          >
-            <p>{text}</p>
+          <div className="footer-content--right">
+            <form onSubmit={handleSubmit}>
+              <div className="form-names">
+                <input
+                  value={firstName}
+                  onChange={(e) =>
+                    setFirstName(e.target.value)
+                  }
+                  required
+                  type="text"
+                  placeholder="First Name"
+                  className="input-small"
+                />
+                <input
+                  value={lastName}
+                  onChange={(e) =>
+                    setLastName(e.target.value)
+                  }
+                  required
+                  type="text"
+                  placeholder="Last Name"
+                  className="input-small"
+                />
+              </div>
+              <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                type="email"
+                placeholder="Email address"
+                className="input-large"
+              />
+              <input
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
+                required
+                type="text"
+                placeholder="Country"
+                className="input-large"
+              />
+              <input
+                value={interest}
+                onChange={(e) =>
+                  setInterest(e.target.value)
+                }
+                required
+                type="text"
+                placeholder="I'm interested in"
+                className="input-large"
+              />
+              <textarea
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Message"
+                maxLength={300}
+              />
+              <PrimaryButton
+                label="Get in touch"
+                loading={isSubmitting}
+              />
+              {success && (
+                <div className="form-success">
+                  <Lottie
+                    animationData={SuccessJSON}
+                    loop={true}
+                    style={{ height: 50, width: 50 }}
+                  />
+                  <p>
+                    Your form was submitted! I'll get back
+                    to you soon.
+                  </p>
+                </div>
+              )}
+              {error && (
+                <div className="form-error">
+                  <p>
+                    There was an error submitting the data.
+                    Please try again.
+                  </p>
+                </div>
+              )}
+            </form>
           </div>
         </div>
-        <div className="footer-social">
-          <Social />
-        </div>
-        <div className="footer-copyright">
-          <p>
-            2023 <b>© Facundo Ledesma</b>
-          </p>
-        </div>
-      </div>
-      <div ref={matrixRef} className="footer-bg"></div>
+        <section className="footer-bottom">
+          <div className="footer-bottom--divider"></div>
+          <div className="footer-bottom--content">
+            <div className="footer-bottom--content-copyright">
+              <p>
+                <b>© Facundo Ledesma</b>
+              </p>
+              <p>2023 All rights reserved.</p>
+            </div>
+            <div className="footer-bottom--content-logo">
+              <Logo />
+            </div>
+          </div>
+        </section>
+      </section>
     </div>
   );
 };

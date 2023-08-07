@@ -8,7 +8,7 @@ const NoteOne = () => {
   const noteOneRef = useRef<HTMLDivElement>(null);
   const isInViewport = useIntersection(
     noteOneRef,
-    isMobile ? -50 : -150
+    isMobile ? -50 : -100
   );
 
   useEffect(() => {
@@ -19,16 +19,16 @@ const NoteOne = () => {
 
   return (
     <div className="container">
-      <div
+      <section
         ref={noteOneRef}
         id="note-one"
         className="notes-one"
       >
         <h3>
-          Passionate about building highly functional,
-          intuitive and unique experiences.
+          Passionate about crafting beautiful, functional,
+          and user-friendly interfaces.
         </h3>
-      </div>
+      </section>
     </div>
   );
 };

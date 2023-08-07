@@ -2,69 +2,31 @@
 
 header {
   position: fixed;
-  width: 100dvw;
+  width: 100%;
   top: 0;
   left: 0;
   background: transparent;
+  height: auto;
+  margin: 0 auto;
+  border-bottom: 0.5px solid $shadow-dark-900;
+  backdrop-filter: blur(10px);
+  translate: 0 -100%;
   z-index: 5;
 }
 
 .header {
   height: 100px;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  opacity: 0;
-  animation: fade-in calc($golden-ratio-time / 2) ease-out
-    forwards;
-
-  &-logo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 200px;
-    cursor: pointer;
-
-    svg {
-      width: 41px;
-      height: 43px;
-      transform: scale(1);
-      transition: calc($golden-ratio-time / 8) ease-in;
-
-      path {
-        stroke: var(--secondary-color);
-        fill: transparent;
-      }
-
-      circle,
-      rect {
-        stroke: rgba(var(--secondary-color-rgb), 1);
-        fill: transparent;
-      }
-    }
-
-    p {
-      font-weight: 600;
-    }
-  }
+  padding-left: 5%;
+  padding-right: 5%;
 
   &-links {
     width: 320px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    .theme {
-      margin-right: 2rem;
-
-      svg {
-        width: 18px;
-        padding: 5px;
-        scale: 0 0;
-        animation: scale-in calc($golden-ratio-time / 8)
-          ease-in forwards;
-      }
-    }
 
     &--item {
       position: relative;
@@ -86,7 +48,7 @@ header {
 
         span:first-child {
           transform: translateY(0) scaleY(1);
-          color: var(--secondary-color);
+          color: $secondary-color;
           transition: all calc($golden-ratio-time / 8)
             ease-in;
         }
@@ -96,7 +58,7 @@ header {
           top: 0;
           left: 0;
           transform: translateY(100%) scaleY(0);
-          color: var(--secondary-color);
+          color: $secondary-color;
           transition: all calc($golden-ratio-time / 8)
             ease-in;
         }
@@ -105,20 +67,14 @@ header {
       &:hover {
         .header-links--item-text {
           span:first-child {
-            color: rgba(
-              var(--secondary-color-rgb),
-              var(--shades-gray-op-one)
-            );
+            color: $shadow-light;
             transform: translateY(0) scaleY(0);
             transition: all calc($golden-ratio-time / 8)
               ease-in;
           }
 
           span:last-child {
-            color: rgba(
-              var(--secondary-color-rgb),
-              var(--shades-gray-op-one)
-            );
+            color: $shadow-light;
             transform: translateY(0) scaleY(1);
             transition: all calc($golden-ratio-time / 8)
               ease-in;
@@ -130,14 +86,13 @@ header {
 }
 
 .show-header {
-  display: flex;
+  animation: slidey-in-top calc($golden-ratio-time / 4)
+    ease-out forwards;
 }
 
 /* Smartphones (portrait and landscape) */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .header {
-    position: relative;
-
     &-logo {
       width: 100px;
 

@@ -6,16 +6,10 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 8rem;
-
-  > h3 {
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 16px;
-    margin-bottom: 2rem;
-    scale: 0 1;
-  }
+  align-items: center;
+  scroll-snap-align: start;
+  gap: 100px;
+  padding: 200px 0;
 
   &-list {
     width: 100%;
@@ -23,29 +17,33 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 10rem;
+    gap: 200px;
 
     &--danilo,
     &--namewiz,
     &--art {
       position: relative;
-      width: 100%;
+      width: 1000px;
       height: 550px;
-      z-index: 2;
-      cursor: pointer;
       overflow: hidden;
       opacity: 0;
-      color: var(--secondary-color);
+      color: $secondary-color;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      border-radius: 0.5rem;
+      cursor: pointer;
+      z-index: 2;
+      scroll-snap-align: start;
+      scroll-margin-top: 180px;
+      perspective: 1000px;
+      transform-style: preserve-3d;
 
-      h2,
       h3 {
         translate: 0px 0px;
         transition: translate calc($golden-ratio-time / 8)
           ease-in-out;
       }
 
-      h2 {
+      h3:first-child {
         width: 40%;
         position: absolute;
         top: 50px;
@@ -80,8 +78,8 @@
         align-items: center;
         justify-content: center;
         border-radius: 50%;
-        background-color: var(--secondary-color);
-        color: var(--highlight-color);
+        background-color: $secondary-color;
+        color: $highlight-color;
         scale: 0;
         translate: -50% -50%;
         font-weight: 300;
@@ -90,32 +88,52 @@
 
       &:hover {
         img {
-          scale: 1.1;
-          transition: scale calc($golden-ratio-time / 8)
+          scale: 1.05;
+          transition: scale calc($golden-ratio-time / 4)
             ease-in-out;
         }
 
-        h2 {
-          translate: 20px 20px;
-          transition: translate calc($golden-ratio-time / 8)
+        h3:first-child {
+          translate: 1rem 1rem;
+          transition: translate calc($golden-ratio-time / 4)
             ease-in-out;
         }
 
         h3 {
-          translate: 20px -20px;
-          transition: translate calc($golden-ratio-time / 8)
+          translate: 1rem -1rem;
+          transition: translate calc($golden-ratio-time / 4)
             ease-in-out;
         }
       }
     }
 
+    &--danilo {
+      background: linear-gradient(
+        to right,
+        rgb(83, 48, 44),
+        $primary-color
+      );
+    }
+
     &--namewiz {
+      background: linear-gradient(
+        to right,
+        rgb(103, 120, 116),
+        $primary-color
+      );
+
       img {
         height: 80%;
       }
     }
 
     &--art {
+      background: linear-gradient(
+        to right,
+        rgba(rgb(35, 21, 33), 0.4),
+        $primary-color
+      );
+
       img {
         scale: 1.2;
         opacity: 0.6;
@@ -152,70 +170,23 @@
     forwards;
 }
 
-.danilo-dark,
-.namewiz-dark,
-.art-dark {
-  color: var(--secondary-color);
-}
-
-.danilo-dark {
-  background: linear-gradient(
-    to right,
-    rgb(83, 48, 44),
-    var(--primary-color)
-  );
-}
-
-.namewiz-dark {
-  background: linear-gradient(
-    to right,
-    rgb(103, 120, 116),
-    var(--primary-color)
-  );
-}
-
-.art-dark {
-  background: linear-gradient(
-    to right,
-    rgba(rgb(35, 21, 33), 0.4),
-    var(--primary-color)
-  );
-}
-
-.danilo-light {
-  background: rgba(rgb(83, 48, 44), 0.95);
-}
-
-.namewiz-light {
-  background: rgba(rgb(103, 120, 116), 0.7);
-}
-
-.art-light {
-  background: rgba(rgb(35, 21, 33), 0.9);
-}
-
-.danilo-light,
-.namewiz-light,
-.art-light {
-  color: var(--primary-color);
-}
-
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .work {
     width: 100%;
     height: fit-content;
-    margin: 4rem 0;
+    gap: 60px;
+    padding: 120px 0;
 
     &-list {
       width: 100%;
-      gap: 4rem;
+      gap: 60px;
 
       &--danilo,
       &--namewiz,
       &--art {
         height: 400px;
+        width: 100%;
 
-        h2,
         h3 {
           font-size: 30px;
           translate: 0px 0px;
@@ -223,7 +194,7 @@
             ease-in-out;
         }
 
-        h2 {
+        h3:first-child {
           font-size: 30px;
           width: 75%;
           position: absolute;
@@ -245,7 +216,7 @@
         }
 
         &:hover {
-          h2 {
+          h3:first-child {
             translate: 5px 5px;
             transition: translate
               calc($golden-ratio-time / 8) ease-in-out;

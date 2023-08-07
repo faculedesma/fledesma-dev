@@ -5,19 +5,36 @@ $secondary-font-family: 'Graphik', sans-serif;
 
 // colors
 
-$primary-color: #0f0e0d;
-$secondary-color: #ffffff;
-$highlight-color: #985151;
-$shades-gray: rgba($secondary-color, 0.5);
+$primary-color: rgb(8, 8, 8);
+$primary-color-800: rgba($primary-color, 0.8);
+$primary-color-900: rgba($primary-color, 0.9);
+$secondary-color: rgb(231, 231, 231);
+$secondary-color-800: rgba($secondary-color, 0.8);
+$secondary-color-900: rgba($secondary-color, 0.9);
+$highlight-color: rgb(152, 81, 81);
+$highlight-color-100: rgba($highlight-color, 0.1);
+$highlight-color-300: rgba($highlight-color, 0.3);
+$highlight-color-500: rgba($highlight-color, 0.5);
+$highlight-color-800: rgba($highlight-color, 0.8);
+$highlight-color-900: rgba($highlight-color, 0.9);
+$shadow-light: rgb(83, 83, 83);
+$shadow-dark: rgb(37, 37, 37);
+$shadow-dark-100: rgba($shadow-dark, 0.1);
+$shadow-dark-200: rgba($shadow-dark, 0.2);
+$shadow-dark-400: rgba($shadow-dark, 0.4);
+$shadow-dark-600: rgba($shadow-dark, 0.6);
+$shadow-dark-700: rgba($shadow-dark, 0.7);
+$shadow-dark-800: rgba($shadow-dark, 0.8);
+$shadow-dark-900: rgba($shadow-dark, 0.9);
 
 // sizes - desktop
 
 $heading-one-size: 100px;
 $heading-one-letter-spacing: -2px;
 $heading-one-line-height: 100px;
-$heading-two-size: 70px;
+$heading-two-size: 80px;
 $heading-two-letter-spacing: -1px;
-$heading-two-line-height: 70px;
+$heading-two-line-height: 80px;
 $heading-three-size: 40px;
 $heading-three-letter-spacing: -1px;
 $heading-three-line-height: 55px;
@@ -26,6 +43,8 @@ $paragraph-size: 16px;
 $paragraph-line-height: 33px;
 $anchor-size: 16px;
 $anchor-line-height: 30px;
+$input-size: 14px;
+$input-line-height: 30px;
 
 // sizes - mobile
 
@@ -43,6 +62,8 @@ $paragraph-size-mobile: 14px;
 $paragraph-line-height-mobile: 33px;
 $anchor-size-mobile: 12px;
 $anchor-line-height-mobile: 30px;
+$input-size-mobile: 16px;
+$input-line-height-mobile: 30px;
 
 // animations
 

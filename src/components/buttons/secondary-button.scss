@@ -8,7 +8,8 @@
   width: auto;
   height: 55px;
   background: none;
-  color: var(--secondary-color);
+  border: none;
+  color: $secondary-color;
   cursor: pointer;
   transform: scale(1);
   transition: all calc($golden-ratio-time / 8) ease-in-out;
@@ -20,19 +21,11 @@
 
     path {
       stroke: none;
-      fill: var(--highlight-color);
+      fill: $highlight-color;
     }
   }
 
   &:focus {
     outline: none;
-  }
-
-  &:hover {
-    svg {
-      translate: 2px 0;
-      transition: all calc($golden-ratio-time / 8)
-        ease-in-out;
-    }
   }
 }

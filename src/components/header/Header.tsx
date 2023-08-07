@@ -1,12 +1,9 @@
-import { Logo } from '@assets/svgs/Logo';
 import { Menu } from '@components/menu/Menu';
-import './header.scss';
 import { useState, useRef, useEffect } from 'react';
 import { ToggleButton } from '@components/buttons/ToggleButton';
-import { useTheme } from '@components/hooks/useTheme';
 import { useIsOnTop } from '@components/hooks/useIsOnTop';
-import { Sun } from '@assets/svgs/Sun';
-import { Moon } from '@assets/svgs/Moon';
+import Logo from '@components/logo/Logo';
+import './header.scss';
 
 type Link = {
   id: string;
@@ -48,19 +45,11 @@ const HeaderlLink = ({ link }: ILinkProps) => {
     if (linkRef.current) {
       const mouse = document.getElementById('mouse-follow');
       if (isOnTop) {
-        mouse?.animate(
-          {
-            scale: 0
-          },
-          { duration: 1618 / 4, fill: 'forwards' }
-        );
+        mouse?.classList.remove('point');
+        mouse?.classList.add('hide');
       } else {
-        mouse?.animate(
-          {
-            scale: 1
-          },
-          { duration: 1618 / 4, fill: 'forwards' }
-        );
+        mouse?.classList.add('point');
+        mouse?.classList.remove('hide');
       }
     }
   }, [isOnTop]);
@@ -99,13 +88,9 @@ const HeaderlLink = ({ link }: ILinkProps) => {
   );
 };
 
-const Header: React.FC<IHeaderProps> = ({
-  isLoading
-}): JSX.Element => {
+const Header: React.FC<IHeaderProps> = ({ isLoading }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const headerRef = useRef<HTMLDivElement>(null);
-
-  const { isDarkMode, toggleTheme } = useTheme();
 
   useEffect(() => {
     if (!isLoading) {
@@ -124,36 +109,28 @@ const Header: React.FC<IHeaderProps> = ({
   };
 
   return (
-    <header>
-      <div className="container">
-        <div ref={headerRef} id="header" className="header">
-          <div
-            onClick={handleLogoClick}
-            className="header-logo"
-          >
-            <Logo />
-            <p>Facundo Ledesma</p>
-          </div>
-          <div className="header-links">
-            <a
-              key="theme-color-toggle"
-              className="header-links--item theme"
-              onClick={(e) => toggleTheme()}
-            >
-              {isDarkMode ? <Moon /> : <Sun />}
-            </a>
-            {links.map((link) => {
-              return (
-                <HeaderlLink key={link.id} link={link} />
-              );
-            })}
-          </div>
-          <ToggleButton
-            onClick={toggleMenu}
-            isOpen={isOpen}
-          />
-          <Menu isOpen={isOpen} toggleMenu={toggleMenu} />
+    <header ref={headerRef}>
+      <div id="header" className="header">
+        <div
+          onClick={handleLogoClick}
+          className="header-logo"
+        >
+          <Logo />
         </div>
+        <div className="header-links">
+          {links.map((link) => {
+            return (
+              <HeaderlLink key={link.id} link={link} />
+            );
+          })}
+        </div>
+        <ToggleButton
+          onClick={toggleMenu}
+          isOpen={isOpen}
+        />
+        {isOpen && (
+          <Menu isOpen={isOpen} toggleMenu={toggleMenu} />
+        )}
       </div>
     </header>
   );

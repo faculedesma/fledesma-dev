@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useIntersection } from '@components/hooks/useIntersection';
 import { useIsOnTop } from '@components/hooks/useIsOnTop';
-import { useTheme } from '@components/hooks/useTheme';
 
 interface IWork {
   id: string;
@@ -21,11 +20,9 @@ const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
   const workCardRef = useRef<HTMLDivElement>(null);
   const isOnTop = useIsOnTop(workCardRef);
 
-  const { isDarkMode } = useTheme();
-
   const isInViewport = useIntersection(
     workCardRef,
-    isMobile ? 0 : -250
+    isMobile ? 50 : -250
   );
 
   useEffect(() => {
@@ -47,40 +44,24 @@ const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
     }
   }, [isOnTop]);
 
-  useEffect(() => {
-    if (isDarkMode) {
-      workCardRef.current?.classList.add(`${work.id}-dark`);
-      workCardRef.current?.classList.remove(
-        `${work.id}-light`
-      );
-    } else {
-      workCardRef.current?.classList.add(
-        `${work.id}-light`
-      );
-      workCardRef.current?.classList.remove(
-        `${work.id}-dark`
-      );
-    }
-  }, [isDarkMode]);
-
   const handleCardClick = () =>
     window.open(work.link, '_blank');
 
   return (
-    <div
+    <section
       id={work.id}
       ref={workCardRef}
       onClick={handleCardClick}
       className={`work-list--${work.id}`}
     >
-      <h2>{work.title}</h2>
+      <h3>{work.title}</h3>
       <h3>{work.type}</h3>
       <img
         src={work.image}
         alt="work-image"
         draggable="false"
       />
-    </div>
+    </section>
   );
 };
 
