@@ -60,9 +60,7 @@ const Process = () => {
   useEffect(() => {
     if (isInViewport) {
       const intervalId = setInterval(() => {
-        const nextOrder =
-          active === processes.length ? 1 : active + 1;
-        setActive(nextOrder);
+        handleUpdateActive();
       }, 1618 * 4);
 
       return () => {
@@ -89,6 +87,12 @@ const Process = () => {
       }
     }
   }, [isOnTopStepper]);
+
+  const handleUpdateActive = () => {
+    const nextOrder =
+      active === processes.length ? 1 : active + 1;
+    setActive(nextOrder);
+  };
 
   return (
     <div className="container">
@@ -121,7 +125,9 @@ const Process = () => {
                   className={`${
                     active === p.order ? 'active-step' : ''
                   }`}
-                ></div>
+                >
+                  <div className="process-stepper--box"></div>
+                </div>
               );
             })}
           </div>
