@@ -170,7 +170,7 @@
     forwards;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 480px) {
+@media only screen and (min-width: 320px) and (max-width: 812px) {
   .work {
     width: 100%;
     height: fit-content;
@@ -279,14 +279,15 @@
 /* Tablets (portrait) */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: 'portrait') and (-webkit-min-device-pixel-ratio: 1) {
   .work {
-    width: 100%;
-
     &-list {
       &--danilo,
       &--namewiz,
       &--art {
+        width: 100%;
+
         img {
           height: 400px;
+          z-index: -1;
         }
 
         h2 {

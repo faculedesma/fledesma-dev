@@ -192,7 +192,7 @@ select:focus-visible {
 }
 
 /* Smartphones (portrait and landscape) */
-@media only screen and (min-width: 320px) and (max-width: 480px) {
+@media only screen and (min-width: 320px) and (max-width: 812px) and (-webkit-min-device-pixel-ratio: 2) {
   h1 {
     font-size: $heading-one-size-mobile;
     line-height: $heading-one-line-height-mobile;

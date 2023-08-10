@@ -165,7 +165,7 @@
   }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 480px) {
+@media only screen and (min-width: 320px) and (max-width: 812px) {
   .about-me {
     width: 100%;
     height: auto;
@@ -178,29 +178,26 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: space-between;
-      gap: 2rem;
-
-      &-left,
-      &-right {
-        width: 100%;
-      }
+      gap: 4rem;
 
       &-left {
         width: 100%;
 
         &--portrait {
-          width: 90%;
+          width: 100%;
         }
 
         &--bg {
-          position: relative;
-          height: 420px;
           width: 100%;
+          height: 450px;
+          position: relative;
         }
       }
 
       &-right {
         height: 610px;
+        width: 100%;
+
         align-items: flex-start;
         justify-content: space-between;
 
@@ -209,6 +206,16 @@
             text-align: start;
           }
         }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 812px) and (orientation: landscape) {
+  .about-me {
+    &--content {
+      &-left {
+        width: 300px;
       }
     }
   }
@@ -260,11 +267,12 @@
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: 'portrait') and (-webkit-min-device-pixel-ratio: 1) {
   .about-me {
     width: 100%;
-    height: fit-content;
+    height: auto;
 
     &--content {
-      align-items: flex-start;
+      height: fit-content;
       flex-direction: column;
+      gap: 2rem;
 
       &-left,
       &-right {
@@ -272,26 +280,22 @@
       }
 
       &-left {
-        width: 100%;
+        width: 70%;
         height: 700px;
 
-        &--images {
-          img {
-            width: 450px;
-          }
+        &--portrait {
+          width: 100%;
         }
 
         &--bg {
-          width: 470px;
-          height: 600px;
+          // width: 70%;
+          height: 100%;
+          position: relative;
         }
       }
 
       &-right {
-        height: 700px;
         width: 80%;
-        align-items: flex-start;
-        justify-content: center;
       }
     }
   }
