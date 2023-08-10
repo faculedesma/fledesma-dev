@@ -255,13 +255,16 @@
 
 @media only screen and (min-device-width: 1920px) and (max-device-width: 3840px) {
   .work {
+    width: 100%;
+
     &-list {
       &--danilo,
       &--namewiz,
       &--art {
         height: 650px;
+        width: 60%;
 
-        h2 {
+        h3:first-child {
           top: 100px;
         }
 

@@ -147,8 +147,8 @@
   .history {
     &-list {
       &--row {
-        width: 54.5%;
-        gap: 16rem;
+        width: auto;
+        min-width: 33%;
       }
     }
   }
