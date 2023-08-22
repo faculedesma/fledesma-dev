@@ -41,6 +41,7 @@ export const ToggleButton: React.FC<ToggleButtonProps> = ({
     >
       <div></div>
       <div></div>
+      <div></div>
     </div>
   );
 };
