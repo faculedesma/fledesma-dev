@@ -48,60 +48,77 @@
   }
 
   &-list {
-    &--step {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    display: flex;
+  }
 
-      &-card {
-        position: relative;
-        width: 450px;
-        height: 500px;
+  &-list--mobile {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    &-container {
+      overflow-y: hidden;
+      overflow-x: scroll;
+      display: flex;
+      align-items: flex-start;
+      gap: 3rem;
+    }
+  }
+
+  .step {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-card {
+      position: relative;
+      width: 450px;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      gap: 1rem;
+      background: linear-gradient(
+        to bottom,
+        $primary-color,
+        $shadow-dark-100,
+        $highlight-color-100
+      );
+      border: 0.5px solid $highlight-color-300;
+      border-radius: 1.5rem;
+      box-shadow: 0 0 50px 50px $shadow-dark-100;
+      animation: scale-fade-in calc($golden-ratio-time / 2)
+        ease-in-out;
+
+      &-anim {
+        border-radius: 1rem;
+      }
+
+      &-text {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;
-        gap: 1rem;
-        background: linear-gradient(
-          to bottom,
-          $primary-color,
-          $shadow-dark-100,
-          $highlight-color-100
-        );
-        border: 0.5px solid $highlight-color-300;
-        border-radius: 1.5rem;
-        box-shadow: 0 0 50px 50px $shadow-dark-100;
-        animation: scale-fade-in
-          calc($golden-ratio-time / 2) ease-in-out;
+        justify-content: flex-end;
 
-        &-anim {
-          border-radius: 1rem;
+        &--top {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          b {
+            color: $highlight-color-500;
+          }
         }
 
-        &-text {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: flex-end;
+        p {
+          width: 70%;
+          text-align: center;
+        }
 
-          &--top {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-
-            b {
-              color: $highlight-color-500;
-            }
-          }
-
-          p {
-            width: 70%;
-            text-align: center;
-          }
-
-          h3 {
-            font-weight: 600;
-          }
+        h3 {
+          font-weight: 600;
         }
       }
     }
@@ -177,15 +194,27 @@
 
     &-content {
       width: 100%;
+      align-items: flex-start;
     }
 
     &-list {
-      &--step {
-        &-card {
-          width: 300px;
-          height: 420px;
-        }
+      display: none;
+    }
+
+    &-list--mobile {
+      display: flex;
+    }
+
+    .step {
+      &-card {
+        width: 300px;
+        height: 420px;
+        box-shadow: none;
       }
+    }
+
+    &-stepper {
+      display: none;
     }
   }
 }
