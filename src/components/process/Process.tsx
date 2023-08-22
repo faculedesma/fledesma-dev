@@ -116,6 +116,21 @@ const Process = () => {
               process={activeProcess!}
             />
           </div>
+          <section
+            className="process-list--mobile"
+            ref={processRef}
+          >
+            <div className="process-list--mobile-container">
+              {processes.map((process, index) => {
+                return (
+                  <ProcessStep
+                    key={index}
+                    process={process}
+                  />
+                );
+              })}
+            </div>
+          </section>
           <div ref={stepperRef} className="process-stepper">
             {processes.map((p) => {
               return (

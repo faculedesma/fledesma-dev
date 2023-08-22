@@ -16,17 +16,17 @@ export const ProcessStep: React.FC<IProcessCardProps> = ({
   process
 }) => {
   return (
-    <section id={process.id} className="process-list--step">
-      <div className="process-list--step-card">
-        <div className="process-list--step-card-anim">
+    <section id={process.id} className="step">
+      <div className="step-card">
+        <div className="card-anim">
           <Lottie
             animationData={process.lottieJSON}
             loop={true}
             style={{ height: 125, width: 125 }}
           />
         </div>
-        <div className="process-list--step-card-text">
-          <div className="process-list--step-card-text--top">
+        <div className="step-card-text">
+          <div className="step-card-text--top">
             <h3>{process.order}.</h3>
             <h3>{process.label}</h3>
           </div>
