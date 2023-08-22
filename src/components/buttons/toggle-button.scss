@@ -1,42 +1,41 @@
 @import '../../utils/variables';
 
 .toggle {
-  width: 40px;
-  height: 20px;
+  width: 30px;
   display: none;
-  gap: 1rem;
+  gap: 0.5rem;
+  cursor: pointer;
 
   div {
     display: inline-block;
     height: 2px;
     width: 100%;
     background-color: $secondary-color;
-    cursor: pointer;
+    border-radius: 4px;
   }
 
-  div:first-child {
-    rotate: 0;
-    translate: 0 0;
+  div:first-child,
+  div:last-child {
+    transform: scaleX(0.5);
     transition: all calc($golden-ratio-time / 8) ease;
   }
 
-  div:last-child {
-    rotate: 0;
-    translate: 0 0;
+  div:nth-child(2) {
+    transform: scale(1, 1);
     transition: all calc($golden-ratio-time / 8) ease;
   }
 }
 
 .clicked {
-  div:first-child {
-    rotate: 45deg;
-    translate: 0 0;
+  div:first-child,
+  div:last-child {
+    transform: scaleX(0);
     transition: all calc($golden-ratio-time / 8) ease;
   }
 
-  div:last-child {
-    rotate: -45deg;
-    translate: 0 -18px;
+  div:nth-child(2) {
+    border-radius: 50%;
+    transform: scale(0.3, 4);
     transition: all calc($golden-ratio-time / 8) ease;
   }
 }
