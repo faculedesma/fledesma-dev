@@ -4,12 +4,12 @@ import './history.scss';
 
 const jobsHistory = [
   {
-    id: 'freelance',
+    id: 'bask',
     date: 'Now',
-    position: 'Freelancer',
+    position: 'UX Designer | Software Engineer',
     company: {
-      name: 'Self-taught designer',
-      url: 'https://www.linkedin.com/in/facundo-ledesma/'
+      name: 'Bask Health, LLC',
+      url: 'https://bask.health'
     }
   },
   {
