@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react';
 import { useIntersection } from '@components/hooks/useIntersection';
 import { Discovery } from '@components/buttons/Discovery';
 import SectionTitle from '@components/titles/SectionTitle';
-import MePNG from '@assets/images/me.webp';
+import MePNG from '@assets/images/me.jpg';
 import './about-me.scss';
 
 const AboutMe = () => {

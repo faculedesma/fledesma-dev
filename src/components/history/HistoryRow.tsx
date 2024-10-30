@@ -36,16 +36,18 @@ export const HistoryRow: React.FC<IHistoryRowProps> = ({
       ref={historyRef}
       className="history-list--row-container"
     >
-      <div
-        onClick={() => handleRowClick(job.company.url)}
-        className="history-list--row"
-      >
-        <h3>{job.date}</h3>
-        <div className="history-list--row-charge">
-          <h3>{job.company.name}</h3>
-          <a href={job.company.url} target="_blank">
-            {job.position}
-          </a>
+      <div className="container">
+        <div
+          onClick={() => handleRowClick(job.company.url)}
+          className="history-list--row"
+        >
+          <h3>{job.date}</h3>
+          <div className="history-list--row-charge">
+            <h3>{job.company.name}</h3>
+            <a href={job.company.url} target="_blank">
+              {job.position}
+            </a>
+          </div>
         </div>
       </div>
     </div>

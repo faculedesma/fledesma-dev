@@ -5,14 +5,23 @@
   height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
-  box-sizing: border-box;
-  scroll-snap-type: y mandatory;
+  scroll-padding: 240px;
+}
+
+.app {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.app::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 .container {
-  width: 85%;
-  height: auto;
+  width: 100%;
+  max-width: 1280px;
   margin: 0 auto;
+  padding: 320px 0;
 }
 
 // global keyframes
@@ -55,6 +64,7 @@
     translate: 0 100%;
   }
 }
+
 @keyframes slide-in-fade {
   0% {
     translate: 0 100%;
@@ -227,14 +237,30 @@
   }
 }
 
-@media only screen and (min-device-width: 1920px) and (max-device-width: 2420px) {
+@media only screen and (min-width: 320px) and (max-width: 768px) {
   .container {
-    width: 100%;
+    max-width: 640px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 160px;
+    padding-bottom: 160px;
   }
 }
 
-@media only screen and (min-device-width: 2420px) and (max-device-width: 3840px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   .container {
-    width: 70%;
+    max-width: 768px;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+  .container {
+    max-width: 1080px;
+  }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 3840px) {
+  .container {
+    max-width: 1080px;
   }
 }

@@ -3,15 +3,12 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 620px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  padding-top: 100px;
-  scroll-snap-align: start;
   z-index: 2;
 
   &-titles {
@@ -115,8 +112,7 @@
   }
 }
 
-/* Smartphones (portrait and landscape) */
-@media only screen and (min-width: 320px) and (max-width: 812px) {
+@media only screen and (min-width: 320px) and (max-width: 768px) {
   .hero {
     position: relative;
     height: fit-content;
@@ -135,26 +131,5 @@
         font-weight: 300;
       }
     }
-  }
-}
-
-/* Larger screens */
-@media only screen and (min-device-width: 1920px) and (max-device-width: 3840px) {
-  .hero {
-    height: 900px;
-  }
-}
-
-/* Tablets (landscape) */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: 'landscape') and (-webkit-min-device-pixel-ratio: 1) {
-  .hero {
-    height: 600px;
-  }
-}
-
-/* Tablets (portrait) */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: 'portrait') and (-webkit-min-device-pixel-ratio: 1) {
-  .hero {
-    height: 750px;
   }
 }

@@ -211,7 +211,7 @@ const Footer = () => {
               <p>
                 <b>© Facundo Ledesma</b>
               </p>
-              <p>2023 All rights reserved.</p>
+              <p>2024 All rights reserved</p>
             </div>
             <div className="footer-bottom--content-logo">
               <Logo />

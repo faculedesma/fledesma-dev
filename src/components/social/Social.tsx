@@ -1,7 +1,5 @@
 import { useEffect } from 'react';
-import { Twitter } from '@assets/svgs/Twitter';
-import { Behance } from '@assets/svgs/Behance';
-import { Dribble } from '@assets/svgs/Dribble';
+import { X } from '@assets/svgs/X';
 import { LinkedIn } from '@assets/svgs/LinkedIn';
 import { GitHub } from '@assets/svgs/GitHub';
 import { ReactElement, useRef } from 'react';
@@ -33,23 +31,11 @@ const links = [
     aria: `Go to Facundo's GitHub account.`,
     icon: <GitHub />
   },
-  // {
-  //   id: 'behance',
-  //   href: 'https://www.behance.net/facundoledesma5',
-  //   aria: `Go to Facundo's Behance account.`,
-  //   icon: <Behance />
-  // },
-  // {
-  //   id: 'dribble',
-  //   href: 'https://www.linkedin.com/in/facundo-ledesma/',
-  //   aria: `Go to Facundo's Dribble account.`,
-  //   icon: <Dribble />
-  // },
   {
-    id: 'twitter',
-    href: 'https://twitter.com/faculedesma93',
-    aria: `Go to Facundo's Twitter account.`,
-    icon: <Twitter />
+    id: 'x',
+    href: 'https://x.com/faculedesma93',
+    aria: `Go to Facundo's X account.`,
+    icon: <X />
   },
   {
     id: 'envelop',
