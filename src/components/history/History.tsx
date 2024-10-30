@@ -6,9 +6,9 @@ const jobsHistory = [
   {
     id: 'bask',
     date: 'Now',
-    position: 'UX Designer | Software Engineer',
+    position: 'UX Engineer',
     company: {
-      name: 'Bask Health, LLC',
+      name: 'Bask Health, Inc.',
       url: 'https://bask.health'
     }
   },

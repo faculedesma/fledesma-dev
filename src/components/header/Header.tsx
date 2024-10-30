@@ -110,27 +110,29 @@ const Header: React.FC<IHeaderProps> = ({ isLoading }) => {
 
   return (
     <header ref={headerRef}>
-      <div id="header" className="header">
-        <div
-          onClick={handleLogoClick}
-          className="header-logo"
-        >
-          <Logo />
+      <div className="container">
+        <div id="header" className="header">
+          <div
+            onClick={handleLogoClick}
+            className="header-logo"
+          >
+            <Logo />
+          </div>
+          <div className="header-links">
+            {links.map((link) => {
+              return (
+                <HeaderlLink key={link.id} link={link} />
+              );
+            })}
+          </div>
+          <ToggleButton
+            onClick={toggleMenu}
+            isOpen={isOpen}
+          />
+          {isOpen && (
+            <Menu isOpen={isOpen} toggleMenu={toggleMenu} />
+          )}
         </div>
-        <div className="header-links">
-          {links.map((link) => {
-            return (
-              <HeaderlLink key={link.id} link={link} />
-            );
-          })}
-        </div>
-        <ToggleButton
-          onClick={toggleMenu}
-          isOpen={isOpen}
-        />
-        {isOpen && (
-          <Menu isOpen={isOpen} toggleMenu={toggleMenu} />
-        )}
       </div>
     </header>
   );

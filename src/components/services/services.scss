@@ -2,32 +2,34 @@
 
 .services {
   width: 100%;
-  height: 900px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  scroll-snap-align: start;
-  gap: 100px;
-  padding: 200px 0;
+  gap: 80px;
 
   &-list {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     border-radius: 1rem;
+    gap: 3rem;
 
     &--card {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 320px;
+      min-width: 320px;
+      max-width: 420px;
+      width: 100%;
       height: 375px;
       scale: 1;
       opacity: 0;
+      border: 1px solid $highlight-color-100;
+      border-bottom: 0;
       transition: all calc($golden-ratio-time / 4)
         ease-in-out;
       position: relative;
@@ -36,39 +38,8 @@
         $primary-color,
         transparent
       );
-
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 321px;
-        height: 376px;
-        border-radius: 0.25rem;
-        background: linear-gradient(
-          180deg,
-          $highlight-color-300,
-          transparent
-        );
-        background-position: 100% 100%;
-        z-index: -1;
-      }
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0.5px;
-        left: 0.5px;
-        width: 320px;
-        height: 375px;
-        border-radius: 0.25rem;
-        background: linear-gradient(
-          180deg,
-          $primary-color,
-          $primary-color
-        );
-        z-index: -1;
-      }
+      box-shadow: 0 0 50px 50px $shadow-dark-100;
+      cursor: pointer;
 
       &-top {
         height: 45%;
@@ -174,85 +145,25 @@
   }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 812px) {
+@media only screen and (min-width: 320px) and (max-width: 768px) {
   .services {
     width: 100%;
-    height: auto;
     gap: 50px;
-    padding: 100px 0;
-    scroll-margin-top: 50px;
 
     &-list {
       width: 100%;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 6rem;
-
-      &--card {
-        width: 300px;
-        height: 350px;
-
-        &::before {
-          width: 301px;
-          height: 351px;
-        }
-
-        &::after {
-          width: 300px;
-          height: 350px;
-        }
-      }
+      gap: 4rem;
     }
   }
 }
 
-/* Tablets (landscape) */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: 'landscape') and (-webkit-min-device-pixel-ratio: 1) {
+@media only screen and (min-width: 768px) and (max-width: 1440px) {
   .services {
     &-list {
-      padding: 1rem 0;
-      gap: 2rem;
-
-      &--card {
-        &-bottom {
-          p {
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-}
-
-/* Tablets (portrait) */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: 'portrait') and (-webkit-min-device-pixel-ratio: 1) {
-  .services {
-    &-list {
-      width: 100%;
       flex-wrap: wrap;
-      justify-content: space-between;
-      padding: 1rem 0;
-      gap: 2rem;
-
-      &--card {
-        width: 45%;
-
-        &-bottom {
-          p {
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (min-device-width: 1920px) and (max-device-width: 3840px) {
-  .services {
-    &-list {
-      width: 60%;
-      justify-content: space-between;
     }
   }
 }

@@ -4,11 +4,9 @@
   &-one,
   &-two,
   &-three {
-    height: 900px;
     display: flex;
     align-items: center;
     justify-content: center;
-    scroll-snap-align: start;
 
     h3 {
       max-width: 930px;
@@ -69,27 +67,14 @@
   }
 }
 
-/* Smartphones (portrait and landscape) */
-@media only screen and (min-width: 320px) and (max-width: 812px) {
+@media only screen and (min-width: 320px) and (max-width: 768px) {
   .notes {
     &-one,
     &-two,
     &-three {
-      height: 450px;
-      scroll-margin-top: 100px;
-
       h3 {
         width: 100%;
       }
-    }
-  }
-}
-
-/* Tablets (portrait) */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: 'portrait') and (-webkit-min-device-pixel-ratio: 1) {
-  .notes {
-    &-one {
-      height: 1000px;
     }
   }
 }

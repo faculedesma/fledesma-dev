@@ -95,58 +95,60 @@ const Process = () => {
   };
 
   return (
-    <section className="process">
-      <div className="process-text">
-        <div className="process-text--top">
-          <SectionTitle text="My Process" />
+    <div className="container">
+      <section className="process">
+        <div className="process-text">
+          <div className="process-text--top">
+            <SectionTitle text="My Process" />
+          </div>
+          <div className="process-text--bottom">
+            <h2>Precision planning, elevated results.</h2>
+            <p>
+              Using the right tools with a well structured
+              process leads to the collaboration’s success.
+            </p>
+          </div>
         </div>
-        <div className="process-text--bottom">
-          <h2>Precision planning, elevated results.</h2>
-          <p>
-            Using the right tools with a well structured
-            process leads to the collaboration’s success.
-          </p>
-        </div>
-      </div>
-      <div className="process-content">
-        <div className="process-list" ref={processRef}>
-          <ProcessStep
-            key={activeProcess!.id}
-            process={activeProcess!}
-          />
-        </div>
-        <section
-          className="process-list--mobile"
-          ref={processRef}
-        >
-          <div className="process-list--mobile-scrollable">
-            {processes.map((process, index) => {
+        <div className="process-content">
+          <div className="process-list" ref={processRef}>
+            <ProcessStep
+              key={activeProcess!.id}
+              process={activeProcess!}
+            />
+          </div>
+          <section
+            className="process-list--mobile"
+            ref={processRef}
+          >
+            <div className="process-list--mobile-scrollable">
+              {processes.map((process, index) => {
+                return (
+                  <ProcessStep
+                    key={index}
+                    process={process}
+                  />
+                );
+              })}
+            </div>
+          </section>
+          <div ref={stepperRef} className="process-stepper">
+            {processes.map((p) => {
               return (
-                <ProcessStep
-                  key={index}
-                  process={process}
-                />
+                <div
+                  key={p.id}
+                  onClick={() => setActive(p.order)}
+                  className={`${
+                    active === p.order ? 'active-step' : ''
+                  }`}
+                >
+                  <div className="process-stepper--box"></div>
+                </div>
               );
             })}
           </div>
-        </section>
-        <div ref={stepperRef} className="process-stepper">
-          {processes.map((p) => {
-            return (
-              <div
-                key={p.id}
-                onClick={() => setActive(p.order)}
-                className={`${
-                  active === p.order ? 'active-step' : ''
-                }`}
-              >
-                <div className="process-stepper--box"></div>
-              </div>
-            );
-          })}
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 

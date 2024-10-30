@@ -30,9 +30,7 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
           <div className="hero-titles--top">
             <p>Facundo Ledesma</p>
             <h1>developer &amp;</h1>
-            <h1 data-value="ui/ux designer">
-              ui/ux designer
-            </h1>
+            <h1 data-value="ui/ux designer">ux designer</h1>
           </div>
           <div className="hero-titles--bottom">
             <p>Build it simple and beautiful.</p>
