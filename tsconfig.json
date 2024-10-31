@@ -22,7 +22,8 @@
       "@pages/*": ["src/pages/*"],
       "@constants/*": ["src/constants/*"],
       "@database/*": ["src/database/*"]
-    }
+    },
+    "types": []
   },
   "include": ["src", "**/*.ts", "**/*.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
