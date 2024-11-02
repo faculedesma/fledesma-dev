@@ -191,7 +191,7 @@
 
     &-content {
       width: 100%;
-      align-items: flex-start;
+      align-items: center;
     }
 
     &-list {
@@ -202,8 +202,8 @@
       display: flex;
     }
 
-    &-stepper {
-      display: none;
+    .step {
+      width: 100%;
     }
   }
 }

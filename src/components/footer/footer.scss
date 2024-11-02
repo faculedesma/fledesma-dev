@@ -3,7 +3,6 @@
 .footer {
   position: relative;
   width: 100%;
-  height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -243,9 +242,7 @@
 
 @media only screen and (min-width: 320px) and (max-width: 1024px) {
   .footer {
-    padding: 60px 0 0 0;
-    gap: 60px;
-    scroll-margin-top: 100px;
+    padding: 0;
 
     &-content {
       gap: 60px;
@@ -276,7 +273,6 @@
     &-bottom {
       height: auto;
       justify-content: flex-end;
-      padding-bottom: 60px;
       gap: 1rem;
 
       &--content {
@@ -296,11 +292,5 @@
         }
       }
     }
-  }
-}
-
-@media only screen and (min-width: 1024px) and (max-width: 3840px) {
-  .container {
-    padding-bottom: 40px;
   }
 }
