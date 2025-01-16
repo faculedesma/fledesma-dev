@@ -1,4 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
 import { useIntersection } from '@components/hooks/useIntersection';
 import { ProcessStep } from './ProcessStep';
 import SectionTitle from '@components/titles/SectionTitle';
@@ -6,7 +8,8 @@ import researchJSON from '@assets/animations/search.json';
 import buildJSON from '@assets/animations/build.json';
 import prototypeJSON from '@assets/animations/prototype.json';
 import designJSON from '@assets/animations/design.json';
-import { useIsOnTop } from '@components/hooks/useIsOnTop';
+import { useMouseFollow } from '@components/hooks/useMouseFollow';
+
 import './process.scss';
 
 const processes = [
@@ -46,28 +49,26 @@ const processes = [
 
 const Process = () => {
   const [active, setActive] = useState<number>(1);
+  const [isPlaying, setIsPlaying] = useState<boolean>(true);
 
   const processRef = useRef<HTMLDivElement>(null);
   const stepperRef = useRef<HTMLDivElement>(null);
 
-  const isOnTopStepper = useIsOnTop(stepperRef);
   const isInViewport = useIntersection(processRef);
 
-  const activeProcess = processes.find(
-    (p) => p.order === active
-  );
+  const activeProcess = processes.find((p) => p.order === active);
 
   useEffect(() => {
-    if (isInViewport) {
+    if (isInViewport && isPlaying) {
       const intervalId = setInterval(() => {
         handleUpdateActive();
-      }, 1618 * 4);
+      }, 5000);
 
       return () => {
         clearInterval(intervalId);
       };
     }
-  }, [active, isInViewport]);
+  }, [active, isInViewport, isPlaying]);
 
   useEffect(() => {
     if (isInViewport) {
@@ -75,24 +76,16 @@ const Process = () => {
     }
   }, [isInViewport]);
 
-  useEffect(() => {
-    if (stepperRef.current) {
-      const mouse = document.getElementById('mouse-follow');
-      if (isOnTopStepper) {
-        mouse?.classList.remove('point');
-        mouse?.classList.add('hide');
-      } else {
-        mouse?.classList.add('point');
-        mouse?.classList.remove('hide');
-      }
-    }
-  }, [isOnTopStepper]);
-
   const handleUpdateActive = () => {
-    const nextOrder =
-      active === processes.length ? 1 : active + 1;
+    const nextOrder = active === processes.length ? 1 : active + 1;
     setActive(nextOrder);
   };
+
+  const handlePrev = () => setActive((prev) => (prev === 1 ? 4 : prev - 1));
+
+  const handleNext = () => setActive((prev) => (prev === 4 ? 1 : prev + 1));
+
+  useMouseFollow(stepperRef);
 
   return (
     <div className="container">
@@ -102,49 +95,46 @@ const Process = () => {
             <SectionTitle text="My Process" />
           </div>
           <div className="process-text--bottom">
-            <h2>Precision planning, elevated results.</h2>
+            <h2>Precision planning, elevated results</h2>
             <p>
-              Using the right tools with a well structured
-              process leads to the collaboration’s success.
+              Using the right tools with a well structured process leads to the collaboration’s
+              success.
             </p>
           </div>
         </div>
         <div className="process-content">
           <div className="process-list" ref={processRef}>
-            <ProcessStep
-              key={activeProcess!.id}
-              process={activeProcess!}
-            />
+            <ProcessStep key={activeProcess!.id} process={activeProcess!} />
           </div>
-          <section
-            className="process-list--mobile"
-            ref={processRef}
-          >
+          {/* <section className="process-list--mobile" ref={processRef}>
             <div className="process-list--mobile-scrollable">
               {processes.map((process, index) => {
+                return <ProcessStep key={index} process={process} />;
+              })}
+            </div>
+          </section> */}
+          <div className="process-navigation">
+            <button onClick={handlePrev} className="process-navigation--control">
+              <ChevronLeft />
+            </button>
+            <button onClick={handleNext} className="process-navigation--control">
+              <ChevronRight />
+            </button>
+            <div ref={stepperRef} className="process-navigation--stepper">
+              {processes.map((p) => {
                 return (
-                  <ProcessStep
-                    key={index}
-                    process={process}
-                  />
+                  <div
+                    key={p.id}
+                    onClick={() => setActive(p.order)}
+                    className={`${active === p.order ? 'active-step' : ''}`}
+                  >
+                    <div className="process-navigation--stepper-box">
+                      <div></div>
+                    </div>
+                  </div>
                 );
               })}
             </div>
-          </section>
-          <div ref={stepperRef} className="process-stepper">
-            {processes.map((p) => {
-              return (
-                <div
-                  key={p.id}
-                  onClick={() => setActive(p.order)}
-                  className={`${
-                    active === p.order ? 'active-step' : ''
-                  }`}
-                >
-                  <div className="process-stepper--box"></div>
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>

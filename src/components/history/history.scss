@@ -1,5 +1,3 @@
-@import '../../utils/variables';
-
 .history {
   position: relative;
   width: 100%;
@@ -14,16 +12,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 80px 0;
+    padding: 5rem 0;
 
     &--row {
       width: 100%;
-      height: 150px;
+      padding: 3.5rem 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10rem;
       cursor: pointer;
+      border-top: 1px solid var(--color-border-primary);
 
       &-container {
         position: relative;
@@ -31,16 +30,19 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border-top: 0.5px solid $shadow-dark-900;
-        border-bottom: 0px solid $shadow-dark-900;
-        color: $secondary-color;
         scale: 0;
         z-index: 2;
-        transition: all calc($golden-ratio-time / 4) ease-in;
 
         .container {
           padding-bottom: 0;
           padding-top: 0;
+          border: 0;
+        }
+
+        &:last-child {
+          .history-list--row {
+            border-bottom: 1px solid var(--color-border-primary);
+          }
         }
 
         &::before {
@@ -50,33 +52,21 @@
           position: absolute;
           top: 0;
           left: 0;
-          background: linear-gradient(
-            to right,
-            $shadow-dark-400,
-            transparent
-          );
+          background: linear-gradient(to right, var(--color-neutral-100), transparent);
           transform: scaleX(0);
-          transform-origin: left;
-          transition: all calc($golden-ratio-time / 4)
-            ease-in;
         }
 
         &:hover {
           &::before {
-            transform: scaleX(1);
-            transition: all calc($golden-ratio-time / 4)
-              ease-in;
+            animation-name: scaley-fade-in;
             z-index: -1;
           }
-        }
-
-        &::last-child {
-          border-bottom: 0.5px solid $secondary-color;
         }
       }
 
       > h3 {
         text-transform: uppercase;
+        font-weight: 500;
         width: 50px;
       }
 
@@ -90,7 +80,7 @@
 
         h3,
         a {
-          font-weight: 400;
+          font-weight: 300;
         }
 
         h3 {
@@ -109,8 +99,7 @@
 }
 
 .show-row {
-  animation: scalex-in calc($golden-ratio-time / 4)
-    ease-in-out forwards;
+  animation-name: scalex-in;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 1024px) {

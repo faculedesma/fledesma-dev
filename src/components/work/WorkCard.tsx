@@ -52,10 +52,12 @@ const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
       id={work.id}
       ref={workCardRef}
       onClick={handleCardClick}
-      className={`work-list--${work.id}`}
+      className={`work-list--card ${work.id}`}
     >
-      <h3>{work.title}</h3>
-      <h3>{work.type}</h3>
+      <div className="work-list--card-text">
+        <h3>{work.title}</h3>
+        <h3>{work.type}</h3>
+      </div>
       <img
         src={work.image}
         alt="work-image"

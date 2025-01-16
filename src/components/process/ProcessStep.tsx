@@ -12,9 +12,7 @@ interface IProcessCardProps {
   process: IProcessStep;
 }
 
-export const ProcessStep: React.FC<IProcessCardProps> = ({
-  process
-}) => {
+export const ProcessStep: React.FC<IProcessCardProps> = ({ process }) => {
   return (
     <section id={process.id} className="step">
       <div className="step-card">

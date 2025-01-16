@@ -15,11 +15,9 @@ interface IHistoryRowProps {
   job: IJob;
 }
 
-export const HistoryRow: React.FC<IHistoryRowProps> = ({
-  job
-}) => {
+export const HistoryRow: React.FC<IHistoryRowProps> = ({ job }) => {
   const historyRef = useRef<HTMLDivElement>(null);
-  const isInViewport = useIntersection(historyRef, -100);
+  const isInViewport = useIntersection(historyRef, -80);
 
   useEffect(() => {
     if (isInViewport) {
@@ -32,15 +30,9 @@ export const HistoryRow: React.FC<IHistoryRowProps> = ({
   };
 
   return (
-    <div
-      ref={historyRef}
-      className="history-list--row-container"
-    >
+    <div ref={historyRef} className="history-list--row-container">
       <div className="container">
-        <div
-          onClick={() => handleRowClick(job.company.url)}
-          className="history-list--row"
-        >
+        <div onClick={() => handleRowClick(job.company.url)} className="history-list--row">
           <h3>{job.date}</h3>
           <div className="history-list--row-charge">
             <h3>{job.company.name}</h3>

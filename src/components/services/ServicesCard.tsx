@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import { SecondaryButton } from '@components/buttons/SecondaryButton';
 import './services.scss';
+import Button from '@components/buttons/Button';
 
 interface IServices {
   id: string;
@@ -16,26 +17,24 @@ interface IServicesCardProps {
 export const ServicesCard: React.FC<IServicesCardProps> = ({
   service
 }) => {
-  const handleGetStartedClick = () => {
-    const section = document.getElementById('contact');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <div
-      id={service.id}
-      className="services-list--card"
-      onClick={handleGetStartedClick}
-    >
+    <div id={service.id} className="services-list--card">
       <div className="services-list--card-top">
         {service.icon}
         <h2>{service.label}</h2>
+        <p>{service.description}</p>
       </div>
       <div className="services-list--card-bottom">
-        <p>{service.description}</p>
-        <SecondaryButton label="Get started" />
+        <Button
+          variant="tertiary"
+          size="md"
+          trailingIcon="ChevronRight"
+          data-cal-link="fledesma/30min?date=2024-11-25&month=2024-11"
+          data-cal-config='{"theme":"dark"}'
+        >
+          {' '}
+          Get Started
+        </Button>
       </div>
     </div>
   );

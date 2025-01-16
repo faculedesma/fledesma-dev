@@ -1,27 +1,24 @@
 import { LogoSVG } from '@assets/svgs/LogoSVG';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useIsOnTop } from '@components/hooks/useIsOnTop';
+import { useMouseFollow } from '@components/hooks/useMouseFollow';
+
 import './logo.scss';
 
 const Logo = () => {
   const logoRef = useRef<HTMLDivElement>(null);
-  const isOnTop = useIsOnTop(logoRef);
 
-  useEffect(() => {
-    if (logoRef.current) {
-      const mouse = document.getElementById('mouse-follow');
-      if (isOnTop) {
-        mouse?.classList.remove('point');
-        mouse?.classList.add('hide');
-      } else {
-        mouse?.classList.add('point');
-        mouse?.classList.remove('hide');
-      }
+  const handleLogoClick = () => {
+    const top = document.getElementById('hero');
+    if (top) {
+      top.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [isOnTop]);
+  };
+
+  useMouseFollow(logoRef, 'fire', false);
 
   return (
-    <div ref={logoRef} className="logo">
+    <div ref={logoRef} onClick={handleLogoClick} className="logo">
       <LogoSVG />
     </div>
   );

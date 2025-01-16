@@ -1,8 +1,11 @@
-import { Menu } from '@components/menu/Menu';
 import { useState, useRef, useEffect } from 'react';
+
+import { Menu } from '@components/menu/Menu';
 import { ToggleButton } from '@components/buttons/ToggleButton';
-import { useIsOnTop } from '@components/hooks/useIsOnTop';
 import Logo from '@components/logo/Logo';
+import { useMouseFollow } from '@components/hooks/useMouseFollow';
+import ThemeToggle from '@components/theme-toggle/ThemeToggle';
+
 import './header.scss';
 
 type Link = {
@@ -17,14 +20,14 @@ interface ILinkProps {
 
 export const links: Link[] = [
   {
-    id: 'work',
-    label: 'Work',
-    href: '/work'
-  },
-  {
     id: 'about',
     label: 'About',
     href: '/about'
+  },
+  {
+    id: 'work',
+    label: 'Projects',
+    href: '/projects'
   },
   {
     id: 'contact',
@@ -39,25 +42,8 @@ interface IHeaderProps {
 
 const HeaderlLink = ({ link }: ILinkProps) => {
   const linkRef = useRef<HTMLAnchorElement>(null);
-  const isOnTop = useIsOnTop(linkRef);
 
-  useEffect(() => {
-    if (linkRef.current) {
-      const mouse = document.getElementById('mouse-follow');
-      if (isOnTop) {
-        mouse?.classList.remove('point');
-        mouse?.classList.add('hide');
-      } else {
-        mouse?.classList.add('point');
-        mouse?.classList.remove('hide');
-      }
-    }
-  }, [isOnTop]);
-
-  const handleLinkClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    id: string
-  ) => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const section = document.getElementById(id);
     if (section) {
@@ -65,20 +51,19 @@ const HeaderlLink = ({ link }: ILinkProps) => {
     }
   };
 
+  useMouseFollow(linkRef);
+
   return (
     <a
       ref={linkRef}
       key={link.id}
-      className="header-links--item"
+      className="header-nav-links-item"
       onClick={(e) => handleLinkClick(e, link.id)}
       href={link.href}
     >
       {link.label.split('').map((char, index) => {
         return (
-          <div
-            key={`${char}-${index}`}
-            className="header-links--item-text"
-          >
+          <div key={`${char}-${index}`} className="header-nav-links-item-text">
             <span>{char}</span>
             <span>{char}</span>
           </div>
@@ -90,6 +75,7 @@ const HeaderlLink = ({ link }: ILinkProps) => {
 
 const Header: React.FC<IHeaderProps> = ({ isLoading }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
   const headerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -98,40 +84,25 @@ const Header: React.FC<IHeaderProps> = ({ isLoading }) => {
     }
   }, [isLoading]);
 
-  const toggleMenu = () =>
-    setIsOpen((prevIsOpen) => !prevIsOpen);
-
-  const handleLogoClick = () => {
-    const top = document.getElementById('hero');
-    if (top) {
-      top.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const toggleMenu = () => setIsOpen((prevIsOpen) => !prevIsOpen);
 
   return (
     <header ref={headerRef}>
-      <div className="container">
+      <div className="container" style={{ border: 0 }}>
         <div id="header" className="header">
-          <div
-            onClick={handleLogoClick}
-            className="header-logo"
-          >
+          <div className="header-logo">
             <Logo />
           </div>
-          <div className="header-links">
-            {links.map((link) => {
-              return (
-                <HeaderlLink key={link.id} link={link} />
-              );
-            })}
+          <div className="header-nav">
+            <ThemeToggle />
+            <div className="header-nav-links">
+              {links.map((link) => {
+                return <HeaderlLink key={link.id} link={link} />;
+              })}
+            </div>
           </div>
-          <ToggleButton
-            onClick={toggleMenu}
-            isOpen={isOpen}
-          />
-          {isOpen && (
-            <Menu isOpen={isOpen} toggleMenu={toggleMenu} />
-          )}
+          <ToggleButton onClick={toggleMenu} isOpen={isOpen} />
+          <Menu isOpen={isOpen} toggleMenu={toggleMenu} />
         </div>
       </div>
     </header>

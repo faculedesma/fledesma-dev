@@ -1,12 +1,11 @@
-@import '../../utils/variables';
-
 header {
   position: fixed;
+  // TODO: fueguito vicio hover mouse, traiangle deform circle, square
   width: 100%;
   top: 0;
   left: 0;
   background: transparent;
-  border-bottom: 0.5px solid $shadow-dark-900;
+  border-bottom: 1px solid var(--color-border-primary);
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   translate: 0 -100%;
@@ -26,62 +25,60 @@ header {
   align-items: center;
   justify-content: space-between;
 
-  &-links {
-    width: 320px;
+  &-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 6rem;
 
-    &--item {
-      position: relative;
+    &-links {
       display: flex;
       align-items: center;
-      justify-content: center;
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-      transition: all calc($golden-ratio-time / 8) ease-in;
-      cursor: pointer;
+      justify-content: space-between;
+      gap: 6rem;
 
-      &-text {
+      &-item {
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        cursor: pointer;
 
-        span {
-          display: inline-block;
-          transition: all calc($golden-ratio-time / 8)
-            ease-in-out;
-        }
+        &-text {
+          position: relative;
 
-        span:first-child {
-          transform: translateY(0) scaleY(1);
-          color: $secondary-color;
-          transition: all calc($golden-ratio-time / 8)
-            ease-in;
-        }
+          span {
+            display: inline-block;
+          }
 
-        span:last-child {
-          position: absolute;
-          top: 0;
-          left: 0;
-          transform: translateY(100%) scaleY(0);
-          color: $secondary-color;
-          transition: all calc($golden-ratio-time / 8)
-            ease-in;
-        }
-      }
-
-      &:hover {
-        .header-links--item-text {
           span:first-child {
-            color: $shadow-light;
-            transform: translateY(0) scaleY(0);
-            transition: all calc($golden-ratio-time / 8)
-              ease-in;
+            transform: translateY(0) scaleY(1);
+            color: var(--color-text-primary);
           }
 
           span:last-child {
-            color: $shadow-light;
-            transform: translateY(0) scaleY(1);
-            transition: all calc($golden-ratio-time / 8)
-              ease-in;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateY(100%) scaleY(0);
+            color: var(--color-text-primary);
+          }
+        }
+
+        &:hover {
+          .header-nav-links-item-text {
+            span:first-child {
+              color: var(--color-text-primary-hover);
+              transform: translateY(-100%) scaleY(1);
+              animation-timing-function: ease-out;
+            }
+
+            span:last-child {
+              color: var(--color-text-primary-hover);
+              transform: translateY(0) scaleY(1);
+              animation-timing-function: ease-in;
+            }
           }
         }
       }
@@ -90,19 +87,28 @@ header {
 }
 
 .show-header {
-  animation: slidey-in-top calc($golden-ratio-time / 4)
-    ease-out forwards;
+  animation-name: slidey-in-top;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 640px) {
+  .header {
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+  }
 }
 
 @media only screen and (min-width: 320px) and (max-width: 1024px) {
   .header {
-    &-links {
-      &--item {
-        display: none;
-      }
+    &-nav {
+      gap: 1rem;
 
-      .theme {
-        display: inherit;
+      &-links {
+        display: none;
+
+        .theme {
+          display: inherit;
+        }
       }
     }
   }

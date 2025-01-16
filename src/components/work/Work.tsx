@@ -7,6 +7,13 @@ import './work.scss';
 
 const works = [
   {
+    id: 'art',
+    title: 'Journey of selfknowledge',
+    type: 'Art Concept',
+    image: LampBG,
+    link: 'https://facundo-ledesma.me/'
+  },
+  {
     id: 'danilo',
     title: 'New goals, new website',
     type: 'Danilo Andrade',
@@ -19,21 +26,21 @@ const works = [
     type: 'Namewiz',
     image: NamewizBG,
     link: 'https://faculedesma.github.io/namewiz-fe/'
-  },
-  {
-    id: 'art',
-    title: 'Journey of selfknowledge',
-    type: 'Art Concept',
-    image: LampBG,
-    link: 'https://facundo-ledesma.me/'
   }
+  // {
+  //   id: 'vir',
+  //   title: 'Blog site',
+  //   type: 'Vir Ledesma',
+  //   image: NamewizBG,
+  //   link: 'https://faculedesma.github.io/namewiz-fe/'
+  // }
 ];
 
 const Work = () => {
   return (
     <div className="container">
       <section id="work" className="work">
-        <SectionTitle text="Work" />
+        <SectionTitle text="Projects" />
         <div className="work-list">
           {works.map((work) => {
             return <WorkCard key={work.id} work={work} />;

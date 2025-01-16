@@ -1,19 +1,22 @@
 import { useRef, useEffect } from 'react';
+
 import { useIntersection } from '@components/hooks/useIntersection';
-import { Discovery } from '@components/buttons/Discovery';
 import SectionTitle from '@components/titles/SectionTitle';
+// import MePNG from '@assets/images/me.jpg';
 import MePNG from '@assets/images/me.jpg';
+import Button from '@components/buttons/Button';
 import './about-me.scss';
+import useDistortEffect from '@components/hooks/useDistortEffect';
+import useWaveEffect from '@components/hooks/useWaveEffect';
 
 const AboutMe = () => {
-  const isMobile =
-    window.innerWidth > 320 && window.innerWidth < 480;
+  const isMobile = window.innerWidth > 320 && window.innerWidth < 480;
   const aboutRef = useRef<HTMLDivElement>(null);
 
-  const isInViewport = useIntersection(
-    aboutRef,
-    isMobile ? -50 : -100
-  );
+  const isInViewport = useIntersection(aboutRef, isMobile ? -50 : -100);
+
+  useDistortEffect('image-container', 'image-source');
+  // useWaveEffect('image-container', 'image-source');
 
   useEffect(() => {
     if (isInViewport) {
@@ -23,16 +26,12 @@ const AboutMe = () => {
 
   return (
     <div className="container">
-      <section
-        ref={aboutRef}
-        id="about"
-        className="about-me"
-      >
+      <section ref={aboutRef} id="about" className="about-me">
         <SectionTitle text="About me" />
         <section className="about-me--content">
           <div className="about-me--content-left">
-            <div className="about-me--content-left--portrait">
-              <img src={MePNG} alt="me" draggable="false" />
+            <div id="image-container" className="about-me--content-left--portrait">
+              <img id="image-source" src={MePNG} alt="me" draggable="false" />
             </div>
             <div className="about-me--content-left--bg"></div>
           </div>
@@ -44,25 +43,26 @@ const AboutMe = () => {
             </div>
             <div className="about-me--content-right--text">
               <p>
-                I'm Facundo! A person who believes in
-                building meaningful and positive connections
-                with others. My passions span across
-                computer, music, and art. Graduating with a
-                degree in Computer Science from the National
-                University of Tucumán, Argentina (2018),
-                I've gain over 4 years of experience working
-                as a software engineer. Over the past year,
-                I've dive in the world of design, mixing it
-                with my technical abbilities. The fusion of
-                programming and artistic expression allows
-                me to bring captivating concepts to life.
+                I'm Facundo! I’m passionate about building meaningful connections, with interests in
+                computers, music, and art. I hold a Computer Science degree from the National
+                University of Tucumán, Argentina (2018) and have over four years of experience as a
+                software engineer. Over the past year, I’ve immersed myself in design, blending it
+                with my technical skills to bring creative concepts to life.
               </p>
               <p>
-                I believe details make simplicity beautiful.
-                Are you ready to build your dream project?
+                I believe details make simplicity beautiful. Are you ready to build your dream
+                project?
               </p>
             </div>
-            <Discovery />
+            <Button
+              variant="secondary"
+              size="lg"
+              trailingIcon="ExternalLink"
+              data-cal-link="fledesma/30min?date=2024-11-25&month=2024-11"
+              data-cal-config='{"theme":"dark"}'
+            >
+              Book FREE Discovery Call
+            </Button>
           </div>
         </section>
       </section>

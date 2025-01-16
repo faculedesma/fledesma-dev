@@ -1,16 +1,16 @@
-@import '../../utils/variables.scss';
-
 .menu {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
   height: 100dvh;
   width: 100%;
-  background-color: $primary-color;
-  opacity: 0;
-  z-index: -1;
+  background-color: var(--color-bg-default);
+  z-index: 10;
 
   .container {
+    max-width: unset;
+    width: 100%;
     position: relative;
     height: 100%;
     display: flex;
@@ -20,7 +20,7 @@
   }
 
   &-links {
-    margin-top: 50px;
+    padding-top: 48px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,7 +40,7 @@
         align-items: center;
 
         a {
-          font-size: $heading-three-size;
+          font-size: 2.5rem;
         }
       }
     }
@@ -57,28 +57,25 @@
 }
 
 .show-menu {
-  animation: fade-in calc($golden-ratio-time / 8) ease-out
-    forwards;
+  animation-name: scaley-fade-in;
 
   .menu-links {
     &--item {
       &-container {
-        animation: slidey-in calc($golden-ratio-time / 4)
-          ease-in-out forwards;
+        animation-name: slidey-in;
       }
     }
   }
 }
 
 .hide-menu {
-  animation: fade-out calc($golden-ratio-time / 4)
-    ease-in-out forwards;
+  animation-name: scaley-fade-out;
+  transform-origin: top;
 
   .menu-links {
     &--item {
       &-container {
-        animation: slidey-out calc($golden-ratio-time / 8)
-          ease-in-out forwards;
+        animation-name: slidey-out;
       }
     }
   }

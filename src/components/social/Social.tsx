@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
-import { X } from '@assets/svgs/X';
-import { LinkedIn } from '@assets/svgs/LinkedIn';
-import { GitHub } from '@assets/svgs/GitHub';
-import { ReactElement, useRef } from 'react';
+import { ReactElement, useEffect, useRef } from 'react';
+
 import { useIsOnTop } from '@components/hooks/useIsOnTop';
+
+import { LinkedIn } from '@assets/svgs/LinkedIn';
+import { Mail, Github } from 'lucide-react';
+import { X } from '@assets/svgs/X';
 import './social.scss';
-import { MailEnvelop } from '@assets/svgs/MailEnvelop';
 
 interface ILink {
   id: string;
@@ -29,7 +29,7 @@ const links = [
     id: 'github',
     href: 'https://github.com/faculedesma',
     aria: `Go to Facundo's GitHub account.`,
-    icon: <GitHub />
+    icon: <Github />
   },
   {
     id: 'x',
@@ -41,7 +41,7 @@ const links = [
     id: 'envelop',
     href: 'mailto:faculedesma1993@gmail.com',
     aria: `Send Facundo an email.`,
-    icon: <MailEnvelop />
+    icon: <Mail />
   }
 ];
 

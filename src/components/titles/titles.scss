@@ -1,14 +1,16 @@
-@import '../../utils/variables';
-
 .section-title {
   text-transform: uppercase;
   scale: 0 1;
-  color: $highlight-color-900;
-  font-size: 1rem;
+  color: var(--color-text-brand);
+  font-weight: 300;
   letter-spacing: 0.25rem;
+  filter: brightness(1);
+
+  &:hover {
+    filter: brightness(1.75);
+  }
 }
 
 .show-section-title {
-  animation: scaley-in calc($golden-ratio-time / 4)
-    ease-in-out forwards;
+  animation-name: scaley-fade-in;
 }

@@ -1,0 +1,106 @@
+.button {
+  color: var(--color-text-primary);
+  font-size: var(--paragraph-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border: none;
+  gap: 0.75rem;
+  cursor: pointer;
+  border-radius: var(--size-border-radius-lg);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform calc(var(--animation-base-time) / 8) ease-in-out;
+    background-color: var(--color-bg-fill-neutral-hover);
+
+    z-index: -1;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+  }
+
+  &--primary {
+    color: var(--color-text-invert);
+    background-color: var(--color-bg-fill-brand);
+
+    &:hover {
+      background-color: var(--color-bg-fill-brand-hover);
+    }
+  }
+
+  &--secondary {
+    background-color: var(--color-bg-fill-neutral);
+    color: var(--color-text-invert);
+
+    &:hover {
+      background-color: var(--color-bg-fill-neutral-hover);
+    }
+  }
+
+  &--tertiary {
+    background-color: transparent;
+
+    svg {
+      stroke: var(--color-icon-primary);
+    }
+
+    &:hover {
+      background-color: var(--color-neutral-200);
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 1px solid var(--color-border-primary);
+
+    svg {
+      stroke: var(--color-icon-primary);
+    }
+
+    &:hover {
+      background-color: var(--color-bg-fill-neutral-hover);
+      svg {
+        stroke: var(--color-icon-invert);
+      }
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+  }
+
+  &--sm {
+    height: 24px;
+  }
+
+  &--md {
+    height: 32px;
+  }
+
+  &--lg {
+    height: 48px;
+  }
+
+  &--icon {
+    color: var(--color-icon-invert);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      color: var(--color-icon-invert);
+    }
+  }
+}

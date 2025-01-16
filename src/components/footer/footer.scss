@@ -1,27 +1,27 @@
-@import '../../utils/variables';
-
 .footer {
   position: relative;
   width: 100%;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-top: 80px;
   gap: 3rem;
 
   &-content {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
     gap: 4rem;
 
     &--left {
       width: 100%;
+      max-width: 480px;
       height: 100%;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: space-between;
+      gap: 2rem;
 
       &-titles {
         width: 100%;
@@ -36,7 +36,7 @@
 
         p {
           opacity: 0;
-          color: $shadow-light;
+          color: var(--color-text-secondary);
         }
       }
 
@@ -49,18 +49,23 @@
 
     &--right {
       width: 100%;
+      max-width: 480px;
+      translate: 0 100%;
+      opacity: 0;
 
       form {
+        width: 100%;
         position: relative;
         height: fit-content;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        padding: 1rem;
+        justify-content: space-between;
+        padding: 2rem;
         gap: 1rem;
-        border-radius: 4px;
-        box-shadow: 0 0 50px 50px $shadow-dark-100;
+        border: 1px solid var(--color-border-primary);
+        background: linear-gradient(to top, var(--color-neutral-100), var(--color-bg-default) 30%);
+        border-radius: var(--size-border-radius-lg);
 
         &::before {
           content: '';
@@ -71,9 +76,6 @@
           height: 100%;
           scale: 1.005;
           border-radius: 0.25rem;
-          background: $highlight-color-100;
-          transition: all calc($golden-ratio-time / 4)
-            ease-in-out;
           filter: brightness(100%);
           z-index: -1;
         }
@@ -86,7 +88,6 @@
           width: 100%;
           height: 100%;
           border-radius: 0.25rem;
-          background: $primary-color;
           z-index: -1;
         }
 
@@ -94,25 +95,11 @@
         select {
           width: 100%;
           height: 54px;
-          border: 0.5px solid $shadow-dark-900;
-          border-radius: 0.25rem;
-          background: transparent;
-        }
-
-        .select-placeholder {
-          color: $shadow-light;
-        }
-
-        .option-placeholder {
-          display: none;
         }
 
         textarea {
           height: 140px;
           width: 100%;
-          border: 0.5px solid $shadow-dark-900;
-          border-radius: 0.25rem;
-          background: transparent;
         }
 
         button {
@@ -140,14 +127,13 @@
           justify-content: center;
 
           p {
-            margin: 0;
             font-size: 0.75rem;
           }
         }
 
         .form-error {
           p {
-            color: $highlight-color;
+            color: red;
             font-size: 0.75rem;
           }
         }
@@ -166,18 +152,14 @@
       scale: 0 1;
       height: 1px;
       width: 100%;
-      background: linear-gradient(
-        to right,
-        transparent,
-        $highlight-color,
-        transparent
-      );
+      background: linear-gradient(to right, transparent, var(--color-bg-fill-brand), transparent);
     }
 
     &--content {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      opacity: 0;
 
       &-copyright {
         display: flex;
@@ -186,12 +168,11 @@
         gap: 1rem;
 
         p:last-child {
-          color: $shadow-light;
+          color: var(--color-text-secondary);
         }
 
         p {
           font-size: 0.875rem;
-          opacity: 0;
         }
       }
     }
@@ -203,38 +184,39 @@
     &-content {
       &--left {
         &-titles {
-          h2,
+          h2 {
+            animation-name: slidex-in-fade;
+            animation-duration: calc(var(--animation-base-time) / 8);
+          }
+
           p {
-            animation: fade-in calc($golden-ratio-time / 4)
-              ease-in forwards;
+            animation-name: slidex-in-fade;
+            animation-duration: calc(var(--animation-base-time) / 8);
           }
         }
 
         &-bottom {
-          animation: fade-in calc($golden-ratio-time/ 2)
-            ease-in forwards;
+          animation-name: slidey-in-fade;
+          animation-duration: calc(var(--animation-base-time) / 8);
         }
+      }
+
+      &--right {
+        animation-name: slidey-in-fade;
+        animation-duration: calc(var(--animation-base-time) / 8);
       }
     }
 
     &-bottom {
       &--divider {
-        animation: scalex-in calc($golden-ratio-time)
-          ease-in forwards;
+        animation-name: scalex-in;
+        animation-delay: calc(var(--animation-base-time) / 4);
+        animation-duration: calc(var(--animation-base-time) / 4);
       }
 
       &--content {
-        &-copyright {
-          p {
-            animation: fade-in calc($golden-ratio-time/ 2)
-              ease-in forwards;
-          }
-        }
-
-        &-logo {
-          animation: fade-in calc($golden-ratio-time)
-            ease-in forwards;
-        }
+        animation-name: slidey-in-fade;
+        animation-delay: calc(var(--animation-base-time) / 4);
       }
     }
   }
@@ -243,12 +225,20 @@
 @media only screen and (min-width: 320px) and (max-width: 1024px) {
   .footer {
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &-content {
-      gap: 60px;
+      width: 100%;
+      max-width: 480px;
+      gap: 4rem;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
       &--left {
+        width: 100%;
         align-items: center;
 
         &-titles {
@@ -262,6 +252,8 @@
       }
 
       &--right {
+        width: 100%;
+
         form {
           .form-success {
             position: relative;
@@ -286,10 +278,6 @@
       &--copyright {
         flex-direction: column;
         gap: 0;
-
-        p {
-          margin: 0;
-        }
       }
     }
   }

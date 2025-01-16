@@ -1,50 +1,17 @@
-// Gilroy
+@import './utils/styles/_variables.scss';
+@import './utils/styles/animations.scss';
+@import './utils/styles/fonts.scss';
+@import './utils/styles/themes.scss';
 
-@font-face {
-  font-family: 'Gilroy';
-  font-weight: 300;
-  font-style: normal;
-  src: url('../src/assets/fonts/Gilroy-Light.ttf')
-    format('truetype');
-}
+// * {
+//   transition-property: all;
+//   transition-timing-function: ease-in-out;
+//   transition-duration: calc(var(--animation-base-time) / 6);
 
-@font-face {
-  font-family: 'Gilroy';
-  font-weight: 400;
-  font-style: normal;
-  src: url('../src/assets/fonts/Gilroy-Regular.ttf')
-    format('truetype');
-}
-
-@font-face {
-  font-family: 'Gilroy';
-  font-weight: 600;
-  font-style: normal;
-  src: url('../src/assets/fonts/Gilroy-SemiBold.ttf')
-    format('truetype');
-}
-
-// Graphik
-
-@font-face {
-  font-family: 'Graphik';
-  font-weight: 300;
-  src: url('../src/assets/fonts/GraphikLight.otf');
-}
-
-@font-face {
-  font-family: 'Graphik';
-  font-weight: 400;
-  src: url('../src/assets/fonts/GraphikRegular.otf');
-}
-
-@font-face {
-  font-family: 'Graphik';
-  font-weight: 700;
-  src: url('../src/assets/fonts/GraphikBold.otf');
-}
-
-@import '../src/utils/variables';
+//   animation-timing-function: ease-in-out;
+//   animation-fill-mode: forwards;
+//   animation-duration: calc(var(--animation-base-time) / 6);
+// }
 
 *,
 *::before,
@@ -52,14 +19,119 @@
   box-sizing: border-box;
 }
 
+.theme-switch {
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+  transition-duration: calc(var(--animation-base-time) / 6);
+
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: calc(var(--animation-base-time) / 6);
+}
+
+html,
+body,
+main,
+section,
+article,
+aside,
+nav,
+header,
+footer,
+hgroup,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+a,
+abbr,
+b,
+bdi,
+bdo,
+br,
+cite,
+code,
+data,
+dfn,
+em,
+i,
+kbd,
+mark,
+q,
+rp,
+rt,
+ruby,
+s,
+samp,
+small,
+strong,
+sub,
+sup,
+time,
+u,
+var,
+wbr,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+form,
+fieldset,
+legend,
+label,
+input,
+button,
+select,
+datalist,
+optgroup,
+option,
+textarea,
+output,
+progress,
+meter,
+details,
+summary,
+dialog,
+img,
+picture,
+svg,
+video,
+audio,
+source,
+track,
+iframe,
+canvas,
+embed,
+object,
+param,
+table,
+caption,
+th,
+tr,
+td,
+thead,
+tbody,
+tfoot,
+col,
+colgroup {
+  @extend .theme-switch;
+}
+
 body {
   width: 100dvw;
   height: 100dvh;
   margin: 0;
-  font-family: $secondary-font-family;
-  background-color: $primary-color;
-  color: $secondary-color;
-  color-scheme: light dark;
+  font-family: var(--font-family-secondary);
 
   img {
     touch-action: pan-y;
@@ -82,92 +154,113 @@ body {
 h1,
 h2,
 h3,
+h4,
+h5,
+h6,
 a,
-span,
 button,
-a {
-  font-family: $primary-font-family;
+span {
+  font-family: var(--font-family–primary);
 }
 
-p,
-div {
-  font-family: $secondary-font-family;
+p {
+  margin: 0;
 }
 
 h1 {
-  font-size: $heading-one-size;
-  line-height: $heading-one-line-height;
+  font-size: var(--text-heading-one-size);
+  line-height: var(--text-heading-one-line-height);
   margin-top: 0;
   margin-bottom: 0;
   font-weight: 600;
 }
 
 h2 {
-  font-size: $heading-two-size;
-  line-height: $heading-two-line-height;
+  font-size: var(--text-heading-two-size);
+  line-height: var(--text-heading-two-line-height);
   margin-top: 0;
   margin-bottom: 0;
   font-weight: 600;
 }
 
 h3 {
-  font-size: $heading-three-size;
-  line-height: $heading-three-line-height;
+  font-size: var(--text-heading-three-size);
+  line-height: var(--text-heading-three-line-height);
   margin-top: 0;
   margin-bottom: 0;
-  font-weight: 300;
+}
+
+h4 {
+  font-size: var(--text-heading-four-size);
+  line-height: var(--text-heading-four-line-height);
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: var(--text-heading-five-size);
+  line-height: var(--text-heading-five-line-height);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h6 {
+  font-size: var(--text-heading-six-size);
+  line-height: var(--text-heading-six-line-height);
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 p,
 span {
-  font-size: $paragraph-size;
-  line-height: $paragraph-line-height;
+  font-size: var(--text-paragraph-size);
+  line-height: var(--text-paragraph-line-height);
 }
 
 input,
 textarea,
 input::placeholder,
 textarea::placeholder {
-  font-size: $input-size;
-  line-height: $input-line-height;
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: $shadow-light;
+  font-size: var(--text-input-size);
+  line-height: var(--text-input-line-height);
 }
 
 a {
-  font-size: $anchor-size;
-  line-height: $anchor-line-height;
+  font-size: var(--text-anchor-size);
+  line-height: var(--text-anchor-line-height);
   color: inherit;
   text-decoration: none;
   font-weight: 600;
 }
 
 button {
-  font-size: $paragraph-size;
-  font-weight: 700;
+  font-size: var(--text-paragraph-size);
+  font-weight: 600;
   font-family: inherit;
 }
 
 svg {
-  color: $secondary-color;
+  color: var(--color-icon-primary);
   width: 20px;
   height: 20px;
-
-  path {
-    fill: $secondary-color;
-  }
 }
 
 input,
 textarea,
 select,
 option {
-  font-size: $paragraph-size;
+  color: var(--color-text-primary);
+  font-size: var(--text-paragraph-size);
   font-weight: 300;
   font-family: inherit;
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--size-border-radius-md);
+  background: transparent;
+
+  &:hover {
+    border-color: var(--color-border-primary-hover);
+  }
 }
 
 select {
@@ -187,6 +280,13 @@ select {
   box-sizing: border-box;
 }
 
+input::placeholder,
+select::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: var(--color-text-placeholder);
+}
+
 input:focus,
 input:focus-visible,
 textarea:focus,
@@ -194,75 +294,91 @@ textarea:focus-visible,
 select:focus,
 select:focus-visible {
   outline-style: solid;
-  outline-color: $highlight-color-300;
+  outline-color: var(--color-border-primary-selected);
 }
 
 @media only screen and (min-width: 320px) and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
   h1 {
-    font-size: $heading-one-size-mobile;
-    line-height: $heading-one-line-height-mobile;
+    font-size: var(--text-heading-one-size-mobile);
+    line-height: var(--text-heading-one-line-height-mobile);
   }
 
   h2 {
-    font-size: $heading-two-size-mobile;
-    line-height: $heading-two-line-height-mobile;
+    font-size: var(--text-heading-two-size-mobile);
+    line-height: var(--text-heading-two-line-height-mobile);
   }
 
   h3 {
-    font-size: $heading-three-size-mobile;
-    line-height: $heading-three-line-height-mobile;
+    font-size: var(--text-heading-three-size-mobile);
+    line-height: var(--text-heading-three-line-height-mobile);
+  }
+
+  h4 {
+    font-size: var(--text-heading-four-size-mobile);
+    line-height: var(--text-heading-four-line-height-mobile);
+  }
+
+  h5 {
+    font-size: var(--text-heading-five-size-mobile);
+    line-height: var(--text-heading-five-line-height-mobile);
+  }
+
+  h6 {
+    font-size: var(--text-heading-six-size-mobile);
+    line-height: var(--text-heading-six-line-height-mobile);
   }
 
   a {
-    font-size: $anchor-size-mobile;
-    line-height: $anchor-line-height-mobile;
+    font-size: var(--anchor-size-mobile);
+    line-height: var(--anchor-line-height-mobile);
   }
 
   p {
-    font-size: $paragraph-size-mobile;
-    line-height: $paragraph-line-height-mobile;
+    margin: 0;
+    font-size: var(--text-paragraph-size-mobile);
+    line-height: var(--text-paragraph-line-height-mobile);
   }
 
   input,
   textarea,
   input::placeholder,
   textarea::placeholder {
-    font-size: $input-size-mobile;
-    line-height: $input-line-height-mobile;
+    font-size: var(--text-input-size-mobile);
+    line-height: var(--text-input-line-height-mobile);
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
   h1 {
-    font-size: $heading-one-size-tablet;
-    line-height: $heading-one-line-height-tablet;
+    font-size: var(--text-heading-one-size-tablet);
+    line-height: var(--text-heading-one-line-height-tablet);
   }
 
   h2 {
-    font-size: $heading-two-size-tablet;
-    line-height: $heading-two-line-height-tablet;
+    font-size: var(--text-heading-two-size-tablet);
+    line-height: var(--text-heading-two-line-height-tablet);
   }
 
   h3 {
-    font-size: $heading-three-size-tablet;
-    line-height: $heading-three-line-height-tablet;
+    font-size: var(--text-heading-three-size-tablet);
+    line-height: var(--text-heading-three-line-height-tablet);
   }
 
   a {
-    font-size: $anchor-size-tablet;
-    line-height: $anchor-line-height-tablet;
+    font-size: var(--anchor-size-table);
+    line-height: var(--anchor-line-height-tablet);
   }
 
   p {
-    font-size: $paragraph-size-tablet;
-    line-height: $paragraph-line-height-tablet;
+    font-size: var(--text-paragraph-size-tablet);
+    line-height: var(--text-paragraph-line-height-tablet);
   }
 
   input,
   textarea,
   input::placeholder,
   textarea::placeholder {
-    font-size: $input-size-tablet;
-    line-height: $input-line-height-tablet;
+    font-size: var(--text-input-size-tablet);
+    line-height: var(--text-input-line-height-tablet);
   }
 }
