@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
-import { SecondaryButton } from '@components/buttons/SecondaryButton';
-import './services.scss';
+
 import Button from '@components/buttons/Button';
+import './services.scss';
 
 interface IServices {
   id: string;
@@ -14,9 +14,7 @@ interface IServicesCardProps {
   service: IServices;
 }
 
-export const ServicesCard: React.FC<IServicesCardProps> = ({
-  service
-}) => {
+export const ServicesCard: React.FC<IServicesCardProps> = ({ service }) => {
   return (
     <div id={service.id} className="services-list--card">
       <div className="services-list--card-top">
