@@ -1,6 +1,5 @@
 header {
   position: fixed;
-  // TODO: fueguito vicio hover mouse, traiangle deform circle, square
   width: 100%;
   top: 0;
   left: 0;
@@ -91,6 +90,11 @@ header {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 640px) {
+  header {
+    border: 1px solid var(--color-border-primary);
+    border-top: 0;
+  }
+
   .header {
     border-left: 0;
     border-right: 0;

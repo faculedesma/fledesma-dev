@@ -121,7 +121,7 @@ const Services = () => {
                 <Button size="lg" variant="secondary">
                   Button Label
                 </Button>
-                <Button size="lg" variant="tertiary" onClick={() => setTheme('slow')}>
+                <Button size="lg" variant="tertiary">
                   Button Label
                 </Button>
               </div>
