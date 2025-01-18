@@ -82,6 +82,11 @@ header {
         }
       }
     }
+
+    &-version {
+      font-family: var(--font-primary);
+      color: var(--color-text-secondary);
+    }
   }
 }
 
@@ -113,6 +118,10 @@ header {
         .theme {
           display: inherit;
         }
+      }
+
+      &-version {
+        display: none;
       }
     }
   }

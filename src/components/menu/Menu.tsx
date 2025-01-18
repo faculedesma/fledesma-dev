@@ -8,16 +8,10 @@ type MenuProps = {
   toggleMenu: () => void;
 };
 
-export const Menu: React.FC<MenuProps> = ({
-  isOpen,
-  toggleMenu
-}) => {
+export const Menu: React.FC<MenuProps> = ({ isOpen, toggleMenu }) => {
   const menuRef = useRef<HTMLDivElement>(null);
 
-  const handleLinkClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    sectionId: string
-  ) => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
     const section = document.getElementById(sectionId);
     section?.scrollIntoView({ behavior: 'smooth' });
@@ -29,9 +23,7 @@ export const Menu: React.FC<MenuProps> = ({
       menuRef.current?.classList.remove('hide-menu');
       menuRef.current?.classList.add('show-menu');
     } else {
-      if (
-        menuRef.current?.classList.contains('show-menu')
-      ) {
+      if (menuRef.current?.classList.contains('show-menu')) {
         menuRef.current?.classList.remove('show-menu');
         menuRef.current?.classList.add('hide-menu');
       }
@@ -46,12 +38,7 @@ export const Menu: React.FC<MenuProps> = ({
             return (
               <li key={index} className="menu-links--item">
                 <div className="menu-links--item-container">
-                  <a
-                    onClick={(e) =>
-                      handleLinkClick(e, link.id)
-                    }
-                    href={link.href}
-                  >
+                  <a onClick={(e) => handleLinkClick(e, link.id)} href={link.href}>
                     {link.label}
                   </a>
                 </div>
@@ -62,6 +49,7 @@ export const Menu: React.FC<MenuProps> = ({
         <div className="menu-social">
           <Social />
         </div>
+        <span className="menu-version">1.1.0</span>
       </div>
     </div>
   );

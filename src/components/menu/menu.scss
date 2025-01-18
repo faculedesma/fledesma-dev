@@ -50,21 +50,59 @@
   &-social {
     height: 50px;
     width: 80%;
+    opacity: 0;
 
     .social {
       flex-direction: row;
     }
   }
+
+  &-version {
+    opacity: 0;
+    font-family: var(--font-primary);
+    color: var(--color-text-secondary);
+  }
 }
 
 .show-menu {
   animation-name: scaley-fade-in;
+  transform-origin: top;
 
-  .menu-links {
-    &--item {
-      &-container {
+  .menu {
+    &-links {
+      &--item-container {
         animation-name: slidey-in;
       }
+
+      &--item {
+        &:nth-child(1) {
+          .menu-links--item-container {
+            animation-delay: calc(var(--animation-base-time) / 12);
+          }
+        }
+
+        &:nth-child(2) {
+          .menu-links--item-container {
+            animation-delay: calc(var(--animation-base-time) / 8);
+          }
+        }
+
+        &:nth-child(3) {
+          .menu-links--item-container {
+            animation-delay: calc(var(--animation-base-time) / 6);
+          }
+        }
+      }
+    }
+
+    &-social {
+      animation-name: slidey-in-fade;
+      animation-delay: calc(var(--animation-base-time) / 4);
+    }
+
+    &-version {
+      animation-name: slidey-in-fade;
+      animation-delay: calc(var(--animation-base-time) / 4);
     }
   }
 }
@@ -73,10 +111,12 @@
   animation-name: scaley-fade-out;
   transform-origin: top;
 
-  .menu-links {
-    &--item {
-      &-container {
-        animation-name: slidey-out;
+  .menu {
+    &-links {
+      &--item {
+        &-container {
+          animation-name: slidey-out;
+        }
       }
     }
   }
