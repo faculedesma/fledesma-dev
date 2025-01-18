@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const themes = ['dark', 'light', 'slow', 'system'] as const;
+export const themes = ['dark', 'light', 'system'] as const;
 
 type Theme = typeof themes[number];
 

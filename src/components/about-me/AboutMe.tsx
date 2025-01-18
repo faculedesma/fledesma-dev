@@ -42,11 +42,11 @@ const AboutMe = () => {
             </div>
             <div className="about-me--content-right--text">
               <p>
-                I'm Facundo! I’m passionate about building meaningful connections, with interests in
-                computers, music, and art. I hold a Computer Science degree from the National
-                University of Tucumán, Argentina (2018) and have over four years of experience as a
-                software engineer. Over the past year, I’ve immersed myself in design, blending it
-                with my technical skills to bring creative concepts to life.
+                I'm Facundo! I’m person with deeply cares about building meaningful connections with
+                people. Passionate about computers, music, and art; I hold a Computer Science degree
+                from the National University of Tucumán, Argentina (2018) and have over 4 years of
+                experience as a software engineer. Over the past years, I’ve immersed myself in
+                design, blending it with my technical skills to bring creative concepts to life.
               </p>
               <p>
                 I believe details make simplicity beautiful. Are you ready to build your dream
