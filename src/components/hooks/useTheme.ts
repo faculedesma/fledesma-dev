@@ -25,6 +25,7 @@ function useTheme(initialTheme: Theme = 'dark'): [Theme, (theme: Theme) => void]
     };
 
     applyTheme(theme);
+    localStorage.setItem('theme', theme);
 
     if (theme === 'system') {
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -32,8 +33,6 @@ function useTheme(initialTheme: Theme = 'dark'): [Theme, (theme: Theme) => void]
       mediaQuery.addEventListener('change', handleChange);
       return () => mediaQuery.removeEventListener('change', handleChange);
     }
-
-    localStorage.setItem('theme', theme);
   }, [theme]);
 
   return [theme, setTheme];

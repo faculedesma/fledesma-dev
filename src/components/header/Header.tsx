@@ -100,7 +100,7 @@ const Header: React.FC<IHeaderProps> = ({ isLoading }) => {
                 return <HeaderlLink key={link.id} link={link} />;
               })}
             </div>
-            <span className="header-nav-version">1.1.0</span>
+            <p className="header-nav-version">1.1.0</p>
           </div>
           <ToggleButton onClick={toggleMenu} isOpen={isOpen} />
           <Menu isOpen={isOpen} toggleMenu={toggleMenu} />
