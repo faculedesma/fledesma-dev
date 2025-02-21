@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Sun, Moon, Monitor } from 'lucide-react';
 
 import useTheme from '@components/hooks/useTheme';
@@ -8,28 +8,39 @@ import './theme-toggle.scss';
 
 const ThemeToggle: React.FC = () => {
   const [theme, setTheme] = useTheme();
+  const [isOpen, setIsOpen] = useState(false);
   const toggleRef = useRef<HTMLDivElement>(null);
 
   useMouseFollow(toggleRef);
 
+  function handleThemeChange(selectedTheme: 'light' | 'dark' | 'system') {
+    setTheme(selectedTheme);
+    setIsOpen(false);
+  }
+
   return (
-    <div ref={toggleRef} className="theme-container">
+    <div
+      ref={toggleRef}
+      className={`theme-container ${isOpen ? 'open' : ''}`}
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
       <button
-        onClick={() => setTheme('light')}
+        onClick={() => handleThemeChange('light')}
         aria-label="Switch to light mode"
         className={`theme-container-toggle ${theme === 'light' ? 'active' : ''}`}
       >
         <Sun />
       </button>
       <button
-        onClick={() => setTheme('dark')}
+        onClick={() => handleThemeChange('dark')}
         aria-label="Switch to dark mode"
         className={`theme-container-toggle ${theme === 'dark' ? 'active' : ''}`}
       >
         <Moon />
       </button>
       <button
-        onClick={() => setTheme('system')}
+        onClick={() => handleThemeChange('system')}
         aria-label="Switch to system mode"
         className={`theme-container-toggle ${theme === 'system' ? 'active' : ''}`}
       >

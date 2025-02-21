@@ -27,6 +27,10 @@
 
       > div {
         opacity: 0;
+        background-color: var(--color-bg-surface-primary);
+        border-radius: var(--size-border-radius-md);
+        transition-property: border-radius;
+        transition-duration: calc(var(--animation-base-time) / 4);
       }
 
       h5 {
@@ -52,13 +56,13 @@
         width: 100%;
         background-color: var(--color-bg-surface-primary);
         border-radius: var(--size-border-radius-md);
+        transition-property: border-radius;
+        transition-duration: calc(var(--animation-base-time) / 4);
       }
 
       &-preview {
         height: 100%;
         width: 100%;
-        background-color: var(--color-bg-surface-primary);
-        border-radius: var(--size-border-radius-md);
       }
 
       &-icons {
@@ -70,10 +74,13 @@
           justify-content: center;
           background-color: var(--color-bg-surface-secondary);
           border-radius: var(--size-border-radius-md);
+          transition-property: color, border-radius;
+          transition-duration: calc(var(--animation-base-time) / 4);
 
           &:hover {
             svg {
-              color: vaR(--color-icon-brand);
+              color: var(--color-icon-brand);
+              transition-duration: calc(var(--animation-base-time) / 4);
             }
           }
 
@@ -98,7 +105,6 @@
           display: flex;
           align-items: flex-start;
           justify-content: space-between;
-          border-radius: var(--size-border-radius-md);
           gap: 1.25rem;
 
           &-color {
@@ -112,6 +118,8 @@
               height: 3rem;
               border: 1px solid var(--color-border-secondary);
               border-radius: var(--size-border-radius-md);
+              transition-property: border-radius;
+              transition-duration: calc(var(--animation-base-time) / 4);
             }
 
             &:nth-child(1) {
@@ -145,7 +153,6 @@
         flex-direction: column;
         justify-content: space-between;
         background-color: var(--color-bg-surface-primary);
-        border-radius: var(--size-border-radius-md);
 
         &-blocks {
           width: 100%;
@@ -173,10 +180,12 @@
         &-text {
           font-size: 120px;
           color: var(--color-text-brand) !important;
+          transition-duration: calc(var(--animation-base-time) / 4);
 
           &:hover {
             transform: scale(1.05);
             opacity: 0.9;
+            transition-duration: calc(var(--animation-base-time) / 4);
           }
         }
 
@@ -185,6 +194,8 @@
           background-color: var(--color-bg-surface-secondary);
           border: 1px solid var(--color-border-secondary);
           border-radius: var(--size-border-radius-md);
+          transition-property: border-radius;
+          transition-duration: calc(var(--animation-base-time) / 4);
 
           p {
             color: var(--color-text-primary);
@@ -202,8 +213,6 @@
         align-items: center;
         justify-content: center;
         gap: 2rem;
-        background-color: var(--color-bg-surface-primary);
-        border-radius: var(--size-border-radius-md);
 
         &-buttons {
           display: flex;
@@ -214,6 +223,7 @@
           padding: 2rem;
           border: 1px dashed #9747ff;
           border-radius: var(--size-border-radius-md);
+          transition-duration: calc(var(--animation-base-time) / 4);
         }
 
         &-borders {
@@ -224,6 +234,8 @@
 
           button {
             border-radius: var(--size-border-radius-full);
+            width: 3rem;
+            height: 3rem;
           }
         }
       }

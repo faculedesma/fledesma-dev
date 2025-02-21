@@ -24,6 +24,10 @@ header {
   align-items: center;
   justify-content: space-between;
 
+  &-logo {
+    z-index: 11;
+  }
+
   &-nav {
     display: flex;
     align-items: center;
@@ -54,14 +58,16 @@ header {
           span:first-child {
             transform: translateY(0) scaleY(1);
             color: var(--color-text-primary);
+            transition-duration: calc(var(--animation-base-time) / 6);
           }
 
           span:last-child {
             position: absolute;
             top: 0;
             left: 0;
-            transform: translateY(100%) scaleY(0);
             color: var(--color-text-primary);
+            transform: translateY(100%) scaleY(0);
+            transition-duration: calc(var(--animation-base-time) / 6);
           }
         }
 
@@ -70,13 +76,13 @@ header {
             span:first-child {
               color: var(--color-text-primary-hover);
               transform: translateY(-100%) scaleY(1);
-              animation-timing-function: ease-out;
+              transition-duration: calc(var(--animation-base-time) / 6);
             }
 
             span:last-child {
               color: var(--color-text-primary-hover);
               transform: translateY(0) scaleY(1);
-              animation-timing-function: ease-in;
+              transition-duration: calc(var(--animation-base-time) / 6);
             }
           }
         }

@@ -15,15 +15,11 @@ interface IWorkCardProps {
 }
 
 const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
-  const isMobile =
-    window.innerWidth > 320 && window.innerWidth < 480;
+  const isMobile = window.innerWidth > 320 && window.innerWidth < 480;
   const workCardRef = useRef<HTMLDivElement>(null);
   const isOnTop = useIsOnTop(workCardRef);
 
-  const isInViewport = useIntersection(
-    workCardRef,
-    isMobile ? 50 : -250
-  );
+  const isInViewport = useIntersection(workCardRef, isMobile ? 50 : -250);
 
   useEffect(() => {
     if (isInViewport) {
@@ -44,8 +40,7 @@ const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
     }
   }, [isOnTop]);
 
-  const handleCardClick = () =>
-    window.open(work.link, '_blank');
+  const handleCardClick = () => window.open(work.link, '_blank');
 
   return (
     <section
@@ -58,11 +53,7 @@ const WorkCard: React.FC<IWorkCardProps> = ({ work }) => {
         <h3>{work.title}</h3>
         <h3>{work.type}</h3>
       </div>
-      <img
-        src={work.image}
-        alt="work-image"
-        draggable="false"
-      />
+      <img src={work.image} alt="work-image" draggable="false" />
     </section>
   );
 };

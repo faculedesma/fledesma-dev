@@ -15,7 +15,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    // gap: 2rem;
     gap: 2rem;
 
     &--top {
@@ -25,20 +24,9 @@
       justify-content: center;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 
-      h6:first-child {
-        // transform: translate(0, 56px);
-
-        &:hover {
-          // transform: translate(0, 0px);
-        }
-      }
-
       h6 {
         margin-bottom: 2rem;
-
-        &:hover {
-          // animation: none;
-        }
+        transition-duration: calc(var(--animation-base-time) / 4);
       }
 
       h1:last-child {
@@ -49,6 +37,7 @@
 
         &:hover {
           filter: saturate(1.2);
+          transition-duration: calc(var(--animation-base-time) / 4);
         }
       }
     }

@@ -13,14 +13,17 @@
       .theme-container-toggle:nth-child(3) {
         opacity: 1;
         scale: 1;
+        transition-duration: calc(var(--animation-base-time) / 4);
       }
 
       .theme-container-toggle:nth-child(2) {
         transform: translateX(-2rem);
+        transition-duration: calc(var(--animation-base-time) / 4);
       }
 
       .theme-container-toggle:nth-child(1) {
         transform: translateX(-4rem);
+        transition-duration: calc(var(--animation-base-time) / 6);
       }
     }
 
@@ -32,14 +35,15 @@
       cursor: pointer;
       scale: 0;
       padding: 0.5rem;
+      z-index: 11;
 
       svg {
         width: 1rem;
         height: 1rem;
 
         &:hover {
-          color: var(--color-icon-secondary);
           transform: scale(0.95);
+          transition-duration: calc(var(--animation-base-time) / 6);
         }
       }
     }
@@ -48,12 +52,14 @@
       position: absolute;
       top: 0;
       left: 0;
+      transition-duration: calc(var(--animation-base-time) / 4);
     }
 
     .theme-container-toggle:nth-child(1) {
       position: absolute;
       top: 0;
       left: 0;
+      transition-duration: calc(var(--animation-base-time) / 6);
     }
 
     .active {

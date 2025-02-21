@@ -5,9 +5,11 @@
   font-weight: 300;
   letter-spacing: 0.25rem;
   filter: brightness(1);
+  transition-duration: calc(var(--animation-base-time) / 4);
 
   &:hover {
     filter: brightness(1.75);
+    transition-duration: calc(var(--animation-base-time) / 4);
   }
 }
 

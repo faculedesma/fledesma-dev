@@ -1,8 +1,8 @@
 import DaniloBG from '@assets/images/danilo-red.webp';
 import NamewizBG from '@assets/images/namewiz-bg.webp';
-import LampBG from '@assets/images/lamp.png';
-import WorkCard from './WorkCard';
+import SpiralSVG from '@assets/images/espiral.svg';
 import SectionTitle from '@components/titles/SectionTitle';
+import WorkCard from './WorkCard';
 import './work.scss';
 
 const works = [
@@ -10,7 +10,7 @@ const works = [
     id: 'art',
     title: 'Journey of selfknowledge',
     type: 'Art Concept',
-    image: LampBG,
+    image: SpiralSVG,
     link: 'https://facundo-ledesma.me/'
   },
   {
@@ -27,13 +27,6 @@ const works = [
     image: NamewizBG,
     link: 'https://faculedesma.github.io/namewiz-fe/'
   }
-  // {
-  //   id: 'vir',
-  //   title: 'Blog site',
-  //   type: 'Vir Ledesma',
-  //   image: NamewizBG,
-  //   link: 'https://faculedesma.github.io/namewiz-fe/'
-  // }
 ];
 
 const Work = () => {

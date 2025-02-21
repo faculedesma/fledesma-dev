@@ -15,7 +15,6 @@ const AboutMe = () => {
   const isInViewport = useIntersection(aboutRef, isMobile ? -50 : -100);
 
   useDistortEffect('image-container', 'image-source');
-  // useWaveEffect('image-container', 'image-source');
 
   useEffect(() => {
     if (isInViewport) {

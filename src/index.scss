@@ -3,128 +3,17 @@
 @import './utils/styles/fonts.scss';
 @import './utils/styles/themes.scss';
 
-// * {
-//   transition-property: all;
-//   transition-timing-function: ease-in-out;
-//   transition-duration: calc(var(--animation-base-time) / 6);
-
-//   animation-timing-function: ease-in-out;
-//   animation-fill-mode: forwards;
-//   animation-duration: calc(var(--animation-base-time) / 6);
-// }
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-.theme-switch {
-  transition-property: all;
-  transition-timing-function: ease-in-out;
-  transition-duration: calc(var(--animation-base-time) / 6);
 
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
   animation-duration: calc(var(--animation-base-time) / 6);
-}
 
-html,
-body,
-main,
-section,
-article,
-aside,
-nav,
-header,
-footer,
-hgroup,
-div,
-span,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-hr,
-a,
-abbr,
-b,
-bdi,
-bdo,
-br,
-cite,
-code,
-data,
-dfn,
-em,
-i,
-kbd,
-mark,
-q,
-rp,
-rt,
-ruby,
-s,
-samp,
-small,
-strong,
-sub,
-sup,
-time,
-u,
-var,
-wbr,
-ul,
-ol,
-li,
-dl,
-dt,
-dd,
-form,
-fieldset,
-legend,
-label,
-input,
-button,
-select,
-datalist,
-optgroup,
-option,
-textarea,
-output,
-progress,
-meter,
-details,
-summary,
-dialog,
-img,
-picture,
-svg,
-video,
-audio,
-source,
-track,
-iframe,
-canvas,
-embed,
-object,
-param,
-table,
-caption,
-th,
-tr,
-td,
-thead,
-tbody,
-tfoot,
-col,
-colgroup {
-  @extend .theme-switch;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
 }
 
 body {
@@ -244,6 +133,10 @@ svg {
   color: var(--color-icon-primary);
   width: 20px;
   height: 20px;
+
+  &:hover {
+    color: var(--color-icon-primary-hover);
+  }
 }
 
 input,

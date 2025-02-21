@@ -14,12 +14,14 @@
       stroke-dasharray: 0;
       filter: brightness(100%);
       stroke: var(--color-brand-600);
+      transition-duration: calc(var(--animation-base-time) / 4);
     }
 
     &:hover {
       path:last-child {
         stroke-dasharray: 24;
         stroke: var(--color-brand-300);
+        transition-duration: calc(var(--animation-base-time) / 4);
       }
     }
   }

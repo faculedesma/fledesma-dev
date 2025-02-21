@@ -1,14 +1,14 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { Codesandbox, ChartPie, Code, Webhook } from 'lucide-react';
 
 import { useIntersection } from '@components/hooks/useIntersection';
 import SectionTitle from '@components/titles/SectionTitle';
 import Button from '@components/buttons/Button';
 import Palette from '@components/palette/Palette';
+import { useMouseFollow } from '@components/hooks/useMouseFollow';
 import useTheme from '@components/hooks/useTheme';
 
 import './services.scss';
-import { useMouseFollow } from '@components/hooks/useMouseFollow';
 
 const servicesProvided = {
   design: {
@@ -45,7 +45,12 @@ const Services = () => {
   const isInViewport = useIntersection(servicesRef);
   const matrixRef = useRef<HTMLDivElement>(null);
 
-  const [theme, setTheme] = useTheme();
+  const [theme] = useTheme();
+  const [colorBG, setColorBG] = useState<string>(theme === 'light' ? '#FFF' : '#000');
+
+  useEffect(() => {
+    setColorBG(theme === 'light' ? '#FFF' : '#000');
+  }, [theme]);
 
   useEffect(() => {
     if (isInViewport) {
@@ -131,6 +136,7 @@ const Services = () => {
                   variant="outline"
                   leadingIcon="Square"
                   onClick={handleChangeSquareBorder}
+                  className="w-12 h-12"
                 />
                 <Button
                   size="lg"
@@ -156,7 +162,7 @@ const Services = () => {
               <div className="services-content-brand-palette-boxes">
                 <div ref={matrixRef} className="services-content-brand-palette-boxes-color">
                   <span></span>
-                  <p>{theme === 'dark' ? '#000' : '#FFF'}</p>
+                  <p>{colorBG}</p>
                 </div>
                 <div className="services-content-brand-palette-boxes-color">
                   <span></span>

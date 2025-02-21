@@ -13,7 +13,6 @@ const preventScroll = (e: WheelEvent) => {
 
 const Loader: React.FC<ILoaderProps> = ({ isLoading }) => {
   const [number, setNumber] = useState<number>(0);
-
   const loaderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -27,18 +26,15 @@ const Loader: React.FC<ILoaderProps> = ({ isLoading }) => {
 
   useEffect(() => {
     function increase() {
-      const randomIncrement =
-        Math.floor(Math.random() * 10) + 1;
+      const randomIncrement = Math.floor(Math.random() * 10) + 1;
       setNumber((prevNumber) =>
-        prevNumber + randomIncrement > 100
-          ? 100
-          : prevNumber + randomIncrement
+        prevNumber + randomIncrement > 100 ? 100 : prevNumber + randomIncrement
       );
     }
 
     if (number < 100) {
-      const timeoutId = setTimeout(increase, 100); // Increase every second (adjust as needed)
-      return () => clearTimeout(timeoutId); // Cleanup function to clear the timeout
+      const timeoutId = setTimeout(increase, 100);
+      return () => clearTimeout(timeoutId);
     }
   }, [number]);
 
