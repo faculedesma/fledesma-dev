@@ -11,6 +11,7 @@
     width: 100%;
     background-color: var(--color-bg-surface-secondary);
     border-radius: 4px;
+    transition-duration: calc(var(--animation-base-time) / 6);
   }
 
   div:first-child,
