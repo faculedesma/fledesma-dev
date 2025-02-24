@@ -32,14 +32,11 @@ const Hero: React.FC<IHeroProps> = ({ isLoading }) => {
       <section ref={heroRef} id="hero" className="hero">
         <div className="hero-titles">
           <div className="hero-titles--top">
-            {/* <SectionTitle text="Facundo Ledesma" /> */}
             <SectionTitle text="Facundo Ledesma" />
             <h1>engineer &amp;</h1>
             <HoverRandomString heading="ux designer" stringLength={12} />
-            {/* <h1 data-value="ux designer">ux designer</h1> */}
           </div>
           <div className="hero-titles--bottom">
-            {/* <span></span> */}
             <h5>Build it simple and beautiful</h5>
           </div>
         </div>
