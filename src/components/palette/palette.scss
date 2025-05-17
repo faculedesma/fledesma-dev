@@ -26,6 +26,7 @@
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     opacity: 0;
+    scale: 0;
 
     &-brand,
     &-neutral {
@@ -112,12 +113,14 @@
 
 .show-palette {
   opacity: 1;
+  scale: 1;
   visibility: visible;
   transition-duration: calc(var(--animation-base-time) / 8);
 }
 
 .hide-palette {
   opacity: 0;
+  scale: 0;
   visibility: hidden;
   transition-duration: calc(var(--animation-base-time) / 8);
 }
