@@ -24,12 +24,12 @@ const Home = ({ isLoading }: IHomeProps) => {
       <Hero isLoading={isLoading} />
       <NoteOne />
       <Services />
+      <Process />
       <NoteTwo />
       <AboutMe />
-      <Process />
+      <Work />
       <History />
       <NoteThree />
-      <Work />
       <Footer />
     </div>
   );

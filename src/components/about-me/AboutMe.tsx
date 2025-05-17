@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react';
 
 import { useIntersection } from '@components/hooks/useIntersection';
 import SectionTitle from '@components/titles/SectionTitle';
-import MePNG from '@assets/images/me.jpg';
+import MePNG from '@assets/images/little-chicha.jpg';
 import Button from '@components/buttons/Button';
 import useDistortEffect from '@components/hooks/useDistortEffect';
 

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { PaintBucket } from 'lucide-react';
 
 import useClickOutside from '@components/hooks/useClickOutside';
@@ -18,9 +18,9 @@ interface SlideInputProps {
 
 const Palette: React.FC<SlideInputProps> = ({ min = 0, max = 360, step = 1, onChange }) => {
   const [brandHue, setBrandHue] = useState(0);
-  const [brandSaturation, setBrandSaturation] = useState(0);
+  const [brandSaturation, setBrandSaturation] = useState(50);
   const [neutralHue, setNeutralHue] = useState(0);
-  const [neutralSaturation, setNeutralSaturation] = useState(0);
+  const [neutralSaturation, setNeutralSaturation] = useState(50);
 
   const paletteRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -28,6 +28,33 @@ const Palette: React.FC<SlideInputProps> = ({ min = 0, max = 360, step = 1, onCh
   const brandSaturationRef = useRef<HTMLInputElement>(null);
   const neutralHueRef = useRef<HTMLInputElement>(null);
   const neutralSaturationRef = useRef<HTMLInputElement>(null);
+
+  const randomizeHues = () => {
+    const randomHue = () => Math.floor(Math.random() * 361); // 0–360
+    const randomSaturation = () => Math.floor(Math.random() * 101); // 0–100
+
+    const newBrandHue = randomHue();
+    const newBrandSaturation = randomSaturation();
+    const newNeutralHue = randomHue();
+    const newNeutralSaturation = randomSaturation();
+
+    document.body.style.setProperty('--color-brand-hue', `${newBrandHue}deg`);
+    document.body.style.setProperty('--color-brand-saturation', `${newBrandSaturation}%`);
+    document.body.style.setProperty('--color-neutral-hue', `${newNeutralHue}deg`);
+    document.body.style.setProperty('--color-neutral-saturation', `${newNeutralSaturation}%`);
+
+    setBrandHue(newBrandHue);
+    setBrandSaturation(newBrandSaturation);
+    setNeutralHue(newNeutralHue);
+    setNeutralSaturation(newNeutralSaturation);
+
+    if (onChange) {
+      onChange(newBrandHue);
+      onChange(newBrandSaturation);
+      onChange(newNeutralHue);
+      onChange(newNeutralSaturation);
+    }
+  };
 
   const handleChangeBrandHue = (event: React.ChangeEvent<HTMLInputElement>) => {
     const hueValue = Number(event.target.value);
@@ -152,9 +179,14 @@ const Palette: React.FC<SlideInputProps> = ({ min = 0, max = 360, step = 1, onCh
             onChange={handleChangeNeutralSaturation}
           />
         </div>
-        <Button variant="secondary" onClick={resetToDefault}>
-          Reset
-        </Button>
+        <div className="theme-palette-actions">
+          <Button variant="primary" onClick={randomizeHues}>
+            Random
+          </Button>
+          <Button variant="secondary" onClick={resetToDefault}>
+            Reset
+          </Button>
+        </div>
       </div>
     </div>
   );

@@ -82,7 +82,7 @@ const Services = () => {
 
   return (
     <div className="container">
-      <section className="services" ref={servicesRef}>
+      <section className="services" id="services" ref={servicesRef}>
         <SectionTitle text="Core Services" />
         <div className="services-content">
           <div className="services-content-design">
@@ -133,14 +133,14 @@ const Services = () => {
               <div className="services-content-development-content-borders">
                 <Button
                   size="lg"
-                  variant="outline"
+                  variant="primary"
                   leadingIcon="Square"
                   onClick={handleChangeSquareBorder}
                   className="w-12 h-12"
                 />
                 <Button
                   size="lg"
-                  variant="outline"
+                  variant="secondary"
                   leadingIcon="Circle"
                   onClick={handleChangeRoundedBorder}
                 />

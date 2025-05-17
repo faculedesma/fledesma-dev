@@ -52,8 +52,8 @@ body[data-theme='light'] {
   --color-text-primary: var(--color-neutral-800);
   --color-text-primary-hover: var(--color-neutral-400);
   --color-text-primary-invert: var(--color-neutral-100);
-  --color-text-secondary: var(--color-neutral-400);
-  --color-text-secondary-hover: var(--color-neutral-500);
+  --color-text-secondary: var(--color-neutral-500);
+  --color-text-secondary-hover: var(--color-neutral-600);
   --color-text-brand: var(--color-brand-700);
   --color-text-brand-hover: var(--color-brand-800);
   --color-text-placeholder: var(--color-neutral-300);
@@ -62,9 +62,9 @@ body[data-theme='light'] {
   --color-border-primary: var(--color-neutral-100);
   --color-border-primary-hover: var(--color-neutral-200);
   --color-border-primary-selected: var(--color-neutral-200);
-  --color-border-secondary: var(--color-neutral-300);
-  --color-border-secondary-hover: var(--color-neutral-400);
-  --color-border-secondary-selected: var(--color-neutral-400);
+  --color-border-secondary: var(--color-neutral-200);
+  --color-border-secondary-hover: var(--color-neutral-300);
+  --color-border-secondary-selected: var(--color-neutral-300);
   --color-border-brand: var(--color-brand-600);
   --color-border-brand-hover: var(--color-brand-700);
   --color-border-brand-selected: var(--color-brand-700);
@@ -169,8 +169,8 @@ body[data-theme='dark'] {
   --color-text-primary: var(--color-neutral-800);
   --color-text-primary-hover: var(--color-neutral-400);
   --color-text-primary-invert: var(--color-neutral-100);
-  --color-text-secondary: var(--color-neutral-400);
-  --color-text-secondary-hover: var(--color-neutral-500);
+  --color-text-secondary: var(--color-neutral-500);
+  --color-text-secondary-hover: var(--color-neutral-600);
   --color-text-brand: var(--color-brand-700);
   --color-text-brand-hover: var(--color-brand-800);
   --color-text-placeholder: var(--color-neutral-300);
@@ -179,9 +179,9 @@ body[data-theme='dark'] {
   --color-border-primary: var(--color-neutral-100);
   --color-border-primary-hover: var(--color-neutral-200);
   --color-border-primary-selected: var(--color-neutral-200);
-  --color-border-secondary: var(--color-neutral-300);
-  --color-border-secondary-hover: var(--color-neutral-400);
-  --color-border-secondary-selected: var(--color-neutral-400);
+  --color-border-secondary: var(--color-neutral-200);
+  --color-border-secondary-hover: var(--color-neutral-300);
+  --color-border-secondary-selected: var(--color-neutral-300);
   --color-border-brand: var(--color-brand-600);
   --color-border-brand-hover: var(--color-brand-700);
   --color-border-brand-selected: var(--color-brand-700);

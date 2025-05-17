@@ -20,19 +20,19 @@ interface ILinkProps {
 
 export const links: Link[] = [
   {
+    id: 'services',
+    label: 'Services',
+    href: '/services'
+  },
+  {
     id: 'about',
     label: 'About',
     href: '/about'
   },
   {
     id: 'work',
-    label: 'Projects',
-    href: '/projects'
-  },
-  {
-    id: 'contact',
-    label: 'Contact',
-    href: '/contact'
+    label: 'Work',
+    href: '/work'
   }
 ];
 

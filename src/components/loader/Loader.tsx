@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Antenna } from 'lucide-react';
+
 import './loader.scss';
 
 interface ILoaderProps {
@@ -48,6 +50,7 @@ const Loader: React.FC<ILoaderProps> = ({ isLoading }) => {
   return (
     <div ref={loaderRef} className="loader">
       <div className="number">
+        <Antenna />
         <p>{number}%</p>
       </div>
     </div>
